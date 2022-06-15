@@ -45,8 +45,8 @@ let easyQuestions = [
     {
         id: 8,
         question: "How many cards are there in a pack of cards (excluding jokers)?",
-        correctAnswer: 52,
-        wrongAnswers: [32, 60, 50]
+        correctAnswer: "52",
+        wrongAnswers: ["32", "60", "50"]
 	},
     {
         id: 9,
@@ -143,8 +143,8 @@ let hardQuestions = [
     {
         id: 23,
         question: "How many dots appear on a pair of dice?",
-        correctAnswer: 42,
-        wrongAnswers: [21, 52, 32]
+        correctAnswer: "42",
+        wrongAnswers: ["21", "52", "32"]
 	},
     {
         id: 24,
@@ -190,7 +190,6 @@ let hardQuestions = [
 	},
 ]
 
-
 // MILLION EURO QUESTIONS
 let hardestQuestions = [
     {
@@ -233,10 +232,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let optionThreeBtn = document.getElementById('optionThreeBtn');
     let optionFourBtn = document.getElementById('optionFourBtn');
 
-    // question selected by randomizer
-    let selectedQuestion = questionRandomizer(easyQuestions);
-
-    displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+    let selectedQuestion = {};
+    // selects and displays first question
+    selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
 
     optionOneBtn.addEventListener('click', function() {
         if(answerChecker(selectedQuestion, optionOneText)) {
@@ -250,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionTwoText)) {
             alert("Continue game!");
         } else {
-            alert("Stope game!")
+            alert("Stop game!")
         }
     });
 
@@ -258,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionThreeText)) {
             alert("Continue game!");
         } else {
-            alert("Stope game!")
+            alert("Stop game!")
         }
     });
 
@@ -266,10 +264,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionFourText)) {
             alert("Continue game!")
         } else {
-            alert("Stope game!")
+            alert("Stop game!")
         }
     });
-
 });
 
 /**
@@ -323,4 +320,22 @@ function answerChecker(questionObj, answerText) {
     } else {
         return false
     }
+}
+
+/**
+ * Continues the game by selecting a new randomized question with 
+ * answer choices and displaying them in the game page
+ * @param {Object} qselected - The question object as returned by the 
+ * question randomizer
+ * @param {*} qtext - The html element for the question text
+ * @param {*} opt1 - The html element for the first answer choice
+ * @param {*} opt2 - The html element for the second answer choice
+ * @param {*} opt3 - The html element for the third answer choice
+ * @param {*} opt4 - The html element for the forth answer choice
+ * @returns a new randomized question
+ */
+function newQuestion(qselected, qtext, opt1, opt2, opt3, opt4) {
+    qselected = questionRandomizer(easyQuestions);
+    displayQuestion(qselected, qtext, opt1, opt2, opt3, opt4);
+    return qselected
 }
