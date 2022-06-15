@@ -29,3 +29,101 @@ nav {
     width: 80%;
 }
 
+/* GAME AREA */
+section {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* progress bar */
+progress {
+    width: 80%;
+    height: 3rem;
+}
+
+/* display of money progress */
+#money-progress-container {
+    border: 2px solid black;
+    height: 4rem;
+    width: 80%;
+    overflow: auto;
+}
+
+#money-progress-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    margin: 1rem 0;
+}
+
+#money-progress-list > li {
+    font-size: 1.5rem;
+}
+
+/* life lines */
+#life-lines {
+    display: flex;
+    column-gap: 2rem;
+    row-gap: .8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1.1rem 0;
+    width: 100%;
+}
+
+#life-lines > h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.life-line-item {
+    display: inline-block;
+    border: 1px solid black;
+    width: 3rem;
+    height: 3rem;
+}
+
+/* question area */
+#question-container {
+    background-color: rgb(174, 203, 203);
+    padding: 1.5rem 8%;
+    position: relative;
+}
+
+#question-container > h2 {
+    font-size: 1.2rem;
+}
+
+#question-text {
+    padding-top: .8rem;
+}
+
+#timer {
+    border: 2px solid black;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    position: absolute;
+    right: 8%;
+    top: .5rem;
+}
+
+#answers-container {
+    display: flex;
+    row-gap: .4rem;
+    flex-direction: column;
+    margin: 1rem 0;
+    width: 85%;
+}
+
+#answers-container > button {
+    height: 2.5rem;
+    padding: .1rem .4rem;
+    text-align: left;
+}

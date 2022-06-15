@@ -37,8 +37,8 @@
         <!-- shows progress in the game -->
         <progress value="2" max="15" role="progressbar" aria-label="progess in the game">2 of 15 questions</progress>
         <!-- displays the money to earn per question and player's current money earned  -->
-        <div>
-            <ul>
+        <div id="money-progress-container">
+            <ul id="money-progress-list">
                 <li>1 - &euro; 500</li>
                 <li>2 - &euro; 1,000</li>
                 <li>3 - &euro; 1,500</li>
@@ -57,31 +57,29 @@
             </ul>
         </div>
         <!-- Life Lines to help player choose the correct answer -->
-        <div>
+        <div id="life-lines">
            <h2>Life Lines</h2>
-           <div data-type="remove-one-option">Help 1</div>
-           <div data-type="remove-two-options">Help 2</div>
-           <div data-type="add-to-timer">Help 3</div> 
+           <div data-type="remove-one-option" class="life-line-item">Help 1</div>
+           <div data-type="remove-two-options" class="life-line-item">Help 2</div>
+           <div data-type="add-to-timer" class="life-line-item">Help 3</div> 
         </div>
         <!-- container for the question, and timer -->
-        <div>
+        <div id="question-container">
             <!-- Question -->
             <h2>Question <span>1</span>:</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dignissimos beatae unde veritatis optio amet omnis nihil officiis, iusto delectus necessitatibus sed molestiae suscipit quia totam velit laboriosam dolorum odit?</p>
+            <p id="question-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dignissimos beatae unde veritatis optio amet omnis nihil officiis totam velit laboriosam dolorum odit?</p>
             <!-- 30-second Timer -->
-            <div>
-                <span>30</span>
+            <div id="timer">
+                <span id="timer-value">30</span>
             </div>
         </div>
         <!-- container for the answers-->
-        <div>
+        <div id="answers-container">
             <!-- options for the answer -->
-            <ul>
-                <li>Option 1</li>
-                <li>Option 2</li>
-                <li>Option 3</li>
-                <li>Option 4</li>
-            </ul>
+            <button>A. <span>Option 1</span></button>
+            <button>B. <span>Option 2</span></button>
+            <button>C. <span>Option 3</span></button>
+            <button>D. <span>Option 4</span></button>
         </div>
     </section>
     <!-- link to external javascript file -->
