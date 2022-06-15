@@ -219,15 +219,40 @@ let hardestQuestions = [
 	},
 ]
 
-
 document.addEventListener('DOMContentLoaded', function(event) {
 
+    let questionText = document.getElementById('question-text');
+    let optionOneText = document.getElementById('option1-text');
+    let optionTwoText = document.getElementById('option2-text');
+    let optionThreeText = document.getElementById('option3-text');
+    let optionFourText = document.getElementById('option4-text');
+
     let selectedQuestion = questionRandomizer(easyQuestions);
-    console.log(selectedQuestion);
 
-})
+    // displays the question in the game page
+    questionText.innerText = selectedQuestion.question;
+    
+});
 
+/**
+ * Returns randomized question from a category as specified
+ * in the argument passed
+ */
 function questionRandomizer(questionCategory) {
     let randomNumber = Math.floor(Math.random() * questionCategory.length);
     return questionCategory[randomNumber];
+}
+
+/**
+ * Returns a shuffled list of answer options from the random question 
+ * passed in the parameter
+ */
+function shuffleOptions(questionObj) {
+    let optionsList = [questionObj.correctAnswer, questionObj.wrongAnswers[0], questionObj.wrongAnswers[1], questionObj.wrongAnswers[2]];
+    for (let i = 0; i < 4; i++) {
+        let randIndex = Math.floor(Math.random() * optionsList.length)
+        lastItem = optionsList.pop();
+        optionsList.splice(randIndex, 0, lastItem)
+    };
+    return optionsList;
 }
