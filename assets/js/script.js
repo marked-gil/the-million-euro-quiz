@@ -220,13 +220,20 @@ let hardestQuestions = [
 ]
 
 document.addEventListener('DOMContentLoaded', function(event) {
-
+    // local variables for text contents of each question
     let questionText = document.getElementById('question-text');
     let optionOneText = document.getElementById('option1-text');
     let optionTwoText = document.getElementById('option2-text');
     let optionThreeText = document.getElementById('option3-text');
     let optionFourText = document.getElementById('option4-text');
 
+    // local variables for each answer option to the question
+    let optionOneBtn = document.getElementById('optionOneBtn');
+    let optionTwoBtn = document.getElementById('optionTwoBtn');
+    let optionThreeBtn = document.getElementById('optionThreeBtn');
+    let optionFourBtn = document.getElementById('optionFourBtn');
+
+    // question selected by randomizer
     let selectedQuestion = questionRandomizer(easyQuestions);
 
     // displays the question in the game page
@@ -238,6 +245,23 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionTwoText.innerText = shuffledOptions[1];
     optionThreeText.innerText = shuffledOptions[2];
     optionFourText.innerText = shuffledOptions[3];
+
+    optionOneBtn.addEventListener('click', function() {
+        console.log("It's working! 1")
+    });
+
+    optionTwoBtn.addEventListener('click', function() {
+        console.log("It's working! 2")
+    });
+
+    optionThreeBtn.addEventListener('click', function() {
+        console.log("It's working! 3")
+    });
+
+    optionFourBtn.addEventListener('click', function() {
+        console.log("It's working! 4")
+    });
+
 });
 
 /**
