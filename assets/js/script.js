@@ -239,6 +239,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionOneBtn.addEventListener('click', function() {
         if(answerChecker(selectedQuestion, optionOneText)) {
             alert("Continue game");
+            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
         } else {
             alert("Stop game!")
         }
@@ -247,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionTwoBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionTwoText)) {
             alert("Continue game!");
+            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
         } else {
             alert("Stop game!")
         }
@@ -255,6 +257,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionThreeBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionThreeText)) {
             alert("Continue game!");
+            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
         } else {
             alert("Stop game!")
         }
@@ -262,7 +265,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     optionFourBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionFourText)) {
-            alert("Continue game!")
+            alert("Continue game!");
+            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
         } else {
             alert("Stop game!")
         }
