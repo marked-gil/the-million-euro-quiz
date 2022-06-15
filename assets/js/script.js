@@ -1,11 +1,11 @@
 // EASY QUESTIONS
 let easyQuestions = [
-    {
+    {   
         question: "What is the capital of France?",
         correctAnswer: "Paris",
         wrongAnswers: ["Italy", "Cannes", "Marseille"]
 	},
-    {
+    {   
         question: "Which Queen of Pop was married to Guy Ritchie and Sean Penn?",
         correctAnswer: "Madonna",
         wrongAnswers: ["Celine Dion", "Mariah Carey", "Cher"]
@@ -184,3 +184,16 @@ let hardestQuestions = [
         wrongAnswers: ["Jimi Hendrix", "Elton John", "Stevie Wonder"]
 	},
 ]
+
+
+document.addEventListener('DOMContentLoaded', function(event) {
+
+    let selectedQuestion = questionRandomizer(easyQuestions);
+    console.log(selectedQuestion);
+
+})
+
+function questionRandomizer(questionCategory) {
+    let randomNumber = Math.floor(Math.random() * questionCategory.length);
+    return questionCategory[randomNumber];
+}
