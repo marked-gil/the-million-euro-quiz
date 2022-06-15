@@ -232,6 +232,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
     // displays the question in the game page
     questionText.innerText = selectedQuestion.question;
     
+    // displays the answer options in the game page randomly
+    let shuffledOptions = shuffleOptions(selectedQuestion)
+    optionOneText.innerText = shuffledOptions[0];
+    optionTwoText.innerText = shuffledOptions[1];
+    optionThreeText.innerText = shuffledOptions[2];
+    optionFourText.innerText = shuffledOptions[3];
 });
 
 /**
