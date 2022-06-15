@@ -236,35 +236,38 @@ document.addEventListener('DOMContentLoaded', function(event) {
     // question selected by randomizer
     let selectedQuestion = questionRandomizer(easyQuestions);
 
-    // displays the question in the game page
-    questionText.innerText = selectedQuestion.question;
-    
-    // displays the answer options in the game page randomly
-    let shuffledOptions = shuffleOptions(selectedQuestion)
-    optionOneText.innerText = shuffledOptions[0];
-    optionTwoText.innerText = shuffledOptions[1];
-    optionThreeText.innerText = shuffledOptions[2];
-    optionFourText.innerText = shuffledOptions[3];
+    displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
 
     optionOneBtn.addEventListener('click', function() {
         if(answerChecker(selectedQuestion, optionOneText)) {
-            alert("Continue game")
+            alert("Continue game");
         } else {
             alert("Stop game!")
         }
-        ;
     });
 
     optionTwoBtn.addEventListener('click', function() {
-        answerChecker(selectedQuestion, optionTwoText);
+        if (answerChecker(selectedQuestion, optionTwoText)) {
+            alert("Continue game!");
+        } else {
+            alert("Stope game!")
+        }
     });
 
     optionThreeBtn.addEventListener('click', function() {
-        answerChecker(selectedQuestion, optionThreeText);
+        if (answerChecker(selectedQuestion, optionThreeText)) {
+            alert("Continue game!");
+        } else {
+            alert("Stope game!")
+        }
     });
 
     optionFourBtn.addEventListener('click', function() {
-        answerChecker(selectedQuestion, optionFourText);
+        if (answerChecker(selectedQuestion, optionFourText)) {
+            alert("Continue game!")
+        } else {
+            alert("Stope game!")
+        }
     });
 
 });
@@ -276,6 +279,27 @@ document.addEventListener('DOMContentLoaded', function(event) {
 function questionRandomizer(questionCategory) {
     let randomNumber = Math.floor(Math.random() * questionCategory.length);
     return questionCategory[randomNumber];
+}
+
+/**
+ * Displays the question and options in the game page
+ * @param {Object} qselected - The question object as returned by the question randomizer
+ * @param {*} qtext - The html element for the question text
+ * @param {*} opt1 - The html element for the first answer choice
+ * @param {*} opt2 - The html element for the second answer choice
+ * @param {*} opt3 - The html element for the third answer choice
+ * @param {*} opt4 - The html element for the forth answer choice
+ */
+function displayQuestion(qselected, qtext, opt1, opt2, opt3, opt4) {
+    // displays the question in the game page
+    qtext.innerText = qselected.question;
+    
+    // displays the answer options in the game page randomly
+    let shuffledOptions = shuffleOptions(qselected)
+    opt1.innerText = shuffledOptions[0];
+    opt2.innerText = shuffledOptions[1];
+    opt3.innerText = shuffledOptions[2];
+    opt4.innerText = shuffledOptions[3];
 }
 
 /**
