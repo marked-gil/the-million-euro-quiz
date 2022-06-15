@@ -247,19 +247,24 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionFourText.innerText = shuffledOptions[3];
 
     optionOneBtn.addEventListener('click', function() {
-        console.log("It's working! 1")
+        if(answerChecker(selectedQuestion, optionOneText)) {
+            alert("Continue game")
+        } else {
+            alert("Stop game!")
+        }
+        ;
     });
 
     optionTwoBtn.addEventListener('click', function() {
-        console.log("It's working! 2")
+        answerChecker(selectedQuestion, optionTwoText);
     });
 
     optionThreeBtn.addEventListener('click', function() {
-        console.log("It's working! 3")
+        answerChecker(selectedQuestion, optionThreeText);
     });
 
     optionFourBtn.addEventListener('click', function() {
-        console.log("It's working! 4")
+        answerChecker(selectedQuestion, optionFourText);
     });
 
 });
@@ -285,4 +290,13 @@ function shuffleOptions(questionObj) {
         optionsList.splice(randIndex, 0, lastItem)
     };
     return optionsList;
+}
+
+function answerChecker(questionObj, answerText) {
+    if (questionObj.correctAnswer === answerText.innerText) {
+        console.log("Correct!", questionObj.correctAnswer, "=", answerText.innerText);
+        return true
+    } else {
+        return false
+    }
 }
