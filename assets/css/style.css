@@ -3,12 +3,29 @@ body {
 }
 
 /* removes default global styles */
-* {
+* { 
+    color: black;
     list-style: none;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #logo {
     font-family: 'Playfair Display', serif;
 }
+
+#nav-menu {
+    display: flex;
+    column-gap: 1.5rem;
+    justify-content: space-around;
+    width: 80%;
+}
+
