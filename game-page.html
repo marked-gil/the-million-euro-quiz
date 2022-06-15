@@ -8,21 +8,25 @@
     <meta name="description" content="Let's play an exciting online quiz game inspired by the famous 'Who Wants To Be a Millionaire' game show.">
     <meta name="keywords" content="quiz, game show, online quiz, online game show, who wants to be a millionaire">
     <meta name="author" content="Mark Gil Dacutan">
+    <!-- link from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
     <title>The Million Euro Quiz</title>
     <!-- link to external css file -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
-        <div>
-            <h1>Logo</h1>
-        </div>
-        <ul>
-            <li>Home</li>
-            <li>How to Play</li>
-            <li>Quit</li>
-        </ul>
+        <nav>
+            <h1 id="logo"><span id="logo-the">The</span> Million Euro <span id="logo-quiz">Quiz</span></h1>
+            <ul id="nav-menu">
+                <li>Home</li>
+                <li>How to Play</li>
+                <li>Quit</li>
+            </ul>
+        </nav>
     </header>
+    <!-- game area -->
     <section>
         <!-- shows progress in the game -->
         <progress value="2" max="15" role="progressbar" aria-label="progess in the game">2 of 15 questions</progress>
