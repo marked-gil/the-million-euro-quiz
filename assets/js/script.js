@@ -235,10 +235,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
+    let timerValue = document.getElementById('timer-value');
+    let counter = timer(timerValue);
+
     for (answerBtn of answerButtons) {
         answerBtn.addEventListener('click', function() {
+            clearInterval(counter.id);
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
                 usedQuestions.push(selectedQuestion.id);
+                counter = timer(timerValue);
                 if (usedQuestions.length < 15) {
                     alert("Continue game");
                     if (usedQuestions.length <= 4){
@@ -334,4 +339,20 @@ function answerChecker(questionObj, answerText) {
         "Your answer:", ${answerText}`);
         return false
     }
+}
+
+/**
+ * Displays a timer
+ * @param {*} counter 
+ * @returns an object with setInterval id, and time left
+ */
+function timer(counter) {
+    let timeLeft = 30;
+    let timeInterval = setInterval(function(){
+        if (timeLeft >= 0) {
+            timeLeft--;
+            counter.innerText = timeLeft + 1;
+        }
+    }, 1000);
+    return {id: timeInterval, timeLeft: timeLeft};
 }
