@@ -226,7 +226,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let optionThreeText = document.getElementById('option3-text');
     let optionFourText = document.getElementById('option4-text');
 
-    // local variables for each answer option to the question
+    let questionNumber = document.getElementById('question-number');
+    console.log(questionNumber)
+
+    // local variables for each answer choice to the question
     let optionOneBtn = document.getElementById('optionOneBtn');
     let optionTwoBtn = document.getElementById('optionTwoBtn');
     let optionThreeBtn = document.getElementById('optionThreeBtn');
@@ -236,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // selects and displays first question
     let selectedQuestion = questionRandomizer(easyQuestions);
-    displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+    displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
     optionOneBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionOneText)) {
@@ -247,22 +250,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(easyQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                 selectedQuestion = questionRandomizer(moderateQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(moderateQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
                 selectedQuestion = questionRandomizer(hardQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(hardQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
                 selectedQuestion = questionRandomizer(hardestQuestions);
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
         } else {
             alert("Game Over!") 
@@ -279,22 +282,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(easyQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                 selectedQuestion = questionRandomizer(moderateQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(moderateQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
                 selectedQuestion = questionRandomizer(hardQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(hardQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
                 selectedQuestion = questionRandomizer(hardestQuestions);
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
         } else {
             alert("Game Over!")
@@ -311,22 +314,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(easyQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                 selectedQuestion = questionRandomizer(moderateQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(moderateQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
                 selectedQuestion = questionRandomizer(hardQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(hardQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
                 selectedQuestion = questionRandomizer(hardestQuestions);
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
         } else {
             alert("Game Over!")        
@@ -343,22 +346,22 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(easyQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                 selectedQuestion = questionRandomizer(moderateQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(moderateQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
                 selectedQuestion = questionRandomizer(hardQuestions);
                 while (usedQuestions.includes(selectedQuestion.id)) {
                     selectedQuestion = questionRandomizer(hardQuestions);
                 }
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
                 selectedQuestion = questionRandomizer(hardestQuestions);
-                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
         } else {
             alert("Game Over!")
@@ -385,9 +388,11 @@ function questionRandomizer(questionCategory) {
  * @param {*} opt3 - The html element for the third answer choice
  * @param {*} opt4 - The html element for the forth answer choice
  */
-function displayQuestion(qselected, qtext, opt1, opt2, opt3, opt4) {
+function displayQuestion(qselected, qnumber, qtext, opt1, opt2, opt3, opt4) {
     // displays the question in the game page
     qtext.innerText = qselected.question;
+
+    qnumber.innerText++;
     
     // displays the answer options in the game page randomly
     let shuffledOptions = shuffleOptions(qselected)
