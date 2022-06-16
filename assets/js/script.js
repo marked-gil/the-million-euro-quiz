@@ -234,12 +234,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     let selectedQuestion = {};
     // selects and displays first question
-    selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+    selectedQuestion = questionRandomizer(easyQuestions);
+
+    displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
     optionOneBtn.addEventListener('click', function() {
         if(answerChecker(selectedQuestion, optionOneText)) {
             alert("Continue game");
-            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+            selectedQuestion = questionRandomizer(easyQuestions);
+            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
@@ -248,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionTwoBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionTwoText)) {
             alert("Continue game!");
-            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
@@ -257,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionThreeBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionThreeText)) {
             alert("Continue game!");
-            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
@@ -266,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     optionFourBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionFourText)) {
             alert("Continue game!");
-            selectedQuestion = newQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText)
+            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
@@ -324,22 +327,4 @@ function answerChecker(questionObj, answerText) {
     } else {
         return false
     }
-}
-
-/**
- * Continues the game by selecting a new randomized question with 
- * answer choices and displaying them in the game page
- * @param {Object} qselected - The question object as returned by the 
- * question randomizer
- * @param {*} qtext - The html element for the question text
- * @param {*} opt1 - The html element for the first answer choice
- * @param {*} opt2 - The html element for the second answer choice
- * @param {*} opt3 - The html element for the third answer choice
- * @param {*} opt4 - The html element for the forth answer choice
- * @returns a new randomized question
- */
-function newQuestion(qselected, qtext, opt1, opt2, opt3, opt4) {
-    qselected = questionRandomizer(easyQuestions);
-    displayQuestion(qselected, qtext, opt1, opt2, opt3, opt4);
-    return qselected
 }
