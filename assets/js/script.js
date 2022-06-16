@@ -227,135 +227,44 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let optionFourText = document.getElementById('option4-text');
 
     let questionNumber = document.getElementById('question-number');
-
-    // local variables for each answer choice to the question
-    let optionOneBtn = document.getElementById('optionOneBtn');
-    let optionTwoBtn = document.getElementById('optionTwoBtn');
-    let optionThreeBtn = document.getElementById('optionThreeBtn');
-    let optionFourBtn = document.getElementById('optionFourBtn');
-
+    let answerButtons = document.getElementsByClassName('answer-button');
+ 
     let usedQuestions = [];
 
     // selects and displays first question
     let selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
-    optionOneBtn.addEventListener('click', function() {
-        if (answerChecker(selectedQuestion, optionOneText)) {
-            usedQuestions.push(selectedQuestion.id);
-            alert("Continue game");
-            if (usedQuestions.length <= 4){
-                selectedQuestion = questionRandomizer(easyQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
+    for (answerBtn of answerButtons) {
+        answerBtn.addEventListener('click', function() {
+            if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+                usedQuestions.push(selectedQuestion.id);
+                alert("Continue game");
+                if (usedQuestions.length <= 4){
                     selectedQuestion = questionRandomizer(easyQuestions);
-                }
-            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                selectedQuestion = questionRandomizer(moderateQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(easyQuestions);
+                    }
+                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                     selectedQuestion = questionRandomizer(moderateQuestions);
-                }
-            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
-                selectedQuestion = questionRandomizer(hardQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(moderateQuestions);
+                    }
+                } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
                     selectedQuestion = questionRandomizer(hardQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(hardQuestions);
+                    }
+                } else {
+                    selectedQuestion = questionRandomizer(hardestQuestions);
                 }
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
-                selectedQuestion = questionRandomizer(hardestQuestions);
+                alert("Game Over!") 
             }
-            displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
-        } else {
-            alert("Game Over!") 
-        }
-        console.log(usedQuestions)
-    });
-
-    optionTwoBtn.addEventListener('click', function() {
-        if (answerChecker(selectedQuestion, optionTwoText)) {
-            usedQuestions.push(selectedQuestion.id);
-            alert("Continue game!");
-            if (usedQuestions.length <= 4){
-                selectedQuestion = questionRandomizer(easyQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                }
-            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                selectedQuestion = questionRandomizer(moderateQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                }
-            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
-                selectedQuestion = questionRandomizer(hardQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                }
-            } else {
-                selectedQuestion = questionRandomizer(hardestQuestions);
-            }
-            displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
-        } else {
-            alert("Game Over!")
-        }
-        console.log(usedQuestions)
-    });
-
-    optionThreeBtn.addEventListener('click', function() {
-        if (answerChecker(selectedQuestion, optionThreeText)) {
-            usedQuestions.push(selectedQuestion.id);
-            alert("Continue game!");
-            if (usedQuestions.length <= 4){
-                selectedQuestion = questionRandomizer(easyQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                }
-            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                selectedQuestion = questionRandomizer(moderateQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                }
-            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
-                selectedQuestion = questionRandomizer(hardQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                }
-            } else {
-                selectedQuestion = questionRandomizer(hardestQuestions);
-            }
-            displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
-
-        } else {
-            alert("Game Over!")        
-        }
-        console.log(usedQuestions)
-    });
-
-    optionFourBtn.addEventListener('click', function() {
-        if (answerChecker(selectedQuestion, optionFourText)) {
-            usedQuestions.push(selectedQuestion.id);
-            alert("Continue game!");
-            if (usedQuestions.length <= 4){
-                selectedQuestion = questionRandomizer(easyQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                }
-            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                selectedQuestion = questionRandomizer(moderateQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                }
-            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
-                selectedQuestion = questionRandomizer(hardQuestions);
-                while (usedQuestions.includes(selectedQuestion.id)) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                }
-            } else {
-                selectedQuestion = questionRandomizer(hardestQuestions);
-            }
-            displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
-        } else {
-            alert("Game Over!")
-        }
-        console.log(usedQuestions)
-    });
+            console.log(usedQuestions)
+        })
+    }
 });
 
 /**
@@ -405,11 +314,20 @@ function shuffleOptions(questionObj) {
     return optionsList;
 }
 
+/**
+ * Checks the user's answer and returns true if correct, and false if not
+ * @param {*} questionObj - randomized question object 
+ * @param {*} answerText - text content of the answer
+ * @returns true or false
+ */
 function answerChecker(questionObj, answerText) {
-    if (questionObj.correctAnswer === answerText.innerText) {
-        console.log("Correct!", questionObj.correctAnswer, "=", answerText.innerText);
+    if (questionObj.correctAnswer === answerText) {
+        console.log("Correct!", questionObj.correctAnswer, "=", answerText);
         return true
     } else {
+        console.log(`Wrong! 
+        Correct Answer: ${questionObj.correctAnswer}, 
+        "Your answer:", ${answerText}`);
         return false
     }
 }
