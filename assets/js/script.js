@@ -232,9 +232,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let optionThreeBtn = document.getElementById('optionThreeBtn');
     let optionFourBtn = document.getElementById('optionFourBtn');
 
-    let selectedQuestion = {};
     // selects and displays first question
-    selectedQuestion = questionRandomizer(easyQuestions);
+    let selectedQuestion = questionRandomizer(easyQuestions);
 
     displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
