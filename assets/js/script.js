@@ -232,46 +232,70 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let optionThreeBtn = document.getElementById('optionThreeBtn');
     let optionFourBtn = document.getElementById('optionFourBtn');
 
+    let usedQuestions = [];
+
     // selects and displays first question
     let selectedQuestion = questionRandomizer(easyQuestions);
-
     displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
     optionOneBtn.addEventListener('click', function() {
-        if(answerChecker(selectedQuestion, optionOneText)) {
+        if (answerChecker(selectedQuestion, optionOneText)) {
+            usedQuestions.push(selectedQuestion.id);
             alert("Continue game");
             selectedQuestion = questionRandomizer(easyQuestions);
+            while (usedQuestions.includes(selectedQuestion.id)) {
+                selectedQuestion = questionRandomizer(easyQuestions);
+            }
             displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
+        console.log(usedQuestions)
     });
 
     optionTwoBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionTwoText)) {
+            usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            selectedQuestion = questionRandomizer(easyQuestions);
+            while (usedQuestions.includes(selectedQuestion.id)) {
+                selectedQuestion = questionRandomizer(easyQuestions);
+            }
+            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
+        console.log(usedQuestions)
     });
 
     optionThreeBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionThreeText)) {
+            usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            selectedQuestion = questionRandomizer(easyQuestions);
+            while (usedQuestions.includes(selectedQuestion.id)) {
+                selectedQuestion = questionRandomizer(easyQuestions);
+            }
+            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
+        console.log(usedQuestions)
     });
 
     optionFourBtn.addEventListener('click', function() {
         if (answerChecker(selectedQuestion, optionFourText)) {
+            usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            selectedQuestion = questionRandomizer(easyQuestions);  
+            while (usedQuestions.includes(selectedQuestion.id)) {
+                selectedQuestion = questionRandomizer(easyQuestions);
+            }          
+            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
             alert("Stop game!")
         }
+        console.log(usedQuestions)
     });
 });
 
