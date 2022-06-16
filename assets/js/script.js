@@ -239,26 +239,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
         answerBtn.addEventListener('click', function() {
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
                 usedQuestions.push(selectedQuestion.id);
-                alert("Continue game");
-                if (usedQuestions.length <= 4){
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
+                if (usedQuestions.length < 15) {
+                    alert("Continue game");
+                    if (usedQuestions.length <= 4){
                         selectedQuestion = questionRandomizer(easyQuestions);
-                    }
-                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        while (usedQuestions.includes(selectedQuestion.id)) {
+                            selectedQuestion = questionRandomizer(easyQuestions);
+                        }
+                    } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
                         selectedQuestion = questionRandomizer(moderateQuestions);
-                    }
-                } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        while (usedQuestions.includes(selectedQuestion.id)) {
+                            selectedQuestion = questionRandomizer(moderateQuestions);
+                        }
+                    } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
                         selectedQuestion = questionRandomizer(hardQuestions);
+                        while (usedQuestions.includes(selectedQuestion.id)) {
+                            selectedQuestion = questionRandomizer(hardQuestions);
+                        }
+                    } else {
+                        selectedQuestion = questionRandomizer(hardestQuestions);
                     }
+                    displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
                 } else {
-                    selectedQuestion = questionRandomizer(hardestQuestions);
+                    alert('YOU WON!')
                 }
-                displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             } else {
                 alert("Game Over!") 
             }
