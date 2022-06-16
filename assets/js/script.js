@@ -352,6 +352,9 @@ function timer(counter) {
         if (timeLeft >= 0) {
             timeLeft--;
             counter.innerText = timeLeft + 1;
+        } else {
+            alert("Game Over!")
+            clearInterval(timeInterval);
         }
     }, 1000);
     return {id: timeInterval, timeLeft: timeLeft};
