@@ -228,13 +228,15 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     let questionNumber = document.getElementById('question-number');
     let answerButtons = document.getElementsByClassName('answer-button');
- 
+    
+    // list container for the IDs of used questions
     let usedQuestions = [];
 
     // selects and displays first question
     let selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
 
+    // timer
     let timerValue = document.getElementById('timer-value');
     let counter = timer(timerValue);
 
@@ -353,7 +355,7 @@ function timer(counter) {
             timeLeft--;
             counter.innerText = timeLeft + 1;
         } else {
-            // gameOver();
+            gameOver();
             clearInterval(timeInterval);
         }
     }, 1000);
