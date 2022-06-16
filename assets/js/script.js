@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     let questionNumber = document.getElementById('question-number');
     let answerButtons = document.getElementsByClassName('answer-button');
-    
+
     // list container for the IDs of used questions
     let usedQuestions = [];
 
@@ -240,10 +240,26 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let timerValue = document.getElementById('timer-value');
     let counter = timer(timerValue);
 
+    // lifelines event listeners
+    let lifeLines = document.getElementsByClassName('life-line-item');
+    for (lifeItem of lifeLines) {
+        lifeItem.addEventListener('click', function() {
+            if (this.getAttribute('data-lifeline') === 'remove-one-option') {
+                randomChoiceRemove(selectedQuestion, 1, answerButtons);
+            } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
+                randomChoiceRemove(selectedQuestion, 2, answerButtons);
+            } else {
+                console.log('add more time')
+            }
+    })
+    }
+
+    // buttons for answer choices
     for (answerBtn of answerButtons) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+                undisableOptionBtns(answerButtons)
                 usedQuestions.push(selectedQuestion.id);
                 counter = timer(timerValue);
                 if (usedQuestions.length < 15) {
@@ -365,4 +381,31 @@ function timer(counter) {
 function gameOver() {
     alert(`Sorry, game Over!`)
     location.reload();
+}
+
+function randomChoiceRemove(question, num, optionButtons) {
+    randNum = Math.floor(Math.random() * 3)
+    let options = []
+    for (let i = 0; i < num; i++) {
+        randNum = Math.floor(Math.random() * 3);
+        selectedAnswer = question.wrongAnswers[randNum]
+        while (options.includes(selectedAnswer)) {
+            randNum = Math.floor(Math.random() * 3);
+            selectedAnswer = question.wrongAnswers[randNum]
+        }
+        options.push(question.wrongAnswers[randNum]);
+    }
+    for (optionBtn of optionButtons) {
+        for (let i = 0; i < options.length; i++) {
+            if (optionBtn.innerText.slice(3) === options[i]) {
+                optionBtn.disabled = true;
+            }
+        }
+    }
+}
+
+function undisableOptionBtns(optionButtons) {
+    for (optionBtn of optionButtons) {
+        optionBtn.disabled = false;
+    }
 }
