@@ -242,13 +242,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionOneText)) {
             usedQuestions.push(selectedQuestion.id);
             alert("Continue game");
-            selectedQuestion = questionRandomizer(easyQuestions);
-            while (usedQuestions.includes(selectedQuestion.id)) {
+            if (usedQuestions.length <= 4){
                 selectedQuestion = questionRandomizer(easyQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                selectedQuestion = questionRandomizer(moderateQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
+                selectedQuestion = questionRandomizer(hardQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else {
+                selectedQuestion = questionRandomizer(hardestQuestions);
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
-            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
-            alert("Stop game!")
+            alert("Game Over!") 
         }
         console.log(usedQuestions)
     });
@@ -257,13 +274,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionTwoText)) {
             usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);
-            while (usedQuestions.includes(selectedQuestion.id)) {
+            if (usedQuestions.length <= 4){
                 selectedQuestion = questionRandomizer(easyQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                selectedQuestion = questionRandomizer(moderateQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
+                selectedQuestion = questionRandomizer(hardQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else {
+                selectedQuestion = questionRandomizer(hardestQuestions);
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
-            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
-            alert("Stop game!")
+            alert("Game Over!")
         }
         console.log(usedQuestions)
     });
@@ -272,13 +306,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionThreeText)) {
             usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);
-            while (usedQuestions.includes(selectedQuestion.id)) {
+            if (usedQuestions.length <= 4){
                 selectedQuestion = questionRandomizer(easyQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                selectedQuestion = questionRandomizer(moderateQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
+                selectedQuestion = questionRandomizer(hardQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else {
+                selectedQuestion = questionRandomizer(hardestQuestions);
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
             }
-            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
         } else {
-            alert("Stop game!")
+            alert("Game Over!")        
         }
         console.log(usedQuestions)
     });
@@ -287,13 +338,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
         if (answerChecker(selectedQuestion, optionFourText)) {
             usedQuestions.push(selectedQuestion.id);
             alert("Continue game!");
-            selectedQuestion = questionRandomizer(easyQuestions);  
-            while (usedQuestions.includes(selectedQuestion.id)) {
+            if (usedQuestions.length <= 4){
                 selectedQuestion = questionRandomizer(easyQuestions);
-            }          
-            displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                selectedQuestion = questionRandomizer(moderateQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else if (usedQuestions.length >= 10 && usedQuestions.length <= 14) {
+                selectedQuestion = questionRandomizer(hardQuestions);
+                while (usedQuestions.includes(selectedQuestion.id)) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                }
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            } else {
+                selectedQuestion = questionRandomizer(hardestQuestions);
+                displayQuestion(selectedQuestion, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+            }
         } else {
-            alert("Stop game!")
+            alert("Game Over!")
         }
         console.log(usedQuestions)
     });
