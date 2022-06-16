@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     alert('YOU WON!')
                 }
             } else {
-                alert("Game Over!") 
+                gameOver();
             }
             console.log(usedQuestions)
         })
@@ -353,9 +353,14 @@ function timer(counter) {
             timeLeft--;
             counter.innerText = timeLeft + 1;
         } else {
-            alert("Game Over!")
+            gameOver();
             clearInterval(timeInterval);
         }
     }, 1000);
     return {id: timeInterval, timeLeft: timeLeft};
+}
+
+function gameOver() {
+    alert(`Sorry, game Over!`)
+    location.reload();
 }
