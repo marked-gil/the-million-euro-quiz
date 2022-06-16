@@ -353,7 +353,7 @@ function timer(counter) {
             timeLeft--;
             counter.innerText = timeLeft + 1;
         } else {
-            gameOver();
+            // gameOver();
             clearInterval(timeInterval);
         }
     }, 1000);

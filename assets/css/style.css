@@ -82,8 +82,14 @@ progress {
 .life-line-item {
     display: inline-block;
     border: 1px solid black;
-    width: 3rem;
-    height: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+}
+
+.fas {
+    font-size: 2.3rem;
+    margin: .6rem 0;
 }
 
 /* question area */

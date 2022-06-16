@@ -8,7 +8,8 @@
     <meta name="description" content="Let's play an exciting online quiz game inspired by the famous 'Who Wants To Be a Millionaire' game show.">
     <meta name="keywords" content="quiz, game show, online quiz, online game show, who wants to be a millionaire">
     <meta name="author" content="Mark Gil Dacutan">
-    <!-- link from Google Fonts -->
+
+    <!-- link to Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 
     <title>The Million Euro Quiz</title>
@@ -59,9 +60,9 @@
         <!-- Life Lines to help player choose the correct answer -->
         <div id="life-lines">
            <h2>Life Lines</h2>
-           <div data-type="remove-one-option" class="life-line-item">Help 1</div>
-           <div data-type="remove-two-options" class="life-line-item">Help 2</div>
-           <div data-type="add-to-timer" class="life-line-item">Help 3</div> 
+           <div data-type="remove-one-option" class="life-line-item"><i class="fas fa-hands-helping"></i></div>
+           <div data-type="remove-two-options" class="life-line-item"><i class="fas fa-life-ring"></i></div>
+           <div data-type="add-to-timer" class="life-line-item"><i class="fas fa-clock"></i></div> 
         </div>
         <!-- container for the question, and timer -->
         <div id="question-container">
@@ -82,6 +83,8 @@
             <button class="answer-button">D. <span id="option4-text">Option 4</span></button>
         </div>
     </section>
+    <!-- link to Fontawesome -->
+    <script src="https://kit.fontawesome.com/d037c16f69.js" crossorigin="anonymous"></script>
     <!-- link to external javascript file -->
     <script src="assets/js/script.js"></script>
 </body>
