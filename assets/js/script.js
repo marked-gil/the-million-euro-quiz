@@ -246,8 +246,12 @@ document.addEventListener('DOMContentLoaded', function(event) {
         lifeItem.addEventListener('click', function() {
             if (this.getAttribute('data-lifeline') === 'remove-one-option') {
                 randomChoiceRemove(selectedQuestion, 1, answerButtons);
+                // deactives the lifeline button after using. This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
+                this.removeEventListener('click', arguments.callee);
             } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
                 randomChoiceRemove(selectedQuestion, 2, answerButtons);
+                // deactives the lifeline button after using. This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
+                this.removeEventListener('click', arguments.callee);
             } else {
                 console.log('add more time')
             }
