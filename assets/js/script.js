@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // timer
     let timerValue = document.getElementById('timer-value');
-    let counter = timer(timerValue);
+    let counter = timer(timerValue, 30);
 
     // lifelines event listeners
     let lifeLines = document.getElementsByClassName('life-line-item');
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 // deactives the lifeline button after using. This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
                 this.removeEventListener('click', arguments.callee);
             } else {
-                console.log('add more time')
+                console.log('add more time');
             }
     })
     }
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
                 undisableOptionBtns(answerButtons)
                 usedQuestions.push(selectedQuestion.id);
-                counter = timer(timerValue);
+                counter = timer(timerValue, 30);
                 if (usedQuestions.length < 15) {
                     alert("Continue game");
                     if (usedQuestions.length <= 4){
@@ -364,12 +364,13 @@ function answerChecker(questionObj, answerText) {
 }
 
 /**
- * Displays a timer
- * @param {*} counter 
- * @returns an object with setInterval id, and time left
+ * Displays a timer from specified max time to 0
+ * @param {*} counter - the timer object from DOM
+ * @param {*} num - initial time for timer to start from
+ * @returns an object with setInterval id
  */
-function timer(counter) {
-    let timeLeft = 30;
+function timer(counter, num) {
+    let timeLeft = parseInt(num);
     let timeInterval = setInterval(function(){
         if (timeLeft >= 0) {
             timeLeft--;
@@ -379,7 +380,7 @@ function timer(counter) {
             clearInterval(timeInterval);
         }
     }, 1000);
-    return {id: timeInterval, timeLeft: timeLeft};
+    return {id: timeInterval};
 }
 
 function gameOver() {
