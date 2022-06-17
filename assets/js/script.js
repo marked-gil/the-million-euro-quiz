@@ -253,7 +253,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 // deactives the lifeline button after using. This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
                 this.removeEventListener('click', arguments.callee);
             } else {
-                console.log('add more time');
             }
     })
     }
@@ -381,6 +380,12 @@ function timer(counter, num) {
         }
     }, 1000);
     return {id: timeInterval};
+}
+
+function addMoreTime(counter, numToAdd) {
+    let num = parseInt(counter.innerText) + numToAdd;
+    let timerId = timer(counter, num);
+    return {timerId: timerId}
 }
 
 function gameOver() {
