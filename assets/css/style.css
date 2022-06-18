@@ -1,7 +1,3 @@
-body {
-    font-family: 'Roboto', sans-serif;;
-}
-
 /* removes default global styles */
 * { 
     color: black;
@@ -11,7 +7,44 @@ body {
     text-decoration: none;
 }
 
-/* navbar */
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Home Page */
+#logo-wrapper {
+    background-color: aquamarine;
+    height: 5rem;
+    margin: 20vh 0 4rem;
+}
+#logo-homepage {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    line-height: 5rem;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 17.5rem;
+}
+
+#logo-the {
+    font-size: 2rem;
+    position: absolute;
+    top: -2.5rem;
+    left: .1rem;
+}
+
+#logo-quiz {
+    font-size: 2rem;
+    position: absolute;
+    top: 2.5rem;
+    right: .1rem;
+}
+
+/* navbar - Game Page */
 nav {
     display: flex;
     flex-direction: column;
