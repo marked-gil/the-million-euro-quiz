@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // lifelines event listeners
     let lifeLines = document.getElementsByClassName('life-line-item');
-    for (lifeItem of lifeLines) {
+    for (let lifeItem of lifeLines) {
         lifeItem.addEventListener('click', function() {
             if (this.getAttribute('data-lifeline') === 'remove-one-option') {
                 randomChoiceRemove(selectedQuestion, 1, answerButtons);
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
 
     // buttons for answer choices
-    for (answerBtn of answerButtons) {
+    for (let answerBtn of answerButtons) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
@@ -343,7 +343,7 @@ function shuffleOptions(questionObj) {
     let optionsList = [questionObj.correctAnswer, questionObj.wrongAnswers[0], questionObj.wrongAnswers[1], questionObj.wrongAnswers[2]];
     for (let i = 0; i < 4; i++) {
         let randIndex = Math.floor(Math.random() * optionsList.length)
-        lastItem = optionsList.pop();
+        let lastItem = optionsList.pop();
         optionsList.splice(randIndex, 0, lastItem)
     };
     return optionsList;
@@ -398,18 +398,18 @@ function gameOver() {
 }
 
 function randomChoiceRemove(question, num, optionButtons) {
-    randNum = Math.floor(Math.random() * 3)
+    let randNum = Math.floor(Math.random() * 3)
     let options = []
     for (let i = 0; i < num; i++) {
         randNum = Math.floor(Math.random() * 3);
-        selectedAnswer = question.wrongAnswers[randNum]
+        let selectedAnswer = question.wrongAnswers[randNum]
         while (options.includes(selectedAnswer)) {
             randNum = Math.floor(Math.random() * 3);
             selectedAnswer = question.wrongAnswers[randNum]
         }
         options.push(question.wrongAnswers[randNum]);
     }
-    for (optionBtn of optionButtons) {
+    for (let optionBtn of optionButtons) {
         for (let i = 0; i < options.length; i++) {
             if (optionBtn.innerText.slice(3) === options[i]) {
                 optionBtn.disabled = true;
@@ -419,7 +419,7 @@ function randomChoiceRemove(question, num, optionButtons) {
 }
 
 function undisableOptionBtns(optionButtons) {
-    for (optionBtn of optionButtons) {
+    for (let optionBtn of optionButtons) {
         optionBtn.disabled = false;
     }
 }
