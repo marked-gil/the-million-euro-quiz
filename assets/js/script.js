@@ -60,7 +60,7 @@ let easyQuestions = [
         correctAnswer: "Mercury",
         wrongAnswers: ["Saturn", "Venus", "Pluto"]
 	},
-]
+];
 
 // MODERATE QUESTIONS
 let moderateQuestions = [
@@ -124,7 +124,7 @@ let moderateQuestions = [
         correctAnswer: "red, green, black, blue and yellow",
         wrongAnswers: ["green, yellow, violet, blue, white", "yellow, red, brown, blue, green", "black, orange, yellow, green, red"]
 	},
-]
+];
 
 // HARD QUESTIONS
 let hardQuestions = [
@@ -188,7 +188,7 @@ let hardQuestions = [
         correctAnswer: "Benjamin Franklin",
         wrongAnswers: ["Henry Ford", "Michael Faraday", "Albert Einstein"]
 	},
-]
+];
 
 // MILLION EURO QUESTIONS
 let hardestQuestions = [
@@ -216,7 +216,7 @@ let hardestQuestions = [
         correctAnswer: "Bob Dylan",
         wrongAnswers: ["Jimi Hendrix", "Elton John", "Stevie Wonder"]
 	},
-]
+];
 
 document.addEventListener('DOMContentLoaded', function(event) {
     // local variables for text contents of each question
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 // deactives the lifeline button after using. This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript
                 this.removeEventListener('click', arguments.callee);
             }
-    })
+    });
     }
 
     // buttons for answer choices
@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
             if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
-                undisableOptionBtns(answerButtons)
+                undisableOptionBtns(answerButtons);
                 usedQuestions.push(selectedQuestion.id);
                 counter = timer(timerValue, 30);
                 if (usedQuestions.length < 15) {
@@ -292,13 +292,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     }
                     displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
                 } else {
-                    alert('YOU WON!')
+                    alert('YOU WON!');
                 }
             } else {
                 gameOver();
             }
-            console.log(usedQuestions)
-        })
+            console.log(usedQuestions);
+        });
     }
 });
 
@@ -328,7 +328,7 @@ function displayQuestion(qselected, qnumber, qtext, opt1, opt2, opt3, opt4) {
     qnumber.innerText++;
     
     // displays the answer options in the game page randomly
-    let shuffledOptions = shuffleOptions(qselected)
+    let shuffledOptions = shuffleOptions(qselected);
     opt1.innerText = shuffledOptions[0];
     opt2.innerText = shuffledOptions[1];
     opt3.innerText = shuffledOptions[2];
@@ -342,10 +342,10 @@ function displayQuestion(qselected, qnumber, qtext, opt1, opt2, opt3, opt4) {
 function shuffleOptions(questionObj) {
     let optionsList = [questionObj.correctAnswer, questionObj.wrongAnswers[0], questionObj.wrongAnswers[1], questionObj.wrongAnswers[2]];
     for (let i = 0; i < 4; i++) {
-        let randIndex = Math.floor(Math.random() * optionsList.length)
+        let randIndex = Math.floor(Math.random() * optionsList.length);
         let lastItem = optionsList.pop();
-        optionsList.splice(randIndex, 0, lastItem)
-    };
+        optionsList.splice(randIndex, 0, lastItem);
+    }
     return optionsList;
 }
 
@@ -358,12 +358,12 @@ function shuffleOptions(questionObj) {
 function answerChecker(questionObj, answerText) {
     if (questionObj.correctAnswer === answerText) {
         console.log("Correct!", questionObj.correctAnswer, "=", answerText);
-        return true
+        return true;
     } else {
         console.log(`Wrong! 
         Correct Answer: ${questionObj.correctAnswer}, 
         "Your answer:", ${answerText}`);
-        return false
+        return false;
     }
 }
 
@@ -393,19 +393,19 @@ function addMoreTime(counter, numToAdd) {
 }
 
 function gameOver() {
-    alert(`Sorry, game Over!`)
+    alert(`Sorry, game Over!`);
     location.reload();
 }
 
 function randomChoiceRemove(question, num, optionButtons) {
-    let randNum = Math.floor(Math.random() * 3)
-    let options = []
+    let randNum = Math.floor(Math.random() * 3);
+    let options = [];
     for (let i = 0; i < num; i++) {
         randNum = Math.floor(Math.random() * 3);
-        let selectedAnswer = question.wrongAnswers[randNum]
+        let selectedAnswer = question.wrongAnswers[randNum];
         while (options.includes(selectedAnswer)) {
             randNum = Math.floor(Math.random() * 3);
-            selectedAnswer = question.wrongAnswers[randNum]
+            selectedAnswer = question.wrongAnswers[randNum];
         }
         options.push(question.wrongAnswers[randNum]);
     }
