@@ -266,3 +266,11 @@ progress {
     background-color: var(--clr-sea-green);
     border: 1px solid var(--clr-burlywood);
 }
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+    #game-area {
+        min-height: 50rem;
+        justify-content: center;
+    }
+}
