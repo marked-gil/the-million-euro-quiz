@@ -203,9 +203,17 @@ progress {
 
 /* question area */
 #question-container {
-    background-color: rgb(174, 203, 203);
-    padding: 1.5rem 8%;
+    background-image: linear-gradient(to right, #264137, #598c34);
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.2rem 1.5rem;
     position: relative;
+    text-align: center;
+    min-height: 8rem;
+    width: 100%;
 }
 
 #question-container > h2 {
