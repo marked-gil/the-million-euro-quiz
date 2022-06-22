@@ -322,7 +322,7 @@ function questionRandomizer(questionCategory) {
  * Displays the question and options in the game page
  * @param {Object} qselected - The question object as returned by the question randomizer
  * @param {*} qtext - The html element for the question text
- * @param {Array} optList - List of 
+ * @param {Array} optList - List of the answer-button elements
  */
 function displayQuestion(qselected, qnumber, qtext, optList) {
     // displays the question in the game page
