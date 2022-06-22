@@ -457,4 +457,13 @@ progress {
         font-size: 1.2rem;
     }
 
+    progress {
+        width: 45rem;
+        margin-left: 8%;
+    }
+
+    #life-lines {
+        column-gap: 6rem;
+        width: 56.25rem;
+    }
 }
