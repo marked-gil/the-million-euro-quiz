@@ -368,7 +368,7 @@ progress {
     }
 
     #game-area {
-        min-height: 50rem;
+        height: 65vh;
         justify-content: center;
     }
 }
