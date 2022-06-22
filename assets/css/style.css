@@ -215,13 +215,17 @@ progress {
     min-height: 8rem;
     width: 100%;
 }
-
+/* question label */
 #question-container > h2 {
+    text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1.2rem;
 }
 
 #question-text {
-    padding-top: .8rem;
+    color: var(--clr-snow);
+    text-shadow: 0 0 5px var(--clr-raisin-black);
+    font-size: 1.2rem;
+    margin: .8rem 0 0;
 }
 
 #timer {
