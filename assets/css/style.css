@@ -19,6 +19,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--clr-raisin-black);
     height: 100vh;
     display: flex;
     flex-direction: column;
