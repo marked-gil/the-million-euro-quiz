@@ -349,6 +349,20 @@ progress {
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
+    /* Game Page */
+    #logo-wrapper-gamepage {
+        height: 4rem;
+    }
+
+    #logo-gamepage {
+        font-size: 2.5rem;
+        line-height: 4rem;
+    }
+
+    #logo-gamepage span {
+        font-size: 1.6rem;
+    }
+
     #game-area {
         min-height: 50rem;
         justify-content: center;
