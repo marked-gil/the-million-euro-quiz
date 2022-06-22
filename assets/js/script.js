@@ -399,6 +399,12 @@ function gameOver() {
     location.reload();
 }
 
+/**
+ * Randomly removes wrong options for the answer
+ * @param {Object} question - the randomly selected question Object
+ * @param {number} num - Number of wrong options to remove
+ * @param {Array} optionButtons - List of the button elements for the answer options 
+ */
 function randomChoiceRemove(question, num, optionButtons) {
     let randNum = Math.floor(Math.random() * 3);
     let optionsRemoved = [];
@@ -415,10 +421,10 @@ function randomChoiceRemove(question, num, optionButtons) {
         for (let i = 0; i < optionsRemoved.length; i++) {
             if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
                 optionBtn.disabled = true;
+                optionBtn.classList.add('disabled-button')
             }
         }
     }
-    return {optionsRemoved, question};
 }
 
 function undisableOptionBtns(optionButtons) {
