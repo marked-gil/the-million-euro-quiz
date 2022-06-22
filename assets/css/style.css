@@ -10,7 +10,7 @@
 
 /* removes default global styles */
 * { 
-    color: black;
+    color: var(--clr-snow);
     list-style: none;
     margin: 0;
     padding: 0;
