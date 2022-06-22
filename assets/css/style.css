@@ -261,3 +261,8 @@ progress {
     color: var(--clr-snow);
     text-shadow: 0 0 10px var(--clr-raisin-black);
 }
+
+.answer-button:hover {
+    background-color: var(--clr-sea-green);
+    border: 1px solid var(--clr-burlywood);
+}
