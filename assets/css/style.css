@@ -246,12 +246,18 @@ progress {
     display: flex;
     row-gap: .4rem;
     flex-direction: column;
-    margin: 1rem 0;
+    margin: 5% 0;
     width: 85%;
 }
 
-#answers-container > button {
-    height: 2.5rem;
-    padding: .1rem .4rem;
+.answer-button {
+    background-color: #34684a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    min-height: 2.5rem;
+    padding: .1rem 1rem;
     text-align: left;
+    color: var(--clr-snow);
+    text-shadow: 0 0 10px var(--clr-raisin-black);
 }
