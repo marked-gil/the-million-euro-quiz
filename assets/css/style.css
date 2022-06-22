@@ -15,6 +15,10 @@
     pointer-events: none;
 }
 
+.hide {
+    display: none;
+}
+
 /* removes default global styles */
 * { 
     color: var(--clr-snow);
