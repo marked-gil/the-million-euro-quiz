@@ -371,6 +371,18 @@ progress {
         height: 65vh;
         justify-content: center;
     }
+
+    #life-lines > h2 {
+        font-size: 1.4rem;
+    }
+    .life-line-item {
+        width: 5rem;
+        height: 5rem;
+    }
+    .lifeline-icon {
+        font-size: 4rem;
+    }
+
 }
 
 @media (min-width: 900px) {
