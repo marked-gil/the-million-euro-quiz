@@ -363,6 +363,10 @@ progress {
         font-size: 1.6rem;
     }
 
+    #nav-menu {
+        font-size: 1.3rem;
+    }
+
     #game-area {
         min-height: 50rem;
         justify-content: center;
