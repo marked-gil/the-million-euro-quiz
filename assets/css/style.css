@@ -126,6 +126,7 @@ nav {
 #nav-menu {
     display: flex;
     column-gap: 1.5rem;
+    font-size: 1.1rem;
     justify-content: space-around;
     width: 80%;
 }
