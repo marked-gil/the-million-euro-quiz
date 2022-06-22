@@ -8,6 +8,13 @@
     --clr-snow: #fff9fb;
 }
 
+/* Utilities */
+
+.disabled-button {
+    opacity: .2;
+    pointer-events: none;
+}
+
 /* removes default global styles */
 * { 
     color: var(--clr-snow);

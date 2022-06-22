@@ -245,13 +245,17 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let lifeItem of lifeLines) {
         lifeItem.addEventListener('click', function() {
             if (this.getAttribute('data-lifeline') === 'remove-one-option') {
-                randomChoiceRemove(selectedQuestion, 1, answerButtons);
+                let lifeLineOutput= randomChoiceRemove(selectedQuestion, 1, answerButtons);
+                // applies 'disabled button' css style once the lifeline button is clicked
+                this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: 
                 https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
             } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
-                randomChoiceRemove(selectedQuestion, 2, answerButtons);
+                let lifeLineOutput = randomChoiceRemove(selectedQuestion, 2, answerButtons);
+                // applies 'disabled button' css style once the lifeline button is clicked
+                this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: 
                 https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
@@ -260,6 +264,8 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 // stops and adds more time to current timer, and then resumes new timer
                 clearInterval(counter.id);
                 counter.id = addMoreTime(timerValue, 30);
+                // applies 'disabled button' css style once the lifeline button is clicked
+                this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: 
                 https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
@@ -405,23 +411,24 @@ function gameOver() {
 
 function randomChoiceRemove(question, num, optionButtons) {
     let randNum = Math.floor(Math.random() * 3);
-    let options = [];
+    let optionsRemoved = [];
     for (let i = 0; i < num; i++) {
         randNum = Math.floor(Math.random() * 3);
         let selectedAnswer = question.wrongAnswers[randNum];
-        while (options.includes(selectedAnswer)) {
+        while (optionsRemoved.includes(selectedAnswer)) {
             randNum = Math.floor(Math.random() * 3);
             selectedAnswer = question.wrongAnswers[randNum];
         }
-        options.push(question.wrongAnswers[randNum]);
+        optionsRemoved.push(question.wrongAnswers[randNum]);
     }
     for (let optionBtn of optionButtons) {
-        for (let i = 0; i < options.length; i++) {
-            if (optionBtn.innerText.slice(3) === options[i]) {
+        for (let i = 0; i < optionsRemoved.length; i++) {
+            if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
                 optionBtn.disabled = true;
             }
         }
     }
+    return {optionsRemoved, question};
 }
 
 function undisableOptionBtns(optionButtons) {
