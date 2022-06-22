@@ -311,6 +311,26 @@ progress {
     cursor: pointer;
 }
 
+#how-to-play-header {
+    border-bottom: 2px solid var(--clr-burlywood);
+    font-size: 1.8rem;
+    line-height: 3rem;
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+#how-to-play-container h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin: 1.5rem 0 .8rem;
+}
+
+#how-to-play-container li {
+    list-style: disc;
+    list-style-position: inside;
+    margin: .5rem 0;
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
     #game-area {
