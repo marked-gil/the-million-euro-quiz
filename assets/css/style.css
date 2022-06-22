@@ -298,6 +298,13 @@ progress {
     left: 5%;
 }
 
+.fa-times {
+    color: var(--clr-sea-green);
+    font-size: 2.5rem;
+    position: fixed;
+    top: 13%;
+    right: 11%;
+}
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
