@@ -396,15 +396,15 @@ progress {
     #answers-container {
         width: 31.875rem;
     }
-    
+
     .answer-button {
         font-size: 1.4rem;
         min-height: 3.8rem;
     }
-
 }
 
 @media (min-width: 900px) {
+    /* Game Page */
     #question-container {
         width: 56.25rem;
     }
@@ -420,3 +420,41 @@ progress {
         width: 49%;
     }
 } 
+
+@media (min-width: 1180px) {
+	/* Game Page */
+    #game-area {
+        align-items: flex-start;
+        box-sizing: border-box;
+        margin: 5vh auto 0;
+        padding: 0 1rem;
+        position: relative;
+        min-height: 44rem;
+        max-height: 44rem;
+        width: 73.75rem;
+    }
+
+    #money-container {
+        background-image: linear-gradient(#F0E699, #E1CD33, #B6A733);
+        box-shadow: 0 0 10px 5px #8ecd21;
+        min-height: auto;
+        max-height: 100%;
+        width: 15rem;
+        padding: 1rem 0;
+        position: absolute;
+        top: 2%;
+        right: .5rem;
+    }
+
+    #money-list {
+        align-items: flex-start;
+        flex-direction: column-reverse;
+        padding-left: 2rem;
+        row-gap: .6rem;
+    }
+
+    #money-list > li {
+        font-size: 1.2rem;
+    }
+
+}
