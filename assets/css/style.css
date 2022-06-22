@@ -83,7 +83,7 @@ body {
     border-radius: 6px;
     display: block;
     font-size: .9rem;
-    letter-spacing: .2rem;
+    letter-spacing: .1rem;
     line-height: 2.1rem;
     margin: .5rem auto;
     height: 2.1rem;
@@ -91,6 +91,10 @@ body {
     text-transform: uppercase;
 }
 
+#how-to-play-button:hover {
+    background-color: #3a956187;
+    cursor: pointer;
+}
 
 /* navbar - Game Page */
 nav {
