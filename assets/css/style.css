@@ -148,22 +148,26 @@ progress {
 }
 
 /* display of money progress */
-#money-progress-container {
-    border: 2px solid black;
-    height: 4rem;
+#money-container {
+    background-color: white;
+    border-radius: 4px;
+    min-height: 3rem;
+    max-height: 5rem;
     width: 80%;
-    overflow: auto;
+    overflow: scroll;
 }
 
-#money-progress-list {
+#money-list {
     display: flex;
     align-items: center;
-    flex-direction: column-reverse;
-    margin: 1rem 0;
+    flex-direction: column;
+    margin: .6rem 0;
 }
 
-#money-progress-list > li {
+#money-list > li {
+    color: var(--clr-raisin-black);
     font-size: 1.5rem;
+    margin: .2rem 0;
 }
 
 /* life lines */
