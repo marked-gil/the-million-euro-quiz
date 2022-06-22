@@ -93,6 +93,16 @@ body {
     cursor: pointer;
 }
 
+/* GAME AREA */
+#game-area {
+    margin: 5% 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 80vh;
+}
+
 /* navbar - Game Page */
 nav {
     display: flex;
@@ -109,14 +119,6 @@ nav {
     column-gap: 1.5rem;
     justify-content: space-around;
     width: 80%;
-}
-
-/* GAME AREA */
-section {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 /* progress bar */
