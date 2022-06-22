@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     // local variables for text contents of each question
     let questionText = document.getElementById('question-text');
     // list of button elements containing the answer options
-    let optionButtonsList = document.getElementsByClassName('answer-button')
+    let optionButtonsList = document.getElementsByClassName('answer-button');
 
     let questionNumber = document.getElementById('question-number');
 
@@ -242,16 +242,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let lifeItem of lifeLines) {
         lifeItem.addEventListener('click', function() {
             if (this.getAttribute('data-lifeline') === 'remove-one-option') {
-                let lifeLineOutput= randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
+                randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
                 // applies 'disabled button' css style once the lifeline button is clicked
-                this.classList.add("disabled-button")
+                this.classList.add("disabled-button");
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
             } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
-                let lifeLineOutput = randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
+                randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
                 // applies 'disabled button' css style once the lifeline button is clicked
-                this.classList.add("disabled-button")
+                this.classList.add("disabled-button");
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 clearInterval(counter.id);
                 counter.id = addMoreTime(timerValue, 30);
                 // applies 'disabled button' css style once the lifeline button is clicked
-                this.classList.add("disabled-button")
+                this.classList.add("disabled-button");
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: 
                 https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
@@ -331,9 +331,11 @@ function displayQuestion(qselected, qnumber, qtext, optList) {
     qnumber.innerText++;
     // displays the answer options in the game page randomly
     let shuffledOptions = shuffleOptions(qselected);
-    let letterSequence = ['A.', 'B.', 'C.', 'D.']
+    let letterSequence = ['A.', 'B.', 'C.', 'D.'];
     for (let i = 0; i < optList.length; i++) {
         optList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
+        // un-disable disabled buttons
+        optList[i].classList.remove('disabled-button');
     }
 }
 
@@ -417,11 +419,12 @@ function randomChoiceRemove(question, num, optionButtons) {
         }
         optionsRemoved.push(question.wrongAnswers[randNum]);
     }
+    // disable answer buttons when removed by lifeline click
     for (let optionBtn of optionButtons) {
         for (let i = 0; i < optionsRemoved.length; i++) {
             if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
                 optionBtn.disabled = true;
-                optionBtn.classList.add('disabled-button')
+                optionBtn.classList.add('disabled-button');
             }
         }
     }
