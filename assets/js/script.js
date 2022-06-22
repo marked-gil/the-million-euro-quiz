@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let answerBtn of optionButtonsList) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
-            if (answerChecker(selectedQuestion, this.innerText)) {
+            if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
                 undisableOptionBtns(optionButtonsList);
                 usedQuestions.push(selectedQuestion.id);
                 counter = timer(timerValue, 30);
@@ -331,9 +331,9 @@ function displayQuestion(qselected, qnumber, qtext, optList) {
     qnumber.innerText++;
     // displays the answer options in the game page randomly
     let shuffledOptions = shuffleOptions(qselected);
+    let letterSequence = ['A.', 'B.', 'C.', 'D.']
     for (let i = 0; i < optList.length; i++) {
-        console.log(optList[i], shuffledOptions[i])
-        optList[i].innerText = shuffledOptions[i];
+        optList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
     }
 }
 
