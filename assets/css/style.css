@@ -1,3 +1,13 @@
+/* Customized Variables */
+:root {
+    --clr-raisin-black: #252627;
+    --clr-harlequin-green: #1b4d31;
+    --clr-sea-green: #3a9561;
+    --clr-burlywood: #deb887;
+    --clr-light-silver: #dad9d8;
+    --clr-snow: #fff9fb;
+}
+
 /* removes default global styles */
 * { 
     color: black;
