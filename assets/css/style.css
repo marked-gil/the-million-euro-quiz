@@ -316,7 +316,7 @@ progress {
     cursor: pointer;
 }
 
-/* heading - How to Play */
+/* main heading - How to Play */
 #how-to-play-heading {
     border-bottom: 2px solid var(--clr-burlywood);
     font-size: 1.8rem;
@@ -325,19 +325,21 @@ progress {
     margin: 0 0 1rem;
 }
 
-
+/* subheading - How to Play */
 #how-to-play-container h3 {
     text-align: center;
     font-size: 1.3rem;
     margin: 1.5rem 0 .8rem;
 }
 
+/* bullet points - How to Play */
 #how-to-play-container li {
     list-style: disc;
     list-style-position: inside;
     margin: .5rem 0;
 }
 
+/* lifeline image - How to Play */
 #lifeline-image {
     display: block;
     margin: 0 auto;
