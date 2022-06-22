@@ -393,6 +393,14 @@ progress {
         font-size: 1.6rem;
     }
 
+    #answers-container {
+        width: 31.875rem;
+    }
+    
+    .answer-button {
+        font-size: 1.4rem;
+        min-height: 3.8rem;
+    }
 
 }
 
