@@ -221,10 +221,8 @@ let hardestQuestions = [
 document.addEventListener('DOMContentLoaded', function(event) {
     // local variables for text contents of each question
     let questionText = document.getElementById('question-text');
-    let optionOneText = document.getElementById('option1-text');
-    let optionTwoText = document.getElementById('option2-text');
-    let optionThreeText = document.getElementById('option3-text');
-    let optionFourText = document.getElementById('option4-text');
+    let optionButtonsList = document.getElementsByClassName('answer-button')
+    console.log(optionButtonsList)
 
     let questionNumber = document.getElementById('question-number');
     let answerButtons = document.getElementsByClassName('answer-button');
@@ -234,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // selects and displays first question
     let selectedQuestion = questionRandomizer(easyQuestions);
-    displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+    displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
 
     // timer
     let timerValue = document.getElementById('timer-value');
@@ -249,16 +247,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
                 // applies 'disabled button' css style once the lifeline button is clicked
                 this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
-                This code is from stackoverflow: 
-                https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
+                This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
             } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
                 let lifeLineOutput = randomChoiceRemove(selectedQuestion, 2, answerButtons);
                 // applies 'disabled button' css style once the lifeline button is clicked
                 this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
-                This code is from stackoverflow: 
-                https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
+                This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
             } else {
                 // stops and adds more time to current timer, and then resumes new timer
@@ -278,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let answerBtn of answerButtons) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
-            if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+            if (answerChecker(selectedQuestion, this.innerText)) {
                 undisableOptionBtns(answerButtons);
                 usedQuestions.push(selectedQuestion.id);
                 counter = timer(timerValue, 30);
@@ -302,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
                     } else {
                         selectedQuestion = questionRandomizer(hardestQuestions);
                     }
-                    displayQuestion(selectedQuestion, questionNumber, questionText, optionOneText, optionTwoText, optionThreeText, optionFourText);
+                    displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
                 } else {
                     alert('YOU WON!');
                 }
@@ -332,7 +328,7 @@ function questionRandomizer(questionCategory) {
  * @param {*} opt3 - The html element for the third answer choice
  * @param {*} opt4 - The html element for the forth answer choice
  */
-function displayQuestion(qselected, qnumber, qtext, opt1, opt2, opt3, opt4) {
+function displayQuestion(qselected, qnumber, qtext, optList) {
     // displays the question in the game page
     qtext.innerText = qselected.question;
 
@@ -341,10 +337,10 @@ function displayQuestion(qselected, qnumber, qtext, opt1, opt2, opt3, opt4) {
     
     // displays the answer options in the game page randomly
     let shuffledOptions = shuffleOptions(qselected);
-    opt1.innerText = shuffledOptions[0];
-    opt2.innerText = shuffledOptions[1];
-    opt3.innerText = shuffledOptions[2];
-    opt4.innerText = shuffledOptions[3];
+    for (let i = 0; i < optList.length; i++) {
+        console.log(optList[i], shuffledOptions[i])
+        optList[i].innerText = shuffledOptions[i];
+    }
 }
 
 /**
