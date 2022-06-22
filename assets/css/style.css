@@ -76,6 +76,7 @@ body {
     text-align: center;
     text-transform: uppercase;
 }
+
 #play-button:hover {
     background-color: #3a956187;
 }
@@ -123,9 +124,11 @@ nav {
     text-align: center;
     width: 100%;
 }
+
 #logo-gamepage > a {
     color: var(--clr-burlywood);
 }
+
 #logo-gamepage span {
     font-size: 1.1rem;
 }
@@ -226,6 +229,7 @@ progress {
     min-height: 8rem;
     width: 100%;
 }
+
 /* question label */
 #question-container > h2 {
     text-shadow: 0 0 5px var(--clr-raisin-black);
@@ -277,6 +281,23 @@ progress {
     background-color: var(--clr-sea-green);
     border: 1px solid var(--clr-burlywood);
 }
+
+
+/* HOW TO PLAY SECTION (Popup) */
+#how-to-play-container {
+    background-color: var(--clr-raisin-black);
+    border: 1px solid white;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    width: 90%;
+    height: 70vh;
+    overflow: auto;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+}
+
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
