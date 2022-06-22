@@ -76,6 +76,22 @@ body {
     background-color: #3a956187;
 }
 
+/* how to play button - Home Page */
+#how-to-play-button {
+    background-color: var(--clr-sea-green);
+    border: none;
+    border-radius: 6px;
+    display: block;
+    font-size: .9rem;
+    letter-spacing: .2rem;
+    line-height: 2.1rem;
+    margin: .5rem auto;
+    height: 2.1rem;
+    width: 16rem;
+    text-transform: uppercase;
+}
+
+
 /* navbar - Game Page */
 nav {
     display: flex;
