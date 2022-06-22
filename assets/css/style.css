@@ -331,6 +331,12 @@ progress {
     margin: .5rem 0;
 }
 
+#lifeline-image {
+    display: block;
+    margin: 0 auto;
+    width: 15rem;
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
     #game-area {
