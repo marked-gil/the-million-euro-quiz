@@ -195,6 +195,10 @@ progress {
     text-align: center;
 }
 
+.life-line-item:hover {
+    background-color: rgb(224, 229, 220);
+}
+
 .fas {
     color: var(--clr-sea-green);
     font-size: 2.3rem;
