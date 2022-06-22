@@ -44,14 +44,14 @@ body {
     width: 17.5rem;
 }
 
-#logo-the {
+#logo-span-1 {
     font-size: 2rem;
     position: absolute;
     top: -2.5rem;
     left: .1rem;
 }
 
-#logo-quiz {
+#logo-span-2 {
     font-size: 2rem;
     position: absolute;
     top: 2.5rem;
