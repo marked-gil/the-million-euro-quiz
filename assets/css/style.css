@@ -274,3 +274,20 @@ progress {
         justify-content: center;
     }
 }
+
+@media (min-width: 900px) {
+    #question-container {
+        width: 56.25rem;
+    }
+    #answers-container {
+        width: 56.25rem;
+        display: flex;
+        column-gap: .5rem;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .answer-button {
+        width: 49%;
+    }
+} 
