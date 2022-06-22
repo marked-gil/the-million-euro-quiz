@@ -302,7 +302,8 @@ progress {
     left: 5%;
 }
 
-.fa-times {
+/* 'x' icon to close  */
+#close-how-to-play {
     color: var(--clr-sea-green);
     font-size: 2.5rem;
     position: fixed;
@@ -310,7 +311,7 @@ progress {
     right: 11%;
 }
 
-.fa-times:hover {
+#close-how-to-play:hover {
     color: #3a956187;
     cursor: pointer;
 }
