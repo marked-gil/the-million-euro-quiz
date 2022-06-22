@@ -306,6 +306,11 @@ progress {
     right: 11%;
 }
 
+.fa-times:hover {
+    color: #3a956187;
+    cursor: pointer;
+}
+
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
     #game-area {
