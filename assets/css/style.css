@@ -302,7 +302,7 @@ progress {
     left: 5%;
 }
 
-/* 'x' icon to close  */
+/* 'x' close icon */
 #close-how-to-play {
     color: var(--clr-sea-green);
     font-size: 2.5rem;
@@ -316,13 +316,15 @@ progress {
     cursor: pointer;
 }
 
-#how-to-play-header {
+/* heading - How to Play */
+#how-to-play-heading {
     border-bottom: 2px solid var(--clr-burlywood);
     font-size: 1.8rem;
     line-height: 3rem;
     text-align: center;
     margin: 0 0 1rem;
 }
+
 
 #how-to-play-container h3 {
     text-align: center;
