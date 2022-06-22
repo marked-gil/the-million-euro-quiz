@@ -383,6 +383,17 @@ progress {
         font-size: 4rem;
     }
 
+    #question-container {
+        min-height: 10rem;
+    }
+    #question-container > h2 {
+        font-size: 1.6rem;
+    }
+    #question-text {
+        font-size: 1.6rem;
+    }
+
+
 }
 
 @media (min-width: 900px) {
