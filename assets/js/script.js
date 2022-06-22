@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
     // timer
     let timerValue = document.getElementById('timer-value');
-    let counter = timer(timerValue, 90);
+    let counter = timer(timerValue, 30);
 
     // lifelines event listeners
     let lifeLines = document.getElementsByClassName('life-line-item');
