@@ -93,16 +93,7 @@ body {
     cursor: pointer;
 }
 
-/* GAME AREA */
-#game-area {
-    margin: 5% 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    min-height: 80vh;
-}
-
+/* GAME PAGE */
 /* navbar - Game Page */
 nav {
     display: flex;
@@ -111,8 +102,25 @@ nav {
     row-gap: .5rem;
 }
 
-#logo {
+#logo-wrapper-gamepage {
+    background-color: black;
     font-family: 'Playfair Display', serif;
+    box-shadow: 2px 0 2px 5px var(--clr-harlequin-green);
+    margin: .3rem 0;
+    height: 3rem;
+    width: 100%;
+}
+
+#logo-gamepage {
+    line-height: 3rem;
+    text-align: center;
+    width: 100%;
+}
+#logo-gamepage > a {
+    color: var(--clr-burlywood);
+}
+#logo-gamepage span {
+    font-size: 1.1rem;
 }
 
 #nav-menu {
@@ -120,6 +128,16 @@ nav {
     column-gap: 1.5rem;
     justify-content: space-around;
     width: 80%;
+}
+
+/* game area section */
+#game-area {
+    margin: 5% 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 80vh;
 }
 
 /* progress bar */
