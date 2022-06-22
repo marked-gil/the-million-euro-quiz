@@ -177,7 +177,7 @@ progress {
     row-gap: .8rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 1.1rem 0;
+    margin: 5% 0;
     width: 100%;
 }
 
@@ -189,13 +189,14 @@ progress {
 
 .life-line-item {
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid var(--clr-light-silver);
     width: 3.5rem;
     height: 3.5rem;
     text-align: center;
 }
 
 .fas {
+    color: var(--clr-sea-green);
     font-size: 2.3rem;
     margin: .6rem 0;
 }
