@@ -221,11 +221,10 @@ let hardestQuestions = [
 document.addEventListener('DOMContentLoaded', function(event) {
     // local variables for text contents of each question
     let questionText = document.getElementById('question-text');
+    // list of button elements containing the answer options
     let optionButtonsList = document.getElementsByClassName('answer-button')
-    console.log(optionButtonsList)
 
     let questionNumber = document.getElementById('question-number');
-    let answerButtons = document.getElementsByClassName('answer-button');
 
     // list container for the IDs of used questions
     let usedQuestions = [];
@@ -243,14 +242,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
     for (let lifeItem of lifeLines) {
         lifeItem.addEventListener('click', function() {
             if (this.getAttribute('data-lifeline') === 'remove-one-option') {
-                let lifeLineOutput= randomChoiceRemove(selectedQuestion, 1, answerButtons);
+                let lifeLineOutput= randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
                 // applies 'disabled button' css style once the lifeline button is clicked
                 this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
                 This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
                 this.removeEventListener('click', arguments.callee);
             } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
-                let lifeLineOutput = randomChoiceRemove(selectedQuestion, 2, answerButtons);
+                let lifeLineOutput = randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
                 // applies 'disabled button' css style once the lifeline button is clicked
                 this.classList.add("disabled-button")
                 /* deactives the lifeline button after using. 
@@ -271,11 +270,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
     }
 
     // buttons for answer choices
-    for (let answerBtn of answerButtons) {
+    for (let answerBtn of optionButtonsList) {
         answerBtn.addEventListener('click', function() {
             clearInterval(counter.id);
             if (answerChecker(selectedQuestion, this.innerText)) {
-                undisableOptionBtns(answerButtons);
+                undisableOptionBtns(optionButtonsList);
                 usedQuestions.push(selectedQuestion.id);
                 counter = timer(timerValue, 30);
                 if (usedQuestions.length < 15) {
@@ -323,18 +322,13 @@ function questionRandomizer(questionCategory) {
  * Displays the question and options in the game page
  * @param {Object} qselected - The question object as returned by the question randomizer
  * @param {*} qtext - The html element for the question text
- * @param {*} opt1 - The html element for the first answer choice
- * @param {*} opt2 - The html element for the second answer choice
- * @param {*} opt3 - The html element for the third answer choice
- * @param {*} opt4 - The html element for the forth answer choice
+ * @param {Array} optList - List of 
  */
 function displayQuestion(qselected, qnumber, qtext, optList) {
     // displays the question in the game page
     qtext.innerText = qselected.question;
-
     // Increment question number as game progresses
     qnumber.innerText++;
-    
     // displays the answer options in the game page randomly
     let shuffledOptions = shuffleOptions(qselected);
     for (let i = 0; i < optList.length; i++) {
