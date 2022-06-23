@@ -86,7 +86,7 @@ body {
 }
 
 /* how to play button - Home Page */
-#how-to-play-button {
+#howtoplay-btn-homepage {
     background-color: var(--clr-sea-green);
     border: none;
     border-radius: 6px;
@@ -100,7 +100,7 @@ body {
     text-transform: uppercase;
 }
 
-#how-to-play-button:hover {
+#howtoplay-btn-homepage:hover {
     background-color: #3a956187;
     cursor: pointer;
 }
