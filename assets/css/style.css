@@ -208,6 +208,7 @@ progress {
     width: 3.5rem;
     height: 3.5rem;
     text-align: center;
+    position: relative;
 }
 
 .life-line-item:hover {
@@ -218,6 +219,28 @@ progress {
     color: var(--clr-sea-green);
     font-size: 2.3rem;
     margin: .6rem 0;
+}
+
+/* lifeline tooltips */
+[data-lifeline="remove-one-option"] .tooltip,
+[data-lifeline="remove-two-options"] .tooltip,
+[data-lifeline="add-to-timer"] .tooltip {
+    background-color: #085232d4;
+    border-radius: 10px 2px;
+    font-size: .7rem;
+    position: absolute;
+    top: -.9rem;
+    left: -2rem;
+    width: 6rem;
+    visibility: hidden;
+    z-index: 1;
+}
+
+/* lifeline tooltips styling on hover */
+[data-lifeline="remove-one-option"]:hover .tooltip,
+[data-lifeline="remove-two-options"]:hover .tooltip,
+[data-lifeline="add-to-timer"]:hover .tooltip {
+    visibility: visible;
 }
 
 /* question area */
