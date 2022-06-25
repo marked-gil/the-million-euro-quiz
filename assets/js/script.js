@@ -297,24 +297,7 @@ if (document.getElementById('gamepage-body')) {
             usedQuestions.push(selectedQuestion.id);
             counter = timer(timerValue, 30);
             if (usedQuestions.length < 15) {
-                if (usedQuestions.length <= 4){
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(easyQuestions);
-                    }
-                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(moderateQuestions);
-                    }
-                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(hardQuestions);
-                    }
-                } else {
-                    selectedQuestion = questionRandomizer(hardestQuestions);
-                }
+                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
                 displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
             } else {
                 alert('YOU WON!');
@@ -333,24 +316,7 @@ if (document.getElementById('gamepage-body')) {
             usedQuestions.push(selectedQuestion.id);
             counter = timer(timerValue, 30);
             if (usedQuestions.length < 15) {
-                if (usedQuestions.length <= 4){
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(easyQuestions);
-                    }
-                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(moderateQuestions);
-                    }
-                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(hardQuestions);
-                    }
-                } else {
-                    selectedQuestion = questionRandomizer(hardestQuestions);
-                }
+                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
                 displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
             } else {
                 alert('YOU WON!');
@@ -369,24 +335,7 @@ if (document.getElementById('gamepage-body')) {
             usedQuestions.push(selectedQuestion.id);
             counter = timer(timerValue, 30);
             if (usedQuestions.length < 15) {
-                if (usedQuestions.length <= 4){
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(easyQuestions);
-                    }
-                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(moderateQuestions);
-                    }
-                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(hardQuestions);
-                    }
-                } else {
-                    selectedQuestion = questionRandomizer(hardestQuestions);
-                }
+                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
                 displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
             } else {
                 alert('YOU WON!');
@@ -405,24 +354,7 @@ if (document.getElementById('gamepage-body')) {
             usedQuestions.push(selectedQuestion.id);
             counter = timer(timerValue, 30);
             if (usedQuestions.length < 15) {
-                if (usedQuestions.length <= 4){
-                    selectedQuestion = questionRandomizer(easyQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(easyQuestions);
-                    }
-                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                    selectedQuestion = questionRandomizer(moderateQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(moderateQuestions);
-                    }
-                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-                    selectedQuestion = questionRandomizer(hardQuestions);
-                    while (usedQuestions.includes(selectedQuestion.id)) {
-                        selectedQuestion = questionRandomizer(hardQuestions);
-                    }
-                } else {
-                    selectedQuestion = questionRandomizer(hardestQuestions);
-                }
+                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
                 displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
             } else {
                 alert('YOU WON!');
@@ -436,27 +368,25 @@ if (document.getElementById('gamepage-body')) {
 // END -- > GAME PAGE
 
 /**
- * Returns randomized question from a category as specified
- * in the argument passed
+ * Randomly selects question based on specified difficulty level
+ * @param {string} qCategory - The level of difficulty of the question
+ * @returns A randomized question
  */
-function questionRandomizer(questionCategory) {
-    let randomNumber = Math.floor(Math.random() * questionCategory.length);
-    return questionCategory[randomNumber];
+function questionRandomizer(qCategory) {
+    let randomNumber = Math.floor(Math.random() * qCategory.length);
+    return qCategory[randomNumber];
 }
 
 /**
  * Displays the question and options in the game page
- * @param {Object} qselected - The question object as returned by the question randomizer
- * @param {*} qtext - The html element for the question text
+ * @param {object} qSelected - The randomly selected question
+ * @param {string} qtext - The html element for the question text
  * @param {Array} optList - List of the answer-button elements
  */
-function displayQuestion(qselected, qnumber, qtext, optList) {
-    // displays the question in the game page
-    qtext.innerText = qselected.question;
-    // Increment question number as game progresses
+function displayQuestion(qSelected, qnumber, qtext, optList) {
+    qtext.innerText = qSelected.question;
     qnumber.innerText++;
-    // displays the answer options in the game page randomly
-    let shuffledOptions = shuffleOptions(qselected);
+    let shuffledOptions = shuffleOptions(qSelected);
     let letterSequence = ['A.', 'B.', 'C.', 'D.'];
     for (let i = 0; i < optList.length; i++) {
         optList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
@@ -466,11 +396,12 @@ function displayQuestion(qselected, qnumber, qtext, optList) {
 }
 
 /**
- * Returns a shuffled list of answer options from the random question 
- * passed in the parameter
+ * Returns a shuffled list of answer options from the selected question 
+ * @param {object} question - The randomly selected question
+ * @returns shuffled list of answer options
  */
-function shuffleOptions(questionObj) {
-    let optionsList = [questionObj.correctAnswer, questionObj.wrongAnswers[0], questionObj.wrongAnswers[1], questionObj.wrongAnswers[2]];
+function shuffleOptions(question) {
+    let optionsList = [question.correctAnswer, question.wrongAnswers[0], question.wrongAnswers[1], question.wrongAnswers[2]];
     for (let i = 0; i < 4; i++) {
         let randIndex = Math.floor(Math.random() * optionsList.length);
         let lastItem = optionsList.pop();
@@ -480,28 +411,28 @@ function shuffleOptions(questionObj) {
 }
 
 /**
- * Checks the user's answer and returns true if correct, and false if not
- * @param {*} questionObj - randomized question object 
- * @param {*} answerText - text content of the answer
+ * Checks the user's answer and returns true or false
+ * @param {object} question - The randomly selected question
+ * @param {string} answerText - Text content of the answer
  * @returns true or false
  */
-function answerChecker(questionObj, answerText) {
-    if (questionObj.correctAnswer === answerText) {
-        console.log("Correct!", questionObj.correctAnswer, "=", answerText);
+function answerChecker(question, answerText) {
+    if (question.correctAnswer === answerText) {
+        console.log("Correct!", question.correctAnswer, "=", answerText);
         return true;
     } else {
         console.log(`Wrong! 
-        Correct Answer: ${questionObj.correctAnswer}, 
+        Correct Answer: ${question.correctAnswer}, 
         "Your answer:", ${answerText}`);
         return false;
     }
 }
 
 /**
- * Displays a timer from specified max time to 0
- * @param {*} counter - the timer object from DOM
- * @param {*} num - initial time for timer to start from
- * @returns an object with setInterval id
+ * Displays a timer that counts from specified max time down to 0
+ * @param {object} counter - The timer object from DOM
+ * @param {number} num - Initial time for timer to start from
+ * @returns An object with setInterval() id
  */
 function timer(counter, num) {
     let timeLeft = parseInt(num);
@@ -517,6 +448,12 @@ function timer(counter, num) {
     return {id: timeInterval};
 }
 
+/**
+ * Adds specified time to the identified counter
+ * @param {object} counter - the counter element in the DOM
+ * @param {number} numToAdd - time (in seconds) to add to the current counter
+ * @returns timer id
+ */
 function addMoreTime(counter, numToAdd) {
     let num = parseInt(counter.innerText) + numToAdd;
     return timer(counter, num).id;
@@ -529,11 +466,11 @@ function gameOver() {
 
 /**
  * Randomly removes wrong options for the answer
- * @param {Object} question - the randomly selected question Object
+ * @param {object} question - The randomly selected question Object
  * @param {number} num - Number of wrong options to remove
- * @param {Array} optionButtons - List of the button elements for the answer options 
+ * @param {Array} optList - List of the button elements for the answer options 
  */
-function randomChoiceRemove(question, num, optionButtons) {
+function randomChoiceRemove(question, num, optList) {
     let randNum = Math.floor(Math.random() * 3);
     let optionsRemoved = [];
     for (let i = 0; i < num; i++) {
@@ -546,7 +483,7 @@ function randomChoiceRemove(question, num, optionButtons) {
         optionsRemoved.push(question.wrongAnswers[randNum]);
     }
     // disable answer buttons when removed by lifeline click
-    for (let optionBtn of optionButtons) {
+    for (let optionBtn of optList) {
         for (let i = 0; i < optionsRemoved.length; i++) {
             if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
                 optionBtn.disabled = true;
@@ -556,8 +493,43 @@ function randomChoiceRemove(question, num, optionButtons) {
     }
 }
 
-function undisableOptionBtns(optionButtons) {
-    for (let optionBtn of optionButtons) {
+/**
+ * Un-disable answer buttons that were disabled
+ * @param {Array} optList - List of the answer option elements (buttons)
+ */
+function undisableOptionBtns(optList) {
+    for (let optionBtn of optList) {
         optionBtn.disabled = false;
+    }
+}
+
+/**
+ * Sets the difficulty of question
+ * @param {Array} qUsed - The variable containing the array of used questions
+ * @param {object} question - The variable containing the selected question
+ * @returns randomly selected question
+ */
+function setsDifficultyLevel(qUsed, question) {
+    if (qUsed.length <= 4){
+        question = questionRandomizer(easyQuestions);
+        while (qUsed.includes(question.id)) {
+            question = questionRandomizer(easyQuestions);
+        }
+        return question;
+    } else if (qUsed.length > 4 && qUsed.length < 10) {
+        question = questionRandomizer(moderateQuestions);
+        while (qUsed.includes(question.id)) {
+            question = questionRandomizer(moderateQuestions);
+        }
+        return question;
+    } else if (qUsed.length >= 10 && qUsed.length < 14) {
+        question = questionRandomizer(hardQuestions);
+        while (qUsed.includes(question.id)) {
+            question = questionRandomizer(hardQuestions);
+        }
+        return question;
+    } else {
+        question = questionRandomizer(hardestQuestions);
+        return question;
     }
 }
