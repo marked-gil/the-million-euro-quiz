@@ -30,7 +30,7 @@
             </div>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li>How to Play</li>
+                <li id="howtoplay-btn-gamepage">How to Play</li>
                 <li>Quit</li>
             </ul>
         </nav>
@@ -79,7 +79,7 @@
         <div id="question-container">
             <!-- Question -->
             <h2>Question <span id="question-number">0</span>:</h2>
-            <p id="question-text"></p>
+            <p id="question-text">Question text here</p>
             <!-- 30-second Timer -->
             <div id="timer">
                 <span id="timer-value">30</span>
@@ -88,10 +88,18 @@
         <!-- container for the answers-->
         <div id="answers-container">
             <!-- options for the answer -->
-            <button class="answer-button">A. <span id="option1-text">Option 1</span></button>
-            <button class="answer-button">B. <span id="option2-text">Option 2</span></button>
-            <button class="answer-button">C. <span id="option3-text">Option 3</span></button>
-            <button class="answer-button">D. <span id="option4-text">Option 4</span></button>
+            <button class="answer-button" id="answer-option-a">
+                A. <span id="option1-text">Option 1</span>
+            </button>
+            <button class="answer-button" id="answer-option-b">
+                B. <span id="option2-text">Option 2</span>
+            </button>
+            <button class="answer-button" id="answer-option-c">
+                C. <span id="option3-text">Option 3</span>
+            </button>
+            <button class="answer-button" id="answer-option-d">
+                D. <span id="option4-text">Option 4</span>
+            </button>
         </div>
     </section>
     <!-- link to Fontawesome -->
