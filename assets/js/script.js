@@ -220,111 +220,217 @@ let hardestQuestions = [
 
 // START --> HOME PAGE
 if (document.getElementById('homepage-body')) {
-    let howToPlayArticle = document.getElementById('howtoplay-container');
-    let howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
+    // variables to access the DOM elements
+    const howToPlayArticle = document.getElementById('howtoplay-container');
+    const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
+    const closeHowToPlay = document.getElementById('close-how-to-play');
 
+    // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
         howToPlayArticle.classList.remove('hide');
-    })
+    });
 
-    let closeHowToPlay = document.getElementById('close-how-to-play');
+    // hides 'How to Play' lightbox
     closeHowToPlay.addEventListener('click', function() {
         howToPlayArticle.classList.add('hide');
-    })
+    });
 }
 // END --> HOME PAGE
 
 // START -- > GAME PAGE
 if (document.getElementById('gamepage-body')) {
-    document.addEventListener('DOMContentLoaded', function(event) {
-        // local variables for text contents of each question
-        let questionText = document.getElementById('question-text');
-        // list of button elements containing the answer options
-        let optionButtonsList = document.getElementsByClassName('answer-button');
+    // variables to access the DOM elements
+    const questionText = document.getElementById('question-text');
+    const optionButtonsList = document.getElementsByClassName('answer-button');
+    const questionNumber = document.getElementById('question-number');
+    const timerValue = document.getElementById('timer-value');
+    const lifelineRemoveOne = document.querySelector('[data-lifeline="remove-one-option"]');
+    const lifelineRemoveTwo = document.querySelector('[data-lifeline="remove-two-options"]');
+    const lifelineAddToTimer = document.querySelector('[data-lifeline="add-to-timer"]');
+    const optionButtonA = document.getElementById('answer-option-a');
+    const optionButtonB = document.getElementById('answer-option-b');
+    const optionButtonC = document.getElementById('answer-option-c');
+    const optionButtonD = document.getElementById('answer-option-d');
+
+    // list container for the IDs of used questions
+    let usedQuestions = [];
+
+    // selects and displays first question
+    let selectedQuestion = questionRandomizer(easyQuestions);
+    displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
     
-        let questionNumber = document.getElementById('question-number');
+    // timer
+    let counter = timer(timerValue, 30);
     
-        // list container for the IDs of used questions
-        let usedQuestions = [];
-    
-        // selects and displays first question
-        let selectedQuestion = questionRandomizer(easyQuestions);
-        displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
-    
-        // timer
-        let timerValue = document.getElementById('timer-value');
-        let counter = timer(timerValue, 30);
-    
-        // lifelines event listeners
-        let lifeLines = document.getElementsByClassName('life-line-item');
-        for (let lifeItem of lifeLines) {
-            lifeItem.addEventListener('click', function() {
-                if (this.getAttribute('data-lifeline') === 'remove-one-option') {
-                    randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
-                    // applies 'disabled button' css style once the lifeline button is clicked
-                    this.classList.add("disabled-button");
-                    /* deactives the lifeline button after using. 
-                    This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
-                    this.removeEventListener('click', arguments.callee);
-                } else if (this.getAttribute('data-lifeline') === 'remove-two-options') {
-                    randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
-                    // applies 'disabled button' css style once the lifeline button is clicked
-                    this.classList.add("disabled-button");
-                    /* deactives the lifeline button after using. 
-                    This code is from stackoverflow: https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
-                    this.removeEventListener('click', arguments.callee);
-                } else {
-                    // stops and adds more time to current timer, and then resumes new timer
-                    clearInterval(counter.id);
-                    counter.id = addMoreTime(timerValue, 30);
-                    // applies 'disabled button' css style once the lifeline button is clicked
-                    this.classList.add("disabled-button");
-                    /* deactives the lifeline button after using. 
-                    This code is from stackoverflow: 
-                    https://stackoverflow.com/questions/4950115/removeeventlistener-on-anonymous-functions-in-javascript */
-                    this.removeEventListener('click', arguments.callee);
-                }
-        });
-        }
-    
-        // buttons for answer choices
-        for (let answerBtn of optionButtonsList) {
-            answerBtn.addEventListener('click', function() {
-                clearInterval(counter.id);
-                if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
-                    undisableOptionBtns(optionButtonsList);
-                    usedQuestions.push(selectedQuestion.id);
-                    counter = timer(timerValue, 30);
-                    if (usedQuestions.length < 15) {
-                        alert("Continue game");
-                        if (usedQuestions.length <= 4){
-                            selectedQuestion = questionRandomizer(easyQuestions);
-                            while (usedQuestions.includes(selectedQuestion.id)) {
-                                selectedQuestion = questionRandomizer(easyQuestions);
-                            }
-                        } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-                            selectedQuestion = questionRandomizer(moderateQuestions);
-                            while (usedQuestions.includes(selectedQuestion.id)) {
-                                selectedQuestion = questionRandomizer(moderateQuestions);
-                            }
-                        } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-                            selectedQuestion = questionRandomizer(hardQuestions);
-                            while (usedQuestions.includes(selectedQuestion.id)) {
-                                selectedQuestion = questionRandomizer(hardQuestions);
-                            }
-                        } else {
-                            selectedQuestion = questionRandomizer(hardestQuestions);
-                        }
-                        displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
-                    } else {
-                        alert('YOU WON!');
+    //lifeline to remove one option
+    lifelineRemoveOne.addEventListener('click', function() {
+        randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
+        // applies 'disabled button' css style once the lifeline buttonis clicked
+        this.classList.add("disabled-button");
+        // deactives the lifeline button. Code taken from stackoverflow [see README file]
+        this.removeEventListener('click', arguments.callee);
+    });
+    //lifeline to remove two options
+    lifelineRemoveTwo.addEventListener('click', function() {
+        randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
+        // applies 'disabled button' css style once the lifeline button is clicked
+        this.classList.add("disabled-button");
+        // deactives the lifeline button. Code taken from stackoverflow [see README file]
+        this.removeEventListener('click', arguments.callee);
+    });
+    // lifeline to add 30 seconds more to the timer
+    lifelineAddToTimer.addEventListener('click', function() {
+        // stops and adds more time to current timer, and then resumes new timer
+        clearInterval(counter.id);
+        counter.id = addMoreTime(timerValue, 30);
+        // applies 'disabled button' css style once the lifeline button is clicked
+        this.classList.add("disabled-button");
+        // deactives the lifeline button. Code taken from stackoverflow [see README file]
+        this.removeEventListener('click', arguments.callee);
+    });
+
+    // Event listener for Option A button
+    optionButtonA.addEventListener('click', function() {
+        clearInterval(counter.id);
+        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+            undisableOptionBtns(optionButtonsList);
+            usedQuestions.push(selectedQuestion.id);
+            counter = timer(timerValue, 30);
+            if (usedQuestions.length < 15) {
+                if (usedQuestions.length <= 4){
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(easyQuestions);
+                    }
+                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(moderateQuestions);
+                    }
+                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(hardQuestions);
                     }
                 } else {
-                    gameOver();
+                    selectedQuestion = questionRandomizer(hardestQuestions);
                 }
-                console.log('Used Questions:', usedQuestions);
-            });
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+            } else {
+                alert('YOU WON!');
+            }
+        } else {
+            gameOver();
         }
+        console.log('Used Questions:', usedQuestions);
+    });
+
+    // Event listener for Option B button
+    optionButtonB.addEventListener('click', function() {
+        clearInterval(counter.id);
+        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+            undisableOptionBtns(optionButtonsList);
+            usedQuestions.push(selectedQuestion.id);
+            counter = timer(timerValue, 30);
+            if (usedQuestions.length < 15) {
+                if (usedQuestions.length <= 4){
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(easyQuestions);
+                    }
+                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(moderateQuestions);
+                    }
+                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(hardQuestions);
+                    }
+                } else {
+                    selectedQuestion = questionRandomizer(hardestQuestions);
+                }
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+            } else {
+                alert('YOU WON!');
+            }
+        } else {
+            gameOver();
+        }
+        console.log('Used Questions:', usedQuestions);
+    });
+
+    // Event listener for Option C button
+    optionButtonC.addEventListener('click', function() {
+        clearInterval(counter.id);
+        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+            undisableOptionBtns(optionButtonsList);
+            usedQuestions.push(selectedQuestion.id);
+            counter = timer(timerValue, 30);
+            if (usedQuestions.length < 15) {
+                if (usedQuestions.length <= 4){
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(easyQuestions);
+                    }
+                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(moderateQuestions);
+                    }
+                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(hardQuestions);
+                    }
+                } else {
+                    selectedQuestion = questionRandomizer(hardestQuestions);
+                }
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+            } else {
+                alert('YOU WON!');
+            }
+        } else {
+            gameOver();
+        }
+        console.log('Used Questions:', usedQuestions);
+    });
+
+    // Event listener for Option D button
+    optionButtonD.addEventListener('click', function() {
+        clearInterval(counter.id);
+        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+            undisableOptionBtns(optionButtonsList);
+            usedQuestions.push(selectedQuestion.id);
+            counter = timer(timerValue, 30);
+            if (usedQuestions.length < 15) {
+                if (usedQuestions.length <= 4){
+                    selectedQuestion = questionRandomizer(easyQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(easyQuestions);
+                    }
+                } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+                    selectedQuestion = questionRandomizer(moderateQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(moderateQuestions);
+                    }
+                } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
+                    selectedQuestion = questionRandomizer(hardQuestions);
+                    while (usedQuestions.includes(selectedQuestion.id)) {
+                        selectedQuestion = questionRandomizer(hardQuestions);
+                    }
+                } else {
+                    selectedQuestion = questionRandomizer(hardestQuestions);
+                }
+                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+            } else {
+                alert('YOU WON!');
+            }
+        } else {
+            gameOver();
+        }
+        console.log('Used Questions:', usedQuestions);
     });
 }
 // END -- > GAME PAGE
