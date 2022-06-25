@@ -219,6 +219,21 @@ let hardestQuestions = [
 ];
 
 document.addEventListener('DOMContentLoaded', function(event) {
+    let howToPlayArticle = document.getElementById('howtoplay-container');
+    let howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
+
+    howToPlayBtn.addEventListener('click', function() {
+        howToPlayArticle.classList.remove('hide');
+    })
+
+    let closeHowToPlay = document.getElementById('close-how-to-play');
+    closeHowToPlay.addEventListener('click', function() {
+        howToPlayArticle.classList.add('hide');
+    })
+})
+
+
+document.addEventListener('DOMContentLoaded', function(event) {
     // local variables for text contents of each question
     let questionText = document.getElementById('question-text');
     // list of button elements containing the answer options
