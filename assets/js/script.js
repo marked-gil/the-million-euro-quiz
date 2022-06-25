@@ -238,33 +238,36 @@ if (document.getElementById('homepage-body')) {
 // END --> HOME PAGE
 
 // START -- > GAME PAGE
+
+// variables to access the DOM elements
+const questionText = document.getElementById('question-text');
+const optionButtonsList = document.getElementsByClassName('answer-button');
+const questionNumber = document.getElementById('question-number');
+const timerValue = document.getElementById('timer-value');
+const lifelineRemoveOne = document.querySelector('[data-lifeline="remove-one-option"]');
+const lifelineRemoveTwo = document.querySelector('[data-lifeline="remove-two-options"]');
+const lifelineAddToTimer = document.querySelector('[data-lifeline="add-to-timer"]');
+const optionButtonA = document.getElementById('answer-option-a');
+const optionButtonB = document.getElementById('answer-option-b');
+const optionButtonC = document.getElementById('answer-option-c');
+const optionButtonD = document.getElementById('answer-option-d');
+
+// common variables
+let usedQuestions = [];     // variable for list of IDs of used questions
+let selectedQuestion;       // variable for randomly selected question
+let counter;                // variable for returned object containing id of timer()
+
 if (document.getElementById('gamepage-body')) {
-    // variables to access the DOM elements
-    const questionText = document.getElementById('question-text');
-    const optionButtonsList = document.getElementsByClassName('answer-button');
-    const questionNumber = document.getElementById('question-number');
-    const timerValue = document.getElementById('timer-value');
-    const lifelineRemoveOne = document.querySelector('[data-lifeline="remove-one-option"]');
-    const lifelineRemoveTwo = document.querySelector('[data-lifeline="remove-two-options"]');
-    const lifelineAddToTimer = document.querySelector('[data-lifeline="add-to-timer"]');
-    const optionButtonA = document.getElementById('answer-option-a');
-    const optionButtonB = document.getElementById('answer-option-b');
-    const optionButtonC = document.getElementById('answer-option-c');
-    const optionButtonD = document.getElementById('answer-option-d');
-
-    // list container for the IDs of used questions
-    let usedQuestions = [];
-
     // selects and displays first question
-    let selectedQuestion = questionRandomizer(easyQuestions);
-    displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+    selectedQuestion = questionRandomizer(easyQuestions);
+    displayQuestion();
     
     // timer
-    let counter = timer(timerValue, 30);
+    counter = timer(30);
     
     //lifeline to remove one option
     lifelineRemoveOne.addEventListener('click', function() {
-        randomChoiceRemove(selectedQuestion, 1, optionButtonsList);
+        randomChoiceRemove(1);
         // applies 'disabled button' css style once the lifeline buttonis clicked
         this.classList.add("disabled-button");
         // deactives the lifeline button. Code taken from stackoverflow [see README file]
@@ -272,7 +275,7 @@ if (document.getElementById('gamepage-body')) {
     });
     //lifeline to remove two options
     lifelineRemoveTwo.addEventListener('click', function() {
-        randomChoiceRemove(selectedQuestion, 2, optionButtonsList);
+        randomChoiceRemove(2);
         // applies 'disabled button' css style once the lifeline button is clicked
         this.classList.add("disabled-button");
         // deactives the lifeline button. Code taken from stackoverflow [see README file]
@@ -282,7 +285,7 @@ if (document.getElementById('gamepage-body')) {
     lifelineAddToTimer.addEventListener('click', function() {
         // stops and adds more time to current timer, and then resumes new timer
         clearInterval(counter.id);
-        counter.id = addMoreTime(timerValue, 30);
+        counter.id = addMoreTime(30);
         // applies 'disabled button' css style once the lifeline button is clicked
         this.classList.add("disabled-button");
         // deactives the lifeline button. Code taken from stackoverflow [see README file]
@@ -292,13 +295,13 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option A button
     optionButtonA.addEventListener('click', function() {
         clearInterval(counter.id);
-        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
-            undisableOptionBtns(optionButtonsList);
+        if (answerChecker(this.innerText.slice(3))) {
+            undisableOptionBtns();
             usedQuestions.push(selectedQuestion.id);
-            counter = timer(timerValue, 30);
+            counter = timer(30);
             if (usedQuestions.length < 15) {
-                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
-                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+                selectedQuestion = setDifficultyLevel();
+                displayQuestion();
             } else {
                 alert('YOU WON!');
             }
@@ -311,13 +314,13 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option B button
     optionButtonB.addEventListener('click', function() {
         clearInterval(counter.id);
-        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
-            undisableOptionBtns(optionButtonsList);
+        if (answerChecker(this.innerText.slice(3))) {
+            undisableOptionBtns();
             usedQuestions.push(selectedQuestion.id);
-            counter = timer(timerValue, 30);
+            counter = timer(30);
             if (usedQuestions.length < 15) {
-                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
-                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+                selectedQuestion = setDifficultyLevel();
+                displayQuestion();
             } else {
                 alert('YOU WON!');
             }
@@ -330,13 +333,13 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option C button
     optionButtonC.addEventListener('click', function() {
         clearInterval(counter.id);
-        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
+        if (answerChecker(this.innerText.slice(3))) {
             undisableOptionBtns(optionButtonsList);
             usedQuestions.push(selectedQuestion.id);
-            counter = timer(timerValue, 30);
+            counter = timer(30);
             if (usedQuestions.length < 15) {
-                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
-                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+                selectedQuestion = setDifficultyLevel();
+                displayQuestion();
             } else {
                 alert('YOU WON!');
             }
@@ -349,13 +352,13 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option D button
     optionButtonD.addEventListener('click', function() {
         clearInterval(counter.id);
-        if (answerChecker(selectedQuestion, this.innerText.slice(3))) {
-            undisableOptionBtns(optionButtonsList);
+        if (answerChecker(this.innerText.slice(3))) {
+            undisableOptionBtns();
             usedQuestions.push(selectedQuestion.id);
-            counter = timer(timerValue, 30);
+            counter = timer(30);
             if (usedQuestions.length < 15) {
-                selectedQuestion = setsDifficultyLevel(usedQuestions, selectedQuestion);
-                displayQuestion(selectedQuestion, questionNumber, questionText, optionButtonsList);
+                selectedQuestion = setDifficultyLevel();
+                displayQuestion();
             } else {
                 alert('YOU WON!');
             }
@@ -378,30 +381,26 @@ function questionRandomizer(qCategory) {
 }
 
 /**
- * Displays the question and options in the game page
- * @param {object} qSelected - The randomly selected question
- * @param {string} qtext - The html element for the question text
- * @param {Array} optList - List of the answer-button elements
+ * Displays the question and answer options in the game page
  */
-function displayQuestion(qSelected, qnumber, qtext, optList) {
-    qtext.innerText = qSelected.question;
-    qnumber.innerText++;
-    let shuffledOptions = shuffleOptions(qSelected);
+function displayQuestion() {
+    questionText.innerText = selectedQuestion.question;
+    questionNumber.innerText++;
+    let shuffledOptions = shuffleOptions();
     let letterSequence = ['A.', 'B.', 'C.', 'D.'];
-    for (let i = 0; i < optList.length; i++) {
-        optList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
+    for (let i = 0; i < optionButtonsList.length; i++) {
+        optionButtonsList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
         // un-disable disabled buttons
-        optList[i].classList.remove('disabled-button');
+        optionButtonsList[i].classList.remove('disabled-button');
     }
 }
 
 /**
  * Returns a shuffled list of answer options from the selected question 
- * @param {object} question - The randomly selected question
  * @returns shuffled list of answer options
  */
-function shuffleOptions(question) {
-    let optionsList = [question.correctAnswer, question.wrongAnswers[0], question.wrongAnswers[1], question.wrongAnswers[2]];
+function shuffleOptions() {
+    let optionsList = [selectedQuestion.correctAnswer, selectedQuestion.wrongAnswers[0], selectedQuestion.wrongAnswers[1], selectedQuestion.wrongAnswers[2]];
     for (let i = 0; i < 4; i++) {
         let randIndex = Math.floor(Math.random() * optionsList.length);
         let lastItem = optionsList.pop();
@@ -412,17 +411,16 @@ function shuffleOptions(question) {
 
 /**
  * Checks the user's answer and returns true or false
- * @param {object} question - The randomly selected question
  * @param {string} answerText - Text content of the answer
  * @returns true or false
  */
-function answerChecker(question, answerText) {
-    if (question.correctAnswer === answerText) {
-        console.log("Correct!", question.correctAnswer, "=", answerText);
+function answerChecker(answerText) {
+    if (selectedQuestion.correctAnswer === answerText) {
+        console.log("Correct!", selectedQuestion.correctAnswer, "=", answerText);
         return true;
     } else {
         console.log(`Wrong! 
-        Correct Answer: ${question.correctAnswer}, 
+        Correct Answer: ${selectedQuestion.correctAnswer}, 
         "Your answer:", ${answerText}`);
         return false;
     }
@@ -430,16 +428,15 @@ function answerChecker(question, answerText) {
 
 /**
  * Displays a timer that counts from specified max time down to 0
- * @param {object} counter - The timer object from DOM
  * @param {number} num - Initial time for timer to start from
  * @returns An object with setInterval() id
  */
-function timer(counter, num) {
+function timer(num) {
     let timeLeft = parseInt(num);
     let timeInterval = setInterval(function(){
         if (timeLeft >= 0) {
             timeLeft--;
-            counter.innerText = timeLeft + 1;
+            timerValue.innerText = timeLeft + 1;
         } else {
             gameOver();
             clearInterval(timeInterval);
@@ -450,13 +447,12 @@ function timer(counter, num) {
 
 /**
  * Adds specified time to the identified counter
- * @param {object} counter - the counter element in the DOM
  * @param {number} numToAdd - time (in seconds) to add to the current counter
  * @returns timer id
  */
-function addMoreTime(counter, numToAdd) {
-    let num = parseInt(counter.innerText) + numToAdd;
-    return timer(counter, num).id;
+function addMoreTime(numToAdd) {
+    let num = parseInt(timerValue.innerText) + numToAdd;
+    return timer(num).id;
 }
 
 function gameOver() {
@@ -465,25 +461,23 @@ function gameOver() {
 }
 
 /**
- * Randomly removes wrong options for the answer
- * @param {object} question - The randomly selected question Object
+ * Randomly removes wrong option/s for the answer to the question
  * @param {number} num - Number of wrong options to remove
- * @param {Array} optList - List of the button elements for the answer options 
  */
-function randomChoiceRemove(question, num, optList) {
+function randomChoiceRemove(num) {
     let randNum = Math.floor(Math.random() * 3);
     let optionsRemoved = [];
     for (let i = 0; i < num; i++) {
         randNum = Math.floor(Math.random() * 3);
-        let selectedAnswer = question.wrongAnswers[randNum];
+        let selectedAnswer = selectedQuestion.wrongAnswers[randNum];
         while (optionsRemoved.includes(selectedAnswer)) {
             randNum = Math.floor(Math.random() * 3);
-            selectedAnswer = question.wrongAnswers[randNum];
+            selectedAnswer = selectedQuestion.wrongAnswers[randNum];
         }
-        optionsRemoved.push(question.wrongAnswers[randNum]);
+        optionsRemoved.push(selectedQuestion.wrongAnswers[randNum]);
     }
     // disable answer buttons when removed by lifeline click
-    for (let optionBtn of optList) {
+    for (let optionBtn of optionButtonsList) {
         for (let i = 0; i < optionsRemoved.length; i++) {
             if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
                 optionBtn.disabled = true;
@@ -495,41 +489,38 @@ function randomChoiceRemove(question, num, optList) {
 
 /**
  * Un-disable answer buttons that were disabled
- * @param {Array} optList - List of the answer option elements (buttons)
  */
-function undisableOptionBtns(optList) {
-    for (let optionBtn of optList) {
+function undisableOptionBtns() {
+    for (let optionBtn of optionButtonsList) {
         optionBtn.disabled = false;
     }
 }
 
 /**
  * Sets the difficulty of question
- * @param {Array} qUsed - The variable containing the array of used questions
- * @param {object} question - The variable containing the selected question
  * @returns randomly selected question
  */
-function setsDifficultyLevel(qUsed, question) {
-    if (qUsed.length <= 4){
-        question = questionRandomizer(easyQuestions);
-        while (qUsed.includes(question.id)) {
-            question = questionRandomizer(easyQuestions);
+function setDifficultyLevel() {
+    if (usedQuestions.length <= 4){
+        selectedQuestion = questionRandomizer(easyQuestions);
+        while (usedQuestions.includes(selectedQuestion.id)) {
+            selectedQuestion = questionRandomizer(easyQuestions);
         }
-        return question;
-    } else if (qUsed.length > 4 && qUsed.length < 10) {
-        question = questionRandomizer(moderateQuestions);
-        while (qUsed.includes(question.id)) {
-            question = questionRandomizer(moderateQuestions);
+        return selectedQuestion;
+    } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
+        selectedQuestion = questionRandomizer(moderateQuestions);
+        while (usedQuestions.includes(selectedQuestion.id)) {
+            selectedQuestion = questionRandomizer(moderateQuestions);
         }
-        return question;
-    } else if (qUsed.length >= 10 && qUsed.length < 14) {
-        question = questionRandomizer(hardQuestions);
-        while (qUsed.includes(question.id)) {
-            question = questionRandomizer(hardQuestions);
+        return selectedQuestion;
+    } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
+        selectedQuestion = questionRandomizer(hardQuestions);
+        while (usedQuestions.includes(selectedQuestion.id)) {
+            selectedQuestion = questionRandomizer(hardQuestions);
         }
-        return question;
+        return selectedQuestion;
     } else {
-        question = questionRandomizer(hardestQuestions);
-        return question;
+        selectedQuestion = questionRandomizer(hardestQuestions);
+        return selectedQuestion;
     }
 }
