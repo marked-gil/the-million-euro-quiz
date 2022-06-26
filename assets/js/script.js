@@ -238,8 +238,7 @@ if (document.getElementById('homepage-body')) {
 }
 // END --> HOME PAGE
 
-// START -- > GAME PAGE
-
+// START --> GAME PAGE
 // variables to access the DOM elements
 const questionText = document.getElementById('question-text');
 const optionButtonsList = document.getElementsByClassName('answer-button');
@@ -270,12 +269,33 @@ const prizeThirteen = document.querySelector('[data-info="prize-150_000"]');
 const prizeFourteen = document.querySelector('[data-info="prize-200_000"]');
 const prizeFifteen = document.querySelector('[data-info="prize-1-million"]');
 
+// variables to access 'Countdown to Start [Lightbox]'
+const countdownSection = document.getElementById('countdown-outer-wrapper');
+const countdown = document.getElementById('countdown');
+
 // common variables
 let usedQuestions = [];     // variable for list of IDs of used questions
 let selectedQuestion;       // variable for randomly selected question
 let counter;                // variable for object containing id of timer()
 
 if (document.getElementById('gamepage-body')) {
+    // start -> Countdown to Start [Lightbox]
+    countdownSection.style.display = 'flex';
+    let countdownLeft = 3;
+    let countdownId = setInterval(function() {
+    if (countdownLeft > 1) {
+        countdownLeft--;
+        countdown.innerHTML = countdownLeft;
+    } else {
+        countdown.innerHTML = `GO`;
+        clearInterval(countdownId);
+        setTimeout(function() {
+            countdownSection.style.display = 'none';
+        }, 1000);
+    }
+    }, 1000);
+    // end -> Countdown to Start [Lightbox]
+
     // selects and displays first question
     selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion();
