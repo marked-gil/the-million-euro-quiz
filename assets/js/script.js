@@ -252,18 +252,36 @@ const optionButtonB = document.getElementById('answer-option-b');
 const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
+// variables to access the 'money prize' elements in the DOM
+const prizeOne = document.querySelector('[data-info="prize-500"]');
+const prizeTwo = document.querySelector('[data-info="prize-1000"]');
+const prizeThree = document.querySelector('[data-info="prize-1500"]');
+const prizeFour = document.querySelector('[data-info="prize-2000"]');
+const prizeFive = document.querySelector('[data-info="prize-2500"]');
+const prizeSix = document.querySelector('[data-info="prize-5000"]');
+const prizeSeven = document.querySelector('[data-info="prize-10_000"]');
+const prizeEight = document.querySelector('[data-info="prize-20_000"]');
+const prizeNine = document.querySelector('[data-info="prize-40_000"]');
+const prizeTen = document.querySelector('[data-info="prize-80_000"]');
+const prizeEleven = document.querySelector('[data-info="prize-100_000"]');
+const prizeTwelve = document.querySelector('[data-info="prize-125_000"]');
+const prizeThirteen = document.querySelector('[data-info="prize-150_000"]');
+const prizeFourteen = document.querySelector('[data-info="prize-200_000"]');
+const prizeFifteen = document.querySelector('[data-info="prize-1-million"]');
+
+
 // common variables
 let usedQuestions = [];     // variable for list of IDs of used questions
 let selectedQuestion;       // variable for randomly selected question
-let counter;                // variable for returned object containing id of timer()
+let counter;                // variable for object containing id of timer()
 
 if (document.getElementById('gamepage-body')) {
     // selects and displays first question
     selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion();
-    
     // timer
     counter = timer(30);
+    highlightPrize();
     
     //lifeline to remove one option
     lifelineRemoveOne.addEventListener('click', function() {
@@ -302,6 +320,7 @@ if (document.getElementById('gamepage-body')) {
             if (usedQuestions.length < 15) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
+                highlightPrize();
             } else {
                 alert('YOU WON!');
             }
@@ -321,6 +340,7 @@ if (document.getElementById('gamepage-body')) {
             if (usedQuestions.length < 15) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
+                highlightPrize();
             } else {
                 alert('YOU WON!');
             }
@@ -340,6 +360,7 @@ if (document.getElementById('gamepage-body')) {
             if (usedQuestions.length < 15) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
+                highlightPrize();
             } else {
                 alert('YOU WON!');
             }
@@ -359,6 +380,7 @@ if (document.getElementById('gamepage-body')) {
             if (usedQuestions.length < 15) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
+                highlightPrize();
             } else {
                 alert('YOU WON!');
             }
@@ -522,5 +544,58 @@ function setDifficultyLevel() {
     } else {
         selectedQuestion = questionRandomizer(hardestQuestions);
         return selectedQuestion;
+    }
+}
+
+/**
+ * Returns the current and previous prize money depending on
+ * the question number
+ * @param {string} qNum - question number as string
+ * @returns An object containing current prize and previous prize
+ */
+function PrizeMoney(qNum) {
+    switch (qNum) {
+        case "1": 
+            return {current: prizeOne};
+        case "2":
+            return {current: prizeTwo, previous: prizeOne};
+        case "3":
+            return {current: prizeThree, previous: prizeTwo};
+        case "4":
+            return {current: prizeFour, previous: prizeThree};
+        case "5":
+            return {current: prizeFive, previous: prizeFour};
+        case "6":
+            return {current: prizeSix, previous: prizeFive};
+        case "7":
+            return {current: prizeSeven, previous: prizeSix};
+        case "8":
+            return {current: prizeEight, previous: prizeSeven};
+        case "9":
+            return {current: prizeNine, previous: prizeEight};
+        case "10":
+            return {current: prizeTen, previous: prizeNine};
+        case "11":
+            return {current: prizeEleven, previous: prizeTen};
+        case "12":
+            return {current: prizeTwelve, previous: prizeEleven};
+        case "13":
+            return {current: prizeThirteen, previous: prizeTwelve};
+        case "14":
+            return {current: prizeFourteen, previous: prizeThirteen};
+        case "15":
+            return {current: prizeFifteen, previous: prizeFourteen};
+    }
+}
+/**
+ * Provides styling to current and previous prize money
+ */
+function highlightPrize() {
+    let currentPrize = PrizeMoney(questionNumber.innerText).current;
+    let previousPrize = PrizeMoney(questionNumber.innerText).previous;
+    currentPrize.classList.add('current-prize');
+    currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
+    if (previousPrize) {
+        previousPrize.style.opacity = 0.5;
     }
 }

@@ -19,6 +19,13 @@
     display: none;
 }
 
+.current-prize {
+    background-color: rgb(77, 186, 77);
+    border-radius: 10px;
+    min-width: 70%;
+    text-align: center;
+}
+
 /* removes default global styles */
 * { 
     color: var(--clr-snow);
