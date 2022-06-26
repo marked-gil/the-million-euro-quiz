@@ -37,9 +37,9 @@
     </header>
 
     <!-- GAME [Start]-->
-    <section id="game-area">
+    <main id="game-area">
         <!-- shows progress in the game -->
-        <progress value="2" max="15" role="progressbar" aria-label="progess in the game">2 of 15 questions</progress>
+        <progress value="2" max="15" aria-label="progess in the game">2 of 15 questions</progress>
         <!-- displays the money to earn per question and player's current money earned  -->
         <div id="money-container">
             <ul id="money-list">
@@ -61,7 +61,7 @@
             </ul>
         </div>
         <!-- Life Lines to help player choose the correct answer -->
-        <div id="life-lines">
+        <section id="life-lines">
             <h2>Life Lines</h2>
             <div data-lifeline="remove-one-option" class="life-line-item">
                 <i class="fas fa-hands-helping lifeline-icon"></i>
@@ -75,9 +75,9 @@
                 <i class="fas fa-clock lifeline-icon"></i>
                 <span class="tooltip">Adds 30 sec more to your time</span>
             </div> 
-        </div>
+        </section>
         <!-- container for the question, and timer -->
-        <div id="question-container">
+        <section id="question-container">
             <!-- Question -->
             <h2>Question <span id="question-number">0</span>:</h2>
             <p id="question-text">Question text here</p>
@@ -85,7 +85,7 @@
             <div id="timer">
                 <span id="timer-value">30</span>
             </div>
-        </div>
+        </section>
         <!-- container for the answers-->
         <div id="answers-container">
             <!-- options for the answer -->
@@ -102,15 +102,15 @@
                 D. <span id="option4-text">Option 4</span>
             </button>
         </div>
-    </section>
+    </main>
     <!-- GAME AREA [End]-->
 
     <!-- 'COUNTDOWN TO START' Lightbox [Start] -->
-    <section id="countdown-outer-wrapper">
+    <div id="countdown-outer-wrapper">
         <div id="countdown-inner-wrapper">
             <span id="countdown">3</span>
         </div>
-    </section>
+    </div>
     <!-- 'COUNTDOWN TO START' Lightbox [End]  -->
 
     <!-- link to Fontawesome -->
