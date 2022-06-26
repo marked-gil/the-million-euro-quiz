@@ -323,7 +323,7 @@ progress {
     border: 1px solid var(--clr-burlywood);
 }
 
-/* HOW TO PLAY (Lightbox) */
+/* HOW TO PLAY [Lightbox] */
 #howtoplay-outer-wrapper {
     display: none;
     background-color: none;
@@ -409,6 +409,59 @@ progress {
     font-size: 10rem;
     text-align: center;
     line-height: 15rem;
+}
+
+/* GAME OVER [Lightbox] */
+#gameover-outer-wrapper {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#gameover-inner-wrapper {
+    background-color: #3a9561;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: .5rem;
+    width: 78%;
+    padding: 1.7rem 1.5rem;
+}
+
+#gameover-inner-wrapper h2 {      /* Game Over heading */
+    color: #233609;
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+}
+
+#gameover-inner-wrapper p,
+#gameover-inner-wrapper span {    /* paragraphs - gameover lightbox */
+    color: #092c18;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+#gameover-inner-wrapper button {  /* playbutton - gameover ligtbox */
+    background-color: #092c18;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    margin-top: 1rem;
+    width: 8rem;
+}
+
+#gameover-inner-wrapper a {        /* home button - gameover ligtbox */
+    background-color: #092c18;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    width: 8rem;
+    text-align: center;
 }
 
 /* MEDIA QUERIES */

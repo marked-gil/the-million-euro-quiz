@@ -496,9 +496,18 @@ function addMoreTime(numToAdd) {
     return timer(num).id;
 }
 
+/**
+ * Displays a Game Over lightbox with 'play again' button
+ * and 'Home' button
+ */
 function gameOver() {
-    alert(`Sorry, game Over!`);
-    location.reload();
+    let gameOverPopUp = document.getElementById('gameover-outer-wrapper');
+    let playAgain = document.getElementById('play-again');
+
+    gameOverPopUp.style.display = 'flex';
+    playAgain.addEventListener('click', function() {
+        location.reload();
+    })
 }
 
 /**
