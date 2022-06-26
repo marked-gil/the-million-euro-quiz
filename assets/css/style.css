@@ -44,6 +44,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--clr-raisin-black);
+    position: relative;
 }
 
 /* Home Page */
@@ -413,6 +414,7 @@ progress {
 
 /* GAME OVER [Lightbox] */
 #gameover-outer-wrapper {
+    background-color: #2e3431a3;
     display: none;
     align-items: center;
     justify-content: center;
@@ -432,36 +434,33 @@ progress {
     padding: 1.7rem 1.5rem;
 }
 
-#gameover-inner-wrapper h2 {      /* Game Over heading */
+#gameover-inner-wrapper h2 {     /* Game Over heading */
     color: #233609;
     font-size: 1.8rem;
     margin-bottom: .5rem;
 }
 
 #gameover-inner-wrapper p,
-#gameover-inner-wrapper span {    /* paragraphs - gameover lightbox */
+#gameover-inner-wrapper span {   /* paragraphs - gameover lightbox */
     color: #092c18;
     font-size: 1.2rem;
     text-align: center;
 }
 
-#gameover-inner-wrapper button {  /* playbutton - gameover ligtbox */
+#gameover-inner-wrapper button,
+#gameover-inner-wrapper a {      /* playbutton - gameover ligtbox */
     background-color: #092c18;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
-    font-size: 1rem;
-    line-height: 1.8rem;
-    margin-top: 1rem;
-    width: 8rem;
-}
-
-#gameover-inner-wrapper a {        /* home button - gameover ligtbox */
-    background-color: #092c18;
-    border-radius: 5px;
     font-size: 1rem;
     line-height: 1.8rem;
     width: 8rem;
     text-align: center;
+}
+
+#gameover-inner-wrapper button {
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
 /* MEDIA QUERIES */
@@ -519,7 +518,7 @@ progress {
         min-height: 3.8rem;
     }
 
-    /* How To Play Lightbox */
+    /* How To Play [Lightbox] */
     #howtoplay-inner-wrapper {
         padding: 1.5rem 3rem 3rem;
         width: 32rem
@@ -529,6 +528,26 @@ progress {
     #howtoplay-inner-wrapper p {
         font-size: 1.1rem;
     }
+
+    /* Game Over [Lightbox] */
+    #gameover-inner-wrapper {
+        width: 32.35rem;
+        height: 18rem;
+    }
+    #gameover-inner-wrapper h2 {
+        font-size: 2.2rem;
+    }
+    #gameover-inner-wrapper p,
+    #gameover-inner-wrapper span {
+        font-size: 1.5rem;
+    }
+    #gameover-inner-wrapper button,
+    #gameover-inner-wrapper a {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        width: 12rem;
+    }
+
 }
 
 @media (min-width: 900px) {
