@@ -221,18 +221,19 @@ let hardestQuestions = [
 // START --> HOME PAGE
 if (document.getElementById('homepage-body')) {
     // variables to access the DOM elements
-    const howToPlayArticle = document.getElementById('howtoplay-container');
+    const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
     const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
-    const closeHowToPlay = document.getElementById('close-how-to-play');
+    const closeHowToPlay = document.getElementById('close-howtoplay');
 
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
-        howToPlayArticle.classList.remove('hide');
+        howToPlaySection.style.display = 'flex';
+        howToPlaySection.style.alignItems = 'center';
     });
 
     // hides 'How to Play' lightbox
     closeHowToPlay.addEventListener('click', function() {
-        howToPlayArticle.classList.add('hide');
+        howToPlaySection.style.display = 'none';
     });
 }
 // END --> HOME PAGE
@@ -269,7 +270,6 @@ const prizeThirteen = document.querySelector('[data-info="prize-150_000"]');
 const prizeFourteen = document.querySelector('[data-info="prize-200_000"]');
 const prizeFifteen = document.querySelector('[data-info="prize-1-million"]');
 
-
 // common variables
 let usedQuestions = [];     // variable for list of IDs of used questions
 let selectedQuestion;       // variable for randomly selected question
@@ -279,10 +279,9 @@ if (document.getElementById('gamepage-body')) {
     // selects and displays first question
     selectedQuestion = questionRandomizer(easyQuestions);
     displayQuestion();
-    // timer
     counter = timer(30);
     highlightPrize();
-    
+
     //lifeline to remove one option
     lifelineRemoveOne.addEventListener('click', function() {
         randomChoiceRemove(1);
