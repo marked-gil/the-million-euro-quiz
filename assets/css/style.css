@@ -10,6 +10,12 @@
 
 /* Utilities */
 
+.close-icon-container {
+    height: 100%;
+    position: absolute;
+    right: 8%;
+}
+
 .disabled-button {
     opacity: .2;
     pointer-events: none;
@@ -317,63 +323,67 @@ progress {
     border: 1px solid var(--clr-burlywood);
 }
 
+/* HOW TO PLAY (Lightbox) */
+#howtoplay-outer-wrapper {
+    display: none;
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
 
-/* HOW TO PLAY SECTION (Popup) */
-#howtoplay-container {
+#howtoplay-inner-wrapper {
     background-color: var(--clr-raisin-black);
     border: 1px solid white;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
     margin: 0 auto;
     padding: 1rem 1.5rem;
-    width: 90%;
+    width: 78%;
     height: 70vh;
     overflow: auto;
-    position: absolute;
-    top: 12%;
-    left: 5%;
+    position: relative;
 }
 
-/* 'x' close icon */
-#close-how-to-play {
+#close-howtoplay {            /* 'x' close icon - How to Play */
     color: var(--clr-sea-green);
     font-size: 2.5rem;
-    position: fixed;
-    top: 13%;
-    right: 11%;
+    position: sticky;
+    top: 0;
 }
 
-#close-how-to-play:hover {
+#close-howtoplay:hover {
     color: #3a956187;
     cursor: pointer;
 }
 
-/* main heading - How to Play */
-#how-to-play-heading {
+#howtoplay-heading {          /* main heading - How to Play */
     border-bottom: 2px solid var(--clr-burlywood);
+    color: #8cc18c;
     font-size: 1.8rem;
     line-height: 3rem;
     text-align: center;
     margin: 0 0 1rem;
 }
 
-/* subheading - How to Play */
-#howtoplay-container h3 {
-    text-align: center;
+#howtoplay-inner-wrapper h3 {     /* subheadings - How to Play */
+    color: #a6bca6;
     font-size: 1.3rem;
-    margin: 1.5rem 0 .8rem;
+    margin: .8rem 0;
+    text-align: center;
 }
 
-/* bullet points - How to Play */
-#howtoplay-container li {
+#howtoplay-inner-wrapper li {     /* bullet points - How to Play */
     list-style: disc;
-    list-style-position: inside;
-    margin: .5rem 0;
+    list-style-position: outside;
+    margin: .5rem 0 0 1rem;
 }
 
-/* lifeline image - How to Play */
-#lifeline-image {
+#lifeline-image {             /* lifeline image - How to Play */
     display: block;
-    margin: 0 auto;
+    margin: .3rem auto 0;
     width: 15rem;
 }
 
@@ -430,6 +440,17 @@ progress {
     .answer-button {
         font-size: 1.4rem;
         min-height: 3.8rem;
+    }
+
+    /* How To Play Lightbox */
+    #howtoplay-inner-wrapper {
+        padding: 1.5rem 3rem 3rem;
+        width: 32rem
+    }
+
+    #howtoplay-inner-wrapper ul,
+    #howtoplay-inner-wrapper p {
+        font-size: 1.1rem;
     }
 }
 
