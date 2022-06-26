@@ -502,10 +502,10 @@ function addMoreTime(numToAdd) {
  */
 function gameOver() {
     let gameOverPopUp = document.getElementById('gameover-outer-wrapper');
-    let playAgain = document.getElementById('play-again');
+    let playAgainLoser = document.getElementById('play-again-gameover');
 
     gameOverPopUp.style.display = 'flex';
-    playAgain.addEventListener('click', function() {
+    playAgainLoser.addEventListener('click', function() {
         location.reload();
     })
 }
