@@ -253,21 +253,21 @@ const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
 // variables to access the 'money prize' elements in the DOM
-const prizeOne = document.querySelector('[data-info="prize-500"]');
-const prizeTwo = document.querySelector('[data-info="prize-1000"]');
-const prizeThree = document.querySelector('[data-info="prize-1500"]');
-const prizeFour = document.querySelector('[data-info="prize-2000"]');
-const prizeFive = document.querySelector('[data-info="prize-2500"]');
-const prizeSix = document.querySelector('[data-info="prize-5000"]');
-const prizeSeven = document.querySelector('[data-info="prize-10_000"]');
-const prizeEight = document.querySelector('[data-info="prize-20_000"]');
-const prizeNine = document.querySelector('[data-info="prize-40_000"]');
-const prizeTen = document.querySelector('[data-info="prize-80_000"]');
-const prizeEleven = document.querySelector('[data-info="prize-100_000"]');
-const prizeTwelve = document.querySelector('[data-info="prize-125_000"]');
-const prizeThirteen = document.querySelector('[data-info="prize-150_000"]');
-const prizeFourteen = document.querySelector('[data-info="prize-200_000"]');
-const prizeFifteen = document.querySelector('[data-info="prize-1-million"]');
+const prizeOne = document.querySelector('[data-prize="500"]');
+const prizeTwo = document.querySelector('[data-prize="1,000"]');
+const prizeThree = document.querySelector('[data-prize="1,500"]');
+const prizeFour = document.querySelector('[data-prize="2,000"]');
+const prizeFive = document.querySelector('[data-prize="2,500"]');
+const prizeSix = document.querySelector('[data-prize="5,000"]');
+const prizeSeven = document.querySelector('[data-prize="10,000"]');
+const prizeEight = document.querySelector('[data-prize="20,000"]');
+const prizeNine = document.querySelector('[data-prize="40,000"]');
+const prizeTen = document.querySelector('[data-prize="80,000"]');
+const prizeEleven = document.querySelector('[data-prize="100,000"]');
+const prizeTwelve = document.querySelector('[data-prize="125,000"]');
+const prizeThirteen = document.querySelector('[data-prize="150,000"]');
+const prizeFourteen = document.querySelector('[data-prize="200,000"]');
+const prizeFifteen = document.querySelector('[data-prize="1-million"]');
 
 // variables to access 'Countdown to Start [Lightbox]'
 const countdownSection = document.getElementById('countdown-outer-wrapper');
