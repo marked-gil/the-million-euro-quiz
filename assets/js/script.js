@@ -242,6 +242,17 @@ if (document.getElementById('homepage-body')) {
     closeHowToPlay.addEventListener('click', function() {
         howToPlaySection.style.display = 'none';
     });
+    
+    let userNameSubmit = document.getElementById('username-btn');
+    userNameSubmit.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (captureUserName()) {
+            self.location.href = 'game-page.html';
+        } else {
+            let small = document.getElementById('username-needed');
+            small.classList.remove('invisible');
+        }
+    }); 
 }
 // END --> HOME PAGE
 
@@ -417,6 +428,17 @@ if (document.getElementById('gamepage-body')) {
     });
 }
 // END -- > GAME PAGE
+
+function captureUserName() {
+    const userName = document.getElementById('username').value;
+    if (userName) {
+        let key = sessionStorage.length;
+        sessionStorage.setItem(key, userName);
+        return userName;
+    } else {
+        return false;
+    }
+}
 
 /**
  * Randomly selects question based on specified difficulty level
