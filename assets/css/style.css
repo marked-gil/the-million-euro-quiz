@@ -175,6 +175,96 @@ body {
     height: 1.8rem;
 }
 
+/* HOW TO PLAY [Lightbox] */
+#howtoplay-outer-wrapper {
+    display: none;
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#howtoplay-inner-wrapper {
+    background-color: var(--clr-raisin-black);
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    width: 78%;
+    height: 70vh;
+    overflow: auto;
+    position: relative;
+}
+
+#close-howtoplay {            /* 'x' close icon - How to Play */
+    color: var(--clr-sea-green);
+    font-size: 2.5rem;
+    position: sticky;
+    top: 0;
+}
+
+#close-howtoplay:hover {
+    color: #3a956187;
+    cursor: pointer;
+}
+
+#howtoplay-heading {          /* main heading - How to Play */
+    border-bottom: 2px solid var(--clr-burlywood);
+    color: #8cc18c;
+    font-size: 1.8rem;
+    line-height: 3rem;
+    text-align: center;
+    margin: 0 0 1rem;
+}
+
+#howtoplay-inner-wrapper h3 {     /* subheadings - How to Play */
+    color: #a6bca6;
+    font-size: 1.3rem;
+    margin: .8rem 0;
+    text-align: center;
+}
+
+#howtoplay-inner-wrapper li {     /* bullet points - How to Play */
+    list-style: disc;
+    list-style-position: outside;
+    margin: .5rem 0 0 1rem;
+}
+
+#lifeline-image {             /* lifeline image - How to Play */
+    display: block;
+    margin: .3rem auto 0;
+    width: 15rem;
+}
+
+/* COUNTDOWN TO START [Lightbox] */
+#countdown-outer-wrapper {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#countdown-inner-wrapper {
+    background-color: rgba(18, 47, 10, 0.803);
+    border-radius: 50%;
+    width: 15rem;
+    height: 15rem;
+}
+
+#countdown {
+    color: #e2dca1;
+    display: block;
+    font-size: 10rem;
+    text-align: center;
+    line-height: 15rem;
+}
+
 /* GAME PAGE */
 /* navbar - Game Page */
 nav {
@@ -223,13 +313,6 @@ nav {
     flex-direction: column;
     justify-content: space-around;
     min-height: 80vh;
-}
-
-/* progress bar */
-progress {
-    accent-color: #e1cd33;;
-    width: 80%;
-    height: 3rem;
 }
 
 /* display of money progress */
@@ -380,96 +463,6 @@ progress {
     border: 1px solid var(--clr-burlywood);
 }
 
-/* HOW TO PLAY [Lightbox] */
-#howtoplay-outer-wrapper {
-    display: none;
-    background-color: none;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-
-#howtoplay-inner-wrapper {
-    background-color: var(--clr-raisin-black);
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    margin: 0 auto;
-    padding: 1rem 1.5rem;
-    width: 78%;
-    height: 70vh;
-    overflow: auto;
-    position: relative;
-}
-
-#close-howtoplay {            /* 'x' close icon - How to Play */
-    color: var(--clr-sea-green);
-    font-size: 2.5rem;
-    position: sticky;
-    top: 0;
-}
-
-#close-howtoplay:hover {
-    color: #3a956187;
-    cursor: pointer;
-}
-
-#howtoplay-heading {          /* main heading - How to Play */
-    border-bottom: 2px solid var(--clr-burlywood);
-    color: #8cc18c;
-    font-size: 1.8rem;
-    line-height: 3rem;
-    text-align: center;
-    margin: 0 0 1rem;
-}
-
-#howtoplay-inner-wrapper h3 {     /* subheadings - How to Play */
-    color: #a6bca6;
-    font-size: 1.3rem;
-    margin: .8rem 0;
-    text-align: center;
-}
-
-#howtoplay-inner-wrapper li {     /* bullet points - How to Play */
-    list-style: disc;
-    list-style-position: outside;
-    margin: .5rem 0 0 1rem;
-}
-
-#lifeline-image {             /* lifeline image - How to Play */
-    display: block;
-    margin: .3rem auto 0;
-    width: 15rem;
-}
-
-/* COUNTDOWN TO START [Lightbox] */
-#countdown-outer-wrapper {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-
-#countdown-inner-wrapper {
-    background-color: rgba(18, 47, 10, 0.803);
-    border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
-}
-
-#countdown {
-    color: #e2dca1;
-    display: block;
-    font-size: 10rem;
-    text-align: center;
-    line-height: 15rem;
-}
-
 /* GAME OVER [Lightbox] */
 #gameover-outer-wrapper {
     background-color: #2e3431a3;
@@ -584,6 +577,24 @@ progress {
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
+
+	/* ENTER NAME [Lightbox] */
+    #username-inner-wrapper {
+        width: 30rem;
+        height: 14rem;
+    }
+
+    /* How To Play [Lightbox] */
+    #howtoplay-inner-wrapper {
+        padding: 1.5rem 3rem 3rem;
+        width: 32rem
+    }
+
+    #howtoplay-inner-wrapper ul,
+    #howtoplay-inner-wrapper p {
+        font-size: 1.1rem;
+    }
+
     /* Game Page */
     #logo-wrapper-gamepage {
         height: 4rem;
@@ -635,17 +646,6 @@ progress {
     .answer-button {
         font-size: 1.4rem;
         min-height: 3.8rem;
-    }
-
-    /* How To Play [Lightbox] */
-    #howtoplay-inner-wrapper {
-        padding: 1.5rem 3rem 3rem;
-        width: 32rem
-    }
-
-    #howtoplay-inner-wrapper ul,
-    #howtoplay-inner-wrapper p {
-        font-size: 1.1rem;
     }
 
     /* Game Over [Lightbox] */
