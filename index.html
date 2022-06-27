@@ -28,11 +28,24 @@
     </div>
 
     <!-- play button -->
-    <a href="game-page.html" id="play-button">Play</a>
+    <button id="play-button">Play</button>
     <!-- 'how to play' button -->
     <button id="howtoplay-btn-homepage">How to Play</button>
 
-    <!-- 'How To Play' Lightbox -->
+    <!-- 'ENTER USERNAME' Lightbox [Start] -->
+    <section id="username-outer-wrapper">
+        <div id="username-inner-wrapper">
+            <h2>Enter Player's Name:</h2>
+            <form id="username-form">
+                <input type="text" name="username" id="username" placeholder="your name here">
+                <button id="username-btn">Let's Play</button>
+            </form>
+            <small class="invisible" id="username-needed">Please enter a name</small>
+        </div>
+    </section>
+    <!-- 'ENTER USERNAME' Lightbox [End] -->
+
+    <!-- 'HOW TO PLAY' Lightbox [Start] -->
     <section id="howtoplay-outer-wrapper">
         <article id="howtoplay-inner-wrapper">
             <div class="close-icon-container">
@@ -76,7 +89,8 @@
             </section>
         </article>
     </section>
-    
+    <!-- 'HOW TO PLAY' Lightbox [End] -->
+
     <!-- link to Fontawesome -->
     <script src="https://kit.fontawesome.com/d037c16f69.js" crossorigin="anonymous"></script>
     <!-- link to external main javascript file -->
