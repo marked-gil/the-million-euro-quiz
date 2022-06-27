@@ -341,7 +341,7 @@ if (document.getElementById('gamepage-body')) {
                 displayQuestion();
                 highlightPrize();
             } else {
-                alert('YOU WON!');
+                gameWon();
             }
         } else {
             gameOver();
@@ -361,7 +361,7 @@ if (document.getElementById('gamepage-body')) {
                 displayQuestion();
                 highlightPrize();
             } else {
-                alert('YOU WON!');
+                gameWon();
             }
         } else {
             gameOver();
@@ -381,7 +381,7 @@ if (document.getElementById('gamepage-body')) {
                 displayQuestion();
                 highlightPrize();
             } else {
-                alert('YOU WON!');
+                gameWon();
             }
         } else {
             gameOver();
@@ -401,7 +401,7 @@ if (document.getElementById('gamepage-body')) {
                 displayQuestion();
                 highlightPrize();
             } else {
-                alert('YOU WON!');
+                gameWon();
             }
         } else {
             gameOver();
@@ -626,4 +626,18 @@ function highlightPrize() {
     if (previousPrize) {
         previousPrize.style.opacity = 0.5;
     }
+}
+
+/**
+ * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons 
+ */
+function gameWon() {
+    const gameWonSection = document.getElementById('gamewon-outer-wrapper');
+    gameWonSection.style.display = 'flex';
+    clearInterval(counter.id);
+
+    const playAgainWinner = document.getElementById('play-again-gamewon');
+    playAgainWinner.addEventListener('click', function() {
+        location.reload();
+    })
 }

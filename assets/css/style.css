@@ -11,7 +11,7 @@
 /* Utilities */
 
 .close-icon-container {
-    height: 100%;
+    height: 120%;
     position: absolute;
     right: 8%;
 }
@@ -44,7 +44,6 @@
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--clr-raisin-black);
-    position: relative;
 }
 
 /* Home Page */
@@ -54,6 +53,7 @@ body {
     height: 5rem;
     margin: 20vh 0 5rem;
 }
+
 #logo-homepage {
     border-radius: 5px;
     color: var(--clr-burlywood);
@@ -398,12 +398,14 @@ progress {
     position: absolute;
     top: 0;
 }
+
 #countdown-inner-wrapper {
     background-color: rgba(18, 47, 10, 0.803);
     border-radius: 50%;
     width: 15rem;
     height: 15rem;
 }
+
 #countdown {
     color: #e2dca1;
     display: block;
@@ -441,14 +443,14 @@ progress {
 }
 
 #gameover-inner-wrapper p,
-#gameover-inner-wrapper span {   /* paragraphs - gameover lightbox */
+#gameover-inner-wrapper span {   /* paragraphs - Game Over */
     color: #092c18;
     font-size: 1.2rem;
     text-align: center;
 }
 
 #gameover-inner-wrapper button,
-#gameover-inner-wrapper a {      /* playbutton - gameover ligtbox */
+#gameover-inner-wrapper a {      /* play & home buttons - Game Over */
     background-color: #092c18;
     border-radius: 10px;
     border: none;
@@ -461,6 +463,67 @@ progress {
 #gameover-inner-wrapper button {
     cursor: pointer;
     margin-top: 1rem;
+}
+
+/* GAME WON [Lightbox] */
+#gamewon-outer-wrapper {
+    background-color: #2e3431a3;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+#gamewon-inner-wrapper {
+    background-color: #3a9561;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: .5rem;
+    width: 78%;
+    height: 18rem;
+    padding: 1.7rem 1rem;
+}
+
+#gamewon-inner-wrapper h2 {     /* Game Over heading */
+    color: #233609;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#username-gamewon {     /* Username - Game Won */
+    color: #233609;
+    font-size: 1.8rem;
+}
+
+#gamewon-inner-wrapper p {     /* paragraph - Game Over */
+    color: #092c18;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#gamewon-inner-wrapper #grand-prize {
+    color: #092c18;
+}
+
+#gamewon-inner-wrapper button,
+#gamewon-inner-wrapper a {       /* play & home buttons - Game Over */
+    background-color: #092c18;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    line-height: 1.8rem;
+    width: 8rem;
+    text-align: center;
+}
+
+#gamewon-inner-wrapper button {
+    margin-top: 1.8rem;
 }
 
 /* MEDIA QUERIES */
@@ -534,13 +597,16 @@ progress {
         width: 32.35rem;
         height: 18rem;
     }
+
     #gameover-inner-wrapper h2 {
         font-size: 2.2rem;
     }
+
     #gameover-inner-wrapper p,
     #gameover-inner-wrapper span {
         font-size: 1.5rem;
     }
+
     #gameover-inner-wrapper button,
     #gameover-inner-wrapper a {
         font-size: 1.3rem;
@@ -548,6 +614,30 @@ progress {
         width: 12rem;
     }
 
+    /* Game Won [Lightbox] */
+    #gamewon-inner-wrapper {
+        width: 32.35rem;
+        height: 18rem;
+    }
+    
+    #gamewon-inner-wrapper h2 {
+        font-size: 2.2rem;
+    }
+    
+    #username-gamewon {
+        font-size: 2.2rem;
+    }
+
+    #gamewon-inner-wrapper p {
+        font-size: 2rem;
+    }
+
+    #gamewon-inner-wrapper button,
+    #gamewon-inner-wrapper a {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        width: 12rem;
+    }
 }
 
 @media (min-width: 900px) {
