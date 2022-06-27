@@ -230,7 +230,7 @@ if (document.getElementById('homepage-body')) {
     // displays 'Enter Username' lightbox
     playBtn.addEventListener('click', function() {
         enterNameSection.style.display = 'flex';
-    })
+    });
 
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
@@ -247,7 +247,7 @@ if (document.getElementById('homepage-body')) {
     userNameSubmit.addEventListener('click', function(e) {
         e.preventDefault();
         if (captureUserName()) {
-            self.location.href = 'game-page.html';
+            location.href = 'game-page.html';
         } else {
             let small = document.getElementById('username-needed');
             small.classList.remove('invisible');
@@ -297,6 +297,15 @@ let selectedQuestion;       // variable for randomly selected question
 let counter;                // variable for object containing id of timer()
 
 if (document.getElementById('gamepage-body')) {
+     // display player's name and money earned
+     const playerNameHolder = document.getElementById('player-name');
+     let playerName = getPlayerName();
+     if (playerName !== null) {
+         playerNameHolder.innerText = playerName;
+     } else {
+         location.href = 'index.html';
+     }
+
     // start -> Countdown to Start [Lightbox]
     countdownSection.style.display = 'flex';
     let countdownLeft = 3;
@@ -429,15 +438,29 @@ if (document.getElementById('gamepage-body')) {
 }
 // END -- > GAME PAGE
 
+/**
+ * Stores player's name in sessionStorage
+ * @returns true or false
+ */
 function captureUserName() {
     const userName = document.getElementById('username').value;
     if (userName) {
         let key = sessionStorage.length;
         sessionStorage.setItem(key, userName);
-        return userName;
+        return true;
     } else {
         return false;
     }
+}
+
+/**
+ * Retrieves username from sessionStorage
+ * @returns username
+ */
+function getPlayerName() {
+    let key = sessionStorage.length - 1;
+    let playerName = sessionStorage.getItem(key);
+    return playerName;
 }
 
 /**
@@ -536,7 +559,7 @@ function gameOver() {
     gameOverPopUp.style.display = 'flex';
     playAgainLoser.addEventListener('click', function() {
         location.reload();
-    })
+    });
 }
 
 /**
@@ -668,5 +691,5 @@ function gameWon() {
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
         location.reload();
-    })
+    });
 }
