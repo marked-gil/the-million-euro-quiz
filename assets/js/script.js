@@ -707,12 +707,13 @@ function highlightPrize() {
 
 /**
  * Displays and returns the amount of money earned
- * @returns money earned
+ * @returns amount of money earned
  */
 function displayEarnedMoney() {
     let moneyElement = prizeMoney(questionNumber.innerText).previous;
     let money = moneyElement.dataset.prize;
-    return moneyEarned.innerText = money;
+    moneyEarned.innerText = money;
+    return moneyEarned.innerText;
 }
 
 /**
