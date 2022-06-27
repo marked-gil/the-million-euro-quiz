@@ -264,6 +264,7 @@ if (document.getElementById('homepage-body')) {
 
 // START --> GAME PAGE
 // variables to access the DOM elements
+const playerNameHolder = document.getElementById('player-name');
 const moneyEarned = document.getElementById('money-earned');
 const questionText = document.getElementById('question-text');
 const optionButtonsList = document.getElementsByClassName('answer-button');
@@ -305,7 +306,6 @@ let counter;                // variable for object containing id of timer()
 
 if (document.getElementById('gamepage-body')) {
      // display player's name and money earned
-     const playerNameHolder = document.getElementById('player-name');
      let playerName = getPlayerName();
      if (playerName !== null) {
          playerNameHolder.innerText = playerName;
@@ -557,7 +557,7 @@ function timer(num) {
 
 /**
  * Adds specified time to the identified counter
- * @param {number} numToAdd - time (in seconds) to add to the current counter
+ * @param {number} numToAdd - time (seconds) to add to the current counter
  * @returns timer id
  */
 function addMoreTime(numToAdd) {
@@ -566,13 +566,23 @@ function addMoreTime(numToAdd) {
 }
 
 /**
- * Displays a Game Over lightbox with 'play again' button
- * and 'Home' button
+ * Displays Game Over lightbox with player's name and money
+ * earned 
  */
 function gameOver() {
-    let gameOverPopUp = document.getElementById('gameover-outer-wrapper');
-    let playAgainLoser = document.getElementById('play-again-gameover');
+    const gameOverPopUp = document.getElementById('gameover-outer-wrapper');
+    const playAgainLoser = document.getElementById('play-again-gameover');
+    const prizeWon = document.getElementById('prize-won');
+    const playerName = document.getElementById('username-gameover');
+    const addOnText = document.querySelector('.not-bad');
 
+    if (moneyEarned.innerText !== '0') {
+        addOnText.classList.remove('hide');
+        console.log(moneyEarned.innerText)
+    }
+
+    playerName.innerText = playerNameHolder.innerText;
+    prizeWon.innerText = moneyEarned.innerText;
     gameOverPopUp.style.display = 'flex';
     playAgainLoser.addEventListener('click', function() {
         location.reload();
