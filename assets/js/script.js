@@ -336,32 +336,29 @@ if (document.getElementById('gamepage-body')) {
     counter = timer(30);
     highlightPrize();
 
-    //lifeline to remove one option
+    // --> Life Lines <-- [Start]
+    // lifeline to remove 1 option
     lifelineRemoveOne.addEventListener('click', function() {
         randomChoiceRemove(1);
-        // applies 'disabled button' css style once the lifeline buttonis clicked
+        // disables button with css
         this.classList.add("disabled-button");
-        // deactives the lifeline button. Code taken from stackoverflow [see README file]
-        this.removeEventListener('click', arguments.callee);
-    });
-    //lifeline to remove two options
+    }, {once: true});
+
+    // lifeline to remove 2 options
     lifelineRemoveTwo.addEventListener('click', function() {
         randomChoiceRemove(2);
-        // applies 'disabled button' css style once the lifeline button is clicked
+        // disables button with css
         this.classList.add("disabled-button");
-        // deactives the lifeline button. Code taken from stackoverflow [see README file]
-        this.removeEventListener('click', arguments.callee);
-    });
+    }, {once: true});
+
     // lifeline to add 30 seconds more to the timer
     lifelineAddToTimer.addEventListener('click', function() {
-        // stops and adds more time to current timer, and then resumes new timer
         clearInterval(counter.id);
         counter.id = addMoreTime(30);
-        // applies 'disabled button' css style once the lifeline button is clicked
+        // disables button with css
         this.classList.add("disabled-button");
-        // deactives the lifeline button. Code taken from stackoverflow [see README file]
-        this.removeEventListener('click', arguments.callee);
-    });
+    }, {once: true});
+    // --> Life Lines <-- [End]
 
     // Event listener for Option A button
     optionButtonA.addEventListener('click', function() {
