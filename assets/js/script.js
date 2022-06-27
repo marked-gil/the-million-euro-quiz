@@ -258,6 +258,7 @@ if (document.getElementById('homepage-body')) {
 
 // START --> GAME PAGE
 // variables to access the DOM elements
+const moneyEarned = document.getElementById('money-earned');
 const questionText = document.getElementById('question-text');
 const optionButtonsList = document.getElementsByClassName('answer-button');
 const questionNumber = document.getElementById('question-number');
@@ -367,6 +368,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
                 highlightPrize();
+                displayEarnedMoney();
             } else {
                 gameWon();
             }
@@ -387,6 +389,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
                 highlightPrize();
+                displayEarnedMoney();
             } else {
                 gameWon();
             }
@@ -407,6 +410,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
                 highlightPrize();
+                displayEarnedMoney();
             } else {
                 gameWon();
             }
@@ -427,6 +431,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 displayQuestion();
                 highlightPrize();
+                displayEarnedMoney();
             } else {
                 gameWon();
             }
@@ -633,7 +638,7 @@ function setDifficultyLevel() {
  * @param {string} qNum - question number as string
  * @returns An object containing current prize and previous prize
  */
-function PrizeMoney(qNum) {
+function prizeMoney(qNum) {
     switch (qNum) {
         case "1": 
             return {current: prizeOne};
@@ -671,8 +676,8 @@ function PrizeMoney(qNum) {
  * Provides styling to current and previous prize money
  */
 function highlightPrize() {
-    let currentPrize = PrizeMoney(questionNumber.innerText).current;
-    let previousPrize = PrizeMoney(questionNumber.innerText).previous;
+    let currentPrize = prizeMoney(questionNumber.innerText).current;
+    let previousPrize = prizeMoney(questionNumber.innerText).previous;
     currentPrize.classList.add('current-prize');
     currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
     if (previousPrize) {
@@ -681,13 +686,27 @@ function highlightPrize() {
 }
 
 /**
- * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons 
+ * Displays and returns the amount of money earned
+ * @returns money earned
+ */
+function displayEarnedMoney() {
+    let moneyElement = prizeMoney(questionNumber.innerText).previous;
+    let money = moneyElement.dataset.prize;
+    return moneyEarned.innerText = money;
+}
+
+
+/**
+ * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons,
+ * and set the earned money to €1,0000,000 
  */
 function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
     gameWonSection.style.display = 'flex';
     clearInterval(counter.id);
 
+    moneyEarned.innerText = '1,000,000'
+    
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
         location.reload();
