@@ -225,12 +225,18 @@ if (document.getElementById('homepage-body')) {
     const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
     const closeHowToPlay = document.getElementById('close-howtoplay');
     const enterNameSection = document.getElementById('username-outer-wrapper');
+    const closeUsernameIcon= document.getElementById('close-username');
     const playBtn = document.getElementById('play-button');
 
     // displays 'Enter Username' lightbox
     playBtn.addEventListener('click', function() {
         enterNameSection.style.display = 'flex';
     });
+
+    // closes 'Enter Username' lightbox
+    closeUsernameIcon.addEventListener('click', function() {
+        enterNameSection.style.display = 'none';
+    })
 
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
