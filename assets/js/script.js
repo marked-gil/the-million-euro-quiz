@@ -446,6 +446,12 @@ if (document.getElementById('gamepage-body')) {
         }
         console.log('Used Questions:', usedQuestions);
     });
+
+    // Event listener for 'Quit' link
+    const quitLink = document.getElementById('quit-link');
+    quitLink.addEventListener('click', function() {
+        quit();
+    });
 }
 // END -- > GAME PAGE
 
@@ -717,4 +723,14 @@ function gameWon() {
     playAgainWinner.addEventListener('click', function() {
         location.reload();
     });
+}
+
+function quit() {
+    const quitSection = document.getElementById('quit-outer-wrapper');
+    quitSection.style.display = 'flex';
+    clearInterval(counter.id);
+    const playAgainQuitter = document.getElementById('play-again-quitter');
+    playAgainQuitter.addEventListener('click', function() {
+        location.reload();
+    })
 }
