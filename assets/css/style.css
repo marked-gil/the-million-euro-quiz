@@ -10,12 +10,6 @@
 
 /* Utilities */
 
-.close-icon-container {
-    height: 120%;
-    position: absolute;
-    right: 8%;
-}
-
 .disabled-button {
     opacity: .2;
     pointer-events: none;
@@ -148,6 +142,24 @@ body {
     position: relative;
 }
 
+.close-username-container {
+    height: 90%;
+    position: absolute;
+    right: 8%;
+}
+
+#close-username {
+    color: var(--clr-sea-green);
+    font-size: 2.5rem;
+    position: sticky;
+    top: 0;
+}
+
+#close-username:hover {
+    color: #3a956187;
+    cursor: pointer;
+}
+
 #username-form {
     display: flex;
     flex-direction: column;
@@ -197,6 +209,12 @@ body {
     height: 70vh;
     overflow: auto;
     position: relative;
+}
+
+.close-howtoplay-container {
+    height: 120%;
+    position: absolute;
+    right: 8%;
 }
 
 #close-howtoplay {            /* 'x' close icon - How to Play */
@@ -621,10 +639,12 @@ nav {
     #life-lines > h2 {
         font-size: 1.4rem;
     }
+
     .life-line-item {
         width: 5rem;
         height: 5rem;
     }
+
     .lifeline-icon {
         font-size: 4rem;
     }
@@ -632,9 +652,11 @@ nav {
     #question-container {
         min-height: 10rem;
     }
+
     #question-container > h2 {
         font-size: 1.6rem;
     }
+    
     #question-text {
         font-size: 1.6rem;
     }

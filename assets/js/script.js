@@ -672,6 +672,7 @@ function prizeMoney(qNum) {
             return {current: prizeFifteen, previous: prizeFourteen};
     }
 }
+
 /**
  * Provides styling to current and previous prize money
  */
@@ -695,7 +696,6 @@ function displayEarnedMoney() {
     return moneyEarned.innerText = money;
 }
 
-
 /**
  * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons,
  * and set the earned money to €1,0000,000 
@@ -706,7 +706,7 @@ function gameWon() {
     clearInterval(counter.id);
 
     moneyEarned.innerText = '1,000,000'
-    
+
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
         location.reload();
