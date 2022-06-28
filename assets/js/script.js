@@ -480,18 +480,26 @@ if (document.getElementById('gamepage-body')) {
 }
 // END -- > GAME PAGE
 
-const disableButtons = (selectedBtn) => {
+/**
+ * Disables all option buttons except the one passed in as argument
+ * @param {object} notToDisableBtn - The option button that is NOT to be disabled
+ */
+const disableButtons = (notToDisableBtn) => {
     for (let optionBtn of optionButtonsList) {
         optionBtn.disabled = true;
-        if (optionBtn !== selectedBtn) {
+        if (optionBtn !== notToDisableBtn) {
             optionBtn.classList.add('disabled-button')
         }
     }
 }
 
-const revealCorrectAnswer = async(answerBtn) => {
+/**
+ * Adds style to the selected correct answer
+ * @param {object} selectedBtn - The correct option button (answer) targeted
+ */
+const revealCorrectAnswer = async(selectedBtn) => {
         setTimeout(function() {
-        answerBtn.classList.add('correct-answer');
+        selectedBtn.classList.add('correct-answer');
     }, 1000)
 }
 
