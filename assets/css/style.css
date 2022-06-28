@@ -11,7 +11,16 @@
 /* Utilities */
 
 .correct-answer:after {
-    content: ' ✔';
+    content: '✔';
+    font-size: 3rem;
+    position: absolute;
+    top: -1rem;
+    left: 3%;
+    opacity: .8;
+}
+
+.wrong-answer:after {
+    content: '✘';
     font-size: 3rem;
     position: absolute;
     top: -1rem;

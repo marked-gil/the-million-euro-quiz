@@ -383,7 +383,12 @@ if (document.getElementById('gamepage-body')) {
                 }, 2000)
             })
         } else {
-            gameOver();
+            revealWrongAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    gameOver();
+                }, 2000)
+            })
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -411,7 +416,12 @@ if (document.getElementById('gamepage-body')) {
                 }, 2000)
             })
         } else {
-            gameOver();
+            revealWrongAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    gameOver();
+                }, 2000)
+            })
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -439,7 +449,12 @@ if (document.getElementById('gamepage-body')) {
                 }, 2000)
             })
         } else {
-            gameOver();
+            revealWrongAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    gameOver();
+                }, 2000)
+            })
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -467,7 +482,12 @@ if (document.getElementById('gamepage-body')) {
                 }, 2000)
             })
         } else {
-            gameOver();
+            revealWrongAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    gameOver();
+                }, 2000)
+            })
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -491,6 +511,16 @@ const disableOptionBtns = (notToDisableBtn) => {
             optionBtn.classList.add('disabled-button')
         }
     }
+}
+
+/**
+ * Adds style to the selected wrong answer
+ * @param {object} selectedBtn - The wrong option button (answer) targeted
+ */
+const revealWrongAnswer = async(selectedBtn) => {
+    setTimeout(() => {
+        selectedBtn.classList.add('wrong-answer');
+    }, 1000)
 }
 
 /**
