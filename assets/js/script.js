@@ -301,8 +301,8 @@ const countdown = document.getElementById('countdown');
 
 // common variables
 let usedQuestions = [];     // variable for list of IDs of used questions
-let selectedQuestion;       // variable for randomly selected question
-let counter;                // variable for object containing id of timer()
+let selectedQuestion;       // variable for randomly selected question (object)
+let counter;                // variable containing id of timer() (object)
 
 if (document.getElementById('gamepage-body')) {
      // display player's name and money earned
@@ -363,18 +363,25 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option A button
     optionButtonA.addEventListener('click', function() {
         clearInterval(counter.id);
+        disableButtons(this);
         if (answerChecker(this.innerText.slice(3))) {
-            undisableOptionBtns();
-            usedQuestions.push(selectedQuestion.id);
-            counter = timer(30);
-            if (usedQuestions.length < 15) {
-                selectedQuestion = setDifficultyLevel();
-                displayQuestion();
-                highlightPrize();
-                displayEarnedMoney();
-            } else {
-                gameWon();
-            }
+            revealCorrectAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    optionButtonA.classList.remove('correct-answer');
+                    usedQuestions.push(selectedQuestion.id);
+                    counter = timer(30);
+                    if (usedQuestions.length < 15) {
+                        selectedQuestion = setDifficultyLevel();
+                        displayQuestion();
+                        highlightPrize();
+                        displayEarnedMoney();
+                        undisableOptionBtns();
+                    } else {
+                        gameWon();
+                    }
+                }, 2000)
+            })
         } else {
             gameOver();
         }
@@ -384,18 +391,25 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option B button
     optionButtonB.addEventListener('click', function() {
         clearInterval(counter.id);
+        disableButtons(this);
         if (answerChecker(this.innerText.slice(3))) {
-            undisableOptionBtns();
-            usedQuestions.push(selectedQuestion.id);
-            counter = timer(30);
-            if (usedQuestions.length < 15) {
-                selectedQuestion = setDifficultyLevel();
-                displayQuestion();
-                highlightPrize();
-                displayEarnedMoney();
-            } else {
-                gameWon();
-            }
+            revealCorrectAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    optionButtonB.classList.remove('correct-answer');
+                    usedQuestions.push(selectedQuestion.id);
+                    counter = timer(30);
+                    if (usedQuestions.length < 15) {
+                        selectedQuestion = setDifficultyLevel();
+                        displayQuestion();
+                        highlightPrize();
+                        displayEarnedMoney();
+                        undisableOptionBtns();
+                    } else {
+                        gameWon();
+                    }
+                }, 2000)
+            })
         } else {
             gameOver();
         }
@@ -405,18 +419,25 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option C button
     optionButtonC.addEventListener('click', function() {
         clearInterval(counter.id);
+        disableButtons(this);
         if (answerChecker(this.innerText.slice(3))) {
-            undisableOptionBtns(optionButtonsList);
-            usedQuestions.push(selectedQuestion.id);
-            counter = timer(30);
-            if (usedQuestions.length < 15) {
-                selectedQuestion = setDifficultyLevel();
-                displayQuestion();
-                highlightPrize();
-                displayEarnedMoney();
-            } else {
-                gameWon();
-            }
+            revealCorrectAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    optionButtonC.classList.remove('correct-answer');
+                    usedQuestions.push(selectedQuestion.id);
+                    counter = timer(30);
+                    if (usedQuestions.length < 15) {
+                        selectedQuestion = setDifficultyLevel();
+                        displayQuestion();
+                        highlightPrize();
+                        displayEarnedMoney();
+                        undisableOptionBtns();
+                    } else {
+                        gameWon();
+                    }
+                }, 2000)
+            })
         } else {
             gameOver();
         }
@@ -426,18 +447,25 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option D button
     optionButtonD.addEventListener('click', function() {
         clearInterval(counter.id);
+        disableButtons(this);
         if (answerChecker(this.innerText.slice(3))) {
-            undisableOptionBtns();
-            usedQuestions.push(selectedQuestion.id);
-            counter = timer(30);
-            if (usedQuestions.length < 15) {
-                selectedQuestion = setDifficultyLevel();
-                displayQuestion();
-                highlightPrize();
-                displayEarnedMoney();
-            } else {
-                gameWon();
-            }
+            revealCorrectAnswer(this)
+            .then(() => {
+                setTimeout(() => {
+                    optionButtonD.classList.remove('correct-answer');
+                    usedQuestions.push(selectedQuestion.id);
+                    counter = timer(30);
+                    if (usedQuestions.length < 15) {
+                        selectedQuestion = setDifficultyLevel();
+                        displayQuestion();
+                        highlightPrize();
+                        displayEarnedMoney();
+                        undisableOptionBtns();
+                    } else {
+                        gameWon();
+                    }
+                }, 2000)
+            })
         } else {
             gameOver();
         }
@@ -451,6 +479,21 @@ if (document.getElementById('gamepage-body')) {
     });
 }
 // END -- > GAME PAGE
+
+const disableButtons = (selectedBtn) => {
+    for (let optionBtn of optionButtonsList) {
+        optionBtn.disabled = true;
+        if (optionBtn !== selectedBtn) {
+            optionBtn.classList.add('disabled-button')
+        }
+    }
+}
+
+const revealCorrectAnswer = async(answerBtn) => {
+        setTimeout(function() {
+        answerBtn.classList.add('correct-answer');
+    }, 1000)
+}
 
 /**
  * Stores player's name in sessionStorage

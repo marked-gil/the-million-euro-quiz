@@ -10,6 +10,15 @@
 
 /* Utilities */
 
+.correct-answer:after {
+    content: ' ✔';
+    font-size: 3rem;
+    position: absolute;
+    top: -1rem;
+    left: 3%;
+    opacity: .8;
+}
+
 .disabled-button {
     opacity: .2;
     pointer-events: none;
@@ -474,6 +483,7 @@ nav {
     text-align: left;
     color: var(--clr-snow);
     text-shadow: 0 0 10px var(--clr-raisin-black);
+    position: relative;
 }
 
 .answer-button:hover {
