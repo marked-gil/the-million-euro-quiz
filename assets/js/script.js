@@ -492,6 +492,12 @@ if (document.getElementById('gamepage-body')) {
         console.log('Used Questions:', usedQuestions);
     });
 
+    // Event listener for 'How to Play' link
+    const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
+    howToPlayLink.addEventListener('click', function() {
+        howToPlayLightbox();
+    })
+
     // Event listener for 'Quit' link
     const quitLink = document.getElementById('quit-link');
     quitLink.addEventListener('click', function() {
@@ -822,4 +828,65 @@ function quit() {
     playAgainQuitter.addEventListener('click', function() {
         location.reload();
     })
+}
+
+/**
+ * Displays the 'How to Play' lightbox with 'close' icon functionality
+ */
+ function howToPlayLightbox() {
+    const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
+    let howToPlayArticle = document.createElement('article');
+    howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper')
+    howToPlayArticle.innerHTML = `
+            <div class="close-howtoplay-container">
+                <i class="fas fa-times" id="close-howtoplay"></i>
+            </div>
+            <h2 id="howtoplay-heading">How to Play</h2>
+            <p>To play this exciting game, read the following mechanics:</p>
+            <section>
+                <h3>How to win?</h3>
+                <ul>
+                    <li>Answer correctly all 15 questions to win the €1 million.</li>
+                    <li>Each question also corresponds to an amount of money.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>When is game over?</h3>
+                <ul>
+                    <li>When wrong answer is selected, or</li>
+                    <li>When time runs out, or</li>
+                    <li>When all 15 questions are answered correctly.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>How are the questions presented?</h3>
+                <ul>
+                    <li>Each question has 4 answer choices, but only 1 is correct.</li>
+                    <li>You have 30 seconds for each question.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Life Lines to Help You</h3>
+                <ul>
+                    <li>You have 3 life lines.</li>
+                    <img id="lifeline-image" src="assets/images/lifeline-icons.png" alt="screenshot of lifeline icons">
+                    <li>1st icon removes 1 wrong answer</li>
+                    <li>2nd icon removes 2 wrong answers</li>
+                    <li>3rd icon adds 30 sec to the timer</li>
+                    <li>Each lifeline can only be used ONCE in the course of the game.</li>
+                    <li>You can use any and as many lifelines you want in a question.</li>
+                </ul>
+            </section>
+        `
+
+    howToPlaySection.appendChild(howToPlayArticle);
+    howToPlaySection.style.display = 'flex';
+    howToPlaySection.style.alignItems = 'center';
+
+    // hides 'How to Play' lightbox
+    const closeHowToPlay = document.getElementById('close-howtoplay');
+    closeHowToPlay.addEventListener('click', function() {
+        howToPlaySection.style.display = 'none';
+        howToPlayArticle.remove();
+    });
 }
