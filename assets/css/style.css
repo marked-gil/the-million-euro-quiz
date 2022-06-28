@@ -96,6 +96,16 @@ body {
     right: .1rem;
 }
 
+#nav-menu li {
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+#nav-menu li:hover {
+    background-color: rgb(69, 69, 4);
+    border-radius: 6px;
+}
+
 /* play button - Home Page */
 #play-button {
     background-color: var(--clr-sea-green);
@@ -199,10 +209,14 @@ body {
     background-color: var(--clr-sea-green);
     border: none;
     border-radius: 6px;
-    color: black;
     font-size: 1rem;
     width: 9rem;
     height: 1.8rem;
+    cursor: pointer;
+}
+
+#username-btn:hover {
+    background-color: #3a956187;
 }
 
 /* HOW TO PLAY [Lightbox] */
@@ -661,7 +675,9 @@ nav {
     margin-top: 1.8rem;
 }
 
-#quit-inner-wrapper button:hover {
+#quit-inner-wrapper button:hover,
+#quit-inner-wrapper a:hover {
+    background-color: #0f2518be;;
     cursor: pointer;
 }
 
