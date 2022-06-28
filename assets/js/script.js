@@ -240,13 +240,7 @@ if (document.getElementById('homepage-body')) {
 
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
-        howToPlaySection.style.display = 'flex';
-        howToPlaySection.style.alignItems = 'center';
-    });
-
-    // hides 'How to Play' lightbox
-    closeHowToPlay.addEventListener('click', function() {
-        howToPlaySection.style.display = 'none';
+        howToPlayLightbox();
     });
     
     let userNameSubmit = document.getElementById('username-btn');
