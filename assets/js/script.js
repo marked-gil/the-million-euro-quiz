@@ -363,7 +363,7 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option A button
     optionButtonA.addEventListener('click', function() {
         clearInterval(counter.id);
-        disableButtons(this);
+        disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             revealCorrectAnswer(this)
             .then(() => {
@@ -391,7 +391,7 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option B button
     optionButtonB.addEventListener('click', function() {
         clearInterval(counter.id);
-        disableButtons(this);
+        disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             revealCorrectAnswer(this)
             .then(() => {
@@ -419,7 +419,7 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option C button
     optionButtonC.addEventListener('click', function() {
         clearInterval(counter.id);
-        disableButtons(this);
+        disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             revealCorrectAnswer(this)
             .then(() => {
@@ -447,7 +447,7 @@ if (document.getElementById('gamepage-body')) {
     // Event listener for Option D button
     optionButtonD.addEventListener('click', function() {
         clearInterval(counter.id);
-        disableButtons(this);
+        disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             revealCorrectAnswer(this)
             .then(() => {
@@ -484,7 +484,7 @@ if (document.getElementById('gamepage-body')) {
  * Disables all option buttons except the one passed in as argument
  * @param {object} notToDisableBtn - The option button that is NOT to be disabled
  */
-const disableButtons = (notToDisableBtn) => {
+const disableOptionBtns = (notToDisableBtn) => {
     for (let optionBtn of optionButtonsList) {
         optionBtn.disabled = true;
         if (optionBtn !== notToDisableBtn) {
