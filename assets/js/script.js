@@ -1,42 +1,42 @@
 // EASY QUESTIONS
 let easyQuestions = [
-    {   
+    {
         id: 1,
         question: "What is the capital of France?",
         correctAnswer: "Paris",
         wrongAnswers: ["Italy", "Cannes", "Marseille"]
 	},
-    {   
+    {
         id: 2,
         question: "Which Queen of Pop was married to Guy Ritchie and Sean Penn?",
         correctAnswer: "Madonna",
         wrongAnswers: ["Celine Dion", "Mariah Carey", "Cher"]
 	},
-    {   
+    {
         id: 3,
         question: "What brand is also known as the Golden Arches?",
         correctAnswer: "McDonalds",
         wrongAnswers: ["KFC", "Kenny Rogers", "Subway"]
 	},
-    {   
+    {
         id: 4,
         question: "Often described as the longest river on earth, on which continent would you find the Nile?",
         correctAnswer: "Africa",
         wrongAnswers: ["Asia", "Europe", "North America"]
 	},
-    {   
+    {
         id: 5,
         question: "What elements make up water?",
         correctAnswer: "oxygen and hydrogen",
         wrongAnswers: ["oxygen and nitrogen", "oxygen and carbon", "oxygen and sodium"]
 	},
-    {   
+    {
         id: 6,
         question: "Which scientist came up with the theory of E=MC2?",
         correctAnswer: "Albert Einstein",
         wrongAnswers: ["Isaac Newton", "Marie Curie", "Stephen Hawking"]
 	},
-    {   
+    {
         id: 7,
         question: "What animal is Pumbaa in the Lion King?",
         correctAnswer: "warthog",
@@ -54,7 +54,7 @@ let easyQuestions = [
         correctAnswer: "Flamingo",
         wrongAnswers: ["turaco", "southern cassowary", "bar-throated minla"]
 	},
-    {   
+    {
         id: 10,
         question: "What planet is closest to the sun? ",
         correctAnswer: "Mercury",
@@ -221,9 +221,7 @@ let hardestQuestions = [
 // START --> HOME PAGE
 if (document.getElementById('homepage-body')) {
     // variables to access the DOM elements
-    const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
     const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
-    const closeHowToPlay = document.getElementById('close-howtoplay');
     const enterNameSection = document.getElementById('username-outer-wrapper');
     const closeUsernameIcon= document.getElementById('close-username');
     const playBtn = document.getElementById('play-button');
@@ -236,7 +234,7 @@ if (document.getElementById('homepage-body')) {
     // closes 'Enter Username' lightbox
     closeUsernameIcon.addEventListener('click', function() {
         enterNameSection.style.display = 'none';
-    })
+    });
 
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', function() {
@@ -360,7 +358,7 @@ if (document.getElementById('gamepage-body')) {
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             setTimeout(() => {
-                revealCorrectAnswer(this)
+                revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonA.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -374,14 +372,14 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 1000)
+                }, 1000);
             }, 1000);
         } else {
             setTimeout(() => {
-                revealWrongAnswer(this)
+                revealWrongAnswer(this);
                 setTimeout(() => {
                     gameOver();
-                }, 1000)
+                }, 1000);
             }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
@@ -393,7 +391,7 @@ if (document.getElementById('gamepage-body')) {
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             setTimeout(() => {
-                revealCorrectAnswer(this)
+                revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonB.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -407,14 +405,14 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 1000)
+                }, 1000);
             }, 1000);
         } else {
             setTimeout(() => {
-                revealWrongAnswer(this)
+                revealWrongAnswer(this);
                 setTimeout(() => {
                     gameOver();
-                }, 1000)
+                }, 1000);
             }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
@@ -426,7 +424,7 @@ if (document.getElementById('gamepage-body')) {
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             setTimeout(() => {
-                revealCorrectAnswer(this)
+                revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonC.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -440,14 +438,14 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 1000)
+                }, 1000);
             }, 1000);
         } else {
             setTimeout(() => {
-                revealWrongAnswer(this)
+                revealWrongAnswer(this);
                 setTimeout(() => {
                     gameOver();
-                }, 1000)
+                }, 1000);
             }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
@@ -459,7 +457,7 @@ if (document.getElementById('gamepage-body')) {
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
             setTimeout(() => {
-                revealCorrectAnswer(this)
+                revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonD.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -473,14 +471,14 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 1000)
+                }, 1000);
             }, 1000);
         } else {
             setTimeout(() => {
-                revealWrongAnswer(this)
+                revealWrongAnswer(this);
                 setTimeout(() => {
                     gameOver();
-                }, 1000)
+                }, 1000);
             }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
@@ -490,7 +488,7 @@ if (document.getElementById('gamepage-body')) {
     const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
     howToPlayLink.addEventListener('click', function() {
         howToPlayLightbox();
-    })
+    });
 
     // Event listener for 'Quit' link
     const quitLink = document.getElementById('quit-link');
@@ -504,11 +502,11 @@ if (document.getElementById('gamepage-body')) {
  * Disables all option buttons except the one passed in as argument
  * @param {object} notToDisableBtn - The option button that is NOT to be disabled
  */
-const disableOptionBtns = (notToDisableBtn) => {
+function disableOptionBtns(notToDisableBtn) {
     for (let optionBtn of optionButtonsList) {
         optionBtn.disabled = true;
         if (optionBtn !== notToDisableBtn) {
-            optionBtn.classList.add('disabled-button')
+            optionBtn.classList.add('disabled-button');
         }
     }
 }
@@ -652,7 +650,6 @@ function gameOver() {
 
     if (moneyEarned.innerText !== '0') {
         addOnText.classList.remove('hide');
-        console.log(moneyEarned.innerText)
     }
 
     playerName.innerText = playerNameHolder.innerText;
@@ -802,7 +799,7 @@ function gameWon() {
     gameWonSection.style.display = 'flex';
     clearInterval(counter.id);
 
-    moneyEarned.innerText = '1,000,000'
+    moneyEarned.innerText = '1,000,000';
 
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
@@ -817,7 +814,7 @@ function quit() {
     const playAgainQuitter = document.getElementById('play-again-quitter');
     playAgainQuitter.addEventListener('click', function() {
         location.reload();
-    })
+    });
 }
 
 /**
@@ -826,7 +823,7 @@ function quit() {
 function howToPlayLightbox() {
     const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
     let howToPlayArticle = document.createElement('article');
-    howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper')
+    howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper');
     howToPlayArticle.innerHTML = `
             <div class="close-howtoplay-container">
                 <i class="fas fa-times" id="close-howtoplay"></i>
@@ -867,7 +864,7 @@ function howToPlayLightbox() {
                     <li>You can use any and as many lifelines you want in a question.</li>
                 </ul>
             </section>
-        `
+        `;
 
     howToPlaySection.appendChild(howToPlayArticle);
     howToPlaySection.style.display = 'flex';
