@@ -359,8 +359,8 @@ if (document.getElementById('gamepage-body')) {
         clearInterval(counter.id);
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
-            revealCorrectAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealCorrectAnswer(this)
                 setTimeout(() => {
                     optionButtonA.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -374,15 +374,15 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         } else {
-            revealWrongAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealWrongAnswer(this)
                 setTimeout(() => {
                     gameOver();
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -392,8 +392,8 @@ if (document.getElementById('gamepage-body')) {
         clearInterval(counter.id);
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
-            revealCorrectAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealCorrectAnswer(this)
                 setTimeout(() => {
                     optionButtonB.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -407,15 +407,15 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         } else {
-            revealWrongAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealWrongAnswer(this)
                 setTimeout(() => {
                     gameOver();
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -425,8 +425,8 @@ if (document.getElementById('gamepage-body')) {
         clearInterval(counter.id);
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
-            revealCorrectAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealCorrectAnswer(this)
                 setTimeout(() => {
                     optionButtonC.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -440,15 +440,15 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         } else {
-            revealWrongAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealWrongAnswer(this)
                 setTimeout(() => {
                     gameOver();
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -458,8 +458,8 @@ if (document.getElementById('gamepage-body')) {
         clearInterval(counter.id);
         disableOptionBtns(this);
         if (answerChecker(this.innerText.slice(3))) {
-            revealCorrectAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealCorrectAnswer(this)
                 setTimeout(() => {
                     optionButtonD.classList.remove('correct-answer');
                     usedQuestions.push(selectedQuestion.id);
@@ -473,15 +473,15 @@ if (document.getElementById('gamepage-body')) {
                     } else {
                         gameWon();
                     }
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         } else {
-            revealWrongAnswer(this)
-            .then(() => {
+            setTimeout(() => {
+                revealWrongAnswer(this)
                 setTimeout(() => {
                     gameOver();
-                }, 2000)
-            })
+                }, 1000)
+            }, 1000);
         }
         console.log('Used Questions:', usedQuestions);
     });
@@ -517,20 +517,16 @@ const disableOptionBtns = (notToDisableBtn) => {
  * Adds style to the selected wrong answer
  * @param {object} selectedBtn - The wrong option button (answer) targeted
  */
-const revealWrongAnswer = async(selectedBtn) => {
-    setTimeout(() => {
-        selectedBtn.classList.add('wrong-answer');
-    }, 1000)
+function revealWrongAnswer(selectedBtn) {
+    selectedBtn.classList.add('wrong-answer');
 }
 
 /**
  * Adds style to the selected correct answer
  * @param {object} selectedBtn - The correct option button (answer) targeted
  */
-const revealCorrectAnswer = async(selectedBtn) => {
-        setTimeout(function() {
-        selectedBtn.classList.add('correct-answer');
-    }, 1000)
+function revealCorrectAnswer(selectedBtn) {
+    selectedBtn.classList.add('correct-answer');
 }
 
 /**
@@ -827,7 +823,7 @@ function quit() {
 /**
  * Displays the 'How to Play' lightbox with 'close' icon functionality
  */
- function howToPlayLightbox() {
+function howToPlayLightbox() {
     const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
     let howToPlayArticle = document.createElement('article');
     howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper')
