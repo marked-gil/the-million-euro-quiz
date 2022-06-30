@@ -509,9 +509,11 @@ nav {
     position: relative;
 }
 
-.answer-button:hover {
-    background-color: var(--clr-sea-green);
-    border: 1px solid var(--clr-burlywood);
+@media (hover: hover) {
+    .answer-button:hover {
+        background-color: var(--clr-sea-green);
+        border: 1px solid var(--clr-burlywood);
+    }
 }
 
 /* GAME OVER [Lightbox] */
