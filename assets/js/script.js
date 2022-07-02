@@ -317,16 +317,15 @@ if (document.getElementById('gamepage-body')) {
         clearInterval(countdownId);
         setTimeout(function() {
             countdownSection.style.display = 'none';
+            // selects and displays first question
+            selectedQuestion = questionRandomizer(easyQuestions);
+            displayQuestion();
+            counter = timer(30);
+            highlightPrize();
         }, 1000);
     }
     }, 1000);
     // end -> Countdown to Start [Lightbox]
-
-    // selects and displays first question
-    selectedQuestion = questionRandomizer(easyQuestions);
-    displayQuestion();
-    counter = timer(30);
-    highlightPrize();
 
     // --> Life Lines <-- [Start]
     // lifeline to remove 1 option
@@ -675,7 +674,7 @@ function randomChoiceRemove(num) {
         }
     }
 
-    // randomly selects and disable the answer button/s
+    // randomly selects and disables the answer button/s
     for (let i = 0; i < num; i++) {
         let randNum = Math.floor(Math.random() * wrongOptList.length);
         wrongOptList[randNum].disabled = true;
