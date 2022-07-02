@@ -665,25 +665,22 @@ function gameOver() {
  * @param {number} num - Number of wrong options to remove
  */
 function randomChoiceRemove(num) {
-    let randNum = Math.floor(Math.random() * 3);
-    let optionsRemoved = [];
-    for (let i = 0; i < num; i++) {
-        randNum = Math.floor(Math.random() * 3);
-        let selectedAnswer = selectedQuestion.wrongAnswers[randNum];
-        while (optionsRemoved.includes(selectedAnswer)) {
-            randNum = Math.floor(Math.random() * 3);
-            selectedAnswer = selectedQuestion.wrongAnswers[randNum];
+    let wrongOptList = [];
+    let wrongAnswers = selectedQuestion.wrongAnswers;
+    for (let optBtn of optionButtonsList) {
+        let optBtnText = optBtn.innerText.slice(3);
+        // filters undisabled answer buttons containing the wrong answer
+        if (wrongAnswers.includes(optBtnText) && optBtn.disabled === false) {
+            wrongOptList.push(optBtn);
         }
-        optionsRemoved.push(selectedQuestion.wrongAnswers[randNum]);
     }
-    // disable answer buttons when removed by lifeline click
-    for (let optionBtn of optionButtonsList) {
-        for (let i = 0; i < optionsRemoved.length; i++) {
-            if (optionBtn.innerText.slice(3) === optionsRemoved[i]) {
-                optionBtn.disabled = true;
-                optionBtn.classList.add('disabled-button');
-            }
-        }
+
+    // randomly selects and disable the answer button/s
+    for (let i = 0; i < num; i++) {
+        let randNum = Math.floor(Math.random() * wrongOptList.length);
+        wrongOptList[randNum].disabled = true;
+        wrongOptList[randNum].classList.add('disabled-button');
+        wrongOptList.splice(randNum, 1);
     }
 }
 
