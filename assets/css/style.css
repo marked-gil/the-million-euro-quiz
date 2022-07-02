@@ -463,11 +463,13 @@ nav {
 
 /* question label */
 #question-container > h2 {
+    visibility: hidden;
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1.2rem;
 }
 
 #question-text {
+    visibility: hidden;
     color: var(--clr-snow);
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1.2rem;

@@ -321,6 +321,8 @@ if (document.getElementById('gamepage-body')) {
             selectedQuestion = questionRandomizer(easyQuestions);
             displayQuestion();
             counter = timer(30);
+            document.querySelector('section#question-container h2').style.visibility = 'visible';
+            document.querySelector('#question-text').style.visibility = 'visible';
             highlightPrize();
         }, 1000);
     }
