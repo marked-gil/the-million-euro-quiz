@@ -1,4 +1,5 @@
-// EASY QUESTIONS
+// START --> QUESTION CATEGORIES
+// Easy Questions
 let easyQuestions = [
     {
         id: 1,
@@ -62,7 +63,7 @@ let easyQuestions = [
 	},
 ];
 
-// MODERATE QUESTIONS
+// Moderate Questions
 let moderateQuestions = [
     {
         id: 11,
@@ -126,7 +127,7 @@ let moderateQuestions = [
 	},
 ];
 
-// HARD QUESTIONS
+// Hard Questions
 let hardQuestions = [
     {
         id: 21,
@@ -190,7 +191,7 @@ let hardQuestions = [
 	},
 ];
 
-// MILLION EURO QUESTIONS
+// Hardest Questions
 let hardestQuestions = [
     {
         id: 31,
@@ -217,6 +218,7 @@ let hardestQuestions = [
         wrongAnswers: ["Jimi Hendrix", "Elton John", "Stevie Wonder"]
 	},
 ];
+// END --> QUESTION CATEGORIES
 
 // START --> HOME PAGE
 if (document.getElementById('homepage-body')) {
@@ -318,7 +320,9 @@ if (document.getElementById('gamepage-body')) {
         setTimeout(function() {
             countdownSection.style.display = 'none';
             // selects and displays first question
-            selectedQuestion = questionRandomizer(easyQuestions);
+            selectedQuestion = setDifficultyLevel();
+            usedQuestions.push(selectedQuestion.id);
+            console.log('Used Questions:', usedQuestions);
             displayQuestion();
             counter = timer(30);
             document.querySelector('section#question-container h2').style.visibility = 'visible';
@@ -362,10 +366,11 @@ if (document.getElementById('gamepage-body')) {
                 revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonA.classList.remove('correct-answer');
-                    usedQuestions.push(selectedQuestion.id);
                     counter = timer(30);
                     if (usedQuestions.length < 15) {
                         selectedQuestion = setDifficultyLevel();
+                        usedQuestions.push(selectedQuestion.id);
+                        console.log('Used Questions:', usedQuestions);
                         displayQuestion();
                         highlightPrize();
                         displayEarnedMoney();
@@ -383,7 +388,6 @@ if (document.getElementById('gamepage-body')) {
                 }, 1000);
             }, 1000);
         }
-        console.log('Used Questions:', usedQuestions);
     });
 
     // Event listener for Option B button
@@ -395,10 +399,11 @@ if (document.getElementById('gamepage-body')) {
                 revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonB.classList.remove('correct-answer');
-                    usedQuestions.push(selectedQuestion.id);
                     counter = timer(30);
                     if (usedQuestions.length < 15) {
                         selectedQuestion = setDifficultyLevel();
+                        usedQuestions.push(selectedQuestion.id);
+                        console.log('Used Questions:', usedQuestions);
                         displayQuestion();
                         highlightPrize();
                         displayEarnedMoney();
@@ -416,7 +421,6 @@ if (document.getElementById('gamepage-body')) {
                 }, 1000);
             }, 1000);
         }
-        console.log('Used Questions:', usedQuestions);
     });
 
     // Event listener for Option C button
@@ -428,10 +432,11 @@ if (document.getElementById('gamepage-body')) {
                 revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonC.classList.remove('correct-answer');
-                    usedQuestions.push(selectedQuestion.id);
                     counter = timer(30);
                     if (usedQuestions.length < 15) {
                         selectedQuestion = setDifficultyLevel();
+                        usedQuestions.push(selectedQuestion.id);
+                        console.log('Used Questions:', usedQuestions);
                         displayQuestion();
                         highlightPrize();
                         displayEarnedMoney();
@@ -449,7 +454,6 @@ if (document.getElementById('gamepage-body')) {
                 }, 1000);
             }, 1000);
         }
-        console.log('Used Questions:', usedQuestions);
     });
 
     // Event listener for Option D button
@@ -461,10 +465,11 @@ if (document.getElementById('gamepage-body')) {
                 revealCorrectAnswer(this);
                 setTimeout(() => {
                     optionButtonD.classList.remove('correct-answer');
-                    usedQuestions.push(selectedQuestion.id);
                     counter = timer(30);
                     if (usedQuestions.length < 15) {
                         selectedQuestion = setDifficultyLevel();
+                        usedQuestions.push(selectedQuestion.id);
+                        console.log('Used Questions:', usedQuestions);
                         displayQuestion();
                         highlightPrize();
                         displayEarnedMoney();
@@ -482,7 +487,6 @@ if (document.getElementById('gamepage-body')) {
                 }, 1000);
             }, 1000);
         }
-        console.log('Used Questions:', usedQuestions);
     });
 
     // Event listener for 'How to Play' link
@@ -696,32 +700,32 @@ function undisableOptionBtns() {
 }
 
 /**
- * Sets the difficulty of question
+ * Sets the difficulty and provides the question
  * @returns randomly selected question
  */
 function setDifficultyLevel() {
+    /* Returns the randomly selected question based on 
+    question Category (questCategory) */
+    const questionSelection = (quesCategory) => {
+        let questionSelected = questionRandomizer(quesCategory);
+        while (usedQuestions.includes(questionSelected.id)) {
+            questionSelected = questionRandomizer(quesCategory);
+        }
+        return questionSelected;
+    };
+
+    // returns the newly selected question based on difficulty level
+    let newQuestion;
     if (usedQuestions.length <= 4){
-        selectedQuestion = questionRandomizer(easyQuestions);
-        while (usedQuestions.includes(selectedQuestion.id)) {
-            selectedQuestion = questionRandomizer(easyQuestions);
-        }
-        return selectedQuestion;
+        newQuestion = questionSelection(easyQuestions);
     } else if (usedQuestions.length > 4 && usedQuestions.length < 10) {
-        selectedQuestion = questionRandomizer(moderateQuestions);
-        while (usedQuestions.includes(selectedQuestion.id)) {
-            selectedQuestion = questionRandomizer(moderateQuestions);
-        }
-        return selectedQuestion;
+        newQuestion = questionSelection(moderateQuestions);
     } else if (usedQuestions.length >= 10 && usedQuestions.length < 14) {
-        selectedQuestion = questionRandomizer(hardQuestions);
-        while (usedQuestions.includes(selectedQuestion.id)) {
-            selectedQuestion = questionRandomizer(hardQuestions);
-        }
-        return selectedQuestion;
+        newQuestion = questionSelection(hardQuestions);
     } else {
-        selectedQuestion = questionRandomizer(hardestQuestions);
-        return selectedQuestion;
+        newQuestion = questionSelection(hardestQuestions);
     }
+    return newQuestion;
 }
 
 /**
