@@ -616,7 +616,8 @@ function answerChecker(answerText) {
  */
 function timer(num) {
     let timeLeft = parseInt(num);
-    let timeInterval = setInterval(function(){
+    timerValue.innerText = timeLeft;
+    let timeInterval = setInterval(() => {
         if (timeLeft >= 0) {
             timeLeft--;
             timerValue.innerText = timeLeft + 1;
