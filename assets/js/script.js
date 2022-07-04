@@ -799,10 +799,12 @@ function displayEarnedMoney() {
  */
 function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
-    gameWonSection.style.display = 'flex';
+    const playerName = document.getElementById('username-gamewon');
+    
     clearInterval(counter.id);
-
     moneyEarned.innerText = '1,000,000';
+    playerName.innerText = playerNameHolder.innerText;
+    gameWonSection.style.display = 'flex';
 
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
