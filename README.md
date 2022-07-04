@@ -1,6 +1,6 @@
 # The Million Euro Quiz
 <!-- Image from IamResponsive here-->
-Live site at: https://marked-gil.github.io/the-million-euro-quiz/
+The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by answering 15 questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. View the live website here: https://marked-gil.github.io/the-million-euro-quiz/
 
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
@@ -44,11 +44,22 @@ Live site at: https://marked-gil.github.io/the-million-euro-quiz/
 
 ## UXD (User Experience Design)
 ### Strategy
-#### Goals:
-*
+#### Goal:
+* This site aims to provide an online quiz game for users, young and old, who want to play and enjoy a challenging and exciting game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, life lines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
 
 #### User Stories:
-*
+* As a user, I want to play a quiz game online that tests their general knowledge.
+* As a user, I want to feel a sense of challenge and excitement when playing the game.
+* As a user, I want to play a simulation of a game that earns a cash prize.
+* As a user, I want to re-play the game multiple times as I want and expect to be asked random questions each time.
+* As a user, I want to experience an increase in difficulty level as the game progresses.
+* As a user, I want to utilize strategic options to help me when a question is difficult.
+* As a user, I want to get immediate feedback on whether my answer is right or wrong.
+* As a user, I want to have the feel of a personalized game.
+* As a user, I want to be able to quit the current game or return to home page to either play a new game or to enter a new name.
+* As a user, I want to be able to read the mechanics of the game before starting the game, and even while playing the game.
+* As a user, I want the game to have an intuitive user interface.
+
 ### **Scope**
 
 #### Planned Features:
