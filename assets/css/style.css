@@ -230,13 +230,11 @@ nav {    /* contains logo & nav menu */
     text-transform: uppercase;
 }
 
-/* display of money progress */
-#money-container {
-    background-color: white;
+#money-container {    /* prize money display */
+    background-image: linear-gradient(#F0E699, #E1CD33, #B6A733);
     border-radius: 4px;
-    min-height: 3rem;
-    max-height: 5rem;
-    width: 80%;
+    height: 3rem;
+    width: 90%;
     overflow: auto;
 }
 
@@ -253,19 +251,17 @@ nav {    /* contains logo & nav menu */
     margin: .2rem 0;
 }
 
-/* life lines */
 #life-lines {
     display: flex;
     column-gap: 2rem;
     row-gap: .8rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 5% 0;
     width: 100%;
 }
 
 #life-lines > h2 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-align: center;
     width: 100%;
 }
@@ -304,15 +300,13 @@ nav {    /* contains logo & nav menu */
     z-index: 1;
 }
 
-/* lifeline tooltips styling on hover */
 [data-lifeline="remove-one-option"]:hover .tooltip,
 [data-lifeline="remove-two-options"]:hover .tooltip,
 [data-lifeline="add-to-timer"]:hover .tooltip {
     visibility: visible;
 }
 
-/* question area */
-#question-container {
+#question-container {    /* question box */
     background-image: linear-gradient(to right, #264137, #598c34);
     border-radius: 5px;
     box-sizing: border-box;
@@ -326,18 +320,17 @@ nav {    /* contains logo & nav menu */
     width: 100%;
 }
 
-/* question label */
 #question-container > h2 {
     visibility: hidden;
     text-shadow: 0 0 5px var(--clr-raisin-black);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 #question-text {
     visibility: hidden;
     color: var(--clr-snow);
     text-shadow: 0 0 5px var(--clr-raisin-black);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: .8rem 0 0;
 }
 
@@ -359,15 +352,14 @@ nav {    /* contains logo & nav menu */
     display: flex;
     row-gap: .4rem;
     flex-direction: column;
-    margin: 5% 0;
     width: 85%;
 }
 
-.answer-button {
+.answer-button {    /* button for answer option */
     background-color: #34684a;
     border: none;
     border-radius: 5px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     min-height: 2.5rem;
     padding: .1rem 1rem;
     text-align: left;
@@ -376,22 +368,21 @@ nav {    /* contains logo & nav menu */
     position: relative;
 }
 
-@media (hover: hover) {
+@media (hover: hover) {    /* styling for hover-capable devices only */
     .answer-button:hover {
         background-color: var(--clr-sea-green);
         border: 1px solid var(--clr-burlywood);
     }
 }
-
 /* GAME PAGE [End] */
 
 /* 404 PAGE [Start] */
-
 #page-404-body {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
+
 #page-404-outer-wrapper {
     display: flex;
     flex-direction: column;
@@ -424,7 +415,7 @@ nav {    /* contains logo & nav menu */
     text-align: center;
 }
 
-#page-404-info-box > a {     /* Home button - 404 page*/
+#page-404-info-box > a {    /* home button */
     display: block;
     background-color: var(--clr-sea-green);
     border-radius: 6px;
@@ -435,11 +426,9 @@ nav {    /* contains logo & nav menu */
     width: 16rem;
     text-align: center;
 }
-
 /* 404 PAGE [End] */
 
-/* ENTER NAME [Lightbox] */
-
+/* ENTER NAME Lightbox [Start] */
 #username-outer-wrapper {
     background-color: #2e3431a3;
     display: none;
@@ -524,6 +513,8 @@ nav {    /* contains logo & nav menu */
     display: block;
     height: 2rem;
 }
+/* ENTER NAME Lightbox [End] */
+
 
 /* HOW TO PLAY [Lightbox] */
 
