@@ -490,9 +490,9 @@ nav {
 }
 
 /* HOW TO PLAY [Lightbox] */
+
 #howtoplay-outer-wrapper {
     display: none;
-    background-color: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -504,11 +504,13 @@ nav {
     border: 1px solid white;
     display: flex;
     flex-direction: column;
+    font-size: .9rem;
     row-gap: 1rem;
     margin: 0 auto;
     padding: 1rem 1.5rem;
     width: 78%;
     height: 70vh;
+    max-height: 41rem;
     overflow: auto;
     position: relative;
 }
@@ -519,7 +521,7 @@ nav {
     right: 8%;
 }
 
-#close-howtoplay {            /* 'x' close icon - How to Play */
+#close-howtoplay {    /* 'x' close icon */
     color: var(--clr-sea-green);
     font-size: 2.5rem;
     position: sticky;
@@ -531,7 +533,7 @@ nav {
     cursor: pointer;
 }
 
-#howtoplay-heading {          /* main heading - How to Play */
+#howtoplay-heading {
     border-bottom: 2px solid var(--clr-burlywood);
     color: #8cc18c;
     font-size: 1.8rem;
@@ -540,23 +542,23 @@ nav {
     margin: 0 0 1rem;
 }
 
-#howtoplay-inner-wrapper h3 {     /* subheadings - How to Play */
+#howtoplay-inner-wrapper h3 {
     color: #a6bca6;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin: .8rem 0;
     text-align: center;
 }
 
-#howtoplay-inner-wrapper li {     /* bullet points - How to Play */
+#howtoplay-inner-wrapper li {    /* bullet points */
     list-style: disc;
     list-style-position: outside;
     margin: .5rem 0 0 1rem;
 }
 
-#lifeline-image {             /* lifeline image - How to Play */
+#lifeline-image {
     display: block;
-    margin: .3rem auto 0;
-    width: 15rem;
+    margin: .4rem auto 0;
+    width: 12rem;
 }
 
 /* COUNTDOWN TO START [Lightbox] */
@@ -823,13 +825,13 @@ nav {
 
     /* How To Play [Lightbox] */
     #howtoplay-inner-wrapper {
+        font-size: 1.1rem;
         padding: 1.5rem 3rem 3rem;
         width: 32rem
     }
 
-    #howtoplay-inner-wrapper ul,
-    #howtoplay-inner-wrapper p {
-        font-size: 1.1rem;
+    #lifeline-image {
+        width: 14rem;
     }
 
     /* Game Over [Lightbox] */
@@ -953,11 +955,6 @@ nav {
 
     #money-list > li {
         font-size: 1.2rem;
-    }
-
-    progress {
-        width: 45rem;
-        margin-left: 8%;
     }
 
     #life-lines {
