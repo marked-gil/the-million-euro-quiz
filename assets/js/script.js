@@ -253,7 +253,7 @@ if (document.getElementById('homepage-body')) {
         howToPlayLightbox();
     });
     
-    let userNameSubmit = document.getElementById('username-btn');
+    const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         if (captureUserName()) {
@@ -510,8 +510,9 @@ if (document.getElementById('gamepage-body')) {
         quit();
     });
 }
-// END -- > GAME PAGE
+// END --> GAME PAGE
 
+// FUNCTIONS
 /**
  * Disables all option buttons except the one passed in as argument
  * @param {object} notToDisableBtn - The option button that is NOT to be disabled
@@ -663,14 +664,21 @@ function gameOver() {
     const playerName = document.getElementById('username-gameover');
     const addOnText = document.querySelector('.not-bad');
 
+    // Add 'Not bad!' message to game over lightbox if cash is earned
     if (moneyEarned.innerText !== '0') {
         addOnText.classList.remove('hide');
+    }
+
+    // Close 'How to Play' lightbox if it is open
+    if (document.getElementById('howtoplay-inner-wrapper')) {
+        document.getElementById('howtoplay-inner-wrapper').remove();
+        document.getElementById('howtoplay-outer-wrapper').style.display = 'none';
     }
 
     playerName.innerText = playerNameHolder.innerText;
     prizeWon.innerText = moneyEarned.innerText;
     gameOverPopUp.style.display = 'flex';
-    playAgainLoser.addEventListener('click', function() {
+    playAgainLoser.addEventListener('click', () => {
         location.reload();
     });
 }
@@ -887,7 +895,7 @@ function howToPlayLightbox() {
 
     // hides 'How to Play' lightbox
     const closeHowToPlay = document.getElementById('close-howtoplay');
-    closeHowToPlay.addEventListener('click', function() {
+    closeHowToPlay.addEventListener('click', () => {
         howToPlaySection.style.display = 'none';
         howToPlayArticle.remove();
     });
