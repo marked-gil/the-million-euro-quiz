@@ -40,14 +40,14 @@
     <section id="username-outer-wrapper">
         <div id="username-inner-wrapper">
             <div class="close-username-container">
-                <i class="fas fa-times" id="close-username"></i>
+                <i class="fas fa-times" id="close-username" aria-label="button to close the lightbox"></i>
             </div>
             <h2>Enter Player's Name:</h2>
             <form id="username-form">
-                <input type="text" name="username" id="username" placeholder="your name here">
+                <input type="text" name="username" id="username" placeholder="your name here" aria-label="Enter player's name" maxlength="12">
                 <button id="username-btn">Let's Play</button>
             </form>
-            <small class="invisible" id="username-needed">Please enter a name</small>
+            <small id="username-feedback"></small>
         </div>
     </section>
     <!-- 'ENTER USERNAME' Lightbox [End] -->

@@ -219,6 +219,11 @@ body {
     background-color: #3a956187;
 }
 
+#username-feedback {
+    display: block;
+    height: 2rem;
+}
+
 /* HOW TO PLAY [Lightbox] */
 #howtoplay-outer-wrapper {
     display: none;

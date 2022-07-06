@@ -52,7 +52,7 @@ let easyQuestions = [
     {
         id: 9,
         question: "What bird is famous for being pink?",
-        correctAnswer: "Flamingo",
+        correctAnswer: "flamingo",
         wrongAnswers: ["turaco", "southern cassowary", "bar-throated minla"]
 	},
     {
@@ -226,31 +226,40 @@ if (document.getElementById('homepage-body')) {
     const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
     const enterNameSection = document.getElementById('username-outer-wrapper');
     const closeUsernameIcon= document.getElementById('close-username');
+    const usernameInput = document.getElementById('username');
     const playBtn = document.getElementById('play-button');
+    const flashMsg = document.getElementById('username-feedback');
 
     // displays 'Enter Username' lightbox
-    playBtn.addEventListener('click', function() {
+    playBtn.addEventListener('click', () => {
         enterNameSection.style.display = 'flex';
     });
 
+	// feedback for usernames >12 characters
+    usernameInput.addEventListener('input', (e) => {
+        if (e.target.value.length === 12) {
+            flashMsg.innerHTML = "Your name can only have a maximum of 12 characters.";
+        }
+    })
+
     // closes 'Enter Username' lightbox
-    closeUsernameIcon.addEventListener('click', function() {
+    closeUsernameIcon.addEventListener('click', () => {
+        flashMsg.innerHTML = "";
         enterNameSection.style.display = 'none';
     });
 
     // displays 'How to Play' lightbox
-    howToPlayBtn.addEventListener('click', function() {
+    howToPlayBtn.addEventListener('click', () => {
         howToPlayLightbox();
     });
     
     let userNameSubmit = document.getElementById('username-btn');
-    userNameSubmit.addEventListener('click', function(e) {
+    userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         if (captureUserName()) {
             location.href = 'game-page.html';
         } else {
-            let small = document.getElementById('username-needed');
-            small.classList.remove('invisible');
+            flashMsg.innerHTML = "You need to enter your name.";
         }
     }); 
 }
