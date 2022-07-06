@@ -796,7 +796,7 @@ nav {    /* contains logo & nav menu */
     }
 
     #game-area {
-        border: 1px solid darkgoldenrod;
+        border: 3px solid darkgoldenrod;
         border-radius: 10px;
         box-sizing: border-box;
         height: 39rem;
@@ -1011,9 +1011,9 @@ nav {    /* contains logo & nav menu */
     }
 
     #game-area {
-        height: 40rem;
+        height: 38rem;
         margin: 0 auto;
-        padding: 2rem 1rem;
+        padding: 1.5rem 1rem;
         width: 55rem;
     }
 
@@ -1059,44 +1059,50 @@ nav {    /* contains logo & nav menu */
     }
 } 
 
-@media (min-width: 1180px) {
-	/* Game Page */
+@media (min-width: 1000px) {
+	/* GAME PAGE*/
     #game-area {
         align-items: flex-start;
         box-sizing: border-box;
-        margin: 5vh auto 0;
-        padding: 0 1rem;
         position: relative;
-        min-height: 44rem;
-        max-height: 44rem;
-        width: 73.75rem;
+        width: 72rem;
+    }
+
+    #player-wrapper {
+        width: 74%;
+    }
+
+    #player-wrapper > h2 {
+        width: 50%;
     }
 
     #money-container {
-        background-image: linear-gradient(#F0E699, #E1CD33, #B6A733);
         box-shadow: 0 0 10px 5px #8ecd21;
-        min-height: auto;
-        max-height: 100%;
-        width: 15rem;
-        padding: 1rem 0;
+        height: 35rem;
+        width: 14rem;
+        padding: .5rem 0;
         position: absolute;
-        top: 2%;
-        right: .5rem;
+        top: 1rem;
+        right: 1.5rem;
     }
 
     #money-list {
         align-items: flex-start;
         flex-direction: column-reverse;
         padding-left: 2rem;
-        row-gap: .6rem;
+        row-gap: .4rem;
     }
 
     #money-list > li {
         font-size: 1.2rem;
     }
 
-    #life-lines {
-        column-gap: 6rem;
-        width: 56.25rem;
+    #question-container {
+        width: 74%;
+        height: 12rem;
+    }
+
+    #answers-container {
+        width: 74%;
     }
 }
