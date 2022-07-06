@@ -515,9 +515,7 @@ nav {    /* contains logo & nav menu */
 }
 /* ENTER NAME Lightbox [End] */
 
-
-/* HOW TO PLAY [Lightbox] */
-
+/* HOW TO PLAY Lightbox [Start] */
 #howtoplay-outer-wrapper {
     display: none;
     width: 100%;
@@ -569,14 +567,14 @@ nav {    /* contains logo & nav menu */
     margin: 0 0 1rem;
 }
 
-#howtoplay-inner-wrapper h3 {
+#howtoplay-inner-wrapper h3 {    /* sub-headings */
     color: #a6bca6;
     font-size: 1.2rem;
     margin: .8rem 0;
     text-align: center;
 }
 
-#howtoplay-inner-wrapper li {    /* bullet points */
+#howtoplay-inner-wrapper li {    /* info list */
     list-style: disc;
     list-style-position: outside;
     margin: .5rem 0 0 1rem;
@@ -587,6 +585,7 @@ nav {    /* contains logo & nav menu */
     margin: .4rem auto 0;
     width: 12rem;
 }
+/* HOW TO PLAY Lightbox [End] */
 
 /* COUNTDOWN TO START [Lightbox] */
 #countdown-outer-wrapper {
