@@ -41,74 +41,76 @@
         </nav>
     </header>
 
-    <!-- GAME [Start]-->
-    <main id="game-area">
-        <!-- player name and money earned -->
-        <section id="player-wrapper">
-            <h2>Player: <span id="player-name">Guest</span></h2>
-            <p>Money Earned: &euro; <span id="money-earned">0</span></p>
-        </section>
-        <!-- displays the money to earn per question and player's current money earned  -->
-        <div id="money-container">
-            <ul id="money-list">
-                <li data-prize="500">1 - &euro; 500</li>
-                <li data-prize="1,000">2 - &euro; 1,000</li>
-                <li data-prize="1,500">3 - &euro; 1,500</li>
-                <li data-prize="2,000">4 - &euro; 2,000</li>
-                <li data-prize="2,500">5 - &euro; 2,500</li>
-                <li data-prize="5,000">6 - &euro; 5,000</li>
-                <li data-prize="10,000">7 - &euro; 10,000</li>
-                <li data-prize="20,000">8 - &euro; 20,000</li>
-                <li data-prize="40,000">9 - &euro; 40,000</li>
-                <li data-prize="80,000">10 - &euro; 80,000</li>
-                <li data-prize="100,000">11 - &euro; 100,000</li>
-                <li data-prize="125,000">12 - &euro; 125,000</li>
-                <li data-prize="150,000">13 - &euro; 150,000</li>
-                <li data-prize="200,000">14 - &euro; 200,000</li>
-                <li data-prize="1-million">15 - &euro; 1,000,000</li>
-            </ul>
-        </div>
-        <!-- Life Lines to help player choose the correct answer -->
-        <section id="life-lines">
-            <h2>Life Lines</h2>
-            <div data-lifeline="remove-one-option" class="life-line-item">
-                <i class="fas fa-hands-helping lifeline-icon"></i>
-                <span class="tooltip">Removes 1 wrong answer</span>
+    <!-- GAME AREA [Start]-->
+    <main id="game-area-wrapper">
+        <div id="game-area">
+            <!-- player name and money earned -->
+            <section id="player-wrapper">
+                <h2>Player: <span id="player-name">Guest</span></h2>
+                <p>Cash: &euro; <span id="money-earned">0</span></p>
+            </section>
+            <!-- displays the money to earn per question and player's current money earned  -->
+            <div id="money-container">
+                <ul id="money-list">
+                    <li data-prize="500">1 - &euro; 500</li>
+                    <li data-prize="1,000">2 - &euro; 1,000</li>
+                    <li data-prize="1,500">3 - &euro; 1,500</li>
+                    <li data-prize="2,000">4 - &euro; 2,000</li>
+                    <li data-prize="2,500">5 - &euro; 2,500</li>
+                    <li data-prize="5,000">6 - &euro; 5,000</li>
+                    <li data-prize="10,000">7 - &euro; 10,000</li>
+                    <li data-prize="20,000">8 - &euro; 20,000</li>
+                    <li data-prize="40,000">9 - &euro; 40,000</li>
+                    <li data-prize="80,000">10 - &euro; 80,000</li>
+                    <li data-prize="100,000">11 - &euro; 100,000</li>
+                    <li data-prize="125,000">12 - &euro; 125,000</li>
+                    <li data-prize="150,000">13 - &euro; 150,000</li>
+                    <li data-prize="200,000">14 - &euro; 200,000</li>
+                    <li data-prize="1-million">15 - &euro; 1,000,000</li>
+                </ul>
             </div>
-            <div data-lifeline="remove-two-options" class="life-line-item">
-                <i class="fas fa-life-ring lifeline-icon"></i>
-                <span class="tooltip">Removes 2 wrong answers</span>
+            <!-- Life Lines to help player choose the correct answer -->
+            <section id="life-lines">
+                <h2>Life Lines</h2>
+                <div data-lifeline="remove-one-option" class="life-line-item">
+                    <i class="fas fa-hands-helping lifeline-icon"></i>
+                    <span class="tooltip">Removes 1 wrong answer</span>
+                </div>
+                <div data-lifeline="remove-two-options" class="life-line-item">
+                    <i class="fas fa-life-ring lifeline-icon"></i>
+                    <span class="tooltip">Removes 2 wrong answers</span>
+                </div>
+                <div data-lifeline="add-to-timer" class="life-line-item">
+                    <i class="fas fa-clock lifeline-icon"></i>
+                    <span class="tooltip">Adds 30 sec more to your time</span>
+                </div> 
+            </section>
+            <!-- container for the question, and timer -->
+            <section id="question-container">
+                <!-- Question -->
+                <h2>Question <span id="question-number">0</span>:</h2>
+                <p id="question-text">Question text here</p>
+                <!-- 30-second Timer -->
+                <div id="timer">
+                    <span id="timer-value">30</span>
+                </div>
+            </section>
+            <!-- container for the answers-->
+            <div id="answers-container">
+                <!-- options for the answer -->
+                <button class="answer-button" id="answer-option-a">
+                    A. <span id="option1-text"> </span>
+                </button>
+                <button class="answer-button" id="answer-option-b">
+                    B. <span id="option2-text"> </span>
+                </button>
+                <button class="answer-button" id="answer-option-c">
+                    C. <span id="option3-text"> </span>
+                </button>
+                <button class="answer-button" id="answer-option-d">
+                    D. <span id="option4-text"> </span>
+                </button>
             </div>
-            <div data-lifeline="add-to-timer" class="life-line-item">
-                <i class="fas fa-clock lifeline-icon"></i>
-                <span class="tooltip">Adds 30 sec more to your time</span>
-            </div> 
-        </section>
-        <!-- container for the question, and timer -->
-        <section id="question-container">
-            <!-- Question -->
-            <h2>Question <span id="question-number">0</span>:</h2>
-            <p id="question-text">Question text here</p>
-            <!-- 30-second Timer -->
-            <div id="timer">
-                <span id="timer-value">30</span>
-            </div>
-        </section>
-        <!-- container for the answers-->
-        <div id="answers-container">
-            <!-- options for the answer -->
-            <button class="answer-button" id="answer-option-a">
-                A. <span id="option1-text"> </span>
-            </button>
-            <button class="answer-button" id="answer-option-b">
-                B. <span id="option2-text"> </span>
-            </button>
-            <button class="answer-button" id="answer-option-c">
-                C. <span id="option3-text"> </span>
-            </button>
-            <button class="answer-button" id="answer-option-d">
-                D. <span id="option4-text"> </span>
-            </button>
         </div>
     </main>
     <!-- GAME AREA [End]-->
@@ -137,7 +139,7 @@
     <!-- 'GAME WON' Lightbox [Start]-->
     <section id="gamewon-outer-wrapper">
         <div id="gamewon-inner-wrapper">
-            <h2>Congratulations, <span id="username-gamewon">Mark</span>!</h2>
+            <h2>Congratulations, <span id="username-gamewon">player</span>!</h2>
             <p>You won &euro;<span id="grand-prize">1 Million</span>!</p>
             <button id="play-again-gamewon">Play Again</button>
             <a href="index.html">Home</a>
