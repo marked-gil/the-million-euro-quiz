@@ -587,7 +587,7 @@ nav {    /* contains logo & nav menu */
 }
 /* HOW TO PLAY Lightbox [End] */
 
-/* COUNTDOWN TO START [Lightbox] */
+/* COUNTDOWN TO START Lightbox [Start] */
 #countdown-outer-wrapper {
     display: none;
     align-items: center;
@@ -612,8 +612,9 @@ nav {    /* contains logo & nav menu */
     text-align: center;
     line-height: 15rem;
 }
+/* COUNTDOWN TO START Lightbox [End] */
 
-/* GAME OVER [Lightbox] */
+/* GAME OVER Lightbox [Start] */
 #gameover-outer-wrapper {
     background-color: #2e3431a3;
     display: none;
@@ -635,21 +636,22 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1.5rem;
 }
 
-#gameover-inner-wrapper h2 {     /* Game Over heading */
+#gameover-inner-wrapper h2 {    /* Game Over heading */
     color: #233609;
     font-size: 1.8rem;
     margin-bottom: .5rem;
 }
 
 #gameover-inner-wrapper p,
-#gameover-inner-wrapper span {   /* paragraphs - Game Over */
+#gameover-inner-wrapper span {    /* Game Over message */
     color: #092c18;
     font-size: 1.2rem;
     text-align: center;
 }
 
+/* buttons - Game Over */
 #gameover-inner-wrapper button,
-#gameover-inner-wrapper a {      /* buttons - Game Over */
+#gameover-inner-wrapper a {
     background-color: #092c18;
     border-radius: 10px;
     border: none;
@@ -663,8 +665,9 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
     margin-top: 1rem;
 }
+/* GAME OVER Lightbox [End] */
 
-/* GAME WON [Lightbox] */
+/* GAME WON Lightbox [Start] */
 #gamewon-outer-wrapper {
     background-color: #2e3431a3;
     display: none;
@@ -688,19 +691,19 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1rem;
 }
 
-#gamewon-inner-wrapper h2 {     /* Game Over heading */
+#gamewon-inner-wrapper h2 {    /* Game Won heading */
     color: #233609;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-#username-gamewon {     /* Username - Game Won */
+#username-gamewon {    /* player's name */
     color: #233609;
     font-size: 1.8rem;
 }
 
-#gamewon-inner-wrapper p {     /* paragraph - Game Over */
+#gamewon-inner-wrapper p {    /* Game Won message */
     color: #092c18;
     font-size: 1.5rem;
     text-align: center;
@@ -710,8 +713,9 @@ nav {    /* contains logo & nav menu */
     color: #092c18;
 }
 
+/* buttons - Game Won */
 #gamewon-inner-wrapper button,
-#gamewon-inner-wrapper a {       /* buttons - Game Over */
+#gamewon-inner-wrapper a {
     background-color: #092c18;
     border-radius: 10px;
     border: none;
@@ -724,8 +728,9 @@ nav {    /* contains logo & nav menu */
 #gamewon-inner-wrapper button {
     margin-top: 1.8rem;
 }
+/* GAME WON Lightbox [End] */
 
-/* QUIT [Lightbox] */
+/* QUIT Lightbox [Start] */
 #quit-outer-wrapper {
     background-color: #2e3431a3;
     display: none;
@@ -747,18 +752,19 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1.5rem;
 }
 
-#quit-inner-wrapper h2 {
+#quit-inner-wrapper h2 {    /* Quit heading */
     color: #233609;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
 }
-#quit-inner-wrapper p {
+#quit-inner-wrapper p {    /* Quit message */
     color: #092c18;
     font-size: 1.2rem;
     text-align: center;
 }
 
+/* buttons - Quit */
 #quit-inner-wrapper button,
 #quit-inner-wrapper a {
     background-color: #092c18;
@@ -779,6 +785,7 @@ nav {    /* contains logo & nav menu */
     background-color: #0f2518be;;
     cursor: pointer;
 }
+/* QUIT Lightbox [End] */
 
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
