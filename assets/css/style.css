@@ -991,19 +991,70 @@ nav {    /* contains logo & nav menu */
 }
 
 @media (min-width: 900px) {
-    /* Game Page */
-    #question-container {
-        width: 56.25rem;
+    /* GAME PAGE */
+    #logo-wrapper-nav {
+        height: 5rem;
     }
+
+    #logo-nav {
+        font-size: 3rem;
+        line-height: 5rem;
+    }
+
+    #logo-nav span {
+        font-size: 2rem;
+    }
+
+    #nav-menu {
+        font-size: 1.3rem;
+        width: 50.8rem;
+    }
+
+    #game-area {
+        height: 40rem;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        width: 55rem;
+    }
+
+    #player-wrapper {
+        width: 100%;
+    }
+
+    #player-wrapper > * {
+        font-size: 1.2rem;
+    }
+
+    #player-wrapper > h2 {
+        width: 50%;
+    }
+
+    #player-name,
+    #money-earned {
+        font-size: 1.5rem;
+    }
+
+    #life-lines {
+        column-gap: 6rem;
+        width: 54rem;
+    }
+
+    #question-container {
+        width: 54rem;
+    }
+
     #answers-container {
-        width: 56.25rem;
+        width: 54rem;
         display: flex;
-        column-gap: .5rem;
+        gap: .5rem;
         flex-direction: row;
         flex-wrap: wrap; 
         justify-content: center;
+        margin: 0;
     }
+
     .answer-button {
+        font-size: 1.1rem;
         width: 49%;
     }
 } 
