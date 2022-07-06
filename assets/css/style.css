@@ -8,8 +8,7 @@
     --clr-snow: #fff9fb;
 }
 
-/* Utilities */
-
+/* UTILITIES */
 .correct-answer:after {
     content: '✔';
     font-size: 3rem;
@@ -48,7 +47,7 @@
     text-align: center;
 }
 
-/* removes default global styles */
+/* Remove Default Global Styles */
 * { 
     color: var(--clr-snow);
     list-style: none;
@@ -57,12 +56,13 @@
     text-decoration: none;
 }
 
+/* General Body Document */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--clr-raisin-black);
 }
 
-/* Home Page [Start] */
+/* HOME PAGE [Start] */
 #logo-wrapper {
     background-color: black;
     box-shadow: 2px 0 2px 10px var(--clr-harlequin-green);
@@ -96,17 +96,6 @@ body {
     right: .1rem;
 }
 
-#nav-menu li {
-    padding: 0 .5rem;
-    cursor: pointer;
-}
-
-#nav-menu li:hover {
-    background-color: rgb(69, 69, 4);
-    border-radius: 6px;
-}
-
-/* play button - Home Page */
 #play-button {
     background-color: var(--clr-sea-green);
     border: none;
@@ -122,8 +111,7 @@ body {
     text-transform: uppercase;
 }
 
-/* how to play button - Home Page */
-#howtoplay-btn-homepage {
+#howtoplay-btn-homepage {    /* 'how to play' button */
     background-color: var(--clr-sea-green);
     border: none;
     border-radius: 6px;
@@ -142,11 +130,17 @@ body {
     background-color: #3a956187;
     cursor: pointer;
 }
+/* HOME PAGE [End] */
 
 /* GAME PAGE [Start] */
+#gamepage-body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    height: 100vh;
+}
 
-/* navbar - Game Page */
-nav {
+nav {    /* contains logo & nav menu */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -168,7 +162,7 @@ nav {
     width: 100%;
 }
 
-#logo-nav > a {
+#logo-nav > a {    /* clickable logo */
     color: var(--clr-burlywood);
 }
 
@@ -178,20 +172,36 @@ nav {
 
 #nav-menu {
     display: flex;
-    column-gap: 1.5rem;
-    font-size: 1.1rem;
+    column-gap: 1rem;
+    font-size: 1rem;
     justify-content: space-around;
-    width: 80%;
+    width: 90%;
 }
 
-/* game area section */
-#game-area {
-    margin: 5% 0;
+#nav-menu li {
+    padding: 0 .5rem;
+    cursor: pointer;
+}
+
+#nav-menu li:hover {
+    background-color: rgb(69, 69, 4);
+    border-radius: 6px;
+}
+
+#game-area-wrapper {
     display: flex;
     align-items: center;
+    flex: 1;
+}
+
+#game-area {
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    min-height: 80vh;
+    align-items: center;
+    justify-content: space-between;
+    height: 33rem;
+    width: 100%;
+    padding: 1rem 0;
 }
 
 /* display of money progress */
