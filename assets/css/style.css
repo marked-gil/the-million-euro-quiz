@@ -822,14 +822,14 @@ nav {    /* contains logo & nav menu */
     #howtoplay-inner-wrapper {
         font-size: 1rem;
     }
-    
+
     #howtoplay-inner-wrapper h3 {
         font-size: 1.3rem;
     }
 }
 
 @media (min-width: 600px) {
-    /* Game Page */
+    /* GAME PAGE */
     #logo-wrapper-nav {
         height: 4rem;
     }
@@ -844,37 +844,43 @@ nav {    /* contains logo & nav menu */
     }
 
     #nav-menu {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     #game-area {
-        height: 65vh;
-        justify-content: center;
+        margin: 0 auto;
+        width: 37.5rem;
+        height: 46rem;
     }
 
-    #life-lines > h2 {
-        font-size: 1.4rem;
+    #player-wrapper > * {
+        font-size: 1.1rem;
+    }
+    
+    #player-name {
+        font-size: 1.3rem;
+    }
+
+    #money-container {
+        width: 30rem;
     }
 
     .life-line-item {
-        width: 5rem;
-        height: 5rem;
+        width: 4rem;
+        height: 4rem;
     }
 
     .lifeline-icon {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     #question-container {
         min-height: 10rem;
-    }
-
-    #question-container > h2 {
-        font-size: 1.6rem;
+        width: 37rem;
     }
 
     #question-text {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
 
     #answers-container {
@@ -882,11 +888,19 @@ nav {    /* contains logo & nav menu */
     }
 
     .answer-button {
-        font-size: 1.4rem;
-        min-height: 3.8rem;
+        min-height: 3.5rem;
     }
 
-	/* ENTER NAME [Lightbox] */
+    /* 404 PAGE */
+    #page-404-inner-wrapper > h1 {
+        font-size: 2rem;
+    }
+
+    #page-404-info-box > p {
+        font-size: 1.4rem;
+    }
+
+	/* ENTER NAME Lightbox */
     #username-inner-wrapper {
         width: 30rem;
         height: 20rem;
@@ -896,10 +910,10 @@ nav {    /* contains logo & nav menu */
         width: 14rem;
     }
 
-    /* How To Play [Lightbox] */
+    /* How To Play Lightbox */
     #howtoplay-inner-wrapper {
         font-size: 1.1rem;
-        padding: 1.5rem 3rem 3rem;
+        padding: 1.5rem 3rem;
         width: 32rem
     }
 
@@ -929,7 +943,7 @@ nav {    /* contains logo & nav menu */
         width: 12rem;
     }
 
-    /* Game Won [Lightbox] */
+    /* Game Won Lightbox */
     #gamewon-inner-wrapper {
         width: 32.35rem;
         height: 18rem;
@@ -954,7 +968,7 @@ nav {    /* contains logo & nav menu */
         width: 12rem;
     }
 
-    /* Quit [Lightbox] */
+    /* Quit Lightbox */
     #quit-inner-wrapper {
         width: 32.35rem;
         height: 18rem;
