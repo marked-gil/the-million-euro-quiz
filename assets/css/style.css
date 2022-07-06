@@ -62,7 +62,7 @@ body {
     background-color: var(--clr-raisin-black);
 }
 
-/* Home Page */
+/* Home Page [Start] */
 #logo-wrapper {
     background-color: black;
     box-shadow: 2px 0 2px 10px var(--clr-harlequin-green);
@@ -315,7 +315,8 @@ body {
     line-height: 15rem;
 }
 
-/* GAME PAGE */
+/* GAME PAGE [Start] */
+
 /* navbar - Game Page */
 nav {
     display: flex;
@@ -324,7 +325,7 @@ nav {
     row-gap: .5rem;
 }
 
-#logo-wrapper-gamepage {
+#logo-wrapper-nav {
     background-color: black;
     font-family: 'Playfair Display', serif;
     box-shadow: 2px 0 2px 5px var(--clr-harlequin-green);
@@ -333,17 +334,17 @@ nav {
     width: 100%;
 }
 
-#logo-gamepage {
+#logo-nav {
     line-height: 3rem;
     text-align: center;
     width: 100%;
 }
 
-#logo-gamepage > a {
+#logo-nav > a {
     color: var(--clr-burlywood);
 }
 
-#logo-gamepage span {
+#logo-nav span {
     font-size: 1.1rem;
 }
 
@@ -517,6 +518,61 @@ nav {
         border: 1px solid var(--clr-burlywood);
     }
 }
+
+/* GAME PAGE [End] */
+
+/* 404 PAGE [Start] */
+
+#page-404-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+#page-404-outer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+#page-404-inner-wrapper {
+    display: flex;
+    row-gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 70%;
+}
+
+#page-404-inner-wrapper > h1 {
+    font-size: 1.8rem;
+}
+
+#page-404-info-box {
+    height: 80%;
+    padding: 1.5rem 1rem;
+}
+
+#page-404-info-box > p {
+    font-size: 1.2rem;
+    padding: 0 10%;
+    text-align: center;
+}
+
+#page-404-info-box > a {     /* Home button - 404 page*/
+    display: block;
+    background-color: var(--clr-sea-green);
+    border-radius: 6px;
+    font-size: 1.2rem;
+    line-height: 2.1rem;
+    margin: 3rem auto 0;
+    height: 2.1rem;
+    width: 16rem;
+    text-align: center;
+}
+
+/* 404 PAGE [End] */
 
 /* GAME OVER [Lightbox] */
 #gameover-outer-wrapper {
@@ -706,16 +762,16 @@ nav {
     }
 
     /* Game Page */
-    #logo-wrapper-gamepage {
+    #logo-wrapper-nav {
         height: 4rem;
     }
 
-    #logo-gamepage {
+    #logo-nav {
         font-size: 2.5rem;
         line-height: 4rem;
     }
 
-    #logo-gamepage span {
+    #logo-nav span {
         font-size: 1.6rem;
     }
 
