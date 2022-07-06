@@ -204,6 +204,32 @@ nav {    /* contains logo & nav menu */
     padding: 1rem 0;
 }
 
+#player-wrapper {    /* container for player's name & cash earned */
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+
+#player-wrapper > * {
+    font-size: .9rem;
+    background-color: #145430;
+    border-radius: 5px;
+    padding: .5rem .6rem;
+}
+
+#player-wrapper > h2 {
+    width: 50%;
+}
+
+#player-name,
+#money-earned {     /* username & cash earned */
+    color: rgb(195, 172, 117);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
 /* display of money progress */
 #money-container {
     background-color: white;
