@@ -869,8 +869,9 @@ function howToPlayLightbox() {
             <section>
                 <h3>Life Lines to Help You</h3>
                 <ul>
-                    <li>You have 3 life lines.</li>
-                    <img id="lifeline-image" src="assets/images/lifeline-icons.png" alt="screenshot of lifeline icons">
+                    <li>You have 3 life lines.
+                        <img id="lifeline-image" src="assets/images/lifeline-icons.png" alt="screenshot of lifeline icons">
+                    </li>
                     <li>1st icon removes 1 wrong answer</li>
                     <li>2nd icon removes 2 wrong answers</li>
                     <li>3rd icon adds 30 sec to the timer</li>
