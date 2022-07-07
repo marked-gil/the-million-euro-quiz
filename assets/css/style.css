@@ -55,7 +55,7 @@
     text-align: center;
 }
 
-.overlay-bg {    /* covers the entire body element */
+.overlay-bg {    /* covers entire body element */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,12 +66,12 @@
 }
 
 .overlay-bgcolor {
-    background-color: #2e3431a3;
+    background-color: #2e343189;
 }
 
 /* Remove Default Global Styles */
 * { 
-    color: var(--clr-snow);
+    color: var(--clr-white);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -96,7 +96,7 @@ body {
 
 #logo-wrapper {
     background-color: black;
-    box-shadow: 2px 0 2px 10px var(--clr-harlequin-green);
+    box-shadow: 2px 0 2px 10px var(--clr-mughal-green);
     height: 5rem;
     margin-bottom: 5rem;
 }
@@ -180,7 +180,7 @@ nav {    /* contains logo & nav menu */
 #logo-wrapper-nav {
     background-color: black;
     font-family: 'Playfair Display', serif;
-    box-shadow: 2px 0 2px 5px var(--clr-harlequin-green);
+    box-shadow: 2px 0 2px 5px var(--clr-mughal-green);
     margin: .3rem 0;
     height: 3rem;
     width: 100%;
@@ -255,7 +255,7 @@ nav {    /* contains logo & nav menu */
 
 #player-name,
 #money-earned {     /* username & cash earned */
-    color: rgb(195, 172, 117);
+    color: var(--clr-burlywood);
     font-size: 1.1rem;
     text-transform: uppercase;
 }
@@ -386,7 +386,7 @@ nav {    /* contains logo & nav menu */
 }
 
 .answer-button {    /* button for answer option */
-    background-color: #34684a;
+    background-color: var(--clr-deep-moss);
     border: none;
     border-radius: 5px;
     font-size: 1rem;
@@ -536,7 +536,7 @@ nav {    /* contains logo & nav menu */
 /* HOW TO PLAY Lightbox [Start] */
 #howtoplay-inner-wrapper {
     background-color: var(--clr-raisin-black);
-    border: 1px solid white;
+    border: 1px solid var(--clr-snow);
     display: flex;
     flex-direction: column;
     font-size: .9rem;
@@ -570,7 +570,7 @@ nav {    /* contains logo & nav menu */
 
 #howtoplay-heading {
     border-bottom: 2px solid var(--clr-burlywood);
-    color: #8cc18c;
+    color: var(--clr-sea-green);
     font-size: 1.8rem;
     line-height: 3rem;
     text-align: center;
@@ -578,13 +578,14 @@ nav {    /* contains logo & nav menu */
 }
 
 #howtoplay-inner-wrapper h3 {    /* sub-headings */
-    color: #a6bca6;
+    color: var(--clr-dark-sea);
     font-size: 1.2rem;
     margin: .8rem 0;
     text-align: center;
 }
 
 #howtoplay-inner-wrapper li {    /* info list */
+    color: var(--clr-light-silver);
     list-style: disc;
     list-style-position: outside;
     margin: .5rem 0 0 1rem;
@@ -599,7 +600,7 @@ nav {    /* contains logo & nav menu */
 
 /* COUNTDOWN TO START Lightbox [Start] */
 #countdown-inner-wrapper {
-    background-color: rgba(18, 47, 10, 0.803);
+    background-color: var(--clr-deep-moss);
     border-radius: 50%;
     width: 15rem;
     height: 15rem;
@@ -616,7 +617,7 @@ nav {    /* contains logo & nav menu */
 
 /* GAME OVER Lightbox [Start] */
 #gameover-inner-wrapper {
-    background-color: #3a9561;
+    background-color: var(--clr-raisin-black);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -626,14 +627,14 @@ nav {    /* contains logo & nav menu */
 }
 
 #gameover-inner-wrapper h2 {    /* Game Over heading */
-    color: #233609;
+    color: var(--clr-sea-green);
     font-size: 1.8rem;
     margin-bottom: .5rem;
 }
 
 #gameover-inner-wrapper p,
 #gameover-inner-wrapper span {    /* Game Over message */
-    color: #092c18;
+    color: var(--clr-light-silver);
     font-size: 1.2rem;
     text-align: center;
 }
@@ -658,7 +659,8 @@ nav {    /* contains logo & nav menu */
 
 /* GAME WON Lightbox [Start] */
 #gamewon-inner-wrapper {
-    background-color: #3a9561;
+    background-color: #b3b354;
+    border: 2px solid var(--clr-deep-moss);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -670,25 +672,27 @@ nav {    /* contains logo & nav menu */
 }
 
 #gamewon-inner-wrapper h2 {    /* Game Won heading */
-    color: #233609;
+    color: var(--clr-raisin-black);
+    font-family: 'Satisfy', cursive;
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
 #username-gamewon {    /* player's name */
-    color: #233609;
+    color: var(--clr-raisin-black);
     font-size: 1.8rem;
 }
 
 #gamewon-inner-wrapper p {    /* Game Won message */
-    color: #092c18;
+    color: #0d4316;;
     font-size: 1.5rem;
     text-align: center;
 }
 
 #gamewon-inner-wrapper #grand-prize {
-    color: #092c18;
+    color: #0d4316;
+    border-bottom: 4px solid var(--clr-pine-tree);
 }
 
 /* buttons - Game Won */
@@ -711,7 +715,7 @@ nav {    /* contains logo & nav menu */
 
 /* QUIT Lightbox [Start] */
 #quit-inner-wrapper {
-    background-color: #3a9561;
+    background-color: var(--clr-raisin-black);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -721,13 +725,13 @@ nav {    /* contains logo & nav menu */
 }
 
 #quit-inner-wrapper h2 {    /* Quit heading */
-    color: #233609;
+    color: var(--clr-sea-green);
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 #quit-inner-wrapper p {    /* Quit message */
-    color: #092c18;
+    color: var(--clr-light-silver);
     font-size: 1.2rem;
     text-align: center;
 }
@@ -763,7 +767,7 @@ nav {    /* contains logo & nav menu */
     }
 
     #game-area {
-        border: 3px solid darkgoldenrod;
+        border: 3px solid var(--clr-burlywood);
         border-radius: 10px;
         box-sizing: border-box;
         height: 39rem;
