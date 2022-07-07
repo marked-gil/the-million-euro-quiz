@@ -352,13 +352,11 @@ if (document.getElementById('gamepage-body')) {
         randomChoiceRemove(1);
         this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
-
     // removes 2 wrong options
     lifelineRemoveTwo.addEventListener('click', function() {
         randomChoiceRemove(2);
         this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
-
     // adds 30 seconds more to the timer
     lifelineAddToTimer.addEventListener('click', function() {
         clearInterval(counter.id);
@@ -369,39 +367,20 @@ if (document.getElementById('gamepage-body')) {
 
     // ANSWER OPTIONS/BUTTONS <-- [Start]
     // Option A button
-    optionButtonA.addEventListener('click', (e) => {
-        let thisBtn = e.target;
-        playGame(thisBtn, counter.id);
-    });
-
+    optionButtonA.addEventListener('click', (e) => playGame(e.target, counter.id));
     // Option B button
-    optionButtonB.addEventListener('click', (e) => {
-        let thisBtn = e.target;
-        playGame(thisBtn, counter.id);
-    });
-
+    optionButtonB.addEventListener('click', (e) => playGame(e.target, counter.id));
     // Option C button
-    optionButtonC.addEventListener('click', (e) => {
-        let thisBtn = e.target;
-        playGame(thisBtn, counter.id);
-    });
-
+    optionButtonC.addEventListener('click', (e) => playGame(e.target, counter.id));
     // Option D button
-    optionButtonD.addEventListener('click', (e) => {
-        let thisBtn = e.target;
-        playGame(thisBtn, counter.id);
-    });
+    optionButtonD.addEventListener('click', (e) => playGame(e.target, counter.id));
     // ANSWER OPTIONS/BUTTONS <-- [End]
 
     // 'How to Play' link Event Listener
-    howToPlayLink.addEventListener('click', () => {
-        howToPlayLightbox();
-    });
+    howToPlayLink.addEventListener('click', () => howToPlayLightbox());
 
     // 'Quit' link Event Listener
-    quitLink.addEventListener('click', () => {
-        quit();
-    });
+    quitLink.addEventListener('click', () => quit());
 }
 // GAME PAGE <-- [End]
 
