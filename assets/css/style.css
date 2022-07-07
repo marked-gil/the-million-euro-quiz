@@ -427,8 +427,6 @@ nav {    /* contains logo & nav menu */
 
 #page-404-info-box > a {    /* home button */
     display: block;
-    background-color: var(--clr-sea-green);
-    border-radius: 6px;
     font-size: 1.2rem;
     line-height: 2.1rem;
     margin: 3rem auto 0;
@@ -717,7 +715,8 @@ nav {    /* contains logo & nav menu */
     #play-button:hover,
     #username-btn:hover,
     #quit-inner-wrapper button:hover,
-    #quit-inner-wrapper a:hover {
+    #quit-inner-wrapper a:hover,
+    #page-404-info-box > a:hover {
         box-shadow: 0 0 2px 2px var(--clr-sea-green);
         cursor: pointer;
     }
