@@ -228,7 +228,8 @@ if (document.getElementById('homepage-body')) {
 
     // displays 'Enter Username' lightbox
     playBtn.addEventListener('click', () => {
-        enterNameSection.style.display = 'flex';
+        enterNameSection.classList.remove('hide');
+        enterNameSection.classList.add('overlay-bg');
     });
 
 	// feedback for usernames >12 characters
@@ -241,7 +242,8 @@ if (document.getElementById('homepage-body')) {
     // closes 'Enter Username' lightbox
     closeUsernameIcon.addEventListener('click', () => {
         flashMsg.innerHTML = "";
-        enterNameSection.style.display = 'none';
+        enterNameSection.classList.add('hide');
+        enterNameSection.classList.remove('overlay-bg');
     });
 
     // displays 'How to Play' lightbox
@@ -390,12 +392,12 @@ if (document.getElementById('gamepage-body')) {
     // ANSWER OPTIONS/BUTTONS <-- [End]
 
     // 'How to Play' link Event Listener
-    howToPlayLink.addEventListener('click', function() {
+    howToPlayLink.addEventListener('click', () => {
         howToPlayLightbox();
     });
 
     // 'Quit' link Event Listener
-    quitLink.addEventListener('click', function() {
+    quitLink.addEventListener('click', () => {
         quit();
     });
 }
@@ -604,7 +606,8 @@ function gameOver() {
 
     playerName.innerText = playerNameHolder.innerText;
     prizeWon.innerText = moneyEarned.innerText;
-    gameOverPopUp.style.display = 'flex';
+    gameOverPopUp.classList.remove('hide');
+    gameOverPopUp.classList.add('overlay-bg');
     playAgainLoser.addEventListener('click', () => {
         location.reload();
     });
@@ -748,7 +751,8 @@ function gameWon() {
     clearInterval(counter.id);
     moneyEarned.innerText = '1,000,000';
     playerName.innerText = playerNameHolder.innerText;
-    gameWonSection.style.display = 'flex';
+    gameWonSection.classList.remove('hide');
+    gameWonSection.classList.add('overlay-bg');
 
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
@@ -758,7 +762,8 @@ function gameWon() {
 
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
-    quitSection.style.display = 'flex';
+    quitSection.classList.remove('hide');
+    quitSection.classList.add('overlay-bg');
     clearInterval(counter.id);
     const playAgainQuitter = document.getElementById('play-again-quitter');
     playAgainQuitter.addEventListener('click', function() {
