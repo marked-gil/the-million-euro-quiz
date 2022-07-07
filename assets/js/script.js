@@ -1,5 +1,4 @@
-// START --> QUESTION CATEGORIES
-// Easy Questions
+// QUESTION CATEGORIES <-- [Start]
 let easyQuestions = [
     {
         id: 1,
@@ -63,7 +62,6 @@ let easyQuestions = [
 	},
 ];
 
-// Moderate Questions
 let moderateQuestions = [
     {
         id: 11,
@@ -127,7 +125,6 @@ let moderateQuestions = [
 	},
 ];
 
-// Hard Questions
 let hardQuestions = [
     {
         id: 21,
@@ -191,7 +188,6 @@ let hardQuestions = [
 	},
 ];
 
-// Hardest Questions
 let hardestQuestions = [
     {
         id: 31,
@@ -218,9 +214,9 @@ let hardestQuestions = [
         wrongAnswers: ["Jimi Hendrix", "Elton John", "Stevie Wonder"]
 	},
 ];
-// END --> QUESTION CATEGORIES
+// QUESTION CATEGORIES <-- [End]
 
-// START --> HOME PAGE
+// HOME PAGE <-- [Start]
 if (document.getElementById('homepage-body')) {
     // variables to access the DOM elements
     const howToPlayBtn = document.getElementById('howtoplay-btn-homepage');
@@ -263,9 +259,9 @@ if (document.getElementById('homepage-body')) {
         }
     }); 
 }
-// END --> HOME PAGE
+// HOME PAGE <-- [End]
 
-// START --> GAME PAGE
+// GAME PAGE <-- [Start]
 // variables to access the DOM elements
 const playerNameHolder = document.getElementById('player-name');
 const moneyEarned = document.getElementById('money-earned');
@@ -366,137 +362,31 @@ if (document.getElementById('gamepage-body')) {
     }, {once: true});
     // --> Life Lines <-- [End]
 
-    // Event listener for Option A button
-    optionButtonA.addEventListener('click', function() {
-        clearInterval(counter.id);
-        disableOptionBtns(this);
-        if (answerChecker(this.innerText.slice(3))) {
-            setTimeout(() => {
-                revealCorrectAnswer(this);
-                setTimeout(() => {
-                    optionButtonA.classList.remove('correct-answer');
-                    counter = timer(30);
-                    if (usedQuestions.length < 15) {
-                        selectedQuestion = setDifficultyLevel();
-                        usedQuestions.push(selectedQuestion.id);
-                        console.log('Used Questions:', usedQuestions);
-                        displayQuestion();
-                        highlightPrize();
-                        displayEarnedMoney();
-                        undisableOptionBtns();
-                    } else {
-                        gameWon();
-                    }
-                }, 1000);
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                revealWrongAnswer(this);
-                setTimeout(() => {
-                    gameOver();
-                }, 1000);
-            }, 1000);
-        }
+    // ANSWER OPTIONS/BUTTONS <-- [Start]
+    // Option A button
+    optionButtonA.addEventListener('click', (e) => {
+        let thisBtn = e.target;
+        playGame(thisBtn, counter.id);
     });
 
-    // Event listener for Option B button
-    optionButtonB.addEventListener('click', function() {
-        clearInterval(counter.id);
-        disableOptionBtns(this);
-        if (answerChecker(this.innerText.slice(3))) {
-            setTimeout(() => {
-                revealCorrectAnswer(this);
-                setTimeout(() => {
-                    optionButtonB.classList.remove('correct-answer');
-                    counter = timer(30);
-                    if (usedQuestions.length < 15) {
-                        selectedQuestion = setDifficultyLevel();
-                        usedQuestions.push(selectedQuestion.id);
-                        console.log('Used Questions:', usedQuestions);
-                        displayQuestion();
-                        highlightPrize();
-                        displayEarnedMoney();
-                        undisableOptionBtns();
-                    } else {
-                        gameWon();
-                    }
-                }, 1000);
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                revealWrongAnswer(this);
-                setTimeout(() => {
-                    gameOver();
-                }, 1000);
-            }, 1000);
-        }
+    // Option B button
+    optionButtonB.addEventListener('click', (e) => {
+        let thisBtn = e.target;
+        playGame(thisBtn, counter.id);
     });
 
-    // Event listener for Option C button
-    optionButtonC.addEventListener('click', function() {
-        clearInterval(counter.id);
-        disableOptionBtns(this);
-        if (answerChecker(this.innerText.slice(3))) {
-            setTimeout(() => {
-                revealCorrectAnswer(this);
-                setTimeout(() => {
-                    optionButtonC.classList.remove('correct-answer');
-                    counter = timer(30);
-                    if (usedQuestions.length < 15) {
-                        selectedQuestion = setDifficultyLevel();
-                        usedQuestions.push(selectedQuestion.id);
-                        console.log('Used Questions:', usedQuestions);
-                        displayQuestion();
-                        highlightPrize();
-                        displayEarnedMoney();
-                        undisableOptionBtns();
-                    } else {
-                        gameWon();
-                    }
-                }, 1000);
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                revealWrongAnswer(this);
-                setTimeout(() => {
-                    gameOver();
-                }, 1000);
-            }, 1000);
-        }
+    // Option C button
+    optionButtonC.addEventListener('click', (e) => {
+        let thisBtn = e.target;
+        playGame(thisBtn, counter.id);
     });
 
-    // Event listener for Option D button
-    optionButtonD.addEventListener('click', function() {
-        clearInterval(counter.id);
-        disableOptionBtns(this);
-        if (answerChecker(this.innerText.slice(3))) {
-            setTimeout(() => {
-                revealCorrectAnswer(this);
-                setTimeout(() => {
-                    optionButtonD.classList.remove('correct-answer');
-                    counter = timer(30);
-                    if (usedQuestions.length < 15) {
-                        selectedQuestion = setDifficultyLevel();
-                        usedQuestions.push(selectedQuestion.id);
-                        console.log('Used Questions:', usedQuestions);
-                        displayQuestion();
-                        highlightPrize();
-                        displayEarnedMoney();
-                        undisableOptionBtns();
-                    } else {
-                        gameWon();
-                    }
-                }, 1000);
-            }, 1000);
-        } else {
-            setTimeout(() => {
-                revealWrongAnswer(this);
-                setTimeout(() => {
-                    gameOver();
-                }, 1000);
-            }, 1000);
-        }
+    // Option D button
+    optionButtonD.addEventListener('click', (e) => {
+        let thisBtn = e.target;
+        playGame(thisBtn, counter.id);
     });
+    // ANSWER OPTIONS/BUTTONS <-- [End]
 
     // Event listener for 'How to Play' link
     const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
@@ -510,9 +400,47 @@ if (document.getElementById('gamepage-body')) {
         quit();
     });
 }
-// END --> GAME PAGE
+// GAME PAGE <-- [End]
 
 // FUNCTIONS
+
+/**
+ * Continues the process of the game, checks the answer, and declares win or loss
+ * @param {*} thisBtn - The targetted event 
+ * @param {*} timerId - The id of the timer() function (setInterval)
+ */
+function playGame(thisBtn, timerId) {
+    clearInterval(timerId);
+    disableOptionBtns(thisBtn);
+    if (answerChecker(thisBtn.innerText.slice(3))) {
+        setTimeout(() => {
+            revealCorrectAnswer(thisBtn);
+            setTimeout(() => {
+                thisBtn.classList.remove('correct-answer');
+                counter = timer(30);
+                if (usedQuestions.length < 15) {
+                    selectedQuestion = setDifficultyLevel();
+                    usedQuestions.push(selectedQuestion.id);
+                    console.log('Used Questions:', usedQuestions);
+                    displayQuestion();
+                    highlightPrize();
+                    displayEarnedMoney();
+                    undisableOptionBtns();
+                } else {
+                    gameWon();
+                }
+            }, 1000);
+        }, 1000);
+    } else {
+        setTimeout(() => {
+            revealWrongAnswer(thisBtn);
+            setTimeout(() => {
+                gameOver();
+            }, 1000);
+        }, 1000);
+    }
+}
+
 /**
  * Disables all option buttons except the one passed in as argument
  * @param {object} notToDisableBtn - The option button that is NOT to be disabled
