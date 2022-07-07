@@ -155,12 +155,6 @@ body {
     width: 16rem;
     text-transform: uppercase;
 }
-
-#howtoplay-btn-homepage:hover,
-#play-button:hover {
-    background-color: #3a956187;
-    cursor: pointer;
-}
 /* HOME PAGE [End] */
 
 /* GAME PAGE [Start] */
@@ -211,11 +205,6 @@ nav {    /* contains logo & nav menu */
 #nav-menu li {
     padding: 0 .5rem;
     cursor: pointer;
-}
-
-#nav-menu li:hover {
-    background-color: rgb(69, 69, 4);
-    border-radius: 6px;
 }
 
 #game-area-wrapper {
@@ -303,10 +292,6 @@ nav {    /* contains logo & nav menu */
     height: 3.5rem;
     text-align: center;
     position: relative;
-}
-
-.life-line-item:hover {
-    background-color: rgb(224, 229, 220);
 }
 
 .lifeline-icon {
@@ -397,13 +382,6 @@ nav {    /* contains logo & nav menu */
     text-shadow: 0 0 10px var(--clr-raisin-black);
     position: relative;
 }
-
-@media (hover: hover) {    /* styling for hover-capable devices only */
-    .answer-button:hover {
-        background-color: var(--clr-sea-green);
-        border: 1px solid var(--clr-burlywood);
-    }
-}
 /* GAME PAGE [End] */
 
 /* 404 PAGE [Start] */
@@ -491,11 +469,6 @@ nav {    /* contains logo & nav menu */
     top: 0;
 }
 
-#close-username:hover {
-    color: #3a956187;
-    cursor: pointer;
-}
-
 #username-form {
     display: flex;
     flex-direction: column;
@@ -523,10 +496,6 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
-#username-btn:hover {
-    background-color: #3a956187;
-}
-
 #username-feedback {
     display: block;
     height: 2rem;
@@ -536,7 +505,7 @@ nav {    /* contains logo & nav menu */
 /* HOW TO PLAY Lightbox [Start] */
 #howtoplay-inner-wrapper {
     background-color: var(--clr-raisin-black);
-    border: 1px solid var(--clr-snow);
+    border: 2px solid var(--clr-snow);
     display: flex;
     flex-direction: column;
     font-size: .9rem;
@@ -561,11 +530,6 @@ nav {    /* contains logo & nav menu */
     font-size: 2.5rem;
     position: sticky;
     top: 0;
-}
-
-#close-howtoplay:hover {
-    color: #3a956187;
-    cursor: pointer;
 }
 
 #howtoplay-heading {
@@ -685,7 +649,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #gamewon-inner-wrapper p {    /* Game Won message */
-    color: #0d4316;;
+    color: #0d4316;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -752,14 +716,38 @@ nav {    /* contains logo & nav menu */
     margin-top: 1.8rem;
 }
 
-#quit-inner-wrapper button:hover,
-#quit-inner-wrapper a:hover {
-    background-color: #0f2518be;;
-    cursor: pointer;
-}
 /* QUIT Lightbox [End] */
 
 /* MEDIA QUERIES */
+
+/* styling for hover-capable devices only */
+@media (hover: hover) {
+    #howtoplay-btn-homepage:hover,
+    #play-button:hover,
+    #username-btn:hover,
+    #quit-inner-wrapper button:hover,
+    #quit-inner-wrapper a:hover {
+        box-shadow: 0 0 2px 2px var(--clr-sea-green);
+        cursor: pointer;
+    }
+    #nav-menu li:hover {
+        background-color: var(--clr-deep-moss);
+        border-radius: 6px;
+    }
+    .life-line-item:hover {
+        background-color: var(--clr-snow);
+    }
+    #close-username:hover,
+    #close-howtoplay:hover {
+        color: var(--clr-ufo-green);
+        cursor: pointer;
+    }
+    .answer-button:hover {
+        background-color: var(--clr-sea-green);
+        box-shadow: 0 0 0 2px var(--clr-sea-green);
+    }
+}
+
 @media (min-width: 390px) {
     /* GAME PAGE */
     #nav-menu {
