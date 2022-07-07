@@ -526,14 +526,6 @@ nav {    /* contains logo & nav menu */
 /* ENTER NAME Lightbox [End] */
 
 /* HOW TO PLAY Lightbox [Start] */
-#howtoplay-outer-wrapper {
-    display: none;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-}
-
 #howtoplay-inner-wrapper {
     background-color: var(--clr-raisin-black);
     border: 1px solid white;
@@ -598,16 +590,6 @@ nav {    /* contains logo & nav menu */
 /* HOW TO PLAY Lightbox [End] */
 
 /* COUNTDOWN TO START Lightbox [Start] */
-#countdown-outer-wrapper {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-}
-
 #countdown-inner-wrapper {
     background-color: rgba(18, 47, 10, 0.803);
     border-radius: 50%;

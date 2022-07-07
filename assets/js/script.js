@@ -319,7 +319,8 @@ if (document.getElementById('gamepage-body')) {
      }
 
     // Countdown to Start [Lightbox] <-- [Start]
-    countdownSection.style.display = 'flex';
+    countdownSection.classList.add('overlay-bg');
+    countdownSection.classList.remove('hide');
     let countdownLeft = 3;
     let countdownId = setInterval(() => {
         if (countdownLeft > 1) {
@@ -329,7 +330,8 @@ if (document.getElementById('gamepage-body')) {
             countdown.innerHTML = `GO`;
             clearInterval(countdownId);
             setTimeout(() => {
-                countdownSection.style.display = 'none';
+                countdownSection.classList.remove('overlay-bg');
+                countdownSection.classList.add('hide');
                 // selects and displays first question
                 selectedQuestion = setDifficultyLevel();
                 usedQuestions.push(selectedQuestion.id);
@@ -615,7 +617,8 @@ function gameOver() {
     // Close 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
         document.getElementById('howtoplay-inner-wrapper').remove();
-        document.getElementById('howtoplay-outer-wrapper').style.display = 'none';
+        document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
+        document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
     }
 
     playerName.innerText = playerNameHolder.innerText;
@@ -836,13 +839,14 @@ function howToPlayLightbox() {
         `;
 
     howToPlaySection.appendChild(howToPlayArticle);
-    howToPlaySection.style.display = 'flex';
-    howToPlaySection.style.alignItems = 'center';
+    howToPlaySection.classList.remove('hide');
+    howToPlaySection.classList.add('overlay-bg');
 
     // hides 'How to Play' lightbox
     const closeHowToPlay = document.getElementById('close-howtoplay');
     closeHowToPlay.addEventListener('click', () => {
-        howToPlaySection.style.display = 'none';
+        howToPlaySection.classList.add('hide');
+        howToPlaySection.classList.remove('overlay-bg');
         howToPlayArticle.remove();
     });
 }
