@@ -69,6 +69,15 @@
     background-color: #2e343189;
 }
 
+.btn-border {
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-color {
+    background-color: var(--clr-deep-moss);
+}
+
 /* Remove Default Global Styles */
 * { 
     color: var(--clr-white);
@@ -128,9 +137,6 @@ body {
 }
 
 #play-button {
-    background-color: var(--clr-sea-green);
-    border: none;
-    border-radius: 6px;
     display: block;
     font-size: 1.2rem;
     letter-spacing: .2rem;
@@ -143,9 +149,6 @@ body {
 }
 
 #howtoplay-btn-homepage {    /* 'how to play' button */
-    background-color: var(--clr-sea-green);
-    border: none;
-    border-radius: 6px;
     display: block;
     font-size: .9rem;
     letter-spacing: .1rem;
@@ -487,9 +490,6 @@ nav {    /* contains logo & nav menu */
 }
 
 #username-btn {
-    background-color: var(--clr-sea-green);
-    border: none;
-    border-radius: 6px;
     font-size: 1rem;
     width: 9rem;
     height: 1.8rem;
@@ -606,9 +606,6 @@ nav {    /* contains logo & nav menu */
 /* buttons - Game Over */
 #gameover-inner-wrapper button,
 #gameover-inner-wrapper a {
-    background-color: #092c18;
-    border-radius: 10px;
-    border: none;
     font-size: 1rem;
     line-height: 1.8rem;
     width: 8rem;
@@ -662,9 +659,6 @@ nav {    /* contains logo & nav menu */
 /* buttons - Game Won */
 #gamewon-inner-wrapper button,
 #gamewon-inner-wrapper a {
-    background-color: #092c18;
-    border-radius: 10px;
-    border: none;
     font-size: 1rem;
     line-height: 1.8rem;
     width: 8rem;
@@ -703,9 +697,6 @@ nav {    /* contains logo & nav menu */
 /* buttons - Quit */
 #quit-inner-wrapper button,
 #quit-inner-wrapper a {
-    background-color: #092c18;
-    border-radius: 10px;
-    border: none;
     font-size: 1rem;
     line-height: 1.8rem;
     width: 8rem;
