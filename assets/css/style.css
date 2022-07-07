@@ -48,11 +48,14 @@
     visibility: hidden;
 }
 
-.current-prize {
-    background-color: rgb(77, 186, 77);
+.highlight-prize {
+    background-color: #4dba4d;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 5px var(--clr-light-silver);
     border-radius: 10px;
     min-width: 70%;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .overlay-bg {    /* covers entire body element */
@@ -264,13 +267,15 @@ nav {    /* contains logo & nav menu */
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: .6rem 0;
+    margin: .5rem 0;
 }
 
-#money-list > li {
-    color: var(--clr-raisin-black);
+[data-prize] {
+    font-family: 'Roboto Slab', serif;
     font-size: 1.5rem;
     margin: .2rem 0;
+    position: relative;
+    color: var(--clr-raisin-black);
 }
 
 #life-lines {
@@ -751,6 +756,15 @@ nav {    /* contains logo & nav menu */
         height: 39rem;
     }
 
+    #money-container {
+        height: 4rem;
+    }
+    
+    #money-list {
+        margin: .8rem;
+        row-gap: .5rem;
+    }
+
     #player-wrapper > * {
         font-size: 1rem;
     }
@@ -1008,7 +1022,7 @@ nav {    /* contains logo & nav menu */
     }
 } 
 
-@media (min-width: 1000px) {
+@media (min-width: 1080px) {
 	/* GAME PAGE*/
     #game-area {
         align-items: flex-start;
@@ -1026,24 +1040,32 @@ nav {    /* contains logo & nav menu */
     }
 
     #money-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         box-shadow: 0 0 10px 5px #8ecd21;
         height: 35rem;
-        width: 14rem;
-        padding: .5rem 0;
+        width: 15rem;
         position: absolute;
         top: 1rem;
         right: 1.5rem;
     }
 
     #money-list {
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column-reverse;
-        padding-left: 2rem;
-        row-gap: .4rem;
+        row-gap: .6rem;
+        width: 100%;
     }
 
-    #money-list > li {
+    [data-prize] {
         font-size: 1.2rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .highlight-prize {
+        min-width: 100%;
     }
 
     #question-container {
