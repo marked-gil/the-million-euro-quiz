@@ -419,6 +419,7 @@ function playGame(thisBtn, timerId) {
         setTimeout(() => {
             revealWrongAnswer(thisBtn);
             setTimeout(() => {
+                clicksBlocker.remove();
                 gameOver();
             }, 1000);
         }, 1000);
