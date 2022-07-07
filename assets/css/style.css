@@ -1,15 +1,23 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto+Slab:wght@200;400;600&family=Roboto:wght@100;300;400&family=Satisfy&display=swap');
+
 /* Customized Variables */
 :root {
+    --clr-white: #ffffff;
     --clr-raisin-black: #252627;
-    --clr-harlequin-green: #1b4d31;
+    --clr-mughal-green: #336633;
+    --clr-deep-moss: #266340;
+    --clr-ufo-green: #3cd07d;
     --clr-sea-green: #3a9561;
+    --clr-dark-sea: #93C393;
+    --clr-pine-tree: #2C3227;
     --clr-burlywood: #deb887;
     --clr-light-silver: #dad9d8;
     --clr-snow: #fff9fb;
 }
 
 /* UTILITIES */
-.correct-answer:after {
+.correct-answer::after {
     content: '✔';
     font-size: 3rem;
     position: absolute;
