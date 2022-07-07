@@ -237,7 +237,7 @@ if (document.getElementById('homepage-body')) {
         if (e.target.value.length === 12) {
             flashMsg.innerHTML = "Your name can only have a maximum of 12 characters.";
         }
-    })
+    });
 
     // closes 'Enter Username' lightbox
     closeUsernameIcon.addEventListener('click', () => {
@@ -279,7 +279,7 @@ const optionButtonB = document.getElementById('answer-option-b');
 const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
-// variables to access  'Cash Prize' DOM elements
+// variables to access 'Cash Prize' DOM elements
 const prizeOne = document.querySelector('[data-prize="500"]');
 const prizeTwo = document.querySelector('[data-prize="1,000"]');
 const prizeThree = document.querySelector('[data-prize="1,500"]');
@@ -413,10 +413,12 @@ if (document.getElementById('gamepage-body')) {
 function playGame(thisBtn, timerId) {
     clearInterval(timerId);
     disableOptionBtns(thisBtn);
+    let clicksBlocker = blockClicks();
     if (answerChecker(thisBtn.innerText.slice(3))) {
         setTimeout(() => {
             revealCorrectAnswer(thisBtn);
             setTimeout(() => {
+                clicksBlocker.remove();
                 thisBtn.classList.remove('correct-answer');
                 counter = timer(30);
                 if (usedQuestions.length < 15) {
@@ -440,6 +442,18 @@ function playGame(thisBtn, timerId) {
             }, 1000);
         }, 1000);
     }
+}
+
+/**
+ * Creates an overlay to body document that blocks interaction
+ * @returns the newly created block element
+ */
+function blockClicks() {
+    const gamepageBody = document.getElementById('gamepage-body');
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('overlay-bg');
+    gamepageBody.appendChild(newDiv);
+    return newDiv;
 }
 
 /**
