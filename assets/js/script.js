@@ -262,7 +262,7 @@ if (document.getElementById('homepage-body')) {
 // HOME PAGE <-- [End]
 
 // GAME PAGE <-- [Start]
-// variables to access the DOM elements
+// variables to access 'Game Area' DOM elements
 const playerNameHolder = document.getElementById('player-name');
 const moneyEarned = document.getElementById('money-earned');
 const questionText = document.getElementById('question-text');
@@ -277,7 +277,7 @@ const optionButtonB = document.getElementById('answer-option-b');
 const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
-// variables to access the 'money prize' elements in the DOM
+// variables to access  'Cash Prize' DOM elements
 const prizeOne = document.querySelector('[data-prize="500"]');
 const prizeTwo = document.querySelector('[data-prize="1,000"]');
 const prizeThree = document.querySelector('[data-prize="1,500"]');
@@ -293,6 +293,10 @@ const prizeTwelve = document.querySelector('[data-prize="125,000"]');
 const prizeThirteen = document.querySelector('[data-prize="150,000"]');
 const prizeFourteen = document.querySelector('[data-prize="200,000"]');
 const prizeFifteen = document.querySelector('[data-prize="1-million"]');
+
+// variables to access lightbox links for 'How to Play' & 'Quit'
+const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
+const quitLink = document.getElementById('quit-link');
 
 // variables to access 'Countdown to Start [Lightbox]'
 const countdownSection = document.getElementById('countdown-outer-wrapper');
@@ -312,55 +316,52 @@ if (document.getElementById('gamepage-body')) {
          location.href = 'index.html';
      }
 
-    // start -> Countdown to Start [Lightbox]
+    // Countdown to Start [Lightbox] <-- [Start]
     countdownSection.style.display = 'flex';
     let countdownLeft = 3;
-    let countdownId = setInterval(function() {
-    if (countdownLeft > 1) {
-        countdownLeft--;
-        countdown.innerHTML = countdownLeft;
-    } else {
-        countdown.innerHTML = `GO`;
-        clearInterval(countdownId);
-        setTimeout(function() {
-            countdownSection.style.display = 'none';
-            // selects and displays first question
-            selectedQuestion = setDifficultyLevel();
-            usedQuestions.push(selectedQuestion.id);
-            console.log('Used Questions:', usedQuestions);
-            displayQuestion();
-            counter = timer(30);
-            document.querySelector('section#question-container h2').style.visibility = 'visible';
-            document.querySelector('#question-text').style.visibility = 'visible';
-            highlightPrize();
-        }, 1000);
-    }
+    let countdownId = setInterval(() => {
+        if (countdownLeft > 1) {
+            countdownLeft--;
+            countdown.innerHTML = countdownLeft;
+        } else {
+            countdown.innerHTML = `GO`;
+            clearInterval(countdownId);
+            setTimeout(() => {
+                countdownSection.style.display = 'none';
+                // selects and displays first question
+                selectedQuestion = setDifficultyLevel();
+                usedQuestions.push(selectedQuestion.id);
+                console.log('Used Questions:', usedQuestions);
+                displayQuestion();
+                counter = timer(30);
+                document.querySelector('section#question-container h2').style.visibility = 'visible';
+                document.querySelector('#question-text').style.visibility = 'visible';
+                highlightPrize();
+            }, 1000);
+        }
     }, 1000);
-    // end -> Countdown to Start [Lightbox]
+    // Countdown to Start [Lightbox] <-- [End]
 
-    // --> Life Lines <-- [Start]
-    // lifeline to remove 1 option
+    // LIFELINES <-- [Start]
+    // removes 1 wrong option
     lifelineRemoveOne.addEventListener('click', function() {
         randomChoiceRemove(1);
-        // disables button with css
-        this.classList.add("disabled-button");
+        this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
 
-    // lifeline to remove 2 options
+    // removes 2 wrong options
     lifelineRemoveTwo.addEventListener('click', function() {
         randomChoiceRemove(2);
-        // disables button with css
-        this.classList.add("disabled-button");
+        this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
 
-    // lifeline to add 30 seconds more to the timer
+    // adds 30 seconds more to the timer
     lifelineAddToTimer.addEventListener('click', function() {
         clearInterval(counter.id);
         counter.id = addMoreTime(30);
-        // disables button with css
-        this.classList.add("disabled-button");
+        this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
-    // --> Life Lines <-- [End]
+    // LIFELINES <-- [End]
 
     // ANSWER OPTIONS/BUTTONS <-- [Start]
     // Option A button
@@ -388,14 +389,12 @@ if (document.getElementById('gamepage-body')) {
     });
     // ANSWER OPTIONS/BUTTONS <-- [End]
 
-    // Event listener for 'How to Play' link
-    const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
+    // 'How to Play' link Event Listener
     howToPlayLink.addEventListener('click', function() {
         howToPlayLightbox();
     });
 
-    // Event listener for 'Quit' link
-    const quitLink = document.getElementById('quit-link');
+    // 'Quit' link Event Listener
     quitLink.addEventListener('click', function() {
         quit();
     });
