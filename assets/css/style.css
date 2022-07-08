@@ -174,11 +174,11 @@ nav {    /* contains logo & nav menu */
     width: 100%;
 }
 
-#logo-nav > a {    /* clickable logo */
+#logo-nav {    /* clickable logo */
     color: var(--clr-burlywood);
 }
 
-#logo-nav span {
+#logo-nav > span {
     font-size: 1.1rem;
 }
 
