@@ -326,7 +326,7 @@ nav {    /* contains logo & nav menu */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.2rem 1.5rem;
+    padding: 0 1rem;
     position: relative;
     text-align: center;
     min-height: 8rem;
@@ -775,15 +775,15 @@ nav {    /* contains logo & nav menu */
         border: 3px solid var(--clr-burlywood);
         border-radius: 10px;
         box-sizing: border-box;
-        height: 42rem;
+        height: 38rem;
     }
 
     #money-container {
-        height: 4rem;
+        height: 3.2rem;
     }
     
     #money-list {
-        margin: .8rem;
+        margin: .6rem;
         row-gap: .5rem;
     }
 
@@ -797,7 +797,8 @@ nav {    /* contains logo & nav menu */
     }
 
     #question-container {
-        min-height: 10rem;
+        min-height: 9rem;
+        padding: 0 1.2rem;
     }
 
     .answer-button {
@@ -870,6 +871,7 @@ nav {    /* contains logo & nav menu */
 
     #question-container {
         min-height: 10rem;
+        padding: 0 1.5rem;
         width: 37rem;
     }
 
