@@ -278,6 +278,13 @@ nav {    /* contains logo & nav menu */
     color: var(--clr-raisin-black);
 }
 
+.star {
+    position: absolute;
+    left: -10px;
+    top: -7px;
+    width: 3.2rem;
+}
+
 #life-lines {
     display: flex;
     column-gap: 2rem;
@@ -765,6 +772,11 @@ nav {    /* contains logo & nav menu */
         row-gap: .5rem;
     }
 
+    .star {
+        left: -5px;
+        width: 3.2rem;
+    }
+
     #player-wrapper > * {
         font-size: 1rem;
     }
@@ -1066,6 +1078,12 @@ nav {    /* contains logo & nav menu */
 
     .highlight-prize {
         min-width: 100%;
+    }
+
+    .star {
+        top: -6px;
+        left: 0;
+        width: 2.5rem;
     }
 
     #question-container {

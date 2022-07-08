@@ -340,7 +340,7 @@ if (document.getElementById('gamepage-body')) {
                 counter = timer(30);
                 document.querySelector('section#question-container h2').style.visibility = 'visible';
                 document.querySelector('#question-text').style.visibility = 'visible';
-                highlightPrize();
+                highlightNextPrize();
             }, 1000);
         }
     }, 1000);
@@ -398,6 +398,7 @@ function playGame(thisBtn, timerId) {
     if (answerChecker(thisBtn.innerText.slice(3))) {
         setTimeout(() => {
             revealCorrectAnswer(thisBtn);
+            highlightEarnedPrize();
             setTimeout(() => {
                 clicksBlocker.remove();
                 thisBtn.classList.remove('correct-answer');
@@ -407,7 +408,7 @@ function playGame(thisBtn, timerId) {
                     usedQuestions.push(selectedQuestion.id);
                     console.log('Used Questions:', usedQuestions);
                     displayQuestion();
-                    highlightPrize();
+                    highlightNextPrize();
                     displayEarnedMoney();
                     undisableOptionBtns();
                 } else {
@@ -714,16 +715,25 @@ function prizeMoney(qNum) {
 }
 
 /**
- * Provides styling to current and previous prize money
+ * Highlights the next prize money
  */
-function highlightPrize() {
-    let currentPrize = prizeMoney(questionNumber.innerText).current;
-    let previousPrize = prizeMoney(questionNumber.innerText).previous;
-    currentPrize.classList.add('current-prize');
+function highlightNextPrize() {
+    const currentPrize = prizeMoney(questionNumber.innerText).current;
+    currentPrize.classList.add('highlight-prize');
     currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
-    if (previousPrize) {
-        previousPrize.style.opacity = 0.5;
-    }
+}
+
+/**
+ * Highlights the prize money already earned
+ */
+function highlightEarnedPrize() {
+    const currentPrize = prizeMoney(questionNumber.innerText).current;
+    const newImg = document.createElement('img');
+    newImg.setAttribute('src', 'assets/images/star-icon.png');
+    newImg.setAttribute('class', 'star');
+    newImg.setAttribute('alt', 'star icon');
+    currentPrize.appendChild(newImg);
+    currentPrize.style.boxShadow = 'none';
 }
 
 /**
