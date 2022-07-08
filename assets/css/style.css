@@ -30,16 +30,6 @@
     visibility: hidden;
 }
 
-.highlight-prize {
-    background-color: #4dba4d;
-    box-sizing: border-box;
-    box-shadow: 0 0 5px 5px var(--clr-light-silver);
-    border-radius: 10px;
-    min-width: 70%;
-    text-align: center;
-    padding: 0 1rem;
-}
-
 .overlay-bg {    /* covers entire body element */
     display: flex;
     align-items: center;
@@ -259,6 +249,16 @@ nav {    /* contains logo & nav menu */
     margin: .2rem 0;
     position: relative;
     color: var(--clr-raisin-black);
+}
+
+.highlight-prize {    /* highlight for cash prizes */
+    background-color: #4dba4d;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px 5px var(--clr-light-silver);
+    border-radius: 10px;
+    min-width: 70%;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .star {
