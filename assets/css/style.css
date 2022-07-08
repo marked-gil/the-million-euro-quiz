@@ -164,7 +164,7 @@ nav {    /* contains logo & nav menu */
     width: 100%;
 }
 
-#logo-nav {    /* clickable logo */
+#logo-nav {
     color: var(--clr-burlywood);
 }
 
@@ -824,6 +824,28 @@ nav {    /* contains logo & nav menu */
 }
 
 @media (min-width: 600px) {
+    /* HOME PAGE */
+    #logo-wrapper {
+        height: 7rem;
+    }
+    
+    #logo-homepage {
+        font-size: 3rem;
+        line-height: 7rem;
+        width: 20rem;
+    }
+    
+    #logo-span-1 {
+        font-size: 2.2rem;
+        position: absolute;
+        top: -2.8rem;
+    }
+    
+    #logo-span-2 {
+        font-size: 2.2rem;
+        top: 2.8rem;
+    }
+
     /* GAME PAGE */
     #logo-wrapper-nav {
         height: 4rem;
