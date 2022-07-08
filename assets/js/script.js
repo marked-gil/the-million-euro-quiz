@@ -56,7 +56,7 @@ let easyQuestions = [
 	},
     {
         id: 10,
-        question: "What planet is closest to the sun? ",
+        question: "What planet is closest to the sun?",
         correctAnswer: "Mercury",
         wrongAnswers: ["Saturn", "Venus", "Pluto"]
 	},
@@ -392,7 +392,7 @@ let selectedQuestion;       // variable for randomly selected question (object)
 let counter;                // variable containing id of timer() (object)
 
 if (document.getElementById('gamepage-body')) {
-	// display player's name and cash earned and 
+    // display player's name and cash earned and 
     // protects gamepage from access without username entered
      let playerName = getPlayerName();
      if (playerName !== null) {
@@ -411,7 +411,7 @@ if (document.getElementById('gamepage-body')) {
             countdown.innerHTML = countdownLeft;
         } else {
             countdown.innerHTML = `GO`;
-            clearInterval(countdownId);
+            stopTimer(countdownId);
             setTimeout(() => {
                 countdownSection.classList.remove('overlay-bg');
                 countdownSection.classList.add('hide');
@@ -442,7 +442,7 @@ if (document.getElementById('gamepage-body')) {
     }, {once: true});
     // adds 30 seconds more to the timer
     lifelineAddToTimer.addEventListener('click', function() {
-        clearInterval(counter.id);
+        stopTimer(counter.id);
         counter.id = addMoreTime(30);
         this.classList.add("disabled-button");    // disables button with css
     }, {once: true});
@@ -475,7 +475,7 @@ if (document.getElementById('gamepage-body')) {
  * @param {*} timerId - The id of the timer() function (setInterval)
  */
 function playGame(thisBtn, timerId) {
-    clearInterval(timerId);
+    stopTimer(timerId);
     disableOptionBtns(thisBtn);
     let clicksBlocker = blockClicks();
     if (answerChecker(thisBtn.innerText.slice(3))) {
@@ -646,7 +646,7 @@ function timer(num) {
             timerValue.innerText = timeLeft + 1;
         } else {
             gameOver();
-            clearInterval(timeInterval);
+            stopTimer(timeInterval);
         }
     }, 1000);
     return {id: timeInterval};
@@ -660,6 +660,14 @@ function timer(num) {
 function addMoreTime(numToAdd) {
     let num = parseInt(timerValue.innerText) + numToAdd;
     return timer(num).id;
+}
+
+/**
+ * Stops timer created by setInterval() function
+ * @param {number} timerId - The setInterval Id
+ */
+function stopTimer(timerId) {
+    clearInterval(timerId);
 }
 
 /**
@@ -836,7 +844,7 @@ function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
     const playerName = document.getElementById('username-gamewon');
     
-    clearInterval(counter.id);
+    stopTimer(counter.id);
     moneyEarned.innerText = '1,000,000';
     playerName.innerText = playerNameHolder.innerText;
     gameWonSection.classList.remove('hide');
@@ -856,7 +864,7 @@ function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
     quitSection.classList.remove('hide');
     quitSection.classList.add('overlay-bg');
-    clearInterval(counter.id);
+    stopTimer(counter.id);
     const playAgainQuitter = document.getElementById('play-again-quitter');
     playAgainQuitter.addEventListener('click', function() {
         location.reload();
