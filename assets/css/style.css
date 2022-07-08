@@ -17,24 +17,6 @@
 }
 
 /* UTILITIES */
-.correct-answer::after {
-    content: '✔';
-    font-size: 3rem;
-    position: absolute;
-    top: -1rem;
-    left: 3%;
-    opacity: .8;
-}
-
-.wrong-answer:after {
-    content: '✘';
-    font-size: 3rem;
-    position: absolute;
-    top: -1rem;
-    left: 3%;
-    opacity: .8;
-}
-
 .disabled-button {
     opacity: .2;
     pointer-events: none;
@@ -397,6 +379,22 @@ nav {    /* contains logo & nav menu */
     color: var(--clr-snow);
     text-shadow: 0 0 10px var(--clr-raisin-black);
     position: relative;
+}
+
+.correct-answer::after {
+    content: url('../images/checked.png');
+    transform: scale(.3);
+    position: absolute;
+    top: -50px;
+    left: -35px;
+}
+
+.wrong-answer:after {
+    content: url('../images/cross.png');
+    transform: scale(.25);
+    position: absolute;
+    top: -45px;
+    left: -45px;
 }
 /* GAME PAGE [End] */
 
@@ -806,6 +804,14 @@ nav {    /* contains logo & nav menu */
         min-height: 3rem;
     }
 
+    .correct-answer::after {
+        top: -45px;
+    }
+
+    .wrong-answer:after {
+        top: -42px;
+    }
+
     /* HOW TO PLAY lightbox */
     #howtoplay-inner-wrapper {
         font-size: 1rem;
@@ -877,6 +883,14 @@ nav {    /* contains logo & nav menu */
 
     .answer-button {
         min-height: 3.5rem;
+    }
+
+    .correct-answer::after {
+        top: -40px;
+    }
+
+    .wrong-answer:after {
+        top: -38px;
     }
 
     /* 404 PAGE */
@@ -1040,6 +1054,15 @@ nav {    /* contains logo & nav menu */
     .answer-button {
         font-size: 1.1rem;
         width: 49%;
+    }
+
+    .correct-answer::after {
+        transform: scale(.35);
+     }
+
+     .wrong-answer:after {
+        transform: scale(.3);
+        left: -42px;
     }
 } 
 
