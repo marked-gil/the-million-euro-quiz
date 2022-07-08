@@ -167,7 +167,7 @@ body {
 #gamepage-body {
     display: flex;
     flex-direction: column;
-    row-gap: 1rem;
+    row-gap: .5rem;
 }
 
 nav {    /* contains logo & nav menu */
@@ -229,23 +229,24 @@ nav {    /* contains logo & nav menu */
     padding: 1rem 0;
 }
 
-#player-wrapper {    /* container for player's name & cash earned */
-    border-radius: 8px;
+#player-wrapper {    /* for player's name & cash earned */
+    border-radius: 6px;
     box-sizing: border-box;
     display: flex;
+    column-gap: .5rem;
+    align-items: center;
     justify-content: space-between;
     width: 90%;
 }
 
 #player-wrapper > * {
     font-size: .9rem;
-    background-color: #145430;
-    border-radius: 5px;
-    padding: .5rem .6rem;
 }
 
-#player-wrapper > h2 {
-    width: 50%;
+#player-wrapper > p {
+    background-color: #354d30;
+    border-radius: 4px;
+    padding: .5rem 1rem;
 }
 
 #player-name,
@@ -451,6 +452,7 @@ nav {    /* contains logo & nav menu */
 /* ENTER NAME Lightbox [Start] */
 #username-inner-wrapper {
     background-color: var(--clr-raisin-black);
+    border: 2px solid var(--clr-sea-green);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -592,12 +594,15 @@ nav {    /* contains logo & nav menu */
 /* GAME OVER Lightbox [Start] */
 #gameover-inner-wrapper {
     background-color: var(--clr-raisin-black);
+    border: 2px solid var(--clr-sea-green);
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     row-gap: .5rem;
     width: 78%;
-    padding: 1.7rem 1.5rem;
+    height: 18rem;
+    padding: 1.7rem 1rem;
 }
 
 #gameover-inner-wrapper h2 {    /* Game Over heading */
@@ -661,9 +666,12 @@ nav {    /* contains logo & nav menu */
     text-align: center;
 }
 
-#gamewon-inner-wrapper #grand-prize {
-    color: #0d4316;
-    border-bottom: 4px solid var(--clr-pine-tree);
+#grand-prize {
+    display: block;
+    color: #091a20;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    font-size: 2rem;
 }
 
 /* buttons - Game Won */
@@ -684,6 +692,7 @@ nav {    /* contains logo & nav menu */
 /* QUIT Lightbox [Start] */
 #quit-inner-wrapper {
     background-color: var(--clr-raisin-black);
+    border: 2px solid var(--clr-sea-green);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -732,18 +741,22 @@ nav {    /* contains logo & nav menu */
         box-shadow: 0 0 2px 2px var(--clr-sea-green);
         cursor: pointer;
     }
+
     #nav-menu li:hover {
         background-color: var(--clr-deep-moss);
         border-radius: 6px;
     }
+
     .life-line-item:hover {
         background-color: var(--clr-snow);
     }
+
     #close-username:hover,
     #close-howtoplay:hover {
         color: var(--clr-ufo-green);
         cursor: pointer;
     }
+
     .answer-button:hover {
         background-color: var(--clr-sea-green);
         box-shadow: 0 0 0 2px var(--clr-sea-green);
@@ -756,11 +769,15 @@ nav {    /* contains logo & nav menu */
         font-size: 1.1rem;
     }
 
+    #nav-menu li {
+        padding: .2rem .8rem;
+    }
+
     #game-area {
         border: 3px solid var(--clr-burlywood);
         border-radius: 10px;
         box-sizing: border-box;
-        height: 39rem;
+        height: 42rem;
     }
 
     #money-container {
@@ -775,10 +792,6 @@ nav {    /* contains logo & nav menu */
     .star {
         left: -5px;
         width: 3.2rem;
-    }
-
-    #player-wrapper > * {
-        font-size: 1rem;
     }
 
     #player-name {
@@ -829,7 +842,7 @@ nav {    /* contains logo & nav menu */
     }
 
     #player-wrapper > * {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     #player-name {
@@ -1000,10 +1013,6 @@ nav {    /* contains logo & nav menu */
         font-size: 1.2rem;
     }
 
-    #player-wrapper > h2 {
-        width: 50%;
-    }
-
     #player-name,
     #money-earned {
         font-size: 1.5rem;
@@ -1036,6 +1045,10 @@ nav {    /* contains logo & nav menu */
 
 @media (min-width: 1080px) {
 	/* GAME PAGE*/
+    #game-area-wrapper {
+        padding: 0 1rem;
+    }
+
     #game-area {
         align-items: flex-start;
         box-sizing: border-box;
