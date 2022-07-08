@@ -331,9 +331,7 @@ if (document.getElementById('homepage-body')) {
     });
 
     // displays 'How to Play' lightbox
-    howToPlayBtn.addEventListener('click', () => {
-        howToPlayLightbox();
-    });
+    howToPlayBtn.addEventListener('click', () => howToPlayLightbox());
     
     const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
@@ -394,7 +392,8 @@ let selectedQuestion;       // variable for randomly selected question (object)
 let counter;                // variable containing id of timer() (object)
 
 if (document.getElementById('gamepage-body')) {
-     // display player's name and money earned
+	// display player's name and cash earned and 
+    // protects gamepage from access without username entered
      let playerName = getPlayerName();
      if (playerName !== null) {
          playerNameHolder.innerText = playerName;
@@ -664,38 +663,6 @@ function addMoreTime(numToAdd) {
 }
 
 /**
- * Displays Game Over lightbox with player's name and money
- * earned 
- */
-function gameOver() {
-    const gameOverPopUp = document.getElementById('gameover-outer-wrapper');
-    const playAgainLoser = document.getElementById('play-again-gameover');
-    const prizeWon = document.getElementById('prize-won');
-    const playerName = document.getElementById('username-gameover');
-    const addOnText = document.querySelector('.not-bad');
-
-    // Add 'Not bad!' message to game over lightbox if cash is earned
-    if (moneyEarned.innerText !== '0') {
-        addOnText.classList.remove('hide');
-    }
-
-    // Close 'How to Play' lightbox if it is open
-    if (document.getElementById('howtoplay-inner-wrapper')) {
-        document.getElementById('howtoplay-inner-wrapper').remove();
-        document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
-        document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
-    }
-
-    playerName.innerText = playerNameHolder.innerText;
-    prizeWon.innerText = moneyEarned.innerText;
-    gameOverPopUp.classList.remove('hide');
-    gameOverPopUp.classList.add('overlay-bg');
-    playAgainLoser.addEventListener('click', () => {
-        location.reload();
-    });
-}
-
-/**
  * Randomly removes wrong option/s for the answer to the question
  * @param {number} num - Number of wrong options to remove
  */
@@ -733,8 +700,7 @@ function undisableOptionBtns() {
  * @returns randomly selected question
  */
 function setDifficultyLevel() {
-    /* Returns the randomly selected question based on 
-    question Category (questCategory) */
+    /* Returns selected question based on question Category (questCategory) */
     const questionSelection = (quesCategory) => {
         let questionSelected = questionRandomizer(quesCategory);
         while (usedQuestions.includes(questionSelected.id)) {
@@ -742,7 +708,6 @@ function setDifficultyLevel() {
         }
         return questionSelected;
     };
-
     // returns the newly selected question based on difficulty level
     let newQuestion;
     if (usedQuestions.length <= 4){
@@ -832,6 +797,38 @@ function displayEarnedMoney() {
 }
 
 /**
+ * Displays Game Over lightbox with player's name and money
+ * earned 
+ */
+ function gameOver() {
+    const gameOverPopUp = document.getElementById('gameover-outer-wrapper');
+    const playAgainLoser = document.getElementById('play-again-gameover');
+    const prizeWon = document.getElementById('prize-won');
+    const playerName = document.getElementById('username-gameover');
+    const addOnText = document.querySelector('.not-bad');
+
+    // Add 'Not bad!' message to game over lightbox if cash is earned
+    if (moneyEarned.innerText !== '0') {
+        addOnText.classList.remove('hide');
+    }
+
+    // Close 'How to Play' lightbox if it is open
+    if (document.getElementById('howtoplay-inner-wrapper')) {
+        document.getElementById('howtoplay-inner-wrapper').remove();
+        document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
+        document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
+    }
+
+    playerName.innerText = playerNameHolder.innerText;
+    prizeWon.innerText = moneyEarned.innerText;
+    gameOverPopUp.classList.remove('hide');
+    gameOverPopUp.classList.add('overlay-bg');
+    playAgainLoser.addEventListener('click', () => {
+        location.reload();
+    });
+}
+
+/**
  * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons,
  * and set the earned money to €1,0000,000 
  */
@@ -851,6 +848,10 @@ function gameWon() {
     });
 }
 
+/**
+ * Quits the current game by stopping timer and providing
+ * option to reload the game.
+ */
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
     quitSection.classList.remove('hide');
