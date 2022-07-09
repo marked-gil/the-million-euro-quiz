@@ -114,6 +114,7 @@ body {
 #play-button {
     display: block;
     font-size: 1.2rem;
+    font-weight: bold;
     letter-spacing: .2rem;
     line-height: 2.1rem;
     margin: .5rem auto;
@@ -125,7 +126,7 @@ body {
 
 #howtoplay-btn-homepage {    /* 'how to play' button */
     display: block;
-    font-size: .9rem;
+    font-size: 1rem;
     letter-spacing: .1rem;
     line-height: 2.1rem;
     margin: .5rem auto;
@@ -458,7 +459,9 @@ nav {    /* contains logo & nav menu */
     justify-content: center;
     row-gap: 1.8rem;
     width: 80%;
-    height: 27rem;
+    min-height: 18rem;
+    height: 60vh;
+    max-height: 22rem;
     padding: 1rem;
     text-align: center;
     position: relative;
@@ -500,9 +503,9 @@ nav {    /* contains logo & nav menu */
 }
 
 #username-btn {
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 9rem;
-    height: 1.8rem;
+    line-height: 1.8rem;
     cursor: pointer;
 }
 
@@ -874,10 +877,6 @@ nav {    /* contains logo & nav menu */
         top: 2.8rem;
     }
 
-    #username-feedback {
-        font-size: 1rem;
-    }
-
     /* GAME PAGE */
     #gamepage-body {
         row-gap: 1rem;
@@ -973,8 +972,24 @@ nav {    /* contains logo & nav menu */
         height: 20rem;
     }
 
+    #username-inner-wrapper > h2 {
+        font-size: 1.5rem;
+    }
+    
     #username {
-        width: 14rem;
+        font-size: 1.2rem;
+        height: 2.2rem;
+        width: 16rem;
+    }
+
+    #username-btn {
+        font-size: 1.3rem;
+        line-height: 2.2rem;
+        width: 12rem;
+    }
+
+    #username-feedback {
+        font-size: 1rem;
     }
 
     /* How To Play Lightbox */
