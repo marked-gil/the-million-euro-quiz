@@ -139,7 +139,6 @@ body {
 #gamepage-body {
     display: flex;
     flex-direction: column;
-    row-gap: .5rem;
 }
 
 nav {    /* contains logo & nav menu */
@@ -193,10 +192,10 @@ nav {    /* contains logo & nav menu */
 
 #game-area {
     display: flex;
+    row-gap: 1rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 33rem;
     width: 100%;
     padding: 1rem 0;
 }
@@ -326,7 +325,8 @@ nav {    /* contains logo & nav menu */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 1rem;
+    margin-top: 1.5rem;
+    padding: .5rem 1rem;
     position: relative;
     text-align: center;
     min-height: 8rem;
@@ -336,20 +336,20 @@ nav {    /* contains logo & nav menu */
 #question-container > h2 {
     visibility: hidden;
     text-shadow: 0 0 5px var(--clr-raisin-black);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 #question-text {
     visibility: hidden;
     color: var(--clr-snow);
     text-shadow: 0 0 5px var(--clr-raisin-black);
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin: .8rem 0 0;
 }
 
 #timer {
     background-color: #264137;
-    border: 2px solid black;
+    border: 2px solid var(--clr-light-silver);
     border-radius: 50%;
     font-size: 1.7rem;
     line-height: 2.6rem;
@@ -357,8 +357,8 @@ nav {    /* contains logo & nav menu */
     height: 2.6rem;
     width: 2.6rem;
     position: absolute;
-    right: 8%;
-    top: .5rem;
+    right: 1rem;
+    top: -1.5rem;
 }
 
 #answers-container {
@@ -761,8 +761,26 @@ nav {    /* contains logo & nav menu */
     }
 }
 
+@media (min-width: 360px) {
+    #question-container {
+        margin-top: 0;
+    }
+
+    #question-container > h2 {
+        font-size: 1.1rem;
+    }
+    
+    #question-text {
+        font-size: 1.1rem;
+    }
+}
+
 @media (min-width: 390px) {
     /* GAME PAGE */
+    #gamepage-body {
+        row-gap: .5rem;
+    }
+
     #nav-menu {
         font-size: 1.1rem;
     }
@@ -775,7 +793,6 @@ nav {    /* contains logo & nav menu */
         border: 3px solid var(--clr-burlywood);
         border-radius: 10px;
         box-sizing: border-box;
-        height: 38rem;
     }
 
     #money-container {
@@ -797,12 +814,21 @@ nav {    /* contains logo & nav menu */
     }
 
     #question-container {
+        margin-top: 1rem;
         min-height: 9rem;
-        padding: 0 1.2rem;
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
+
+    #timer {
+        font-size: 2rem;
+        line-height: 3.2rem;
+        height: 3.2rem;
+        width: 3.2rem;
     }
 
     .answer-button {
-        min-height: 3rem;
+        min-height: 2.8rem;
     }
 
     .correct-answer::after {
@@ -847,6 +873,10 @@ nav {    /* contains logo & nav menu */
     }
 
     /* GAME PAGE */
+    #gamepage-body {
+        row-gap: 1rem;
+    }
+
     #logo-wrapper-nav {
         height: 4rem;
     }
@@ -867,7 +897,6 @@ nav {    /* contains logo & nav menu */
     #game-area {
         margin: 0 auto;
         width: 37.5rem;
-        height: 46rem;
     }
 
     #player-wrapper > * {
@@ -892,13 +921,19 @@ nav {    /* contains logo & nav menu */
     }
 
     #question-container {
+        margin-top: 1.5rem;
         min-height: 10rem;
-        padding: 0 1.5rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
         width: 37rem;
     }
 
     #question-text {
         font-size: 1.2rem;
+    }
+    
+    #timer {
+        right: 2rem;
     }
 
     #answers-container {
@@ -1037,8 +1072,7 @@ nav {    /* contains logo & nav menu */
     }
 
     #game-area {
-        height: 38rem;
-        margin: 0 auto;
+        margin: 0 auto 3rem;
         padding: 1.5rem 1rem;
         width: 55rem;
     }
@@ -1062,7 +1096,26 @@ nav {    /* contains logo & nav menu */
     }
 
     #question-container {
+        padding-left: 3rem;
+        padding-right: 3rem;
         width: 54rem;
+    }
+
+    #question-container > h2 {
+        font-size: 1.3rem;
+    }
+
+    #question-text {
+        font-size: 1.3rem;
+    }
+
+    #timer {
+        font-size: 2.5rem;
+        line-height: 4.5rem;
+        height: 4.5rem;
+        width: 4.5rem;
+        top: -2.4rem;
+        right: 3rem;
     }
 
     #answers-container {
@@ -1076,7 +1129,7 @@ nav {    /* contains logo & nav menu */
     }
 
     .answer-button {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         width: 49%;
     }
 
@@ -1111,15 +1164,23 @@ nav {    /* contains logo & nav menu */
         width: 50%;
     }
 
+    #life-lines {
+        width: 74%;
+    }
+
+    #life-lines > h2 {
+        font-size: 1.3rem;
+    }
+
     #money-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        box-shadow: 0 0 10px 5px #8ecd21;
+        box-shadow: 0 0 10px 5px var(--clr-sea-green);
         height: 35rem;
         width: 15rem;
         position: absolute;
-        top: 1rem;
+        top: .5rem;
         right: 1.5rem;
     }
 
@@ -1148,10 +1209,21 @@ nav {    /* contains logo & nav menu */
 
     #question-container {
         width: 74%;
-        height: 12rem;
+        min-height: 12rem;
     }
 
     #answers-container {
         width: 74%;
+    }
+
+    /* COUNTDOWN TO START Lightbox*/
+    #countdown-inner-wrapper {
+        width: 20rem;
+        height: 20rem;
+    }
+    
+    #countdown {
+        font-size: 14rem;
+        line-height: 20rem;
     }
 }
