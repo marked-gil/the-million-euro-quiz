@@ -507,8 +507,10 @@ nav {    /* contains logo & nav menu */
 }
 
 #username-feedback {
+    font-size: .9rem;
     display: block;
     height: 2rem;
+    padding: 0 1rem;
 }
 /* ENTER NAME Lightbox [End] */
 
@@ -870,6 +872,10 @@ nav {    /* contains logo & nav menu */
     #logo-span-2 {
         font-size: 2.2rem;
         top: 2.8rem;
+    }
+
+    #username-feedback {
+        font-size: 1rem;
     }
 
     /* GAME PAGE */
