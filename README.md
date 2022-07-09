@@ -179,10 +179,19 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
 
 ## FEATURES
 
-### Home Page
+### **Home Page**
+The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').
 <!-- Screenshot of Home Page -->
-* Play Button
-* 'How To Play' Button
+* **'Enter Player's Name' Lightbox**    
+    When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before entering the game page.     
+    <!-- Screenshot of 'Enter Player's Name' -->
+    * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
+    * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.  
+    
+* **'How To Play' Lightbox**    
+    When the 'How to Play' button is clicked, this lightbox will pop up which contains the instruction for, or mechanics of, the quiz game.
+    <!-- Screenshot of 'How to Play' Button -->
+    * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.
 
 ### Game Page
 <!-- Screenshot of Game Page for large screens -->
