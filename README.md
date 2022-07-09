@@ -320,17 +320,39 @@ To clone the repository for this site, do the following steps:
 6. A copy of the repository is now saved in your computer.
 
 ## TECHNOLOGIES
-The following technologies are used in this website:
-
+The following technologies are used in this website:    
 * Programming Languages: 
-    * Javascript
-    * HTML
-    * CSS
+    * **Javascript**
+    * **HTML** - Hypertext Markup Language
+    * **CSS** - Casscading Style Sheets     
+
+* [**Gitpod**](https://gitpod.io/) — the cloud-based IDE (Integrated Developer Environment) used to build this site.
+* **Git** — as a version control system, is made use of to monitor and record changes made when building the site. This allows for the restoration of an earlier version of the code should it be necessary.
+* [**GitHub**](https://github.com/) — stores the source code repository for this website.
+* [**GitHub Pages**](https://pages.github.com/) — hosts the live website.
+* [**Google Fonts**](https://fonts.google.com/) — provides the fonts used in this website. (see [Design Choices](#design-choices))
+* [**Font Awesome**](https://fontawesome.com/) — provides the icons used for the Life lines.
+* [**Favicon.io**](https://favicon.io/) — used for the icon displayed beside the site title seen in the browser tab.
+* [**Balsalmiq**](https://balsamiq.com/) - used in creating the wireframes of this project's design concept.
 
 ## CREDITS
+* **Questions**     
+    The questions in this quiz game are taken from the following sources:
+    * [Trivia Quiz Night](https://triviaquiznight.com/easy-general-knowledge-questions-and-answers/)
+    * [Mentimeter](https://www.mentimeter.com/blog/audience-energizers/55-free-trivia-and-fun-quiz-question-templates)
+    * [Brightful.me](https://www.brightful.me/blog/general-trivia-questions/)
+    * [Express.co.uk](https://www.express.co.uk/life-style/life/1278265/100-general-knowledge-quiz-questions-and-answers)
+    * [RadioTimes](https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/)
+    * [Kidadl](https://kidadl.com/kids/trivia/hardest-trivia-questions-and-answers-to-test-the-biggest-brainiacs)
 
-### Content
+* **Main References: Go-to Sites for CSS, HTML & Javascript**    
+    * [MDN](https://developer.mozilla.org/en-US/)
+    * [W3schools](https://www.w3schools.com/)
+    * [Code Institute lessons](https://codeinstitute.net/ie/)
 
-### Media
+* **Other Sources** (See [Technologies](#technologies) section) 
+    * [Google Fonts](https://fonts.google.com/)
+    * [Fontawesome](https://fontawesome.com/)
+    * [Favicon.io](https://favicon.io/)
 
 ## ACKNOWLEDGMENT
