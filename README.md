@@ -193,31 +193,91 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
     <!-- Screenshot of 'How to Play' Button -->
     * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.
 
-### Game Page
+### **Game Page**
 <!-- Screenshot of Game Page for large screens -->
 <!-- Screenshot of Game Page for mobile screens -->
-* Navigation Bar (Logo & Nav Menu)
-* Life Lines
-* Question Area
-    * Question text
-    * Timer
-* Answers Buttons
+* **Navigation Bar** (Logo & Nav Menu)  
+    The navigation bar contains the website logo, and the nav menu.
+    * **Logo**
+    * **Nav Menu** — includes the following links: **'Home'**, **'How To Play'**, **'Quit'**
+        * **'Home'** link — redirects to the home page.
+        * **'How To Play'** link — brings out the 'How To Play' lightbox.
+        * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.
 
-### 404 Page
- <!-- screenshot here  -->
+* **Player**    
+    The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
 
-### Features for the Future
-* 
+* **Cash**  
+    This is the current cash earned by the player displayed at the top right of the game area.
+
+* **Cash Prizes Box**   
+    This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific cash amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
+    The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
+
+* **Life Lines**    
+    The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.
+    The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.
+    <!-- Screenshot of life linees -->
+
+* **Question Area**     
+    The question area consists of the question number, the main question, and the timer.
+
+    * **Question**  
+    There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
+
+    * **Timer**     
+    Each question has an allotted time of 30 seconds. The player has to choose and click their answer before this allotted time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever prize is equivalent to their last level in the game.
+
+* **Answer Buttons**    
+    As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
+
+    Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
+
+    If the selected answer is correct, the game will proceed to the next question and timer will reset. If answer is wrong, the game will be over and the player gets whatever prize is equivalent to their last level in the game.
+
+* **'Game Over' Lightbox**  
+    The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.
+    <!-- screenshot of Game Over lightbox -->
+
+* **'Game Won' Lightbox**   
+    The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.
+    <!-- screenshot of Game Won lightbox -->
+
+* **'Quit' Lightbox**   
+    In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.
+    <!-- screenshot of Quit lightbox -->
+
+* **'How To Play' Lightbox**   
+    This link can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing and game will be over when time runs out. This is intended to protect the integrity of the game session.
+    <!-- screenshot of How to Play lightbox -->
+
+### **404 Page**  
+The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.
+ <!-- screenshot of 404 Page  -->
+
+### **Features for the Future**
+* In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
 
 ## FIXED BUGS
-* ISSUE:
-    * INTENDED OUTCOME:
-    * SOLUTION:
+* **ISSUE:**   
+    This site has 3 pages (html files) and using only 1 javascript file. When I ran the 'game page', it works perfectly fine without errors. But, when I went to the 'home page', an error showed up in the console: `Uncaught TypeError: Cannot set properties of null (setting ‘innerText’) at displayQuestion`.
+    * **INTENDED OUTCOME**:   
+    I expect no error to show up even in the console when I go to any pages of the site.
+
+    * **SOLUTION**:     
+    As advised in [stackoverflow](https://stackoverflow.com/questions/44182660/add-eventlistener-to-only-one-html-page), I added an ID name to the `<body>` element and used an `if statement` so the codes intended for the gamepage would only run if the current location the user is at is the 'game page'.
+
+* **ISSUE:**    
+    On a mobile device, when I tap on a hoverable button, the hover style sticks on the screen.
+    * **INTENDED OUTCOME**:     
+    I expect that in mobile devices, the hover style on buttons will not show up or stick to the screen.
+    
+    * **SOLUTION**:
+    As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling will only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
+
 
 ## BUGS LEFT TO FIX
-* ISSUE:
-    * INTENDED OUTCOME:
-    * REASON NOT FIXED:
+
 
 ## TESTING
 ### Responsiveness
