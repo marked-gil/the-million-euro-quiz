@@ -293,13 +293,31 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 
 ## DEPLOYMENT
 
-### Version Control
+### **Version Control**
+In developing this site, **git** was a crucial tool used to track changes made in the repository. The following **git** commands were mainly used:      
+* `git status` — to show the status of the repository by displaying the files that have been staged and are ready for commit, those that are not, and those that are untracked.
+* `git add <file name>` — to add file or changes in the file to the staging area before they can be commited
+* `git commit -m "message"` — to add/record file or changes to the local repository
+* `git push` — to upload the local repository to the remote repository, such as GitHub
 
-### Github Pages Deployment
+### **Github Pages Deployment**
+This website is published on [GitHub Pages](https://pages.github.com/). The following were the steps in deploying the site:
+1. Inside the Github repository of 'the-million-euro-asia', I clicked 'Settings' on the menu just below the respository name.
+2. Then, among the options on the left sidebar, I clicked on 'Pages'.
+3. On the right side of the sidebar, I looked for 'Source', and under that was a dropdown menu for 'Branch'.
+4. I clicked on the dropdown menu for Branch, and selected 'main'.
+5. Then, I clicked 'Save' button. The deployed website was'live' after few minutes.
+
 View the live website here: https://marked-gil.github.io/the-million-euro-quiz/
 
-### Cloning from Github
-
+### **Cloning from Github**
+To clone the repository for this site, do the following steps:  
+1. Go to this url: https://github.com/marked-gil/the-million-euro-quiz
+2. Inside the repository, look for the button labeled as '**Code**', which is along the rows with other buttons such as 'Got to file' and 'Add file'.
+3. Click on the '**Code**' button, and a small popup box will show up with a top heading of '**Clone**'.
+4. In the popup box, click on the 'HTTPS' link and copy the url just below it.
+5. Then, go to your computer's terminal and type `git clone <url of the repository>`.
+6. A copy of the repository is now saved in your computer.
 
 ## TECHNOLOGIES
 The following technologies are used in this website:
