@@ -414,11 +414,8 @@ nav {    /* contains logo & nav menu */
 }
 
 #page-404-outer-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1 0 auto;
+    box-sizing: border-box;
+    padding: 10vh 0 0;
 }
 
 #page-404-inner-wrapper {
@@ -427,20 +424,24 @@ nav {    /* contains logo & nav menu */
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 70%;
+    min-height: 13.5rem;
+    height: 60vh;
+    max-height: 14rem;
+    padding-bottom: 2rem ;
 }
 
 #page-404-inner-wrapper > h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 #page-404-info-box {
-    height: 80%;
-    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
 }
 
 #page-404-info-box > p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0 10%;
     text-align: center;
 }
@@ -449,9 +450,8 @@ nav {    /* contains logo & nav menu */
     display: block;
     font-size: 1.2rem;
     line-height: 2.1rem;
-    margin: 3rem auto 0;
-    height: 2.1rem;
-    width: 16rem;
+    margin: 1.5rem auto 0;
+    width: 14rem;
     text-align: center;
 }
 /* 404 PAGE [End] */
@@ -981,12 +981,23 @@ nav {    /* contains logo & nav menu */
     }
 
     /* 404 PAGE */
+    #page-404-inner-wrapper {
+        max-height: 16rem;
+    }
+
     #page-404-inner-wrapper > h1 {
         font-size: 2rem;
     }
 
     #page-404-info-box > p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        padding: 0 5rem;
+    }
+
+    #page-404-info-box > a {
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+        width: 16rem;
     }
 
 	/* ENTER NAME Lightbox */
@@ -1183,6 +1194,11 @@ nav {    /* contains logo & nav menu */
      .wrong-answer:after {
         transform: scale(.3);
         left: -42px;
+    }
+
+    /* 404 PAGE */
+    #page-404-info-box > p {
+        font-size: 1.5rem;
     }
 } 
 
