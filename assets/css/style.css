@@ -612,8 +612,8 @@ nav {    /* contains logo & nav menu */
 }
 
 #gameover-inner-wrapper h2 {    /* Game Over heading */
-    color: var(--clr-sea-green);
-    font-size: 1.8rem;
+    color: var(--clr-dark-sea);
+    font-size: 2rem;
     margin-bottom: .5rem;
 }
 
@@ -654,8 +654,8 @@ nav {    /* contains logo & nav menu */
 }
 
 #gamewon-inner-wrapper h2 {    /* Game Won heading */
-    color: var(--clr-sea-green);
-    font-size: 1.8rem;
+    color: var(--clr-dark-sea);
+    font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -709,8 +709,8 @@ nav {    /* contains logo & nav menu */
 }
 
 #quit-inner-wrapper h2 {    /* Quit heading */
-    color: var(--clr-sea-green);
-    font-size: 1.8rem;
+    color: var(--clr-dark-sea);
+    font-size: 2rem;
     margin-bottom: 1.5rem;
 }
 
