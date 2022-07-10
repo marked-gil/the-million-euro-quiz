@@ -7,7 +7,6 @@
     --clr-raisin-black: #252627;
     --clr-mughal-green: #336633;
     --clr-deep-moss: #266340;
-    --clr-ufo-green: #3cd07d;
     --clr-sea-green: #3a9561;
     --clr-dark-sea: #93C393;
     --clr-pine-tree: #2C3227;
@@ -545,7 +544,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #close-howtoplay {    /* 'x' close icon */
-    color: var(--clr-burlywood);
+    color: var(--clr-sea-green);
     font-size: 2.5rem;
     position: sticky;
     top: 0;
@@ -626,8 +625,8 @@ nav {    /* contains logo & nav menu */
 }
 
 /* buttons - Game Over */
-#gameover-inner-wrapper button,
-#gameover-inner-wrapper a {
+#gameover-inner-wrapper > button,
+#gameover-inner-wrapper > a {
     font-size: 1.2rem;
     line-height: 2.2rem;
     width: 12rem;
@@ -747,8 +746,14 @@ nav {    /* contains logo & nav menu */
     #username-btn:hover,
     #quit-inner-wrapper button:hover,
     #quit-inner-wrapper a:hover,
-    #page-404-info-box > a:hover {
-        box-shadow: 0 0 2px 2px var(--clr-sea-green);
+    #page-404-info-box > a:hover,
+    #gameover-inner-wrapper > button:hover,
+    #gameover-inner-wrapper > a:hover,
+    #gamewon-inner-wrapper > button:hover,
+    #gamewon-inner-wrapper > a:hover {
+        /* box-shadow: 0 0 2px 2px var(--clr-sea-green); */
+        background-color: var(--clr-dark-sea);
+        color: var(--clr-raisin-black);
         cursor: pointer;
     }
 
@@ -763,7 +768,7 @@ nav {    /* contains logo & nav menu */
 
     #close-username:hover,
     #close-howtoplay:hover {
-        color: var(--clr-ufo-green);
+        color: var(--clr-dark-sea);
         cursor: pointer;
     }
 
@@ -1051,8 +1056,8 @@ nav {    /* contains logo & nav menu */
         font-size: 1.6rem;
     }
 
-    #gameover-inner-wrapper button,
-    #gameover-inner-wrapper a {
+    #gameover-inner-wrapper > button,
+    #gameover-inner-wrapper > a {
         font-size: 1.3rem;
         line-height: 2.4rem;
         width: 14rem;
@@ -1064,7 +1069,7 @@ nav {    /* contains logo & nav menu */
         min-height: 16rem;
     }
     
-    #gamewon-inner-wrapper h2 {
+    #gamewon-inner-wrapper > h2 {
         font-size: 2.2rem;
     }
     
@@ -1072,12 +1077,12 @@ nav {    /* contains logo & nav menu */
         font-size: 2.2rem;
     }
 
-    #gamewon-inner-wrapper p {
+    #gamewon-inner-wrapper > p {
         font-size: 2rem;
     }
 
-    #gamewon-inner-wrapper button,
-    #gamewon-inner-wrapper a {
+    #gamewon-inner-wrapper > button,
+    #gamewon-inner-wrapper > a {
         font-size: 1.3rem;
         line-height: 2.4rem;
         width: 14rem;
