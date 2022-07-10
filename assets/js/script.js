@@ -800,7 +800,7 @@ function highlightEarnedPrize() {
 function displayEarnedMoney() {
     let moneyElement = prizeMoney(questionNumber.innerText).previous;
     let money = moneyElement.dataset.prize;
-    moneyEarned.innerText = money;
+    moneyEarned.innerText = '€' + money;
     return moneyEarned.innerText;
 }
 
