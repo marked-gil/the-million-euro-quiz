@@ -253,8 +253,7 @@ nav {    /* contains logo & nav menu */
 
 [data-prize] {
     background-color: var(--clr-dark-sea);
-    box-shadow: 0 0 3px 2px var(--clr-deep-moss);
-    box-sizing: border-box;
+    box-shadow: 0 0 3px 2px var(--clr-sea-green) inset;
     width: 70%;
     text-align: center;
     border-radius: 10px;
@@ -263,7 +262,6 @@ nav {    /* contains logo & nav menu */
     margin: .2rem 0;
     position: relative;
     color: var(--clr-raisin-black);
-    opacity: .8;
 }
 
 .highlight-prize {    /* highlight for cash prizes */
@@ -275,7 +273,6 @@ nav {    /* contains logo & nav menu */
     min-width: 70%;
     text-align: center;
     padding: 0 1rem;
-    opacity: 1;
 }
 
 .star {
