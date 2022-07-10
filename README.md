@@ -182,21 +182,21 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
 
 ### **Home Page**
 The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').
-<!-- Screenshot of Home Page -->
+![Image of Home Page](docs/homepage.png)
 * **'Enter Player's Name' Lightbox**    
     When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before entering the game page.     
-    <!-- Screenshot of 'Enter Player's Name' -->
     * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
-    * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.  
-    
+    * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.   
+    ![Image of Enter Player's Name lightbox](docs/enter-name-lightbox.png)
+
 * **'How To Play' Lightbox**    
     When the 'How to Play' button is clicked, this lightbox will pop up which contains the instruction for, or mechanics of, the quiz game.
-    <!-- Screenshot of 'How to Play' Button -->
-    * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.
+    * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.     
+    ![Image of 'How To Play' lightbox](docs/how-to-play-lightbox.png)
 
 ### **Game Page**
-<!-- Screenshot of Game Page for large screens -->
-<!-- Screenshot of Game Page for mobile screens -->
+![Image of Game Page on large screen](docs/gamepage-large.png)
+![Image of Game Page on mobile device](docs/gamepage-mobile.png)
 * **Navigation Bar** (Logo & Nav Menu)  
     The navigation bar contains the website logo, and the nav menu.
     * **Logo**
@@ -205,6 +205,8 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
         * **'How To Play'** link — brings out the 'How To Play' lightbox.
         * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.
 
+* **Countdown To Start**    
+    ![Image of countdown](docs/countdown.png)
 * **Player**    
     The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
 
@@ -213,16 +215,17 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
 
 * **Cash Prizes Box**   
     This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific cash amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
+
     The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
 
 * **Life Lines**    
     The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.
     The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.
-    <!-- Screenshot of life linees -->
+    ![Image of Life lines](docs/lifelines-image.png)
 
 * **Question Area**     
     The question area consists of the question number, the main question, and the timer.
-
+    ![Image of question area](docs/question-area.png)
     * **Question**  
     There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
 
@@ -232,29 +235,34 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
 * **Answer Buttons**    
     As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
 
+    ![Image of answer buttons](docs/answer-buttons.png)     
+
     Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
 
     If the selected answer is correct, the game will proceed to the next question and timer will reset. If answer is wrong, the game will be over and the player gets whatever prize is equivalent to their last level in the game.
 
 * **'Game Over' Lightbox**  
-    The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.
-    <!-- screenshot of Game Over lightbox -->
+    The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
+
+    ![Image of Game Over lightbox](docs/gameover-lightbox.png)  
 
 * **'Game Won' Lightbox**   
-    The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.
+    The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
+
     <!-- screenshot of Game Won lightbox -->
 
 * **'Quit' Lightbox**   
-    In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.
-    <!-- screenshot of Quit lightbox -->
+    In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
+
+    ![Image of Quit lightbox](docs/quit-lightbox.png)
 
 * **'How To Play' Lightbox**   
-    This link can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing and game will be over when time runs out. This is intended to protect the integrity of the game session.
-    <!-- screenshot of How to Play lightbox -->
+    This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
 
 ### **404 Page**  
-The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.
- <!-- screenshot of 404 Page  -->
+The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.     
+
+![Image of 404 page](docs/404page.png)
 
 ### **Features for the Future**
 * In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
@@ -276,7 +284,6 @@ The 404 Page simply informs the user that there is nothing to be found in that p
     * **SOLUTION**:
     As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling will only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
 
-
 ## BUGS LEFT TO FIX
 
 
@@ -285,7 +292,8 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 ### Accessibility
 ### Links/Buttons Functionality Testing
 ### Validator Testing
-* W3C Markup Validator
+* W3C Markup Validator      
+
 * W3C CSS Validator
 
 ### Lighthouse Testing
