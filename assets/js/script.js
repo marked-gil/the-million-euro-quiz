@@ -397,12 +397,12 @@ let counter;                // variable containing id of timer() (object)
 if (document.getElementById('gamepage-body')) {
     // display player's name and cash earned and 
     // protects gamepage from access without username entered
-    //  let playerName = getPlayerName();
-    //  if (playerName !== null) {
-    //      playerNameHolder.innerText = playerName;
-    //  } else {
-    //      location.href = 'index.html';
-    //  }
+     let playerName = getPlayerName();
+     if (playerName !== null) {
+         playerNameHolder.innerText = playerName;
+     } else {
+         location.href = 'index.html';
+     }
 
     // Countdown to Start [Lightbox] <-- [Start]
     countdownSection.classList.add('overlay-bg');
@@ -599,7 +599,7 @@ function displayQuestion() {
     let letterSequence = ['A.', 'B.', 'C.', 'D.'];
     for (let i = 0; i < optionButtonsList.length; i++) {
         optionButtonsList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
-        // un-disable disabled buttons
+        // un-disable buttons
         optionButtonsList[i].classList.remove('disabled-button');
     }
 }
@@ -780,7 +780,7 @@ function prizeMoney(qNum) {
 function highlightNextPrize() {
     const currentPrize = prizeMoney(questionNumber.innerText).current;
     currentPrize.classList.add('highlight-prize');
-    // currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
+    currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
 }
 
 /**
@@ -883,7 +883,7 @@ function howToPlayLightbox() {
     howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper');
     howToPlayArticle.setAttribute('class', 'lightbox-bgcolor lightbox-border');
     howToPlayArticle.innerHTML = `
-            <div class="close-howtoplay-container">
+            <div class="close-howtoplay-container" role="button" aria-label="close the lightbox">
                 <i class="fas fa-times" id="close-howtoplay"></i>
             </div>
             <h2 id="howtoplay-heading">How to Play</h2>
