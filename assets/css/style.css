@@ -4,7 +4,9 @@
 /* Customized Variables */
 :root {
     --clr-white: #ffffff;
+    --clr-black: #000000;
     --clr-raisin-black: #252627;
+    --clr-outer-space: #264137;
     --clr-mughal-green: #336633;
     --clr-deep-moss: #266340;
     --clr-sea-green: #3a9561;
@@ -84,7 +86,7 @@ body {
 }
 
 #logo-wrapper {
-    background-color: black;
+    background-color: var(--clr-black);
     box-shadow: 2px 0 2px 10px var(--clr-mughal-green);
     height: 5rem;
     margin-bottom: 12vh;
@@ -155,7 +157,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #logo-wrapper-nav {
-    background-color: black;
+    background-color: var(--clr-black);
     font-family: 'Playfair Display', serif;
     box-shadow: 2px 0 2px 5px var(--clr-mughal-green);
     margin: .3rem 0;
@@ -356,7 +358,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #timer {
-    background-color: #264137;
+    background-color: var(--clr-outer-space);
     border: 2px solid var(--clr-light-silver);
     border-radius: 50%;
     font-size: 1.7rem;
@@ -499,7 +501,7 @@ nav {    /* contains logo & nav menu */
 
 #username {
     box-sizing: border-box;
-    color: black;
+    color: var(--clr-black);
     font-size: 1.1rem;
     width: 12rem;
     height: 2rem;
@@ -582,14 +584,14 @@ nav {    /* contains logo & nav menu */
 
 /* COUNTDOWN TO START Lightbox [Start] */
 #countdown-inner-wrapper {
-    background-color: var(--clr-deep-moss);
+    background-color: var(--clr-outer-space);
     border-radius: 50%;
     width: 15rem;
     height: 15rem;
 }
 
 #countdown {
-    color: #e2dca1;
+    color: var(--clr-light-silver);
     display: block;
     font-size: 10rem;
     text-align: center;
