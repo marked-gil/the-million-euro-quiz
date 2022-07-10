@@ -600,11 +600,13 @@ nav {    /* contains logo & nav menu */
     border: 2px solid var(--clr-sea-green);
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
     row-gap: .5rem;
     width: 78%;
-    height: 18rem;
+    min-height: 15rem;
+    height: 50vh;
+    max-height: 18rem;
     padding: 1.7rem 1rem;
 }
 
@@ -624,14 +626,14 @@ nav {    /* contains logo & nav menu */
 /* buttons - Game Over */
 #gameover-inner-wrapper button,
 #gameover-inner-wrapper a {
-    font-size: 1rem;
-    line-height: 1.8rem;
-    width: 8rem;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    width: 12rem;
     text-align: center;
+    cursor: pointer;
 }
 
 #gameover-inner-wrapper button {
-    cursor: pointer;
     margin-top: 1rem;
 }
 /* GAME OVER Lightbox [End] */
@@ -646,15 +648,16 @@ nav {    /* contains logo & nav menu */
     justify-content: center;
     row-gap: .5rem;
     width: 78%;
-    height: 18rem;
+    min-height: 15rem;
+    height: 50vh;
+    max-height: 18rem;
     padding: 1.7rem 1rem;
 }
 
 #gamewon-inner-wrapper h2 {    /* Game Won heading */
     color: var(--clr-raisin-black);
-    font-family: 'Satisfy', cursive;
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     text-align: center;
 }
 
@@ -664,7 +667,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #gamewon-inner-wrapper p {    /* Game Won message */
-    color: #0d4316;
+    color: var(--clr-raisin-black);
     font-size: 1.5rem;
     text-align: center;
 }
@@ -680,15 +683,15 @@ nav {    /* contains logo & nav menu */
 /* buttons - Game Won */
 #gamewon-inner-wrapper button,
 #gamewon-inner-wrapper a {
-    font-size: 1rem;
-    line-height: 1.8rem;
-    width: 8rem;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    width: 12rem;
     text-align: center;
     cursor: pointer;
 }
 
 #gamewon-inner-wrapper button {
-    margin-top: 1.8rem;
+    margin-top: 1rem;
 }
 /* GAME WON Lightbox [End] */
 
@@ -699,17 +702,21 @@ nav {    /* contains logo & nav menu */
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     row-gap: .5rem;
     width: 78%;
-    padding: 1.7rem 1.5rem;
+    min-height: 15rem;
+    height: 50vh;
+    max-height: 18rem;
+    padding: 1.7rem 1rem;
 }
 
 #quit-inner-wrapper h2 {    /* Quit heading */
     color: var(--clr-sea-green);
     font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-align: center;
+    margin-bottom: 1.5rem;
 }
+
 #quit-inner-wrapper p {    /* Quit message */
     color: var(--clr-light-silver);
     font-size: 1.2rem;
@@ -719,14 +726,15 @@ nav {    /* contains logo & nav menu */
 /* buttons - Quit */
 #quit-inner-wrapper button,
 #quit-inner-wrapper a {
-    font-size: 1rem;
-    line-height: 1.8rem;
-    width: 8rem;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    width: 12rem;
     text-align: center;
+    cursor: pointer;
 }
 
 #quit-inner-wrapper button {
-    margin-top: 1.8rem;
+    margin-top: 1rem;
 }
 
 /* QUIT Lightbox [End] */
