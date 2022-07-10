@@ -9,10 +9,8 @@
     --clr-deep-moss: #266340;
     --clr-sea-green: #3a9561;
     --clr-dark-sea: #93C393;
-    --clr-pine-tree: #2C3227;
     --clr-burlywood: #deb887;
     --clr-light-silver: #dad9d8;
-    --clr-snow: #fff9fb;
 }
 
 /* UTILITIES */
@@ -208,7 +206,7 @@ nav {    /* contains logo & nav menu */
     padding: 1rem 0;
 }
 
-#player-wrapper {    /* for player's name & cash earned */
+#player-wrapper {
     border-radius: 6px;
     box-sizing: border-box;
     display: flex;
@@ -222,9 +220,10 @@ nav {    /* contains logo & nav menu */
     font-size: .9rem;
 }
 
-#player-wrapper > p {
-    background-color: #354d30;
-    border-radius: 4px;
+#cash-earned {    /* cash earned */
+    border: 2px solid var(--clr-deep-moss);
+    border-radius: 20px;
+    box-shadow: 0 0 5px 4px var(--clr-deep-moss);
     padding: .5rem 1rem;
 }
 
@@ -349,7 +348,7 @@ nav {    /* contains logo & nav menu */
 
 #question-text {
     visibility: hidden;
-    color: var(--clr-snow);
+    color: var(--clr-white);
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1rem;
     margin: .8rem 0 0;
@@ -384,7 +383,7 @@ nav {    /* contains logo & nav menu */
     min-height: 2.5rem;
     padding: .1rem 1rem;
     text-align: left;
-    color: var(--clr-snow);
+    color: var(--clr-white);
     text-shadow: 0 0 10px var(--clr-raisin-black);
     position: relative;
 }
@@ -763,7 +762,7 @@ nav {    /* contains logo & nav menu */
     }
 
     .life-line-item:hover {
-        background-color: var(--clr-snow);
+        background-color: var(--clr-white);
     }
 
     #close-username:hover,
