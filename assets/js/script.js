@@ -924,7 +924,7 @@ function howToPlayLightbox() {
 
     howToPlaySection.appendChild(howToPlayArticle);
     howToPlaySection.classList.remove('hide');
-    howToPlaySection.classList.add('overlay-bg');
+    howToPlaySection.classList.add('overlay-bg', 'overlay-bgcolor');
 
     // hides 'How to Play' lightbox
     const closeHowToPlay = document.getElementById('close-howtoplay');
