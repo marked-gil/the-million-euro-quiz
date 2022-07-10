@@ -878,6 +878,7 @@ function howToPlayLightbox() {
     const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
     let howToPlayArticle = document.createElement('article');
     howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper');
+    howToPlayArticle.setAttribute('class', 'lightbox-bgcolor lightbox-border');
     howToPlayArticle.innerHTML = `
             <div class="close-howtoplay-container">
                 <i class="fas fa-times" id="close-howtoplay"></i>
