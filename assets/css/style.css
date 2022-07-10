@@ -641,7 +641,6 @@ nav {    /* contains logo & nav menu */
 
 /* GAME WON Lightbox [Start] */
 #gamewon-inner-wrapper {
-    background-color: #b3b354;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -655,29 +654,29 @@ nav {    /* contains logo & nav menu */
 }
 
 #gamewon-inner-wrapper h2 {    /* Game Won heading */
-    color: var(--clr-raisin-black);
+    color: var(--clr-sea-green);
     font-size: 1.8rem;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
 #username-gamewon {    /* player's name */
-    color: var(--clr-raisin-black);
+    color: var(--clr-sea-green);
     font-size: 1.8rem;
 }
 
 #gamewon-inner-wrapper p {    /* Game Won message */
-    color: var(--clr-raisin-black);
+    color: var(--clr-light-silver);
     font-size: 1.5rem;
     text-align: center;
 }
 
 #grand-prize {
+    color: var(--clr-light-silver);
     display: block;
-    color: #091a20;
     font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
     font-weight: 600;
-    font-size: 2rem;
 }
 
 /* buttons - Game Won */
