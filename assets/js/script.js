@@ -423,7 +423,7 @@ if (document.getElementById('gamepage-body')) {
                 usedQuestions.push(selectedQuestion.id);
                 console.log('Used Questions:', usedQuestions);
                 displayQuestion();
-                // counter = timer(30);
+                counter = timer(30);
                 document.querySelector('section#question-container h2').style.visibility = 'visible';
                 document.querySelector('#question-text').style.visibility = 'visible';
                 highlightNextPrize();
@@ -780,7 +780,7 @@ function prizeMoney(qNum) {
 function highlightNextPrize() {
     const currentPrize = prizeMoney(questionNumber.innerText).current;
     currentPrize.classList.add('highlight-prize');
-    currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
+    // currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
 }
 
 /**
