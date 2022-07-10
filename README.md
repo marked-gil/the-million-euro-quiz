@@ -1,5 +1,6 @@
 # The Million Euro Quiz
-<!-- Image from IamResponsive here-->
+![Responsive Mock Image of The Million Euro Quiz](docs/iamresponsive-screenshot.png)
+
 The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the life lines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
 
 ## TABLE OF CONTENTS
