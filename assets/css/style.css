@@ -757,7 +757,6 @@ nav {    /* contains logo & nav menu */
     #gameover-inner-wrapper > a:hover,
     #gamewon-inner-wrapper > button:hover,
     #gamewon-inner-wrapper > a:hover {
-        /* box-shadow: 0 0 2px 2px var(--clr-sea-green); */
         background-color: var(--clr-dark-sea);
         color: var(--clr-raisin-black);
         cursor: pointer;
