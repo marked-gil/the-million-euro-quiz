@@ -258,7 +258,8 @@ nav {    /* contains logo & nav menu */
 }
 
 .highlight-prize {    /* highlight for cash prizes */
-    background-color: #4dba4d;
+    background-color: var(--clr-deep-moss);
+    color: var(--clr-white);
     box-sizing: border-box;
     box-shadow: 0 0 5px 5px var(--clr-light-silver);
     border-radius: 10px;
