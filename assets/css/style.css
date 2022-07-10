@@ -976,8 +976,7 @@ nav {    /* contains logo & nav menu */
 
 	/* ENTER NAME Lightbox */
     #username-inner-wrapper {
-        width: 30rem;
-        height: 20rem;
+        width: 32.35rem;
     }
 
     #username-inner-wrapper > h2 {
@@ -992,8 +991,8 @@ nav {    /* contains logo & nav menu */
 
     #username-btn {
         font-size: 1.3rem;
-        line-height: 2.2rem;
-        width: 12rem;
+        line-height: 2.4rem;
+        width: 14rem;
     }
 
     #username-feedback {
@@ -1014,7 +1013,7 @@ nav {    /* contains logo & nav menu */
     /* Game Over [Lightbox] */
     #gameover-inner-wrapper {
         width: 32.35rem;
-        height: 18rem;
+        min-height: 16rem;
     }
 
     #gameover-inner-wrapper h2 {
@@ -1023,20 +1022,20 @@ nav {    /* contains logo & nav menu */
 
     #gameover-inner-wrapper p,
     #gameover-inner-wrapper span {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     #gameover-inner-wrapper button,
     #gameover-inner-wrapper a {
         font-size: 1.3rem;
-        line-height: 2.2rem;
-        width: 12rem;
+        line-height: 2.4rem;
+        width: 14rem;
     }
 
     /* Game Won Lightbox */
     #gamewon-inner-wrapper {
         width: 32.35rem;
-        height: 18rem;
+        min-height: 16rem;
     }
     
     #gamewon-inner-wrapper h2 {
@@ -1054,14 +1053,14 @@ nav {    /* contains logo & nav menu */
     #gamewon-inner-wrapper button,
     #gamewon-inner-wrapper a {
         font-size: 1.3rem;
-        line-height: 2.2rem;
-        width: 12rem;
+        line-height: 2.4rem;
+        width: 14rem;
     }
 
     /* Quit Lightbox */
     #quit-inner-wrapper {
         width: 32.35rem;
-        height: 18rem;
+        min-height: 16rem;
     }
 
     #quit-inner-wrapper h2 {
@@ -1075,8 +1074,8 @@ nav {    /* contains logo & nav menu */
     #quit-inner-wrapper button,
     #quit-inner-wrapper a {
         font-size: 1.3rem;
-        line-height: 2.2rem;
-        width: 12rem;
+        line-height: 2.4rem;
+        width: 14rem;
     }
 }
 
