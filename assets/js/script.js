@@ -318,7 +318,10 @@ if (document.getElementById('homepage-body')) {
 
 	// feedback for usernames >12 characters
     usernameInput.addEventListener('input', (e) => {
-        if (e.target.value.length === 12) {
+        if (e.target.value[0] === ' ') {
+            flashMsg.innerHTML = "Name cannot start with a space.";
+            usernameInput.value = '';
+        } else if (e.target.value.length === 12) {
             flashMsg.innerHTML = "Your name can only have a maximum of 12 characters.";
         }
     });
