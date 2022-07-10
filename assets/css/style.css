@@ -329,7 +329,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #question-container {    /* question box */
-    background-image: linear-gradient(to right, #264137, #598c34);
+    background-image: linear-gradient(to right, #264137, #266340, #3a9561);
     border-radius: 5px;
     box-sizing: border-box;
     display: flex;
