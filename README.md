@@ -6,7 +6,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
     * [Strategy](#strategy)
-        * [Goals](#goals)
+        * [Goal](#goal)
         * [User Stories](#user-stories)
     * [Scope](#scope)
         * [Planned Features](#planned-features)
@@ -181,7 +181,7 @@ The following are the wireframes used to build this website. These wireframes ar
     !['Enter Name' lightbox wireframe for mobile screen](docs/enter-name-mobile-wf.png)
     !['How to Play' lightbox wireframe for mobile screen](docs/howtoplay-mobile-wf.png)   
 
-    * Large Screen
+    * Large Screen      
     ![Home Page wireframe for large screen](docs/home-large-wf.png)
     ![Enter Player's Name lightbox wireframe for large screen](docs/enter-name-large-wf.png)
 
