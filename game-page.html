@@ -4,30 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="Let's play an exciting online quiz game inspired by the famous 'Who Wants To Be a Millionaire' game show.">
     <meta name="keywords" content="quiz, game show, online quiz, online game show, who wants to be a millionaire">
     <meta name="author" content="Mark Gil Dacutan">
-
     <title>The Million Euro Quiz</title>
-    
     <!-- link to external css file -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- link to favicons -->
+    <!-- links to favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
 </head>
 <body id="gamepage-body">
     <header>
+        <!-- navbar -->
         <nav>
             <div id="logo-wrapper-nav">
+                <!-- logo -->
                 <h1 id="logo-nav">
                     <span>The</span> 
                         Million Euro 
                     <span>Quiz</span>
                 </h1>
             </div>
+            <!-- nav menu -->
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li id="howtoplay-btn-gamepage">How to Play</li>
@@ -39,12 +39,14 @@
     <!-- GAME AREA [Start]-->
     <main id="game-area-wrapper">
         <div id="game-area">
+
             <!-- player name and money earned -->
             <section id="player-wrapper">
                 <h2>Player: <span id="player-name">Guest</span></h2>
                 <p id="cash-earned-container">Cash: <span id="money-earned">0</span></p>
             </section>
-            <!-- displays the money to earn per question and player's current money earned  -->
+
+            <!-- displays levels & cash values  -->
             <div id="money-container">
                 <ul id="money-list">
                     <li data-prize="500">1 - &euro; 500</li>
@@ -64,23 +66,28 @@
                     <li data-prize="1-million">15 - &euro; 1,000,000</li>
                 </ul>
             </div>
-            <!-- Life Lines to help player choose the correct answer -->
+
+            <!-- Life Lines -->
             <section id="life-lines">
                 <h2>Life Lines</h2>
+                <!-- to remove 1 wrong answer -->
                 <div data-lifeline="remove-one-option" class="life-line-item" role="button">
                     <i class="fas fa-hands-helping lifeline-icon"></i>
                     <span class="tooltip">Removes 1 wrong answer</span>
                 </div>
+                <!-- to remove 2 wrong answers -->
                 <div data-lifeline="remove-two-options" class="life-line-item" role="button">
                     <i class="fas fa-life-ring lifeline-icon"></i>
                     <span class="tooltip">Removes 2 wrong answers</span>
                 </div>
+                <!-- Adds more time to timer -->
                 <div data-lifeline="add-to-timer" class="life-line-item" role="button">
                     <i class="fas fa-clock lifeline-icon"></i>
                     <span class="tooltip">Adds 30 sec more to your time</span>
                 </div> 
             </section>
-            <!-- container for the question, and timer -->
+
+            <!-- container for question and timer -->
             <section id="question-container">
                 <!-- Question -->
                 <h2>Question <span id="question-number">0</span>:</h2>
@@ -90,7 +97,8 @@
                     <span id="timer-value">30</span>
                 </div>
             </section>
-            <!-- container for the answers-->
+
+            <!-- container for answers-->
             <div id="answers-container">
                 <!-- options for the answer -->
                 <button class="answer-button" id="answer-option-a"></button>
@@ -98,6 +106,7 @@
                 <button class="answer-button" id="answer-option-c"></button>
                 <button class="answer-button" id="answer-option-d"></button>
             </div>
+
         </div>
     </main>
     <!-- GAME AREA [End]-->
@@ -117,6 +126,7 @@
             <p>We're sorry, <span id="username-gameover">Player Name</span>, you lost!</p>
             <p>You're going home with <span id="prize-won">0</span>!</p>
             <span class="not-bad hide">Not bad!</span>
+            <!-- buttons -->
             <button id="play-again-gameover" class="btn-border btn-color">Play Again</button>
             <a href="index.html" class="btn-border btn-color">Home</a>
         </div>
@@ -128,6 +138,7 @@
         <div id="gamewon-inner-wrapper" class="lightbox-bgcolor lightbox-border">
             <h2>Congratulations, <span id="username-gamewon">player</span>!</h2>
             <p>You just won <span id="grand-prize">&euro; 1 Million!</span></p>
+            <!-- buttons -->
             <button id="play-again-gamewon" class="btn-border btn-color">Play Again</button>
             <a href="index.html" class="btn-border btn-color">Home</a>
         </div>
@@ -140,6 +151,7 @@
             <h2>Oops!</h2>
             <p>You quit the game!</p>
             <p>You're going home with NO MONEY.</p>
+            <!-- buttons -->
             <button id="play-again-quitter" class="btn-border btn-color">Play Again</button>
             <a href="index.html" class="btn-border btn-color">Home</a>
         </div>

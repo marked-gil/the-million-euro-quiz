@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Let's play an exciting online quiz game inspired by the famous 'Who Wants To Be a Millionaire' game show.">
+    <meta name="description" content="Let's play an exciting online quiz game inspired by the famous 'Who Wants To Be a Millionaire' ga me show.">
     <meta name="keywords" content="quiz, game show, online quiz, online game show, who wants to be a millionaire">
     <meta name="author" content="Mark Gil Dacutan">
-    
     <title>The Million Euro Quiz</title>
-    
     <!-- link to external css file -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- link to favicons -->
+    <!-- links to favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
@@ -28,26 +25,29 @@
         </h1>
     </header>
 
-    <!-- play button -->
+    <!-- 'Play' button -->
     <button id="play-button" class="btn-border btn-color">Play</button>
-    <!-- 'how to play' button -->
+    <!-- 'How To Play' button -->
     <button id="howtoplay-btn-homepage" class="btn-border btn-color">How to Play</button>
 
-    <!-- 'ENTER USERNAME' Lightbox [Start] -->
+    <!-- 'ENTER NAME' Lightbox [Start] -->
     <section id="username-outer-wrapper" class="hide overlay-bgcolor">
         <div id="username-inner-wrapper" class="lightbox-bgcolor lightbox-border">
+            <!-- 'x' icon to close lightbox -->
             <div class="close-username-container" role="button" aria-label="close the lightbox">
                 <i class="fas fa-times" id="close-username"></i>
             </div>
             <h2>Enter Player's Name:</h2>
+            <!-- form for player's name input -->
             <form id="username-form">
                 <input type="text" name="username" id="username" placeholder="your name here" aria-label="Enter player's name" maxlength="12">
                 <button id="username-btn" class="btn-border btn-color">Let's Play</button>
             </form>
+            <!-- flash message -->
             <small id="username-feedback"></small>
         </div>
     </section>
-    <!-- 'ENTER USERNAME' Lightbox [End] -->
+    <!-- 'ENTER NAME' Lightbox [End] -->
 
     <!-- 'HOW TO PLAY' Lightbox [Start] -->
     <div id="howtoplay-outer-wrapper" class="hide"></div>
