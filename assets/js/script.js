@@ -447,9 +447,9 @@ let counter;                // variable containing id of timer() (object)
 if (document.getElementById('gamepage-body')) {
     // display player's name and cash earned 
     // and protects game page from access without a name entered
-    //  let playerName = getPlayerName();
+     let playerName = getPlayerName();
     //  if (playerName !== null) {
-    //      playerNameHolder.innerText = playerName;
+         playerNameHolder.innerText = playerName;
     //  } else {
     //      location.href = 'index.html';
     //  }
