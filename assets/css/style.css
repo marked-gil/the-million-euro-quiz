@@ -397,7 +397,7 @@ nav {    /* contains logo & nav menu */
 }
 
 .correct-answer::after {
-    content: url('../images/checked.png');
+    content: url('../images/checked.png') / "Answer is correct";
     transform: scale(.3);
     position: absolute;
     top: -50px;
@@ -405,7 +405,7 @@ nav {    /* contains logo & nav menu */
 }
 
 .wrong-answer:after {
-    content: url('../images/cross.png');
+    content: url('../images/cross.png') / "Answer is wrong";
     transform: scale(.25);
     position: absolute;
     top: -45px;
