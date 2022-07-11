@@ -668,7 +668,7 @@ nav {    /* contains logo & nav menu */
 }
 
 #username-gamewon {    /* player's name */
-    color: var(--clr-sea-green);
+    color: var(--clr-dark-sea);
     font-size: 1.8rem;
 }
 
