@@ -447,12 +447,12 @@ let counter;                // variable containing id of timer() (object)
 if (document.getElementById('gamepage-body')) {
     // display player's name and cash earned 
     // and protects game page from access without a name entered
-     let playerName = getPlayerName();
-     if (playerName !== null) {
-         playerNameHolder.innerText = playerName;
-     } else {
-         location.href = 'index.html';
-     }
+    //  let playerName = getPlayerName();
+    //  if (playerName !== null) {
+    //      playerNameHolder.innerText = playerName;
+    //  } else {
+    //      location.href = 'index.html';
+    //  }
 
     // Countdown to Start [Lightbox] <-- [Start]
     countdownSection.classList.add('overlay-bg');
@@ -472,7 +472,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 usedQuestions.push(selectedQuestion.id);
                 displayQuestion();
-                counter = timer(30);
+                // counter = timer(30);
                 document.querySelector('section#question-container h2').style.visibility = 'visible';
                 document.querySelector('#question-text').style.visibility = 'visible';
                 highlightNextPrize();
