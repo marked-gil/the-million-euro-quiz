@@ -40,6 +40,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 
 ---
 ## UXD (User Experience Design)
+___
 ### **STRATEGY**
 #### **Goal:**
 * This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, life lines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
@@ -215,7 +216,9 @@ The following are the wireframes used to build this website. These wireframes ar
 ![Roboto Slab font from Google Fonts](docs/roboto-slab-font.png)
 * Specific layout
 
+___
 ## FEATURES
+___
 
 ### **Home Page**
 The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').
@@ -321,13 +324,18 @@ The 404 Page simply informs the user that there is nothing to be found in that p
     
     * **SOLUTION**:
     As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling will only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
-
+___
 ## BUGS LEFT TO FIX
-
-
+___
+___
 ## TESTING
+___
 ### Responsiveness
-### Accessibility
+### Accessibility   
+![Result of Safari Accessibility Audit on home page](docs/accessibility-testing/home-accessibility-test.png)    
+![Result of Safari Accessibility Audit on game page](docs/accessibility-testing/gamepage-accessibility-test.png)    
+![Result of Safari Accessibility Audit on 404 page](docs/accessibility-testing/page404-accessibility-test.png)      
+
 ### Links/Buttons Functionality Testing
 ![Result of test on buttons/links functionality](docs/buttons-testing-1.png)    
 ![Result of test on buttons/links functionality](docs/buttons-testing-2.png)
@@ -337,11 +345,18 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 * W3C CSS Validator
 
 ### Lighthouse Testing
-* On Desktop
-* On Mobile
+* On Desktop    
+![Lighthouse result for home page - desktop](docs/lighthouse-testing/home-large-lighthouse.png) 
+![Lighthouse result for game page - desktop](docs/lighthouse-testing/gamepage-large-lighthouse.png)
+![Lighthouse result for 404 page - desktop](docs/lighthouse-testing/page404-large-lighthouse.png)   
 
+* On Mobile     
+![Lighthouse result for home page - mobile](docs/lighthouse-testing/home-mobile-lighthouse.png)     
+![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png)     
+![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)
+___
 ## DEPLOYMENT
-
+___
 ### **Version Control**
 In developing this site, **git** was a crucial tool used to track changes made in the repository. The following **git** commands were mainly used:      
 * `git status` — to show the status of the repository by displaying the files that have been staged and are ready for commit, those that are not, and those that are untracked.
@@ -367,8 +382,9 @@ To clone the repository for this site, do the following steps:
 4. In the popup box, click on the 'HTTPS' link and copy the url just below it.
 5. Then, go to your computer's terminal and type `git clone <url of the repository>`.
 6. A copy of the repository is now saved in your computer.
-
+___
 ## TECHNOLOGIES
+___
 The following technologies are used in this website:    
 * Programming Languages: 
     * **Javascript**
@@ -383,8 +399,9 @@ The following technologies are used in this website:
 * [**Font Awesome**](https://fontawesome.com/) — provides the icons used for the Life lines.
 * [**Favicon.io**](https://favicon.io/) — used for the icon displayed beside the site title seen in the browser tab.
 * [**Balsalmiq**](https://balsamiq.com/) - used in creating the wireframes of this project's design concept.
-
+___
 ## CREDITS
+___
 * **Questions**     
     The questions in this quiz game are taken from the following sources:
     * [Trivia Quiz Night](https://triviaquiznight.com/easy-general-knowledge-questions-and-answers/)
@@ -403,5 +420,6 @@ The following technologies are used in this website:
     * [Google Fonts](https://fonts.google.com/)
     * [Fontawesome](https://fontawesome.com/)
     * [Favicon.io](https://favicon.io/)
-
+___
 ## ACKNOWLEDGMENT
+___
