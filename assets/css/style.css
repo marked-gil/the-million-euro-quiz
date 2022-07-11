@@ -415,7 +415,7 @@ nav {
 
 /* check mark appears when answer is correct */
 .correct-answer::after {
-    content: url('../images/checked.png') / "Answer is correct";
+    content: url('../images/checked.png');
     transform: scale(.3);
     position: absolute;
     top: -50px;
@@ -424,7 +424,7 @@ nav {
 
 /* x-mark appears when answer is wrong */
 .wrong-answer:after {
-    content: url('../images/cross.png') / "Answer is wrong";
+    content: url('../images/cross.png');
     transform: scale(.25);
     position: absolute;
     top: -45px;
