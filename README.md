@@ -40,7 +40,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 
 ---
 ## UXD (User Experience Design)
-### **Strategy**
+### **STRATEGY**
 #### **Goal:**
 * This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, life lines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
 
@@ -57,7 +57,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 * As a user, I want to be able to read the mechanics of the game before starting, and even while playing the game so I can be guided well.
 * As a user, I want the game to have an intuitive user interface so I can just play it straight away even without reading the mechanics of the game.
 
-### **Scope**
+### **SCOPE**
 #### Planned Features:
 This online quiz game has the following planned features based on the User Stories:
 * User Story:
@@ -135,7 +135,7 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
     * **Roboto Slab** — for the cash prize amount (number)
     * **Satisfy** — for the word 'CONGRATULATIONS' in 'GAME WON' lightbox
 
-### **Structure**
+### **STRUCTURE**
 
 #### **Interaction Design (IXD)**
 * Consistent:   
@@ -169,8 +169,30 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
 #### **Information Design/Architecture**
 *
 
-### **Skeleton**
-#### Wireframes
+### **SKELETON**
+
+The following are the wireframes used to build this website. These wireframes are created using [Balsamiq](https://balsamiq.com/).
+#### **Wireframes**
+
+* **Home Page**     
+
+    * Mobile Screen  
+    ![Home Page wireframe for mobile screen](docs/home-mobile-wf.png)
+    !['Enter Name' lightbox wireframe for mobile screen](docs/enter-name-mobile-wf.png)
+    !['How to Play' lightbox wireframe for mobile screen](docs/howtoplay-mobile-wf.png)   
+
+    * Large Screen
+
+* **Game Page**     
+    * Mobile Screen     
+    ![Game Area wireframe for mobile screen](docs/game-area-mobile-wf.png)
+    ![Game Over lightbox wireframe for mobile screen](docs/gameover-mobile-wf.png)
+    ![Game Won lightbox wireframe for mobile screen](docs/gamewon-mobile-wf.png)
+    ![Quit lightbox wireframe for mobile screen](docs/quit-mobile-wf.png)
+
+* **404 Page**      
+    * Mobile Screen  
+    ![404 Page Wireframe for mobile screen](docs/page404-mobile-wf.png)
 
 ### Surface 
 * Color
@@ -220,7 +242,8 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
 
 * **Life Lines**    
     The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.
-    The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.
+    The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.  
+    
     ![Image of Life lines](docs/lifelines-image.png)
 
 * **Question Area**     
