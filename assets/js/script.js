@@ -477,7 +477,6 @@ if (document.getElementById('gamepage-body')) {
  * @param {*} timerId - The id of the timer() function (setInterval)
  */
 function playGame(thisBtn, timerId) {
-    thisBtn.style.backgroundColor = '#3a9561';
     stopTimer(timerId);
     disableOptionBtns(thisBtn);
     let clicksBlocker = blockClicks();
@@ -486,7 +485,6 @@ function playGame(thisBtn, timerId) {
             revealCorrectAnswer(thisBtn);
             highlightEarnedPrize();
             setTimeout(() => {
-                thisBtn.style.backgroundColor = '';
                 clicksBlocker.remove();
                 thisBtn.classList.remove('correct-answer');
                 counter = timer(30);
