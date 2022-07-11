@@ -133,7 +133,6 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
     * **Roboto** — the default font for the site
     * **Playfair Display** — for the main logo
     * **Roboto Slab** — for the cash prize amount (number)
-    * **Satisfy** — for the word 'CONGRATULATIONS' in 'GAME WON' lightbox
 
 ### **STRUCTURE**
 
