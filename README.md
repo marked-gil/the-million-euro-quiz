@@ -182,6 +182,8 @@ The following are the wireframes used to build this website. These wireframes ar
     !['How to Play' lightbox wireframe for mobile screen](docs/howtoplay-mobile-wf.png)   
 
     * Large Screen
+    ![Home Page wireframe for large screen](docs/home-large-wf.png)
+    ![Enter Player's Name lightbox wireframe for large screen](docs/enter-name-large-wf.png)
 
 * **Game Page**     
     * Mobile Screen     
@@ -190,9 +192,19 @@ The following are the wireframes used to build this website. These wireframes ar
     ![Game Won lightbox wireframe for mobile screen](docs/gamewon-mobile-wf.png)
     ![Quit lightbox wireframe for mobile screen](docs/quit-mobile-wf.png)
 
+    * Large Screen   
+    ![Game Area wireframe for large screen](docs/game-area-large-wf.png)
+    ![Game Over lightbox wireframe for large screen](docs/gameover-large-wf.png)
+    ![Game Won lightbox wireframe for large screen](docs/gamewon-large-wf.png)
+    !['How To Play' lightbox wireframe for large screen](docs/howtoplay-large-wf.png)
+    ![Quit lightbox wireframe for large screen](docs/quit-large-wf.png)
+
 * **404 Page**      
-    * Mobile Screen  
+    * Mobile Screen     
     ![404 Page Wireframe for mobile screen](docs/page404-mobile-wf.png)
+
+    * Large Screen   
+    ![404 Page Wireframe for large screen](docs/page404-large-wf.png)
 
 ### Surface 
 * Color
