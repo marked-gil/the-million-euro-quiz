@@ -421,7 +421,6 @@ if (document.getElementById('gamepage-body')) {
                 // selects and displays first question
                 selectedQuestion = setDifficultyLevel();
                 usedQuestions.push(selectedQuestion.id);
-                console.log('Used Questions:', usedQuestions);
                 displayQuestion();
                 counter = timer(30);
                 document.querySelector('section#question-container h2').style.visibility = 'visible';
@@ -492,7 +491,6 @@ function playGame(thisBtn, timerId) {
                 if (usedQuestions.length < 15) {
                     selectedQuestion = setDifficultyLevel();
                     usedQuestions.push(selectedQuestion.id);
-                    console.log('Used Questions:', usedQuestions);
                     displayQuestion();
                     highlightNextPrize();
                     displayEarnedMoney();
@@ -625,12 +623,8 @@ function shuffleOptions() {
  */
 function answerChecker(answerText) {
     if (selectedQuestion.correctAnswer === answerText) {
-        console.log("Correct!", selectedQuestion.correctAnswer, "=", answerText);
         return true;
     } else {
-        console.log(`Wrong! 
-        Correct Answer: ${selectedQuestion.correctAnswer}, 
-        "Your answer:", ${answerText}`);
         return false;
     }
 }
