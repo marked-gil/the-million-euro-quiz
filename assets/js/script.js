@@ -835,7 +835,7 @@ function highlightEarnedPrize() {
     const newImg = document.createElement('img');
     newImg.setAttribute('src', 'assets/images/star-icon.png');
     newImg.setAttribute('class', 'star');
-    newImg.setAttribute('alt', 'star icon');
+    newImg.setAttribute('alt', 'pass this level');
     currentPrize.appendChild(newImg);
     currentPrize.style.boxShadow = 'none';
 }
