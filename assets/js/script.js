@@ -812,11 +812,6 @@ function displayEarnedMoney() {
     const playerName = document.getElementById('username-gameover');
     const addOnText = document.querySelector('.not-bad');
 
-    // Add 'Not bad!' message to game over lightbox if cash is earned
-    if (moneyEarned.innerText !== '0') {
-        addOnText.classList.remove('hide');
-    }
-
     // Close 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
         document.getElementById('howtoplay-inner-wrapper').remove();
@@ -824,8 +819,15 @@ function displayEarnedMoney() {
         document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
     }
 
+    // Add 'Not bad!' message to game over lightbox if cash is earned
+    if (moneyEarned.innerText !== '0') {
+        addOnText.classList.remove('hide');
+        prizeWon.innerText = moneyEarned.innerText;
+    } else {
+        prizeWon.innerText = `nothing`;
+    }
+
     playerName.innerText = playerNameHolder.innerText;
-    prizeWon.innerText = moneyEarned.innerText;
     gameOverPopUp.classList.remove('hide');
     gameOverPopUp.classList.add('overlay-bg');
     playAgainLoser.addEventListener('click', () => {
