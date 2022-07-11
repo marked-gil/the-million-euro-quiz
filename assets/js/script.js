@@ -116,9 +116,9 @@ let easyQuestions = [
 	},
     {
         id: 20,
-        question: "How many bones are there in an elephant's trunk?",
-        correctAnswer: "Zero (0)",
-        wrongAnswers: ["One (1)", "Five (5)", "Two (2)"]
+        question: "What is the largest Spanish speaking city in the world?",
+        correctAnswer: "Mexico City",
+        wrongAnswers: ["Buenos Aires", "Bogotá", "Lima"]
 	},
 ];
 
