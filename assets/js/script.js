@@ -352,13 +352,20 @@ if (document.getElementById('homepage-body')) {
     const playBtn = document.getElementById('play-button');
     const flashMsg = document.getElementById('username-feedback');
 
-    // displays 'Enter Username' lightbox
+    // displays 'Enter Name' lightbox
     playBtn.addEventListener('click', () => {
         enterNameSection.classList.remove('hide');
         enterNameSection.classList.add('overlay-bg');
     });
 
-	// feedback for usernames >12 characters
+    // closes 'Enter Name' lightbox
+    closeUsernameIcon.addEventListener('click', () => {
+        flashMsg.innerHTML = "";
+        enterNameSection.classList.add('hide');
+        enterNameSection.classList.remove('overlay-bg');
+    });
+
+	// flash message if player's name >12 characters or starts with space
     usernameInput.addEventListener('input', (e) => {
         if (e.target.value[0] === ' ') {
             flashMsg.innerHTML = "Name cannot start with a space.";
@@ -368,21 +375,22 @@ if (document.getElementById('homepage-body')) {
         }
     });
 
-    // closes 'Enter Username' lightbox
-    closeUsernameIcon.addEventListener('click', () => {
-        flashMsg.innerHTML = "";
-        enterNameSection.classList.add('hide');
-        enterNameSection.classList.remove('overlay-bg');
-    });
-
     // displays 'How to Play' lightbox
     howToPlayBtn.addEventListener('click', () => howToPlayLightbox());
     
+    // 'Let's Play' button Event Listener ['Enter Name' lightbox]
+    // Requires that a name is entered before redirecting to game page
+    // Only allows alphanumeric characters and/or space in-between
     const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
+        const pattern = '^[a-zA-Z0-9 ]+$';
         if (captureUserName()) {
-            location.href = 'game-page.html';
+            if (usernameInput.value.match(pattern)) {
+                location.href = 'game-page.html';
+            } else {
+                flashMsg.innerHTML = "You can only use letters, numbers, and/or space in-between.";
+            }
         } else {
             flashMsg.innerHTML = "You need to enter your name.";
         }
@@ -406,7 +414,7 @@ const optionButtonB = document.getElementById('answer-option-b');
 const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
-// variables to access 'Cash Prize' DOM elements
+// variables to access 'Money Prize' DOM elements
 const prizeOne = document.querySelector('[data-prize="500"]');
 const prizeTwo = document.querySelector('[data-prize="1,000"]');
 const prizeThree = document.querySelector('[data-prize="1,500"]');
@@ -437,8 +445,8 @@ let selectedQuestion;       // variable for randomly selected question (object)
 let counter;                // variable containing id of timer() (object)
 
 if (document.getElementById('gamepage-body')) {
-    // display player's name and cash earned and 
-    // protects gamepage from access without username entered
+    // display player's name and cash earned 
+    // and protects game page from access without a name entered
      let playerName = getPlayerName();
      if (playerName !== null) {
          playerNameHolder.innerText = playerName;
@@ -511,8 +519,7 @@ if (document.getElementById('gamepage-body')) {
 }
 // GAME PAGE <-- [End]
 
-// FUNCTIONS
-
+// FUNCTIONS <-- [Start]
 /**
  * Continues the process of the game, checks the answer, and declares win or loss
  * @param {*} thisBtn - The targetted event 
@@ -723,7 +730,6 @@ function randomChoiceRemove(num) {
             wrongOptList.push(optBtn);
         }
     }
-
     // randomly selects and disables the answer button/s
     for (let i = 0; i < num; i++) {
         let randNum = Math.floor(Math.random() * wrongOptList.length);
@@ -853,14 +859,12 @@ function displayEarnedMoney() {
     const prizeWon = document.getElementById('prize-won');
     const playerName = document.getElementById('username-gameover');
     const addOnText = document.querySelector('.not-bad');
-
     // Close 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
         document.getElementById('howtoplay-inner-wrapper').remove();
         document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
         document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
     }
-
     // Add 'Not bad!' message to game over lightbox if cash is earned
     if (moneyEarned.innerText !== '0') {
         addOnText.classList.remove('hide');
@@ -868,10 +872,11 @@ function displayEarnedMoney() {
     } else {
         prizeWon.innerText = `nothing`;
     }
-
+    // displays lightbox
     playerName.innerText = playerNameHolder.innerText;
     gameOverPopUp.classList.remove('hide');
     gameOverPopUp.classList.add('overlay-bg');
+    // 'Play Again' button Event Listener - reloads the game
     playAgainLoser.addEventListener('click', () => {
         location.reload();
     });
@@ -884,13 +889,13 @@ function displayEarnedMoney() {
 function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
     const playerName = document.getElementById('username-gamewon');
-    
+    // stops timer and displays lightbox with name and cash prize
     stopTimer(counter.id);
     moneyEarned.innerText = '1,000,000';
     playerName.innerText = playerNameHolder.innerText;
     gameWonSection.classList.remove('hide');
     gameWonSection.classList.add('overlay-bg');
-
+    // 'Play Again' button Event Listener - reloads game
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
         location.reload();
@@ -903,9 +908,11 @@ function gameWon() {
  */
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
+    // displays lightbox and stops timer
     quitSection.classList.remove('hide');
     quitSection.classList.add('overlay-bg');
     stopTimer(counter.id);
+    // 'Play Again' button Event Listener - reloads game
     const playAgainQuitter = document.getElementById('play-again-quitter');
     playAgainQuitter.addEventListener('click', function() {
         location.reload();
@@ -962,12 +969,11 @@ function howToPlayLightbox() {
                 </ul>
             </section>
         `;
-
+    // displays the lightbox
     howToPlaySection.appendChild(howToPlayArticle);
     howToPlaySection.classList.remove('hide');
     howToPlaySection.classList.add('overlay-bg', 'overlay-bgcolor');
-
-    // hides 'How to Play' lightbox
+    // 'close' button Event Listener - hides 'How to Play' lightbox
     const closeHowToPlay = document.getElementById('close-howtoplay');
     closeHowToPlay.addEventListener('click', () => {
         howToPlaySection.classList.add('hide');
@@ -975,3 +981,4 @@ function howToPlayLightbox() {
         howToPlayArticle.remove();
     });
 }
+// FUNCTIONS <-- [End]
