@@ -96,77 +96,107 @@ let easyQuestions = [
         correctAnswer: "1999",
         wrongAnswers: ["2000", "2001", "1995"]
 	},
+    {
+        id: 17,
+        question: "In what year did World War II end?",
+        correctAnswer: "1945",
+        wrongAnswers: ["1950", "1955", "1935"]
+	},
+    {
+        id: 18,
+        question: "What holiday is celebrated after Christmas Day, and is primarily known today as a shopping holiday?",
+        correctAnswer: "Boxing Day",
+        wrongAnswers: ["St. Patrick's Day", "Stephen's Day", "The Day After Christmas Holiday"]
+	},
+    {
+        id: 19,
+        question: "How many bones are there in an elephant's trunk?",
+        correctAnswer: "Zero (0)",
+        wrongAnswers: ["One (1)", "Five (5)", "Two (2)"]
+	},
+    {
+        id: 20,
+        question: "How many bones are there in an elephant's trunk?",
+        correctAnswer: "Zero (0)",
+        wrongAnswers: ["One (1)", "Five (5)", "Two (2)"]
+	},
 ];
 
 let moderateQuestions = [
     {
-        id: 17,
+        id: 21,
+        question: "If it takes ten (10) men to build a wall in 4 hours, how many hours will 5 men take to build it?",
+        correctAnswer: "8 hours",
+        wrongAnswers: ["2 hours", "5 hours", "4 hours"]
+	},
+    {
+        id: 22,
         question: "Which British King famously had six wives?",
         correctAnswer: "Henry VIII",
         wrongAnswers: ["George VI", "George V", "William IV"]
 	},
     {
-        id: 18,
+        id: 23,
         question: "Conquering much of China and central Asia, uniting the wandering tribes and even responsible for creating one of the first international postal systems, who led the Mongols?",
         correctAnswer: "Genghis Khan",
         wrongAnswers: ["Kublai Khan", "The Bogd Khan", "Kaidu"]
 	},
     {
-        id: 19,
+        id: 24,
         question: "Which German classical composer and pianist, was the film Immortal Beloved about?",
         correctAnswer: "Ludwig van Beethoven",
         wrongAnswers: ["Mozart", "Johannes Brahms", "Felix Mendelssohn"]
 	},
     {
-        id: 20,
+        id: 25,
         question: "In which country would you find Angel Falls, the highest waterfall on earth?",
         correctAnswer: "Venezuela",
         wrongAnswers: ["Mexico", "Canada", "Brazil"]
 	},
     {
-        id: 21,
+        id: 26,
         question: "The gaseous elements helium, neon, argon, krypton, xenon, and radon are better known as what?",
         correctAnswer: "noble gases",
         wrongAnswers: ["halogens", "simple gases", "liquified gases"]
 	},
     {
-        id: 22,
+        id: 27,
         question: "What is the name of Saturn’s largest moon?",
         correctAnswer: "Titan",
         wrongAnswers: ["Enceladus", "Mimas", "Rhea"]
 	},
     {
-        id: 23,
+        id: 28,
         question: "What character has both Robert Downey Jr. and Benedict Cumberbatch played?",
         correctAnswer: "Sherlock Holmes",
         wrongAnswers: ["'Mad' Max Rockatansky", "Charles Spencer Chaplin", "Alan Turing"]
 	},
     {
-        id: 24,
+        id: 29,
         question: "What country drinks the most coffee per person?",
         correctAnswer: "Finland",
         wrongAnswers: ["USA", "Canada", "Denmark"]
 	},
     {
-        id: 25,
+        id: 30,
         question: "What company was initially known as 'Blue Ribbon Sports'?",
         correctAnswer: "Nike",
         wrongAnswers: ["Addidas", "Puma", "Reebok"]
 	},
     {
-        id: 26,
+        id: 31,
         question: "What are the colours of the Olympic Rings?",
         correctAnswer: "red, green, black, blue and yellow",
         wrongAnswers: ["green, yellow, violet, blue, white", "yellow, red, brown, blue, green", "black, orange, yellow, green, red"]
 	},
     {
-        id: 27,
+        id: 32,
         question: "On average, how far away is the moon from the earth in miles?",
         correctAnswer: "238,000 miles",
         wrongAnswers: ["150,000 miles", "50,000 miles", "350,000 miles"]
 	},
     {
-        id: 28,
+        id: 33,
         question: "Saying the name of which dried fruit was used to encourage people to smile before a photo in the 1800s, before the phrase 'cheese'?",
         correctAnswer: "prunes",
         wrongAnswers: ["oranges", "apples", "lemons"]
@@ -175,67 +205,67 @@ let moderateQuestions = [
 
 let hardQuestions = [
     {
-        id: 29,
+        id: 34,
         question: "Aureolin is a shade of what colour?",
         correctAnswer: "yellow",
         wrongAnswers: ["pink", "orange", "blue"]
 	},
     {
-        id: 30,
+        id: 35,
         question: "In what country is the Chernobyl nuclear plant located?",
         correctAnswer: "Ukraine",
         wrongAnswers: ["Austria", "Norway", "Poland"]
 	},
     {
-        id: 31,
+        id: 36,
         question: "How many dots appear on a pair of dice?",
         correctAnswer: "42",
         wrongAnswers: ["21", "52", "32"]
 	},
     {
-        id: 32,
+        id: 37,
         question: "What country has the only national flag that does not have four sides?",
         correctAnswer: "Nepal",
         wrongAnswers: ["Luxembourg", "Taiwan", "Tuvalu"]
 	},
     {
-        id: 33,
+        id: 38,
         question: "What sporting event has a strict dress code of almost entirely white?",
         correctAnswer: "Wimbledon",
         wrongAnswers: ["Tour de France", "Royal Ascot", "US Masters Tournament"]
 	},
     {
-        id: 34,
+        id: 39,
         question: "How many minutes are in a full week?",
         correctAnswer: "10,080 minutes",
         wrongAnswers: ["20,160 minutes", "43,800 minutes", "7,200 minutes"]
 	},
     {
-        id: 35,
+        id: 40,
         question: "In what capital would you find The Little Mermaid statue?",
         correctAnswer: "Copenhagen",
         wrongAnswers: ["Vienna", "Helsinki", "Athens"]
 	},
     {
-        id: 36,
+        id: 41,
         question: "What is Cynophobia the fear of?",
         correctAnswer: "dogs",
         wrongAnswers: ["cats", "computers", "accidents"]
 	},
     {
-        id: 37,
+        id: 42,
         question: "Unix Time is defined as the number of seconds that have elapsed since when?",
         correctAnswer: "midnight of January 1, 1970",
         wrongAnswers: ["midnight of January 1, 1987", "noontime of January 1, 1970", "noontime of January 1, 1987"]
 	},
     {
-        id: 38,
+        id: 43,
         question: "Who first coined the term 'battery' to describe an electrical storage device?",
         correctAnswer: "Benjamin Franklin",
         wrongAnswers: ["Henry Ford", "Michael Faraday", "Albert Einstein"]
 	},
     {
-        id: 39,
+        id: 44,
         question: "What do Lord of the Rings author J.R.R. Tolkien's initials stand for?",
         correctAnswer: "John Ronald Reuel",
         wrongAnswers: ["James Raymond Ross", "Jack Richard Rafael", "Joseph Rey Rick"]
@@ -244,58 +274,70 @@ let hardQuestions = [
 
 let hardestQuestions = [
     {
-        id: 40,
+        id: 45,
         question: "What is a group of pandas known as?",
         correctAnswer: "an embarassment",
         wrongAnswers: ["a shrewdness", "a murder", "a convocation"]
 	},
     {
-        id: 41,
+        id: 46,
         question: "How long is an elephant pregnant before it gives birth?",
         correctAnswer: "22 months",
         wrongAnswers: ["9 months", "12 months", "16 months"]
 	},
     {
-        id: 42,
+        id: 47,
         question: "The first successful vaccine was introduced by Edward Jenner in 1796. Which disease did it guard against?",
         correctAnswer: "Smallpox",
         wrongAnswers: ["Yellow Fever", "Poliomyelitis", "Tuberculosis"]
 	},
     {
-        id: 43,
+        id: 48,
         question: "Who is the only musician ever to have been awarded the Nobel prize for literature?",
         correctAnswer: "Bob Dylan",
         wrongAnswers: ["Jimi Hendrix", "Elton John", "Stevie Wonder"]
 	},
     {
-        id: 44,
+        id: 49,
         question: "Queen Elizabeth II is the longest reining monarch of the UK, followed by Queen Victoria - but who is the third?",
         correctAnswer: "George III",
         wrongAnswers: ["William IV", "Edward VIII", "Anne"]
 	},
     {
-        id: 45,
+        id: 50,
         question: "Which philosopher stated the famous line 'I think, therefore I am'?",
         correctAnswer: "Rene Descartes",
         wrongAnswers: ["John Locke", "Socrates", "Thomas Aquinas"]
 	},
     {
-        id: 46,
+        id: 51,
         question: "The Taj Mahal was constructed as a tomb of the wife of which Mughal Emperor?",
         correctAnswer: "Shah Jahan",
         wrongAnswers: ["Jahangir", "Azam Shah", "Muhammad Shah"]
 	},
     {
-        id: 47,
+        id: 52,
         question: "Where were the 2 atomic bombs dropped in Japan that resulted in the end of World War II?",
         correctAnswer: "Hiroshima and Nagasaki",
         wrongAnswers: ["Tokushima and Osaka", "Fukuyama and Kochi", "Tokyo and Nagoya"]
 	},
     {
-        id: 48,
+        id: 53,
         question: "In this country, the sun neither rises nor sets for few months in a year. Which country is called the 'Land of the Midnight Sun'?",
         correctAnswer: "Norway",
         wrongAnswers: ["Ireland", "France", "Switzerland"]
+	},
+    {
+        id: 54,
+        question: "According to Greek mythology, who is considered the Goddess of Agriculture?",
+        correctAnswer: "Demeter",
+        wrongAnswers: ["Hera", "Artemis", "Athena"]
+	},
+    {
+        id: 55,
+        question: "Which fruit will you find at the top of the trophy of the Men’s Wimbledon?",
+        correctAnswer: "pineapple",
+        wrongAnswers: ["apple", "grapes", "pear"]
 	},
 ];
 // QUESTION CATEGORIES <-- [End]
