@@ -347,12 +347,6 @@ nav {
     z-index: 1;
 }
 
-[data-lifeline="remove-one-option"]:hover .tooltip,
-[data-lifeline="remove-two-options"]:hover .tooltip,
-[data-lifeline="add-to-timer"]:hover .tooltip {
-    visibility: visible;
-}
-
 #question-container {
     background-image: linear-gradient(to right, var(--clr-outer-space), var(--clr-deep-moss), var(--clr-sea-green));
     border-radius: 5px;
@@ -831,6 +825,12 @@ nav {
 
     .life-line-item:hover {
         background-color: var(--clr-white);
+    }
+
+    [data-lifeline="remove-one-option"]:hover .tooltip,
+    [data-lifeline="remove-two-options"]:hover .tooltip,
+    [data-lifeline="add-to-timer"]:hover .tooltip {
+        visibility: visible;
     }
 
     #close-username:hover,
