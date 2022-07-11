@@ -646,6 +646,8 @@ function displayQuestion() {
     let letterSequence = ['A.', 'B.', 'C.', 'D.'];
     for (let i = 0; i < optionButtonsList.length; i++) {
         optionButtonsList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
+        optionButtonsList[i].setAttribute('aria-label', optionButtonsList[i].innerText);
+        console.log(optionButtonsList[i]);
         // un-disable buttons
         optionButtonsList[i].classList.remove('disabled-button');
     }
