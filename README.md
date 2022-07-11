@@ -349,8 +349,14 @@ ___
 ![Result of test on buttons/links functionality](docs/buttons-testing-2.png)
 ### Validator Testing
 * W3C Markup Validator      
+![Html checker result - home page](docs/html-validator/home-html-checker.png)      
+![Html checker result - game page](docs/html-validator/gamepage-html-checker.png)   
+![Html checker result - 404 page](docs/html-validator/page404-html-checker.png)     
 
-* W3C CSS Validator
+* W3C CSS Validator     
+![CSS validator result - home page](docs/css-validator/home-css-validator.png)  
+![CSS validator result - game page](docs/css-validator/gamepage-css-validator.png)      
+![CSS validator result - 404 page](docs/css-validator/page404-css-validator.png)        
 
 ### Lighthouse Testing
 * On Desktop    
