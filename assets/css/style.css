@@ -1,5 +1,5 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto+Slab:wght@200;400;600&family=Roboto:wght@100;300;400&family=Satisfy&display=swap');
+/* Imported Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Roboto+Slab:wght@400;600&family=Roboto:wght@300;400&display=swap');
 
 /* Customized Variables */
 :root {
@@ -15,7 +15,28 @@
     --clr-light-silver: #dad9d8;
 }
 
-/* UTILITIES */
+/* DEFAULT STYLING */
+
+* { 
+    color: var(--clr-white);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--clr-raisin-black);
+    height: 100%;
+}
+
+/* UTILITY CLASSES <-- [Start]*/
+
 .disabled-button {
     opacity: .2;
     pointer-events: none;
@@ -29,7 +50,7 @@
     visibility: hidden;
 }
 
-.overlay-bg {    /* covers entire body element */
+.overlay-bg {    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,7 +73,7 @@
     background-color: var(--clr-deep-moss);
 }
 
-.lightbox-bgcolor {    /* lightbox background color */
+.lightbox-bgcolor {
     background-color: var(--clr-raisin-black);
 }
 
@@ -60,31 +81,16 @@
     box-shadow: 0 0 5px 4px var(--clr-deep-moss);
 }
 
-/* Remove Default Global Styles */
-* { 
-    color: var(--clr-white);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-}
+/* UTILITY CLASSES <-- [End]*/
 
-html {
-    height: 100%;
-}
+/* HOME PAGE <-- [Start] */
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--clr-raisin-black);
-    height: 100%;
-}
-
-/* HOME PAGE [Start] */
 #homepage-body {
     box-sizing: border-box;
     padding: 20vh 0 0;
 }
 
+/* homepage logo */
 #logo-wrapper {
     background-color: var(--clr-black);
     box-shadow: 2px 0 2px 10px var(--clr-mughal-green);
@@ -131,7 +137,8 @@ body {
     text-transform: uppercase;
 }
 
-#howtoplay-btn-homepage {    /* 'how to play' button */
+/* 'how to play' button */
+#howtoplay-btn-homepage {
     display: block;
     font-size: 1rem;
     letter-spacing: .1rem;
@@ -141,21 +148,25 @@ body {
     width: 14rem;
     text-transform: uppercase;
 }
-/* HOME PAGE [End] */
 
-/* GAME PAGE [Start] */
+/* HOME PAGE <-- [End] */
+
+/* GAME PAGE <-- [Start] */
+
 #gamepage-body {
     display: flex;
     flex-direction: column;
 }
 
-nav {    /* contains logo & nav menu */
+/* contains logo & nav menu */
+nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: .5rem;
 }
 
+/* game page logo */
 #logo-wrapper-nav {
     background-color: var(--clr-black);
     font-family: 'Playfair Display', serif;
@@ -192,12 +203,14 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
+/* outer wrapper of game area */
 #game-area-wrapper {
     display: flex;
     align-items: center;
     flex: 1 0 auto;
 }
 
+/* where all game interactions happen */
 #game-area {
     display: flex;
     row-gap: 1rem;
@@ -222,21 +235,24 @@ nav {    /* contains logo & nav menu */
     font-size: .9rem;
 }
 
-#cash-earned {    /* cash earned */
+/* container for player's current cash earned */
+#cash-earned-container {
     border: 2px solid var(--clr-deep-moss);
     border-radius: 20px;
     box-shadow: 0 0 5px 4px var(--clr-deep-moss);
     padding: .5rem 1rem;
 }
 
+/* username & cash value earned */
 #player-name,
-#money-earned {     /* username & cash earned */
+#money-earned {
     color: var(--clr-burlywood);
     font-size: 1.1rem;
     text-transform: uppercase;
 }
 
-#money-container {    /* prize money display */
+/* prize money display */
+#money-container {
     background-image: linear-gradient(#F0E699, #E1CD33, #B6A733);
     border-radius: 4px;
     height: 3rem;
@@ -251,6 +267,7 @@ nav {    /* contains logo & nav menu */
     margin: .5rem 0;
 }
 
+/* individual cash prize */
 [data-prize] {
     background-color: var(--clr-dark-sea);
     box-shadow: 0 0 3px 2px var(--clr-sea-green) inset;
@@ -264,7 +281,8 @@ nav {    /* contains logo & nav menu */
     color: var(--clr-raisin-black);
 }
 
-.highlight-prize {    /* highlight for cash prizes */
+/* highlights cash prizes */
+.highlight-prize {
     background-color: var(--clr-deep-moss);
     color: var(--clr-white);
     box-sizing: border-box;
@@ -275,6 +293,7 @@ nav {    /* contains logo & nav menu */
     padding: 0 1rem;
 }
 
+/* star icon on cash prize */
 .star {
     position: absolute;
     left: -10px;
@@ -291,6 +310,7 @@ nav {    /* contains logo & nav menu */
     width: 100%;
 }
 
+/* heading for life lines */
 #life-lines > h2 {
     font-size: 1.1rem;
     text-align: center;
@@ -333,7 +353,7 @@ nav {    /* contains logo & nav menu */
     visibility: visible;
 }
 
-#question-container {    /* question box */
+#question-container {
     background-image: linear-gradient(to right, var(--clr-outer-space), var(--clr-deep-moss), var(--clr-sea-green));
     border-radius: 5px;
     box-sizing: border-box;
@@ -348,12 +368,14 @@ nav {    /* contains logo & nav menu */
     width: 100%;
 }
 
+/* question heading */
 #question-container > h2 {
     visibility: hidden;
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1rem;
 }
 
+/* main question text */
 #question-text {
     visibility: hidden;
     color: var(--clr-white);
@@ -383,7 +405,8 @@ nav {    /* contains logo & nav menu */
     width: 85%;
 }
 
-.answer-button {    /* button for answer option */
+/* button for answer option */
+.answer-button {
     background-color: var(--clr-deep-moss);
     border: none;
     border-radius: 5px;
@@ -396,6 +419,7 @@ nav {    /* contains logo & nav menu */
     position: relative;
 }
 
+/* check mark appears when answer is correct */
 .correct-answer::after {
     content: url('../images/checked.png') / "Answer is correct";
     transform: scale(.3);
@@ -404,6 +428,7 @@ nav {    /* contains logo & nav menu */
     left: -35px;
 }
 
+/* x-mark appears when answer is wrong */
 .wrong-answer:after {
     content: url('../images/cross.png') / "Answer is wrong";
     transform: scale(.25);
@@ -411,9 +436,11 @@ nav {    /* contains logo & nav menu */
     top: -45px;
     left: -45px;
 }
-/* GAME PAGE [End] */
 
-/* 404 PAGE [Start] */
+/* GAME PAGE <-- [End] */
+
+/* 404 PAGE <-- [Start] */
+
 #page-404-body {
     display: flex;
     flex-direction: column;
@@ -436,6 +463,7 @@ nav {    /* contains logo & nav menu */
     padding-bottom: 2rem ;
 }
 
+/* heading */
 #page-404-inner-wrapper > h1 {
     font-size: 1.5rem;
 }
@@ -452,7 +480,8 @@ nav {    /* contains logo & nav menu */
     text-align: center;
 }
 
-#page-404-info-box > a {    /* home button */
+/* return home button */
+#page-404-info-box > a {
     display: block;
     font-size: 1.2rem;
     line-height: 2.1rem;
@@ -460,9 +489,11 @@ nav {    /* contains logo & nav menu */
     width: 14rem;
     text-align: center;
 }
-/* 404 PAGE [End] */
 
-/* ENTER NAME Lightbox [Start] */
+/* 404 PAGE <-- [End] */
+
+/* ENTER NAME Lightbox <-- [Start] */
+
 #username-inner-wrapper {
     box-sizing: border-box;
     display: flex;
@@ -479,11 +510,13 @@ nav {    /* contains logo & nav menu */
     position: relative;
 }
 
+/* heading */
 #username-inner-wrapper > h2 {
     font-size: 1.3rem;
     margin-top: 1.5rem;
 }
 
+/* 'x' icon to close lightbox*/
 .close-username-container {
     height: 90%;
     position: absolute;
@@ -504,6 +537,7 @@ nav {    /* contains logo & nav menu */
     row-gap: 1.5rem;
 }
 
+/* input box of player's name */
 #username {
     box-sizing: border-box;
     color: var(--clr-black);
@@ -514,6 +548,7 @@ nav {    /* contains logo & nav menu */
     text-align: center;
 }
 
+/* 'let's play' button */
 #username-btn {
     font-size: 1.1rem;
     width: 9rem;
@@ -521,15 +556,18 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
+/* flash messages */
 #username-feedback {
     font-size: .9rem;
     display: block;
     height: 2rem;
     padding: 0 1rem;
 }
-/* ENTER NAME Lightbox [End] */
 
-/* HOW TO PLAY Lightbox [Start] */
+/* ENTER NAME Lightbox <-- [End] */
+
+/* HOW TO PLAY Lightbox <-- [Start] */
+
 #howtoplay-inner-wrapper {
     display: flex;
     flex-direction: column;
@@ -550,13 +588,15 @@ nav {    /* contains logo & nav menu */
     right: 8%;
 }
 
-#close-howtoplay {    /* 'x' close icon */
+/* 'x' icon to close lightbox*/
+#close-howtoplay {    
     color: var(--clr-sea-green);
     font-size: 2.5rem;
     position: sticky;
     top: 0;
 }
 
+/* heading */
 #howtoplay-heading {
     border-bottom: 2px solid var(--clr-burlywood);
     color: var(--clr-dark-sea);
@@ -566,14 +606,16 @@ nav {    /* contains logo & nav menu */
     margin: 0 0 1rem;
 }
 
-#howtoplay-inner-wrapper h3 {    /* sub-headings */
+/* sub-headings */
+#howtoplay-inner-wrapper h3 {
     color: var(--clr-dark-sea);
     font-size: 1.2rem;
     margin: .8rem 0;
     text-align: center;
 }
 
-#howtoplay-inner-wrapper li {    /* info list */
+/* info list */
+#howtoplay-inner-wrapper li {
     color: var(--clr-light-silver);
     list-style: disc;
     list-style-position: outside;
@@ -585,9 +627,11 @@ nav {    /* contains logo & nav menu */
     margin: .4rem auto 0;
     width: 12rem;
 }
-/* HOW TO PLAY Lightbox [End] */
 
-/* COUNTDOWN TO START Lightbox [Start] */
+/* HOW TO PLAY Lightbox <-- [End] */
+
+/* COUNTDOWN TO START Lightbox <-- [Start] */
+
 #countdown-inner-wrapper {
     background-color: var(--clr-outer-space);
     border-radius: 50%;
@@ -595,6 +639,7 @@ nav {    /* contains logo & nav menu */
     height: 15rem;
 }
 
+/* countdown number */
 #countdown {
     color: var(--clr-light-silver);
     display: block;
@@ -602,9 +647,11 @@ nav {    /* contains logo & nav menu */
     text-align: center;
     line-height: 15rem;
 }
-/* COUNTDOWN TO START Lightbox [End] */
 
-/* GAME OVER Lightbox [Start] */
+/* COUNTDOWN TO START Lightbox <-- [End] */
+
+/* GAME OVER Lightbox <-- [Start] */
+
 #gameover-inner-wrapper {
     display: flex;
     align-items: center;
@@ -618,14 +665,16 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1rem;
 }
 
-#gameover-inner-wrapper h2 {    /* Game Over heading */
+/* heading */
+#gameover-inner-wrapper > h2 {
     color: var(--clr-dark-sea);
     font-size: 2rem;
     margin-bottom: .5rem;
 }
 
+/* Game Over message */
 #gameover-inner-wrapper p,
-#gameover-inner-wrapper span {    /* Game Over message */
+#gameover-inner-wrapper span {
     color: var(--clr-light-silver);
     font-size: 1.2rem;
     text-align: center;
@@ -641,12 +690,15 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
-#gameover-inner-wrapper button {
+/* 'Play Again' button */
+#gameover-inner-wrapper > button {
     margin-top: 1rem;
 }
-/* GAME OVER Lightbox [End] */
 
-/* GAME WON Lightbox [Start] */
+/* GAME OVER Lightbox <-- [End] */
+
+/* GAME WON Lightbox <-- [Start] */
+
 #gamewon-inner-wrapper {
     display: flex;
     align-items: center;
@@ -660,24 +712,28 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1rem;
 }
 
-#gamewon-inner-wrapper h2 {    /* Game Won heading */
+/* heading */
+#gamewon-inner-wrapper > h2 {
     color: var(--clr-dark-sea);
     font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-#username-gamewon {    /* player's name */
+/* player's name */
+#username-gamewon {
     color: var(--clr-dark-sea);
     font-size: 1.8rem;
 }
 
-#gamewon-inner-wrapper p {    /* Game Won message */
+/* message */
+#gamewon-inner-wrapper p {
     color: var(--clr-light-silver);
     font-size: 1.5rem;
     text-align: center;
 }
 
+/* €1 million! */
 #grand-prize {
     color: var(--clr-light-silver);
     display: block;
@@ -686,7 +742,7 @@ nav {    /* contains logo & nav menu */
     font-weight: 600;
 }
 
-/* buttons - Game Won */
+/* buttons */
 #gamewon-inner-wrapper button,
 #gamewon-inner-wrapper a {
     font-size: 1.2rem;
@@ -696,12 +752,15 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
-#gamewon-inner-wrapper button {
+/* 'Play Again' button */
+#gamewon-inner-wrapper > button {
     margin-top: 1rem;
 }
-/* GAME WON Lightbox [End] */
 
-/* QUIT Lightbox [Start] */
+/* GAME WON Lightbox <-- [End] */
+
+/* QUIT Lightbox <-- [Start] */
+
 #quit-inner-wrapper {
     display: flex;
     align-items: center;
@@ -715,19 +774,21 @@ nav {    /* contains logo & nav menu */
     padding: 1.7rem 1rem;
 }
 
-#quit-inner-wrapper h2 {    /* Quit heading */
+/* heading */
+#quit-inner-wrapper > h2 {
     color: var(--clr-dark-sea);
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
 
-#quit-inner-wrapper p {    /* Quit message */
+/* message */
+#quit-inner-wrapper p {    
     color: var(--clr-light-silver);
     font-size: 1.2rem;
     text-align: center;
 }
 
-/* buttons - Quit */
+/* buttons */
 #quit-inner-wrapper button,
 #quit-inner-wrapper a {
     font-size: 1.2rem;
@@ -737,13 +798,14 @@ nav {    /* contains logo & nav menu */
     cursor: pointer;
 }
 
-#quit-inner-wrapper button {
+/* 'Play Again' button */
+#quit-inner-wrapper > button {
     margin-top: 1rem;
 }
 
-/* QUIT Lightbox [End] */
+/* QUIT Lightbox <-- [End] */
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES <-- [Start] */
 
 /* styling for hover-capable devices only */
 @media (hover: hover) {
@@ -784,6 +846,7 @@ nav {    /* contains logo & nav menu */
 }
 
 @media (min-width: 360px) {
+    /* GAME PAGE */
     #question-container {
         margin-top: 0;
     }
@@ -908,7 +971,6 @@ nav {    /* contains logo & nav menu */
         line-height: 2.4rem;
         width: 16rem;
     }
-
 
     /* GAME PAGE */
     #gamepage-body {
@@ -1035,7 +1097,7 @@ nav {    /* contains logo & nav menu */
         font-size: 1rem;
     }
 
-    /* How To Play Lightbox */
+    /* HOW TO PLAY Lightbox */
     #howtoplay-inner-wrapper {
         font-size: 1.1rem;
         padding: 1.5rem 3rem;
@@ -1046,7 +1108,7 @@ nav {    /* contains logo & nav menu */
         width: 14rem;
     }
 
-    /* Game Over [Lightbox] */
+    /* GAME OVER Lightbox */
     #gameover-inner-wrapper {
         width: 32.35rem;
         min-height: 16rem;
@@ -1068,7 +1130,7 @@ nav {    /* contains logo & nav menu */
         width: 14rem;
     }
 
-    /* Game Won Lightbox */
+    /* GAME WON Lightbox */
     #gamewon-inner-wrapper {
         width: 32.35rem;
         min-height: 16rem;
@@ -1093,7 +1155,7 @@ nav {    /* contains logo & nav menu */
         width: 14rem;
     }
 
-    /* Quit Lightbox */
+    /* QUIT Lightbox */
     #quit-inner-wrapper {
         width: 32.35rem;
         min-height: 16rem;
@@ -1286,7 +1348,7 @@ nav {    /* contains logo & nav menu */
         width: 74%;
     }
 
-    /* COUNTDOWN TO START Lightbox*/
+    /* COUNTDOWN TO START Lightbox */
     #countdown-inner-wrapper {
         width: 20rem;
         height: 20rem;
@@ -1297,3 +1359,5 @@ nav {    /* contains logo & nav menu */
         line-height: 20rem;
     }
 }
+
+/* MEDIA QUERIES <-- [End] */
