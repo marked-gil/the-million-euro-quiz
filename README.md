@@ -206,9 +206,13 @@ The following are the wireframes used to build this website. These wireframes ar
     ![404 Page Wireframe for large screen](docs/page404-large-wf.png)
 
 ### Surface 
-* Color
-* Contrast
-* Typography (Font Families & Sizes)
+* Colors & Contrast      
+    ![Colors as shown in Contrast Grid](docs/contrast-grid.png)
+
+* Typography (Font Families & Sizes)    
+![Playfair Display font from Google Fonts](docs/playfair-font.png)
+![Roboto font from Google Fonts](docs/roboto-font.png)
+![Roboto Slab font from Google Fonts](docs/roboto-slab-font.png)
 * Specific layout
 
 ## FEATURES
@@ -325,6 +329,8 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 ### Responsiveness
 ### Accessibility
 ### Links/Buttons Functionality Testing
+![Result of test on buttons/links functionality](docs/buttons-testing-1.png)    
+![Result of test on buttons/links functionality](docs/buttons-testing-2.png)
 ### Validator Testing
 * W3C Markup Validator      
 
