@@ -472,7 +472,7 @@ if (document.getElementById('gamepage-body')) {
                 selectedQuestion = setDifficultyLevel();
                 usedQuestions.push(selectedQuestion.id);
                 displayQuestion();
-                // counter = timer(30);
+                counter = timer(30);
                 document.querySelector('section#question-container h2').style.visibility = 'visible';
                 document.querySelector('#question-text').style.visibility = 'visible';
                 highlightNextPrize();

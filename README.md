@@ -336,6 +336,14 @@ ___
 ![Result of Safari Accessibility Audit on game page](docs/accessibility-testing/gamepage-accessibility-test.png)    
 ![Result of Safari Accessibility Audit on 404 page](docs/accessibility-testing/page404-accessibility-test.png)      
 
+### Color Contrast Accessibility Validator      
+* Home Page result      
+[Result of Color Contrast Validator - home page](docs/color-contrast-validator/home-color-validator.png)       
+* Game Page result      
+[Result of Color Contrast Validator - game page](docs/color-contrast-validator/gamepage-color-validator.png)   
+* 404 Page result       
+[Result of Color Contrast Validator - 404 page](docs/color-contrast-validator/page404-color-validator.png)     
+
 ### Links/Buttons Functionality Testing
 ![Result of test on buttons/links functionality](docs/buttons-testing-1.png)    
 ![Result of test on buttons/links functionality](docs/buttons-testing-2.png)
