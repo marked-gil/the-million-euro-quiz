@@ -287,7 +287,7 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
 * **'Game Won' Lightbox**   
     The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
 
-    <!-- screenshot of Game Won lightbox -->
+    ![Image of Game Won lightbox](docs/gamewon-lightbox.png)
 
 * **'Quit' Lightbox**   
     In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
