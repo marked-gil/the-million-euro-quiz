@@ -258,6 +258,13 @@ nav {
     height: 3rem;
     width: 90%;
     overflow: auto;
+    /* hides scrollbar in Firefox */
+    scrollbar-width: none;
+}
+
+/* hides scrollbar in Chrome, Safari, & Edge */
+#money-container::-webkit-scrollbar {
+    width: 0;
 }
 
 #money-list {
@@ -574,18 +581,19 @@ nav {
     max-height: 41rem;
     overflow: auto;
     position: relative;
-    /* style on scrollbar & thumb for Firefox */
+    /* styles scrollbar in Firefox */
     scrollbar-color: var(--clr-sea-green) var(--clr-deep-moss);
+    /* styles scrollbar thumb in Firefox */
     scrollbar-width: thin;
 }
 
-/* style on scrollbar for Chrome, Safari, & Edge */
+/* styles scrollbar in Chrome, Safari, & Edge */
 #howtoplay-inner-wrapper::-webkit-scrollbar {
     background-color: var(--clr-deep-moss);
     width: 5px;
 }
 
-/* style on scrollbar thumb for Chrome, Safari, & Edge */
+/* styles scrollbar thumb in Chrome, Safari, & Edge */
 #howtoplay-inner-wrapper::-webkit-scrollbar-thumb {
     background-color: var(--clr-sea-green);
     border-radius: 5px;
