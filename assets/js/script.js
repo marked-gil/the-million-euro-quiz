@@ -416,6 +416,7 @@ const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
 // variables to access 'Money Prize' DOM elements
+const prizesList = document.querySelectorAll('#money-list li');
 const prizeOne = document.querySelector('[data-prize="500"]');
 const prizeTwo = document.querySelector('[data-prize="1,000"]');
 const prizeThree = document.querySelector('[data-prize="1,500"]');
@@ -466,6 +467,7 @@ if (document.getElementById('gamepage-body')) {
         } else {
             countdown.innerHTML = `GO`;
             stopTimer(countdownId);
+            displayCashPrizes();
             setTimeout(() => {
                 countdownSection.classList.remove('overlay-bg');
                 countdownSection.classList.add('hide');
@@ -559,6 +561,21 @@ function playGame(thisBtn, timerId) {
             }, 1000);
         }, 1000);
     }
+}
+
+/**
+ * Displays all the cash prizes for the whole game
+ */
+ function displayCashPrizes() {
+    let num = 0;
+    let intervalId = setInterval(() => {
+        if(num < prizesList.length) {
+            prizesList[num].classList.remove('invisible');
+            num += 1;
+        } else {
+            clearInterval(intervalId);
+        }
+    }, 60);
 }
 
 /**
