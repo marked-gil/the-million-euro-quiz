@@ -599,19 +599,23 @@ nav {
     border-radius: 5px;
 }
     
-
+/* sticks the 'x' close icon to the right top of its
+containing scrollable div - code copied from stackoverflow: 
+https://stackoverflow.com/questions/65514077/stick-buttons-to-the-right-top-of-an-scrollable-div */
 .close-howtoplay-container {
-    height: 120%;
-    position: absolute;
+    height: 0;
+    position: sticky;
     right: 8%;
+    top:0;
+    left: 0;
+    width: 100%;
+    text-align: right;
 }
 
-/* 'x' icon to close lightbox*/
+/* 'x' icon to close lightbox */
 #close-howtoplay {    
     color: var(--clr-sea-green);
     font-size: 2.5rem;
-    position: sticky;
-    top: 0;
 }
 
 /* heading */
