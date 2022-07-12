@@ -1,7 +1,7 @@
 # The Million Euro Quiz
-![Responsive Mock Image of The Million Euro Quiz](docs/iamresponsive-screenshot.png)
+![Responsive Mock Image of The Million Euro Quiz](docs/design-choice/iamresponsive-screenshot.png)
 
-The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the life lines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
+The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
 
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
@@ -43,7 +43,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 ___
 ### **STRATEGY**
 #### **Goal:**
-* This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, life lines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
+* This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, lifelines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
 
 #### **User Stories:**
 * As a user, I want to play a quiz game online to test my general knowledge.
@@ -92,8 +92,8 @@ This online quiz game has the following planned features based on the User Stori
 * User Story: 
     > As a user, I want to utilize strategic options to help me when a question is difficult, so the game will also have a strategic nature.
     * IMPLEMENTATION:
-        * Life lines, which are help tools that increase the chances for the player to select the correct answer will be created. These life lines are: (1) to remove 1 wrong answer, (2) to remove 2 wrong answers, and (3) to add more time to the timer.
-        * One or more life lines can be used in a question, but each life line can only be used once in the course of the game.
+        * Lifelines, which are help tools that increase the chances for the player to select the correct answer will be created. These lifelines are: (1) to remove 1 wrong answer, (2) to remove 2 wrong answers, and (3) to add more time to the timer.
+        * One or more lifelines can be used in a question, but each lifeline can only be used once in the course of the game.
 
 * User Story:
     > * As a user, I want to get immediate feedback on whether my answer is right or wrong so I will learn along the way.
@@ -120,14 +120,15 @@ This online quiz game has the following planned features based on the User Stori
     * IMPLEMENTATION:
         * The design of the game display will be minimalist.
         * The home page will only show the logo, and 2 buttons ('Play' and 'How To Play' buttons).
-        * The game page will have a logo, nav bar with 3 nav links ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prize box, life lines, and the main game area where the question and multiple answer choices will be displayed.
+        * The game page will have a logo, nav bar with 3 nav links ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prize box, lifelines, and the main game area where the question and multiple answer choices will be displayed.
         * The popup boxes will be minimal in text content, and will only contain 1 or 2 buttons/links.
 
 #### **Design Choices:**
 This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of mainly **shades of green** is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life. Also, some other colors to serve as accents are used.
 
 * **Color Scheme**:     
-The following are the colors used: 
+    ([See **SURFACE** section for more details](#surface))  
+    The following are the colors used:
     * #ffffff (White)    
     * #dad9d8 (Light silver)
     * #000000 (Black)
@@ -142,15 +143,12 @@ The following are the colors used:
     * #e1cd33 (Sandstorm - yellow)
     * #f0e699 (Khaki - yellow)      
 
-    ([See **SURFACE** section for more details](#surface))
-
-* **Typography**:   
-This website uses fonts from [Google Fonts](https://fonts.google.com/). The following are the utilized fonts:
+* **Typography**:      
+    ([See **'SURFACE'** section for more details](#surface))    
+    This website uses fonts from [Google Fonts](https://fonts.google.com/). The following are the utilized fonts:
     * **Roboto** — the default font for the site
     * **Playfair Display** — for the main logo
     * **Roboto Slab** — for the prize amount (inside money box)   
-
-    ([See **'SURFACE'** section for more details](#surface))
 
 ### **STRUCTURE**
 
@@ -197,34 +195,34 @@ The following are the wireframes used to build this website. These wireframes we
 * **Home Page**     
 
     * Mobile Screen  
-    ![Home Page wireframe for mobile screen](docs/home-mobile-wf.png)
-    !['Enter Name' lightbox wireframe for mobile screen](docs/enter-name-mobile-wf.png)
-    !['How to Play' lightbox wireframe for mobile screen](docs/howtoplay-mobile-wf.png)   
+    ![Home Page wireframe for mobile screen](docs/wireframes/home-mobile-wf.png)
+    !['Enter Name' lightbox wireframe for mobile screen](docs/wireframes/enter-name-mobile-wf.png)
+    !['How to Play' lightbox wireframe for mobile screen](docs/wireframes/howtoplay-mobile-wf.png)   
 
     * Large Screen      
-    ![Home Page wireframe for large screen](docs/home-large-wf.png)
-    ![Enter Player's Name lightbox wireframe for large screen](docs/enter-name-large-wf.png)
+    ![Home Page wireframe for large screen](docs/wireframes/home-large-wf.png)
+    ![Enter Player's Name lightbox wireframe for large screen](docs/wireframes/enter-name-large-wf.png)
 
 * **Game Page**     
     * Mobile Screen     
-    ![Game Area wireframe for mobile screen](docs/game-area-mobile-wf.png)
-    ![Game Over lightbox wireframe for mobile screen](docs/gameover-mobile-wf.png)
-    ![Game Won lightbox wireframe for mobile screen](docs/gamewon-mobile-wf.png)
-    ![Quit lightbox wireframe for mobile screen](docs/quit-mobile-wf.png)
+    ![Game Area wireframe for mobile screen](docs/wireframes/game-area-mobile-wf.png)
+    ![Game Over lightbox wireframe for mobile screen](docs/wireframes/gameover-mobile-wf.png)
+    ![Game Won lightbox wireframe for mobile screen](docs/wireframes/gamewon-mobile-wf.png)
+    ![Quit lightbox wireframe for mobile screen](docs/wireframes/quit-mobile-wf.png)
 
     * Large Screen   
-    ![Game Area wireframe for large screen](docs/game-area-large-wf.png)
-    ![Game Over lightbox wireframe for large screen](docs/gameover-large-wf.png)
-    ![Game Won lightbox wireframe for large screen](docs/gamewon-large-wf.png)
-    !['How To Play' lightbox wireframe for large screen](docs/howtoplay-large-wf.png)
-    ![Quit lightbox wireframe for large screen](docs/quit-large-wf.png)
+    ![Game Area wireframe for large screen](docs/wireframes/game-area-large-wf.png)
+    ![Game Over lightbox wireframe for large screen](docs/wireframes/gameover-large-wf.png)
+    ![Game Won lightbox wireframe for large screen](docs/wireframes/gamewon-large-wf.png)
+    !['How To Play' lightbox wireframe for large screen](docs/wireframes/howtoplay-large-wf.png)
+    ![Quit lightbox wireframe for large screen](docs/wireframes/quit-large-wf.png)
 
 * **404 Page**      
     * Mobile Screen     
-    ![404 Page Wireframe for mobile screen](docs/page404-mobile-wf.png)
+    ![404 Page Wireframe for mobile screen](docs/wireframes/page404-mobile-wf.png)
 
     * Large Screen   
-    ![404 Page Wireframe for large screen](docs/page404-large-wf.png)
+    ![404 Page Wireframe for large screen](docs/wireframes/page404-large-wf.png)
 
 ### Surface     
 This site was created using several shades of colors that were mixed and matched to produce a harmonious design. Following are the colors and typography utilized:  
@@ -232,13 +230,14 @@ This site was created using several shades of colors that were mixed and matched
 (To see the finished product proceed to [**FEATURES**](#features).)
 * Colors & Contrast      
 
-    ![Colors as shown in Contrast Grid](docs/contrast-grid.png)
+    ![Colors as shown in Contrast Grid](docs/design-choice/contrast-grid.png)
 
 * Typography (Font Families)    
 
-    ![Playfair Display font from Google Fonts](docs/playfair-font.png)
-    ![Roboto font from Google Fonts](docs/roboto-font.png)
-    ![Roboto Slab font from Google Fonts](docs/roboto-slab-font.png)
+    ![Playfair Display font from Google Fonts](docs/design-choice/playfair-font.png)
+    ![Roboto font from Google Fonts](docs/design-choice/roboto-font.png)
+    ![Roboto Slab font from Google Fonts](docs/design-choice/roboto-slab-font.png)    
+
 ___
 ## FEATURES
 ___
@@ -246,7 +245,7 @@ ___
 ### **Home Page**
 The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').    
 
-![Image of Home Page](docs/homepage.png)    
+![Image of Home Page](docs/features/homepage.png)    
 
 * **'Enter Player's Name' Lightbox**    
 
@@ -254,20 +253,20 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
     * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
     * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.   
 
-        ![Image of Enter Player's Name lightbox](docs/enter-name-lightbox.png)
+        ![Image of Enter Player's Name lightbox](docs/features/enter-name-lightbox.png)
 
 * **'How To Play' Lightbox**    
 
     When the 'How to Play' button is clicked, this lightbox will pop up which contains the instruction for, or mechanics of, the quiz game.
     * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.     
 
-        ![Image of 'How To Play' lightbox](docs/how-to-play-lightbox.png)
+        ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
 
 
 ### **Game Page**       
 The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.
-![Image of Game Page on large screen](docs/gamepage-large.png)
-![Image of Game Page on mobile device](docs/gamepage-mobile.png)    
+![Image of Game Page on large screen](docs/features/gamepage-large.png)
+![Image of Game Page on mobile device](docs/features/gamepage-mobile.png)    
 
 * **Navigation Bar** (Logo & Nav Menu)  
     The navigation bar contains the website logo, and the nav menu.     
@@ -285,7 +284,7 @@ The Game Page contains the Nav Bar - which has the logo and the nav menu - and t
     * **Countdown To Start**    
     A 3-second countdown shows up when opening the Game Page, and before the 1st question is revelead.  
 
-        ![Image of countdown](docs/countdown.png)
+        ![Image of countdown](docs/features/countdown.png)
 
     * **Player**    
     The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
@@ -298,16 +297,16 @@ The Game Page contains the Nav Bar - which has the logo and the nav menu - and t
     
          The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
 
-    * **Life Lines**    
-    The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
+    * **Lifelines**    
+    The LIFELINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 lifelines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
 
-        The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.      
+        The player can choose to use one or more lifelines in a question, but each lifeline can only be used once in the course of the game.      
 
-        ![Image of Life lines](docs/lifelines-image.png)
+        ![Image of Lifelines](docs/features/lifelines-image.png)
 
     * **Question Area**     
     The question area consists of the question number, the main question, and the timer.
-    ![Image of question area](docs/question-area.png)   
+    ![Image of question area](docs/features/question-area.png)   
 
         * **Question**  
         There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
@@ -318,7 +317,7 @@ The Game Page contains the Nav Bar - which has the logo and the nav menu - and t
     * **Answer Buttons**    
         As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
 
-        ![Image of answer buttons](docs/answer-buttons.png)     
+        ![Image of answer buttons](docs/features/answer-buttons.png)     
 
         Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
 
@@ -329,17 +328,17 @@ The Game Page contains the Nav Bar - which has the logo and the nav menu - and t
     * **'Game Over' Lightbox**  
         The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
 
-        ![Image of Game Over lightbox](docs/gameover-lightbox.png)  
+        ![Image of Game Over lightbox](docs/features/gameover-lightbox.png)  
 
     * **'Game Won' Lightbox**   
         The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
 
-        ![Image of Game Won lightbox](docs/gamewon-lightbox.png)
+        ![Image of Game Won lightbox](docs/features/gamewon-lightbox.png)
 
     * **'Quit' Lightbox**   
         In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
 
-        ![Image of Quit lightbox](docs/quit-lightbox.png)
+        ![Image of Quit lightbox](docs/features/quit-lightbox.png)
 
     * **'How To Play' Lightbox**   
         This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
@@ -347,7 +346,7 @@ The Game Page contains the Nav Bar - which has the logo and the nav menu - and t
 ### **404 Page**  
 The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.     
 
-![Image of 404 page](docs/404page.png)
+![Image of 404 page](docs/features/404page.png)
 
 ### **Features for the Future**
 * In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
@@ -411,7 +410,7 @@ This site is fully responsive and works well from a minimum screen size of 280px
 ### **Links/Buttons Functionality Testing**
 * All the links and buttons of the site were manually tested on different browsers (Chrome, Firefox, Microsoft Edge, and Safari) and are confirmed to be working as shown in the table below:    
 
-    ![Result of test on buttons/links functionality](docs/buttons-testing.png)    
+    ![Result of test on buttons/links functionality](docs/other-tests/buttons-testing.png)    
 
 
 ### **Validator Testing**
@@ -485,7 +484,7 @@ The following technologies are used in this website:
 * [**GitHub**](https://github.com/) — stores the source code repository for this website.
 * [**GitHub Pages**](https://pages.github.com/) — hosts the live website.
 * [**Google Fonts**](https://fonts.google.com/) — provides the fonts used in this website. (see [Design Choices](#design-choices))
-* [**Font Awesome**](https://fontawesome.com/) — provides the icons used for the Life lines.
+* [**Font Awesome**](https://fontawesome.com/) — provides the icons used for the Lifelines.
 * [**Favicon.io**](https://favicon.io/) — used for the icon displayed beside the site title seen in the browser tab.
 * [**Balsalmiq**](https://balsamiq.com/) - used in creating the wireframes of this project's design concept.
 ___
