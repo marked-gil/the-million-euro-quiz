@@ -167,7 +167,7 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * **The Lightboxes (popups)** - The modals or lighboxes are all designed consistently with changes only in their content.
 
     * **Change in Layout Between Large and Small Screens**   
-        * All the elements of the site shown on large-screen devices are also included in the layout for the small-screen devices. However, due to the restriction posed by the smaller screens, the entire box container of the cash prize amounts has to be converted into a small rectangular box that can display a single value at a time. And it is located at the top of the lifelines. 
+        All the elements of the site shown on large-screen devices are also included in the layout for the small-screen devices. However, due to the restriction posed by the smaller screens, the entire box container of the cash prize amounts has to be converted into a small rectangular box that can display a single value at a time. And it is located at the top of the lifelines. 
 
 ### **STRUCTURE**
 
