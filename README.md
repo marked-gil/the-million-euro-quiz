@@ -1,7 +1,7 @@
 # The Million Euro Quiz
 ![Responsive Mock Image of The Million Euro Quiz](docs/design-choice/iamresponsive-screenshot.png)
 
-The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize for every level, and with the top prize of € 1 million. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
+The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize for every level, and with the top prize of € 1 million. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. This quiz is inspired by the game show 'Who Wants to be A Millionaire'.[View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
 
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
@@ -42,8 +42,14 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 ## UXD (User Experience Design)
 ___
 ### **STRATEGY**
-#### **Goal:**
+#### **Main Goal:**
 * This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, lifelines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
+
+#### **Target Audience**
+* People, of any age group, who want to test their general knowledge.
+* People who are interested in online games, including quizzes.
+* People who enjoy a challenging game.
+* People who love watching 'Who Wants To Be A Millionaire' game show, and would want to try a simulated game which has some resemblance to the famous show.
 
 #### **User Stories:**
 * As a user, I want to play a quiz game online to test my general knowledge.
