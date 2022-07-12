@@ -827,7 +827,7 @@ https://stackoverflow.com/questions/65514077/stick-buttons-to-the-right-top-of-a
 /* MEDIA QUERIES <-- [Start] */
 
 /* styling for hover-capable devices only - 
-idea taken from CSS-TRICKS website (See readMe for details) */
+idea taken from CSS-TRICKS website (link found in README Credits section) */
 @media (hover: hover) {
     #howtoplay-btn-homepage:hover,
     #play-button:hover,

@@ -384,7 +384,7 @@ if (document.getElementById('homepage-body')) {
     const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
-        // regex pattern taken from stackoverflow (links found in ReadMe file Credits section)
+        // regex pattern taken from stackoverflow (links found in README file Credits section)
         const pattern = '^[a-zA-Z0-9 ]+$';
         if (captureUserName()) {
             if (usernameInput.value.match(pattern)) {
@@ -566,7 +566,7 @@ function playGame(thisBtn, timerId) {
 /**
  * Displays all the cash prizes for the whole game
  */
- function displayCashPrizes() {
+function displayCashPrizes() {
     let num = 0;
     let intervalId = setInterval(() => {
         if(num < prizesList.length) {
