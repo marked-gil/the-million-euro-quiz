@@ -6,7 +6,8 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
     * [Strategy](#strategy)
-        * [Goal](#goal)
+        * [Main Goal](#main-goal)
+        * [Target Audience](#target-audience)
         * [User Stories](#user-stories)
     * [Scope](#scope)
         * [Planned Features](#planned-features)
@@ -157,7 +158,7 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * **Roboto Slab** — for the prize amount (inside money box)   
 
 * **Layout**    
-    * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro', which is different from the how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
+    * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro', which is different from how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
 
     * **The Home Page & 404 Page** - These pages are kept simple and minimalistic (containing only the logo and button/s) to decrease distraction, and to give a touch of straightforwardness to the site, which I believe most users prefer.   
 
@@ -216,7 +217,7 @@ The following are the wireframes used to build this website. These wireframes we
 
     * Large Screen      
     ![Home Page wireframe for large screen](docs/wireframes/home-large-wf.png)
-    ![Enter Player's Name lightbox wireframe for large screen](docs/wireframes/enter-name-large-wf.png)
+    ![Enter Name lightbox wireframe for large screen](docs/wireframes/enter-name-large-wf.png)
 
 * **Game Page**     
     * Mobile Screen     
@@ -262,13 +263,13 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
 
 ![Image of Home Page](docs/features/homepage.png)    
 
-* **'Enter Player's Name' Lightbox**    
+* **'Enter Name' Lightbox**    
 
     When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before being admitted into the game page.     
     * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
     * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.   
 
-        ![Image of Enter Player's Name lightbox](docs/features/enter-name-lightbox.png)
+        ![Image of Enter Name lightbox](docs/features/enter-name-lightbox.png)
 
 * **'How To Play' Lightbox**    
 
