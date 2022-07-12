@@ -166,6 +166,9 @@ This online game site is created with a minimalist, uncluttered design theme tha
 
     * **The Lightboxes (popups)** - The modals or lighboxes are all designed consistently with changes only in their content.
 
+    * **Change in Layout Between Large and Small Screens**   
+        * The change in layout of for small screen devices are 
+
 ### **STRUCTURE**
 
 #### **Interaction Design (IXD)**

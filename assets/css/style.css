@@ -574,7 +574,23 @@ nav {
     max-height: 41rem;
     overflow: auto;
     position: relative;
+    /* style on scrollbar & thumb for Firefox */
+    scrollbar-color: var(--clr-sea-green) var(--clr-deep-moss);
+    scrollbar-width: thin;
 }
+
+/* style on scrollbar for Chrome, Safari, & Edge */
+#howtoplay-inner-wrapper::-webkit-scrollbar {
+    background-color: var(--clr-deep-moss);
+    width: 5px;
+}
+
+/* style on scrollbar thumb for Chrome, Safari, & Edge */
+#howtoplay-inner-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--clr-sea-green);
+    border-radius: 5px;
+}
+    
 
 .close-howtoplay-container {
     height: 120%;
