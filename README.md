@@ -124,16 +124,33 @@ This online quiz game has the following planned features based on the User Stori
         * The popup boxes will be minimal in text content, and will only contain 1 or 2 buttons/links.
 
 #### **Design Choices:**
-This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of shades of green is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life.
+This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of mainly **shades of green** is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life. Also, some other colors to serve as accents are used.
 
-* **Color Scheme**: 
-    * Green
-    <!-- more content -->
+* **Color Scheme**:     
+The following are the colors used: 
+    * #ffffff (White)    
+    * #dad9d8 (Light silver)
+    * #000000 (Black)
+    * #252627 (Raisin black)
+    * #264137 (Outer-space green)
+    * #336633 (Mughal green)
+    * #266340 (Deep-moss green)
+    * #3a9561 (Sea green)
+    * #93C393 (Dark-sea green)
+    * #deb887 (Burlywood)
+    * #b6a733 (Brass)
+    * #e1cd33 (Sandstorm - yellow)
+    * #f0e699 (Khaki - yellow)      
+
+    ([See **SURFACE** section for more details](#surface))
+
 * **Typography**:   
 This website uses fonts from [Google Fonts](https://fonts.google.com/). The following are the utilized fonts:
     * **Roboto** — the default font for the site
     * **Playfair Display** — for the main logo
-    * **Roboto Slab** — for the cash prize amount (number)
+    * **Roboto Slab** — for the prize amount (inside money box)   
+
+    ([See **'SURFACE'** section for more details](#surface))
 
 ### **STRUCTURE**
 
@@ -166,14 +183,17 @@ This website uses fonts from [Google Fonts](https://fonts.google.com/). The foll
     * The buttons and links can be hovered and will show style changes in them to tell the user that they are functional or clickable.  
     * The buttons and links can be clicked and will show a momentary style change, and may also provide a lightbox (popup box) as a feedback.
 
-#### **Information Design/Architecture**
-*
+#### **Information Design/Architecture**    
+* The content of the website is made certain to be useful and necessary for its function as being an online quiz game site. 
+* Its contents are grouped adequately for consistency, preditability, and ease of use for the user. Examples include:   
+    * The nav links are grouped together at the top of the game page.
+    * The question, multiple answer choices, timer, player name and prize earned are grouped in the game area.  
+    * Feedbacks, such as the lightboxes (popups), to user's interaction with the site are designed consistently and simply.
 
 ### **SKELETON**
 
-The following are the wireframes used to build this website. These wireframes are created using [Balsamiq](https://balsamiq.com/).
-#### **Wireframes**
-
+The following are the wireframes used to build this website. These wireframes were created using [Balsamiq](https://balsamiq.com/).
+#### **Wireframes**     
 * **Home Page**     
 
     * Mobile Screen  
@@ -206,99 +226,123 @@ The following are the wireframes used to build this website. These wireframes ar
     * Large Screen   
     ![404 Page Wireframe for large screen](docs/page404-large-wf.png)
 
-### Surface 
+### Surface     
+This site was created using several shades of colors that were mixed and matched to produce a harmonious design. Following are the colors and typography utilized:  
+
+(To see the finished product proceed to [**FEATURES**](#features).)
 * Colors & Contrast      
+
     ![Colors as shown in Contrast Grid](docs/contrast-grid.png)
 
-* Typography (Font Families & Sizes)    
-![Playfair Display font from Google Fonts](docs/playfair-font.png)
-![Roboto font from Google Fonts](docs/roboto-font.png)
-![Roboto Slab font from Google Fonts](docs/roboto-slab-font.png)
-* Specific layout
+* Typography (Font Families)    
 
+    ![Playfair Display font from Google Fonts](docs/playfair-font.png)
+    ![Roboto font from Google Fonts](docs/roboto-font.png)
+    ![Roboto Slab font from Google Fonts](docs/roboto-slab-font.png)
 ___
 ## FEATURES
 ___
 
 ### **Home Page**
-The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').
-![Image of Home Page](docs/homepage.png)
+The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').    
+
+![Image of Home Page](docs/homepage.png)    
+
 * **'Enter Player's Name' Lightbox**    
-    When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before entering the game page.     
+
+    When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before being admitted into the game page.     
     * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
     * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.   
-    ![Image of Enter Player's Name lightbox](docs/enter-name-lightbox.png)
+
+        ![Image of Enter Player's Name lightbox](docs/enter-name-lightbox.png)
 
 * **'How To Play' Lightbox**    
+
     When the 'How to Play' button is clicked, this lightbox will pop up which contains the instruction for, or mechanics of, the quiz game.
     * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.     
-    ![Image of 'How To Play' lightbox](docs/how-to-play-lightbox.png)
 
-### **Game Page**
+        ![Image of 'How To Play' lightbox](docs/how-to-play-lightbox.png)
+
+
+### **Game Page**       
+The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.
 ![Image of Game Page on large screen](docs/gamepage-large.png)
-![Image of Game Page on mobile device](docs/gamepage-mobile.png)
+![Image of Game Page on mobile device](docs/gamepage-mobile.png)    
+
 * **Navigation Bar** (Logo & Nav Menu)  
-    The navigation bar contains the website logo, and the nav menu.
-    * **Logo**
-    * **Nav Menu** — includes the following links: **'Home'**, **'How To Play'**, **'Quit'**
+    The navigation bar contains the website logo, and the nav menu.     
+
+    * **Logo** - displays 'The Million Euro Quiz' with a black background, and a green top/bottom border.   
+
+    * **Nav Menu** — includes the following links: **'Home'**, **'How To Play'**, **'Quit'**    
         * **'Home'** link — redirects to the home page.
         * **'How To Play'** link — brings out the 'How To Play' lightbox.
-        * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.
+        * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.       
 
-* **Countdown To Start**    
-    ![Image of countdown](docs/countdown.png)
-* **Player**    
+* **Game Area**
+    The game area contains the following:   
+
+    * **Countdown To Start**    
+    A 3-second countdown shows up when opening the Game Page, and before the 1st question is revelead.  
+
+        ![Image of countdown](docs/countdown.png)
+
+    * **Player**    
     The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
 
-* **Cash**  
+    * **Cash**  
     This is the current cash earned by the player displayed at the top right of the game area.
 
-* **Cash Prizes Box**   
+    * **Cash Prize (level) Box**   
     This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific cash amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
-
-    The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
-
-* **Life Lines**    
-    The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.
-    The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.  
     
-    ![Image of Life lines](docs/lifelines-image.png)
+         The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
 
-* **Question Area**     
+    * **Life Lines**    
+    The LIFE LINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 life lines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
+
+        The player can choose to use one or more life lines in a question, but each life line can only be used once in the course of the game.      
+
+        ![Image of Life lines](docs/lifelines-image.png)
+
+    * **Question Area**     
     The question area consists of the question number, the main question, and the timer.
-    ![Image of question area](docs/question-area.png)
-    * **Question**  
-    There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
+    ![Image of question area](docs/question-area.png)   
 
-    * **Timer**     
-    Each question has an allotted time of 30 seconds. The player has to choose and click their answer before this allotted time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever prize is equivalent to their last level in the game.
+        * **Question**  
+        There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
 
-* **Answer Buttons**    
-    As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
+        * **Timer**     
+        ach question has an allotted time of 30 seconds. The player has to choose and click their answer before this allotted time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever prize is equivalent to their last level in the game.
 
-    ![Image of answer buttons](docs/answer-buttons.png)     
+    * **Answer Buttons**    
+        As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
 
-    Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
+        ![Image of answer buttons](docs/answer-buttons.png)     
 
-    If the selected answer is correct, the game will proceed to the next question and timer will reset. If answer is wrong, the game will be over and the player gets whatever prize is equivalent to their last level in the game.
+        Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
 
-* **'Game Over' Lightbox**  
-    The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
+        If the selected answer is correct, the game will proceed to the next question and timer will reset. If answer is wrong, the game will be over and the player gets whatever prize is equivalent to their last level in the game.
 
-    ![Image of Game Over lightbox](docs/gameover-lightbox.png)  
+* **Lightboxes (Popups)**       
 
-* **'Game Won' Lightbox**   
-    The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
+    * **'Game Over' Lightbox**  
+        The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
 
-    ![Image of Game Won lightbox](docs/gamewon-lightbox.png)
+        ![Image of Game Over lightbox](docs/gameover-lightbox.png)  
 
-* **'Quit' Lightbox**   
-    In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
+    * **'Game Won' Lightbox**   
+        The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
 
-    ![Image of Quit lightbox](docs/quit-lightbox.png)
+        ![Image of Game Won lightbox](docs/gamewon-lightbox.png)
 
-* **'How To Play' Lightbox**   
-    This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
+    * **'Quit' Lightbox**   
+        In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
+
+        ![Image of Quit lightbox](docs/quit-lightbox.png)
+
+    * **'How To Play' Lightbox**   
+        This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
 
 ### **404 Page**  
 The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.     
@@ -307,8 +351,9 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 
 ### **Features for the Future**
 * In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
-
-## FIXED BUGS
+___
+## FIXED BUGS   
+___
 * **ISSUE:**   
     This site has 3 pages (html files) and using only 1 javascript file. When I ran the 'game page', it works perfectly fine without errors. But, when I went to the 'home page', an error showed up in the console: `Uncaught TypeError: Cannot set properties of null (setting ‘innerText’) at displayQuestion`.
     * **INTENDED OUTCOME**:   
@@ -324,50 +369,79 @@ The 404 Page simply informs the user that there is nothing to be found in that p
     
     * **SOLUTION**:
     As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling will only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
+
 ___
-## BUGS LEFT TO FIX
+## BUGS LEFT TO FIX   
 ___
+No bugs found on multiple testing of the site.
+
 ___
 ## TESTING
 ___
-### Responsiveness
-### Accessibility   
-![Result of Safari Accessibility Audit on home page](docs/accessibility-testing/home-accessibility-test.png)    
-![Result of Safari Accessibility Audit on game page](docs/accessibility-testing/gamepage-accessibility-test.png)    
-![Result of Safari Accessibility Audit on 404 page](docs/accessibility-testing/page404-accessibility-test.png)      
+### Responsiveness      
+This site is fully responsive and works well from a minimum screen size of 280px.   
+* The web developer tools of the main web browsers (Chrome, Firefox,, Microsoft Edge, and Safari) were used to check for responsiveness.    
+* The online tool [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) has validated the responsiveness of the site.  
 
-### Color Contrast Accessibility Validator      
-* Home Page result      
-[Result of Color Contrast Validator - home page](docs/color-contrast-validator/home-color-validator.png)       
-* Game Page result      
-[Result of Color Contrast Validator - game page](docs/color-contrast-validator/gamepage-color-validator.png)   
-* 404 Page result       
-[Result of Color Contrast Validator - 404 page](docs/color-contrast-validator/page404-color-validator.png)     
+    ![Mobile Friendly Test result for home page](docs/mobile-friendly-test/home-mobilefriendly.png) 
+    ![Mobile Friendly Test result for game page](docs/mobile-friendly-test/gamepage-mobilefriendly.png) 
+    ![Mobile Friendly Test result for 404 page](docs/mobile-friendly-test/page404-mobilefriendly.png)   
 
-### Links/Buttons Functionality Testing
-![Result of test on buttons/links functionality](docs/buttons-testing-1.png)    
-![Result of test on buttons/links functionality](docs/buttons-testing-2.png)
-### Validator Testing
-* W3C Markup Validator      
+### Accessibility
+* Safari Accessibility Audit Results    
+    * Home Page 
+    ![Result of Safari Accessibility Audit on home page](docs/accessibility-testing/home-accessibility-test.png)    
+    * Game Page 
+    ![Result of Safari Accessibility Audit on game page](docs/accessibility-testing/gamepage-accessibility-test.png)    
+    * 404 Page  
+    ![Result of Safari Accessibility Audit on 404 page](docs/accessibility-testing/page404-accessibility-test.png)      
+
+* Color Contrast Accessibility Validator Results
+    * Home Page      
+    ![Result of Color Contrast Validator - home page](docs/color-contrast-validator/home-color-validator.png)       
+
+    * Game Page  
+    ![Result of Color Contrast Validator - game page](docs/color-contrast-validator/gamepage-color-validator.png)   
+
+    * 404 Page   
+    ![Result of Color Contrast Validator - 404 page](docs/color-contrast-validator/page404-color-validator.png)     
+
+* The [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/) browser extension was utilized throughout the development of this website to ensure the accessibility of the website.
+
+### **Links/Buttons Functionality Testing**
+* All the links and buttons of the site were manually tested on different browsers (Chrome, Firefox, Microsoft Edge, and Safari) and are confirmed to be working as shown in the table below:    
+
+    ![Result of test on buttons/links functionality](docs/buttons-testing.png)    
+
+
+### **Validator Testing**
+* [**W3C Markup Validator**](https://validator.w3.org/) - NO ERRORS were found in the HTML of the site.   
+Home Page   
 ![Html checker result - home page](docs/html-validator/home-html-checker.png)      
+Game Page   
 ![Html checker result - game page](docs/html-validator/gamepage-html-checker.png)   
+404 Page    
 ![Html checker result - 404 page](docs/html-validator/page404-html-checker.png)     
 
-* W3C CSS Validator     
-![CSS validator result - home page](docs/css-validator/home-css-validator.png)  
-![CSS validator result - game page](docs/css-validator/gamepage-css-validator.png)      
+* [**W3C CSS Validator**](https://jigsaw.w3.org/css-validator/) - NO ERRORS were found in the CSS of the site.      
+Home Page   
+![CSS validator result - home page](docs/css-validator/home-css-validator.png)      
+Game Page   
+![CSS validator result - game page](docs/css-validator/gamepage-css-validator.png)  
+404 Page    
 ![CSS validator result - 404 page](docs/css-validator/page404-css-validator.png)        
 
-### Lighthouse Testing
+### **Lighthouse Testing**
 * On Desktop    
-![Lighthouse result for home page - desktop](docs/lighthouse-testing/home-large-lighthouse.png) 
+![Lighthouse result for home page - desktop](docs/lighthouse-testing/home-large-lighthouse.png)
 ![Lighthouse result for game page - desktop](docs/lighthouse-testing/gamepage-large-lighthouse.png)
 ![Lighthouse result for 404 page - desktop](docs/lighthouse-testing/page404-large-lighthouse.png)   
 
 * On Mobile     
-![Lighthouse result for home page - mobile](docs/lighthouse-testing/home-mobile-lighthouse.png)     
-![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png)     
-![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)
+![Lighthouse result for home page - mobile](docs/lighthouse-testing/home-mobile-lighthouse.png)
+![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png) 
+![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)   
+
 ___
 ## DEPLOYMENT
 ___
@@ -396,6 +470,7 @@ To clone the repository for this site, do the following steps:
 4. In the popup box, click on the 'HTTPS' link and copy the url just below it.
 5. Then, go to your computer's terminal and type `git clone <url of the repository>`.
 6. A copy of the repository is now saved in your computer.
+
 ___
 ## TECHNOLOGIES
 ___
@@ -416,6 +491,7 @@ The following technologies are used in this website:
 ___
 ## CREDITS
 ___
+### **Content**
 * **Questions**     
     The questions in this quiz game are taken from the following sources:
     * [Trivia Quiz Night](https://triviaquiznight.com/easy-general-knowledge-questions-and-answers/)
@@ -423,17 +499,35 @@ ___
     * [Brightful.me](https://www.brightful.me/blog/general-trivia-questions/)
     * [Express.co.uk](https://www.express.co.uk/life-style/life/1278265/100-general-knowledge-quiz-questions-and-answers)
     * [RadioTimes](https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/)
-    * [Kidadl](https://kidadl.com/kids/trivia/hardest-trivia-questions-and-answers-to-test-the-biggest-brainiacs)
+    * [Kidadl](https://kidadl.com/kids/trivia/hardest-trivia-questions-and-answers-to-test-the-biggest-brainiacs)       
 
-* **Main References: Go-to Sites for CSS, HTML & Javascript**    
-    * [MDN](https://developer.mozilla.org/en-US/)
-    * [W3schools](https://www.w3schools.com/)
-    * [Code Institute lessons](https://codeinstitute.net/ie/)
 
 * **Other Sources** (See [Technologies](#technologies) section) 
     * [Google Fonts](https://fonts.google.com/)
     * [Fontawesome](https://fontawesome.com/)
     * [Favicon.io](https://favicon.io/)
+
+### **Media**
+* Images
+    * <a href="https://www.flaticon.com/free-icons/star" title="star icons">Star icons created by Ghozi Muhtarom - Flaticon</a>
+    * <a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Freepik - Flaticon</a>
+    * <a href="https://www.flaticon.com/free-icons/wrong" title="wrong icons">Wrong icons created by Mihimihi - Flaticon</a>
+
+### **References**
+* Main Go-to Sites for CSS, HTML & Javascript:  
+    * [MDN](https://developer.mozilla.org/en-US/)
+    * [W3schools](https://www.w3schools.com/)
+    * [Code Institute lessons](https://codeinstitute.net/ie/)
+
+* [Stackoverflow](https://stackoverflow.com/), especially the following links:
+    * [Using 1 JS file on multiple HTML files](https://stackoverflow.com/questions/44182660/add-eventlistener-to-only-one-html-page)
+    * [Regex for alphamumeric characters](https://stackoverflow.com/questions/388996/regex-for-javascript-to-allow-only-alphanumeric)   
+    * [Regex to allow space between words](https://stackoverflow.com/questions/15472764/regular-expression-to-allow-spaces-between-words)
+
+* [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) - in solving issue with sticky hover state on mobile devices
+
 ___
 ## ACKNOWLEDGMENT
 ___
+* Ms. Daisy McGirr, my Code Institute mentor, for the professional and valuable guidance to complete this project.  
+* Kyle, my supportive wife who minds our 2 adorable little ones, for never failing to be the wind beneath my wings.
