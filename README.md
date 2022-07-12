@@ -158,7 +158,7 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * **Roboto Slab** — for the prize amount (inside money box)   
 
 * **Layout**    
-    * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro', which is different from how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
+    * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro'. This is different from how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
 
     * **The Home Page & 404 Page** - These pages are kept simple and minimalistic (containing only the logo and button/s) to decrease distraction, and to give a touch of straightforwardness to the site, which I believe most users prefer.   
 
@@ -167,7 +167,7 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * **The Lightboxes (popups)** - The modals or lighboxes are all designed consistently with changes only in their content.
 
     * **Change in Layout Between Large and Small Screens**   
-        * The change in layout of for small screen devices are 
+        * All the elements of the site shown on large-screen devices are also included in the layout for the small-screen devices. However, due to the restriction posed by the smaller screens, the entire box container of the cash prize amounts has to be converted into a small rectangular box that can display a single value at a time. And it is located at the top of the lifelines. 
 
 ### **STRUCTURE**
 
@@ -390,8 +390,7 @@ ___
 ___
 ## BUGS LEFT TO FIX   
 ___
-No bugs found on multiple testing of the site.
-
+The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working in my iPhone (IOS). However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.
 ___
 ## TESTING
 ___
@@ -552,7 +551,8 @@ ___
     * [Regex for alphamumeric characters](https://stackoverflow.com/questions/388996/regex-for-javascript-to-allow-only-alphanumeric)   
     * [Regex to allow space between words](https://stackoverflow.com/questions/15472764/regular-expression-to-allow-spaces-between-words)
 
-* [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) - in solving issue with sticky hover state on mobile devices
+* [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) - Solves the issue with sticky hover state on mobile devices
+* [Stefan Judis](https://www.stefanjudis.com/snippets/how-to-color-the-browser-scrollbar-across-browsers/) - Shows how to color the scrollbar across main browsers
 
 ___
 ## ACKNOWLEDGMENT
