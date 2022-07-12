@@ -801,7 +801,8 @@ nav {
 
 /* MEDIA QUERIES <-- [Start] */
 
-/* styling for hover-capable devices only */
+/* styling for hover-capable devices only - 
+idea taken from CSS-TRICKS website (See readMe for details) */
 @media (hover: hover) {
     #howtoplay-btn-homepage:hover,
     #play-button:hover,
