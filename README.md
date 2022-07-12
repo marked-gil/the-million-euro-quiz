@@ -1,7 +1,7 @@
 # The Million Euro Quiz
 ![Responsive Mock Image of The Million Euro Quiz](docs/design-choice/iamresponsive-screenshot.png)
 
-The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
+The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize for every level, and with the top prize of € 1 million. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
 
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
@@ -150,6 +150,15 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * **Playfair Display** — for the main logo
     * **Roboto Slab** — for the prize amount (inside money box)   
 
+* **Layout**    
+    * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro', which is different from the how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
+
+    * **The Home Page & 404 Page** - These pages are kept simple and minimalistic (containing only the logo and button/s) to decrease distraction, and to give a touch of straightforwardness to the site, which I believe most users prefer.   
+
+    * **The Game Page** - To maintain the intended simplicity of the design of the site, the game page is mainly divided into to 2 sections: the Nav Bar (for logo and nav menu), and the Game Area. As this is a game website, the game area contains the interactive functions (answer buttons and lifelines) and displays (player name, cash earned, game levels with cash prizes, and question) relating the to game session.   
+
+    * **The Lightboxes (popups)** - The modals or lighboxes are all designed consistently with changes only in their content.
+
 ### **STRUCTURE**
 
 #### **Interaction Design (IXD)**
@@ -261,7 +270,6 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
     * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.     
 
         ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
-
 
 ### **Game Page**       
 The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.
@@ -412,8 +420,9 @@ This site is fully responsive and works well from a minimum screen size of 280px
 
     ![Result of test on buttons/links functionality](docs/other-tests/buttons-testing.png)    
 
+### **Validator Testing**   
+* [**JSHint**](https://jshint.com/) - NO ERRORS were found in the Javascript of the site. JSHint was configured to ES6.
 
-### **Validator Testing**
 * [**W3C Markup Validator**](https://validator.w3.org/) - NO ERRORS were found in the HTML of the site.   
 Home Page   
 ![Html checker result - home page](docs/html-validator/home-html-checker.png)      
@@ -457,8 +466,7 @@ This website is published on [GitHub Pages](https://pages.github.com/). The foll
 2. Then, among the options on the left sidebar, I clicked on 'Pages'.
 3. On the right side of the sidebar, I looked for 'Source', and under that was a dropdown menu for 'Branch'.
 4. I clicked on the dropdown menu for Branch, and selected 'main'.
-5. Then, I clicked 'Save' button. The deployed website was'live' after few minutes.
-
+5. Then, I clicked 'Save' button. The deployed website was'live' after few minutes.     
 View the live website here: https://marked-gil.github.io/the-million-euro-quiz/
 
 ### **Cloning from Github**
@@ -478,7 +486,7 @@ The following technologies are used in this website:
     * **Javascript**
     * **HTML** - Hypertext Markup Language
     * **CSS** - Casscading Style Sheets     
-
+* Web browsers (Google Chrome, Firefox, Safari, Microsoft Edge)
 * [**Gitpod**](https://gitpod.io/) — the cloud-based IDE (Integrated Developer Environment) used to build this site.
 * **Git** — as a version control system, is made use of to monitor and record changes made when building the site. This allows for the restoration of an earlier version of the code should it be necessary.
 * [**GitHub**](https://github.com/) — stores the source code repository for this website.
@@ -487,6 +495,18 @@ The following technologies are used in this website:
 * [**Font Awesome**](https://fontawesome.com/) — provides the icons used for the Lifelines.
 * [**Favicon.io**](https://favicon.io/) — used for the icon displayed beside the site title seen in the browser tab.
 * [**Balsalmiq**](https://balsamiq.com/) - used in creating the wireframes of this project's design concept.
+* [**TinyPNG**](https://tinypng.com/) - used to compress size of images
+* [Diffchecker](https://www.diffchecker.com/diff) - used in comparing texts
+* For testing and validating:
+    * [JSHint](https://jshint.com/)
+    * [W3C Markup Validator](https://validator.w3.org/)
+    * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+    * [WAVE - Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+    * [Contrast Grid](https://contrast-grid.eightshapes.com/)
+    * [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly)
+    * [Color Contrast Accessibility Validator](https://color.a11y.com/)
+    * Lighthouse Developer Tool
+    * Safari Accessibility Audit
 ___
 ## CREDITS
 ___
@@ -500,8 +520,7 @@ ___
     * [RadioTimes](https://www.radiotimes.com/quizzes/pub-quiz-general-knowledge/)
     * [Kidadl](https://kidadl.com/kids/trivia/hardest-trivia-questions-and-answers-to-test-the-biggest-brainiacs)       
 
-
-* **Other Sources** (See [Technologies](#technologies) section) 
+* **Other resources** (See [Technologies](#technologies) section) 
     * [Google Fonts](https://fonts.google.com/)
     * [Fontawesome](https://fontawesome.com/)
     * [Favicon.io](https://favicon.io/)
@@ -513,7 +532,7 @@ ___
     * <a href="https://www.flaticon.com/free-icons/wrong" title="wrong icons">Wrong icons created by Mihimihi - Flaticon</a>
 
 ### **References**
-* Main Go-to Sites for CSS, HTML & Javascript:  
+* Main Go-to Sites for CSS, HTML & Javascript:
     * [MDN](https://developer.mozilla.org/en-US/)
     * [W3schools](https://www.w3schools.com/)
     * [Code Institute lessons](https://codeinstitute.net/ie/)
@@ -529,4 +548,4 @@ ___
 ## ACKNOWLEDGMENT
 ___
 * Ms. Daisy McGirr, my Code Institute mentor, for the professional and valuable guidance to complete this project.  
-* Kyle, my supportive wife who minds our 2 adorable little ones, for never failing to be the wind beneath my wings.
+* Kyle, my supportive wife, for never failing to be the wind beneath my wings.
