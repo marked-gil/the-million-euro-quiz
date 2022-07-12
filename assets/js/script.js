@@ -938,7 +938,7 @@ function howToPlayLightbox() {
                 <h3>How to win?</h3>
                 <ul>
                     <li>Answer correctly all 15 questions to win the €1 million.</li>
-                    <li>Each question also corresponds to an amount of money.</li>
+                    <li>Each question also corresponds to a guaranteed cash prize.</li>
                 </ul>
             </section>
             <section>
@@ -946,6 +946,7 @@ function howToPlayLightbox() {
                 <ul>
                     <li>When wrong answer is selected, or</li>
                     <li>When time runs out, or</li>
+                    <li>When you quit the game, or</li>
                     <li>When all 15 questions are answered correctly.</li>
                 </ul>
             </section>
@@ -957,16 +958,15 @@ function howToPlayLightbox() {
                 </ul>
             </section>
             <section>
-                <h3>Life Lines to Help You</h3>
+                <h3>Lifelines to Help You</h3>
+                <img id="lifeline-image" src="assets/images/lifeline-icons.png" alt="screenshot of lifeline icons">
                 <ul>
-                    <li>You have 3 life lines.
-                        <img id="lifeline-image" src="assets/images/lifeline-icons.png" alt="screenshot of lifeline icons">
-                    </li>
+                    <li>You have 3 lifelines.</li>
                     <li>1st icon removes 1 wrong answer</li>
                     <li>2nd icon removes 2 wrong answers</li>
-                    <li>3rd icon adds 30 sec to the timer</li>
+                    <li>3rd icon adds 30 seconds to the timer</li>
                     <li>Each lifeline can only be used ONCE in the course of the game.</li>
-                    <li>You can use any and as many lifelines you want in a question.</li>
+                    <li>You can use 1 or more lifelines in a question.</li>
                 </ul>
             </section>
         `;
