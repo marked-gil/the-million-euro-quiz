@@ -384,6 +384,7 @@ if (document.getElementById('homepage-body')) {
     const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
+        // regex pattern taken from stackoverflow (detailed in ReadMe.md)
         const pattern = '^[a-zA-Z0-9 ]+$';
         if (captureUserName()) {
             if (usernameInput.value.match(pattern)) {
