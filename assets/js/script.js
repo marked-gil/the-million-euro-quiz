@@ -437,7 +437,7 @@ const prizeFifteen = document.querySelector('[data-prize="1-million"]');
 const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
 const quitLink = document.getElementById('quit-link');
 
-// variables to access 'Countdown to Start [Lightbox]'
+// variables to access 'Countdown to Start' lightbox
 const countdownSection = document.getElementById('countdown-outer-wrapper');
 const countdown = document.getElementById('countdown');
 
@@ -448,15 +448,15 @@ let counter;                // variable containing id of timer() (object)
 
 if (document.getElementById('gamepage-body')) {
     // display player's name and cash earned 
-    // and protects game page from access without a name entered
+    // and protects game page from access if name not provided
      let playerName = getPlayerName();
-    //  if (playerName !== null) {
+     if (playerName !== null) {
          playerNameHolder.innerText = playerName;
-    //  } else {
-    //      location.href = 'index.html';
-    //  }
+     } else {
+         location.href = 'index.html';
+     }
 
-    // Countdown to Start [Lightbox] <-- [Start]
+    // 'Countdown to Start' [Lightbox] <-- [Start]
     countdownSection.classList.add('overlay-bg');
     countdownSection.classList.remove('hide');
     let countdownLeft = 3;
@@ -482,7 +482,7 @@ if (document.getElementById('gamepage-body')) {
             }, 1000);
         }
     }, 1000);
-    // Countdown to Start [Lightbox] <-- [End]
+    // 'Countdown to Start' [Lightbox] <-- [End]
 
     // LIFELINES <-- [Start]
     // removes 1 wrong option
@@ -524,7 +524,7 @@ if (document.getElementById('gamepage-body')) {
 
 // FUNCTIONS <-- [Start]
 /**
- * Continues the process of the game, checks the answer, and declares win or loss
+ * Continues the process of the game, checks the answer, and declares win or lose
  * @param {*} thisBtn - The targetted event 
  * @param {*} timerId - The id of the timer() function (setInterval)
  */
@@ -922,8 +922,8 @@ function gameWon() {
 }
 
 /**
- * Quits the current game by stopping timer and providing
- * option to reload the game.
+ * Quits the current game by stopping timer, displays 'Quit' lightbox, 
+ * and provides option to reload the game.
  */
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
