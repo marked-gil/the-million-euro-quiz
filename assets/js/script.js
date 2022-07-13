@@ -390,7 +390,7 @@ if (document.getElementById('homepage-body')) {
             if (usernameInput.value.match(pattern)) {
                 location.href = 'game-page.html';
             } else {
-                flashMsg.innerHTML = "You can only use letters, numbers, and/or space in-between.";
+                flashMsg.innerHTML = "You can only use letters, numbers, and space in between.";
             }
         } else {
             flashMsg.innerHTML = "You need to enter your name.";
