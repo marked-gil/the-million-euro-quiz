@@ -276,104 +276,101 @@ The home page is simple and only shows the website logo and 2 buttons ('Play' & 
 
 ![Image of Home Page](docs/features/homepage.png)    
 
-* **'Enter Name' Lightbox**    
+**'Enter Name' Lightbox**    
+When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before being admitted into the game page.  
+* Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user: 'You need to enter your name'.  
+* Also, the entered name can only have a maximum of 12 characters and allowing only letters, numbers, and space in between - breaching these will result to a flash message being displayed and the user prevented from proceeding to the game page.   
 
-    When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before being admitted into the game page.     
-    * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user: 'You need to enter your name'.
-    * Also, the entered name can only have a maximum of 12 characters and allowing only letters, numbers, and space in between - breaching these will result to a flash message being displayed and the user prevented from proceeding to the game page.   
+    ![Image of Enter Name lightbox](docs/features/enter-name-lightbox.png)
+    
+**'How To Play' Lightbox**    
+When the 'How to Play' button is clicked, this lightbox will pop up. It contains the instruction for, or mechanics of, the quiz game.   
+* It includes an 'x' icon that can close the lightbox. This is located at the top right of the lightbox.     
 
-        ![Image of Enter Name lightbox](docs/features/enter-name-lightbox.png)
-
-* **'How To Play' Lightbox**    
-
-    When the 'How to Play' button is clicked, this lightbox will pop up. It contains the instruction for, or mechanics of, the quiz game.
-    * It includes an 'x' icon that can close the lightbox. This is located at the top right of the lightbox.     
-
-        ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
+    ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
 
 ### **Game Page**       
-The Game Page contains the Nav Bar (which has the logo and nav menu) - and the Game Area.  
-
-Large Screen    
+The Game Page contains the **Nav Bar** (which has the logo and nav menu) - and the **Game Area**.  
+* Large Screen    
 ![Image of Game Page on large screen](docs/features/gamepage-large.png)     
 
-Small Screen (Mobile)   
+* Small Screen (Mobile)   
 ![Image of Game Page on mobile device](docs/features/gamepage-mobile.png)    
 
-* **Navigation Bar** (Logo & Nav Menu)  
-    The navigation bar contains the website logo, and the nav menu.     
+**Navigation Bar** (Logo & Nav Menu)  
+The navigation bar contains the website logo, and the nav menu.     
+* **Logo** - displays 'The Million Euro Quiz' with a black background, and a green top/bottom border.   
 
-    * **Logo** - displays 'The Million Euro Quiz' with a black background, and a green top/bottom border.   
+* **Nav Menu** — includes the following links: **'Home'**, **'How To Play'**, **'Quit'**    
+    * **'Home'** link — redirects to the home page.
+    * **'How To Play'** link — brings out the 'How To Play' lightbox.
+    * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.       
 
-    * **Nav Menu** — includes the following links: **'Home'**, **'How To Play'**, **'Quit'**    
-        * **'Home'** link — redirects to the home page.
-        * **'How To Play'** link — brings out the 'How To Play' lightbox.
-        * **'Quit'** link — immediately quits the game by stopping the timer, and displaying the 'Quit' lightbox.       
+**Game Area**   
+The game area contains the following:   
 
-* **Game Area**
-    The game area contains the following:   
+* **Countdown To Start**    
+A 3-second countdown shows up when opening the Game Page, and before the 1st question is revealed.  
 
-    * **Countdown To Start**    
-    A 3-second countdown shows up when opening the Game Page, and before the 1st question is revealed.  
+    ![Image of countdown](docs/features/countdown.png)
 
-        ![Image of countdown](docs/features/countdown.png)
+* **Player**    
+The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
 
-    * **Player**    
-    The player's name is displayed at the top left of the game area. This is the name of the player as provided by the user before starting the game.
+* **Cash**  
+This is the current cash earned by the player displayed at the top right of the game area.
 
-    * **Cash**  
-    This is the current cash earned by the player displayed at the top right of the game area.
-
-    * **Cash Prizes (level) Box**   
-    This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific incrementing amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
+* **Cash Prizes (level) Box**   
+This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific incrementing amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
     
-         The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
+    The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
 
-    * **Lifelines**    
-    The LIFELINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 lifelines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
+* **Lifelines**    
+The LIFELINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 lifelines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
 
-        The player can choose to use one or more lifelines in a question, but each lifeline can only be used once in a game session.      
+    The player can choose to use one or more lifelines in a question, but each lifeline can only be used once in a game session.      
 
-        ![Image of Lifelines](docs/features/lifelines-image.png)
+    ![Image of Lifelines](docs/features/lifelines-image.png)
 
-    * **Question Area**     
-    The question area consists of the question number, the main question, and the timer.
-    ![Image of question area](docs/features/question-area.png)   
+* **Question Container**     
+The question container consists of the question number, the main question, and the timer.    
 
-        * **Question**  
-        There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
+    ![Image of question containerß](docs/features/question-area.png)   
 
-        * **Timer**     
-        Each question has an allotted time of 30 seconds. The player has to choose and click their answer before this time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever current prize they have already earned.
+    * **Question**  
+    There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
 
-    * **Answer Buttons**    
-        As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
+    * **Timer**     
+    Each question has an allotted time of 30 seconds. The player has to choose and click their answer before this time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever current prize they have already earned.
 
-        ![Image of answer buttons](docs/features/answer-buttons.png)     
+* **Answer Buttons**    
+As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
 
-        Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
+    ![Image of answer buttons](docs/features/answer-buttons.png)     
 
-        If the selected answer is correct, the game will proceed to the next question and timer will reset. If the player's answer is wrong, the game will be over and the player gets whatever cash prize they have already earned (which is equivalent to their last level in the game).
+    Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
 
-* **Lightboxes (Popups)**       
+    If the selected answer is correct, the game will proceed to the next question and timer will reset. If the player's answer is wrong, the game will be over and the player gets whatever cash prize they have already earned (which is equivalent to their last level in the game).
 
-    * **'Game Over' Lightbox**  
-        The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
+**Lightboxes (Popups)**       
 
-        ![Image of Game Over lightbox](docs/features/gameover-lightbox.png)  
+* **'Game Over' Lightbox**  
+The 'Game Over' lightbox shows up when time has run out or when player chooses the wrong answer. Inside this popup window, the player has the option to play again or to go to home page. While this lightbox is on display, all other buttons/links at the background are inactive.    
 
-    * **'Game Won' Lightbox**   
-        The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million and provides the option to play again or go to homepage.    
+    ![Image of Game Over lightbox](docs/features/gameover-lightbox.png)  
 
-        ![Image of Game Won lightbox](docs/features/gamewon-lightbox.png)
+* **'Game Won' Lightbox**   
+The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million and provides the option to play again or go to homepage.    
 
-    * **'Quit' Lightbox**   
-        In the 'Quit' lightbox, the user can choose to go to home page or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
+    ![Image of Game Won lightbox](docs/features/gamewon-lightbox.png)
 
-        ![Image of Quit lightbox](docs/features/quit-lightbox.png)
+* **'Quit' Lightbox**   
+    In the 'Quit' lightbox, the user can choose to go to home page or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
 
-    * **'How To Play' Lightbox**   
-        This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
+    ![Image of Quit lightbox](docs/features/quit-lightbox.png)
+
+* **'How To Play' Lightbox**   
+    This 'How To Play' link in the nav bar can be clicked while the game is in progress, however the timer will still continue to run even when the lightbox is showing, and game will be over when time runs out. This is intended to protect the integrity of the game session. (More description of this is found in the ['Home Page'](#home-page) section above.)
 
 ### **404 Page**  
 The 404 Page simply informs the user that there is nothing to be found in that page, and suggests to the user to go back to the home page to play the quiz game. A 'Return Home' button is available for the user to click.     
@@ -383,7 +380,8 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 [<u>Back to Table of Contents</u>](#table-of-contents)
 
 ### **Features for the Future**
-* In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
+* In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.  
+
 ___
 ## FIXED BUGS   
 ___
