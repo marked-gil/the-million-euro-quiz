@@ -538,9 +538,9 @@ function playGame(thisBtn, timerId) {
             highlightEarnedPrize();
             setTimeout(() => {
                 clicksBlocker.remove();
-                thisBtn.classList.remove('correct-answer');
                 counter = timer(30);
                 if (usedQuestions.length < 15) {
+                    thisBtn.classList.remove('correct-answer');
                     selectedQuestion = setDifficultyLevel();
                     usedQuestions.push(selectedQuestion.id);
                     displayQuestion();
