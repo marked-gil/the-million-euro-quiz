@@ -1,7 +1,7 @@
 # The Million Euro Quiz
 ![Responsive Mock Image of The Million Euro Quiz](docs/design-choice/iamresponsive-screenshot.png)
 
-The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns a cash prize for every level, and with the top prize of € 1 million. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. This quiz is inspired by the game show 'Who Wants to be A Millionaire'.[View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
+The **Million Euro Quiz** is a time-pressured online quiz game that tests the general knowledge of its player by asking 15 multiple-choice questions with varying difficulty levels, from easy to hardest, and simulates a game show that earns an increasing cash prize at every level, and with the top prize of € 1 million. Each question is provided with 4 randomly arranged answer choices among which only one is correct. Also, it contains a special feature, such as the lifelines, which are help tools for the player. This quiz is inspired by the game show 'Who Wants to be A Millionaire'. [View the live website](https://marked-gil.github.io/the-million-euro-quiz/).
 
 ## TABLE OF CONTENTS
 * [User Experience Design (UXD)](#uxd-user-experience-design)
@@ -11,7 +11,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
         * [User Stories](#user-stories)
     * [Scope](#scope)
         * [Planned Features](#planned-features)
-        * [Design Choices](#design-choices)
+        * [Design Choice](#design-choice)
     * [Structure](#structure)
         * [Interaction Design (IXD)](#interaction-design-ixd)
         * [Information Design/Architecture](#information-designarchitecture)
@@ -65,6 +65,8 @@ ___
 * As a user, I want to be able to read the mechanics of the game before starting, and even while playing the game so I can be guided well.
 * As a user, I want the game to have an intuitive user interface so I can just play it straight away even without reading the mechanics of the game.
 
+[<u>Back to Table of Contents</u>](#table-of-contents)
+
 ### **SCOPE**
 #### Planned Features:
 This online quiz game has the following planned features based on the User Stories:
@@ -82,24 +84,24 @@ This online quiz game has the following planned features based on the User Stori
 * User Story: 
     > As a user, I want to play a simulation of a game that earns a cash prize so it will be more exciting.
     * IMPLEMENTATION:
-        * A box will be displayed where money prizes to be earned per question will be displayed and highlighted.
+        * A box will be displayed where cash prizes to be earned as level increases will be displayed and highlighted.
         * The current prize earned by the player will be displayed in realtime.
 
 * User Story:
     > As a user, I want to re-play the game multiple times as I want and expect to be asked random questions each time so it will feel like new every time.
     * IMPLEMENTATION:
-        * The game can be re-played multiple times by player, and 'Play Again' button will be available when game is over or won.
-        * Questions will be randomly selected, and the order of their answer choices will be randomly displayed, every time the game is played and re-played.
+        * The game can be re-played multiple times by the player, and 'Play Again' button will be available when game is over or won.
+        * Questions will be randomly selected and the order of their answer choices will be randomly displayed every time the game is played and re-played.
 
 * User Story:
     > As a user, I want to experience an increase in difficulty level as the game progresses to bring more challenge into it.
     * IMPLEMENTATION:
-        * There are 4 levels of difficulty for the questions to be presented: "**easy**" (for questions 1-5), "**moderate**" (for questions 6-10), "**hard**" (for questions 11-14), and **"hardest"** (for the last question).
+        * There are 4 levels of difficulty of the questions to be presented: "**easy**" (for questions 1-5), "**moderate**" (for questions 6-10), "**hard**" (for questions 11-14), and **"hardest"** (for the last question).
 
 * User Story: 
     > As a user, I want to utilize strategic options to help me when a question is difficult, so the game will also have a strategic nature.
     * IMPLEMENTATION:
-        * Lifelines, which are help tools that increase the chances for the player to select the correct answer will be created. These lifelines are: (1) to remove 1 wrong answer, (2) to remove 2 wrong answers, and (3) to add more time to the timer.
+        * Lifelines, which are help tools that increase the chances for the player to select the correct answer will be available. These lifelines are: (1) to remove 1 wrong answer, (2) to remove 2 wrong answers, and (3) to add more time to the timer.
         * One or more lifelines can be used in a question, but each lifeline can only be used once in the course of the game.
 
 * User Story:
@@ -115,22 +117,22 @@ This online quiz game has the following planned features based on the User Stori
 * User Story:
     > As a user, I want to be able to quit the current game or return to home page so I would have the options to either play a new game or to enter a new name without needing to leave the site.
     * IMPLEMENTATION:
-        * On the game page, the nav bar will contain the 'Home' button and 'Quit' button. When the 'Home' button is clicked, it will automatically redirects the user to the home page, and if they want to play the game again, they will have to enter their name. If the 'Quit' button is clicked, it will automatically stop the current game and show a popup box with options to play again or to return to home page.
+        * On the game page, the nav bar will contain the 'Home' button and 'Quit' button. When the 'Home' button is clicked, it will automatically redirect the user to the home page where the player can enter a new name and re-load the game. If the 'Quit' button is clicked, it will automatically stop the current game and show a popup box with options to play again or to return to home page.
 
 * User Story: 
     > As a user, I want to be able to read the mechanics of the game before starting, and even while playing the game so I can be guided well.
     * IMPLEMENTATION:
-        * A 'How to Play' popup box will be available for the player when they want to read the mechanics of the game. This can be accessed before the start of the game, and even when the game is on. A button or link will be provided for this.
+        * A 'How to Play' lightbox (modal) will be available to the player when they want to read the mechanics of the game. This can be accessed before the start of the game in the home page, and even when the game is on in the game page . A button will be provided for this.
 
 * User Story: 
     > As a user, I want the game to have an intuitive user interface so I can just play it straight away even without reading the mechanics of the game.
     * IMPLEMENTATION:
-        * The design of the game display will be minimalist.
+        * The design of the game display will be minimalist and intuitive.
         * The home page will only show the logo, and 2 buttons ('Play' and 'How To Play' buttons).
-        * The game page will have a logo, nav bar with 3 nav links ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prize box, lifelines, and the main game area where the question and multiple answer choices will be displayed.
+        * The game page will have a logo, nav bar with 3 nav links/buttons ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prizes box, lifelines, and the main game area where the question and multiple answer choices will be displayed.
         * The popup boxes will be minimal in text content, and will only contain 1 or 2 buttons/links.
 
-#### **Design Choices:**
+#### **Design Choice:**
 This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of mainly **shades of green** is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life. Also, some other colors to serve as accents are used.
 
 * **Color Scheme**:     
@@ -154,58 +156,61 @@ This online game site is created with a minimalist, uncluttered design theme tha
     ([See **'SURFACE'** section for more details](#surface))    
     This website uses fonts from [Google Fonts](https://fonts.google.com/). The following are the utilized fonts:
     * **Roboto** — the default font for the site
-    * **Playfair Display** — for the main logo
-    * **Roboto Slab** — for the prize amount (inside money box)   
+    * **Playfair Display** — used on the main logo
+    * **Roboto Slab** — used on the cash prizes (inside money box)   
 
 * **Layout**    
     * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro'. This is different from how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
 
-    * **The Home Page & 404 Page** - These pages are kept simple and minimalistic (containing only the logo and button/s) to decrease distraction, and to give a touch of straightforwardness to the site, which I believe most users prefer.   
+    * **The Home Page & 404 Page** - These pages are kept simple and minimalistic (containing only the logo and button/s) to decrease distraction, and to give a touch of straightforwardness to the site, which I believe most users may prefer.   
 
-    * **The Game Page** - To maintain the intended simplicity of the design of the site, the game page is mainly divided into to 2 sections: the Nav Bar (for logo and nav menu), and the Game Area. As this is a game website, the game area contains the interactive functions (answer buttons and lifelines) and displays (player name, cash earned, game levels with cash prizes, and question) relating the to game session.   
+    * **The Game Page** - To maintain the intended simplicity of the site design, the game page is mainly divided into to 2 sections: the Nav Bar (for logo and nav menu), and the Game Area. As this is a game website, the game area contains the interactive functions (answer buttons and lifelines) and displays (player name, cash earned, game levels with cash prizes, question, and the answer choices) relating the to game session.   
 
     * **The Lightboxes (popups)** - The modals or lighboxes are all designed consistently with changes only in their content.
 
     * **Change in Layout Between Large and Small Screens**   
-        All the elements of the site shown on large-screen devices are also included in the layout for the small-screen devices. However, due to the restriction posed by the smaller screens, the entire box container of the cash prize amounts has to be converted into a small rectangular box that can display a single value at a time. And it is located at the top of the lifelines. 
+        All the elements of the site that can be seen on large-screen devices are also included in the layout for the small-screen devices. However, due to the restriction posed by the smaller screens, the entire box container of the cash prizes has to be converted into a small rectangular box that can display a single value at a time. And it is located at the top of the lifelines. 
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 
 ### **STRUCTURE**
 
 #### **Interaction Design (IXD)**
 * Consistent:   
-    * The color scheme is consistent by mainly using shades of green and some yellow-like color in the entire page. 
+    * The color scheme is consistent by using shades of green dominantly, and some yellow colors, in the entire site. 
     * The fonts used are consistent across all pages of the site.   
-    * The look and feel of the lightboxes (popup boxes) are similar.    
-    * There is consistency in the navigation system of the site and the game. Nav links are placed at the top of the game page, and 404 page. Also, other bottoms - such as the home, play, and play again - are always located at the bottom of some text content where a user would expect them to be seen after reading a short textual information. 
+    * The look and feel of the lightboxes (modals) are similar.    
+    * There is consistency in the navigation system of the site and the game. Nav links are placed at the top of the game page and 404 page. Also, other bottoms - such as the 'home', 'play', and 'play again' - are always located at the bottom after some text content where a user would expect them to be seen after reading a short textual information. 
     * The logo appears on each page of the site.    
     * Feedbacks are available for each interaction a user does in the site. Examples include:   
         * When a mouse hovers on a link and button, a style change on the hovered link/button would appear, thus making the user aware that it is a clickable button/link.  
-        * When clicking on a button, it would momentarily change the style of the button to confirm that it was successfully clicked.   
-        * Also, when clicking certain buttons, a lightbox (popup box), would show up to provide more information or as a feedback to the action taken by the user.  
+        * Also, when clicking certain buttons, a lightbox (popup box) will show up to provide more information or as a feedback to the action taken by the user.  
 
 * Predictable:
-    * The layout of each page of the site is simple and very intuitive, that the user would easily realize where they are on the home page. 
-    * The buttons are placed strategically where users expect them to be, such as at the end of a short text of information, or at the top right beside the heading for the 'close' button in the 'How to Play' lightbox.      
+    * The layout of each site page is simple and very intuitive, that the user would easily realize where they are on the home page. 
+    * The buttons are placed strategically where users expect them to be, such as at the end of a short text of information, or at the top right beside the heading for the 'close' button in the 'How to Play' and 'Enter Name' lightboxes.      
 
 * Learnable:
-    * The navigation of the website is extremely learnable and very intuitive due to its simple styling and minimalist design.  
+    * The navigation of the website is extremely learnable and very intuitive due to its simple styling and minimalistic design.  
     * The game itself is easy to learn and users may dive into it and discover how it works effortlessly.        
 
 * Visible:
-    * The site is made simple and minimalist so that the user can easily locate the buttons they want to click, or the information they need in the site.   
+    * The site is made simple and minimalistic so the user can easily locate the buttons they want to click or the information they need in the site.   
     * The fonts are of sufficient size to ensure that the components of the site can be easily seen or read.    
     * The texts for these questions and answer options can be easily read through the use of a reader-friendly font.     
 
 * Provides clear and intuitive feedback:
     * The buttons and links can be hovered and will show style changes in them to tell the user that they are functional or clickable.  
-    * The buttons and links can be clicked and will show a momentary style change, and may also provide a lightbox (popup box) as a feedback.
+    * The buttons and links can be clicked and may provide a lightbox (popup box) as a feedback depending on the button.
 
 #### **Information Design/Architecture**    
-* The content of the website is made certain to be useful and necessary for its function as being an online quiz game site. 
+* The content of the website is made certain to be useful and necessary for its function as an online quiz game website. 
 * Its contents are grouped adequately for consistency, preditability, and ease of use for the user. Examples include:   
     * The nav links are grouped together at the top of the game page.
     * The question, multiple answer choices, timer, player name and prize earned are grouped in the game area.  
     * Feedbacks, such as the lightboxes (popups), to user's interaction with the site are designed consistently and simply.
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 
 ### **SKELETON**
 
@@ -243,46 +248,50 @@ The following are the wireframes used to build this website. These wireframes we
     * Large Screen   
     ![404 Page Wireframe for large screen](docs/wireframes/page404-large-wf.png)
 
+[<u>Back to Table of Contents</u>](#table-of-contents)
+
 ### Surface     
 This site was created using several shades of colors that were mixed and matched to produce a harmonious design. Following are the colors and typography utilized:  
 
-(To see the finished product proceed to [**FEATURES**](#features).)
-* Colors & Contrast      
+(To see the finished product, proceed to [**FEATURES**](#features).)
+* **Colors & Contrast**      
 
     ![Colors as shown in Contrast Grid](docs/design-choice/contrast-grid.png)
 
-* Typography (Font Families)    
+* **Typography (Font Families)**   
 
     ![Playfair Display font from Google Fonts](docs/design-choice/playfair-font.png)
     ![Roboto font from Google Fonts](docs/design-choice/roboto-font.png)
     ![Roboto Slab font from Google Fonts](docs/design-choice/roboto-slab-font.png)    
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 
 ___
 ## FEATURES
 ___
 
 ### **Home Page**
-The home page is simple and only shows the website logo, and 2 buttons ('Play' & 'How to Play').    
+The home page is simple and only shows the website logo and 2 buttons ('Play' & 'How to Play').    
 
 ![Image of Home Page](docs/features/homepage.png)    
 
 * **'Enter Name' Lightbox**    
 
     When the 'Play' button is clicked, this lightbox will pop up where the user can enter a name before being admitted into the game page.     
-    * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user.   
-    * Also, the entered name can only have a maximum of 12 characters - beyond this, a flash message will show up and the user is prevented from typing beyond 12 characters.   
+    * Inside the lightbox, the user will be required to enter a name before they can proceed to the game page. Clicking the "Let's Play" button without entering at least 1 character will flash a message to the user: 'You need to enter your name'.
+    * Also, the entered name can only have a maximum of 12 characters and allowing only letters, numbers, and space in between - breaching these will result to a flash message being displayed and the user prevented from proceeding to the game page.   
 
         ![Image of Enter Name lightbox](docs/features/enter-name-lightbox.png)
 
 * **'How To Play' Lightbox**    
 
-    When the 'How to Play' button is clicked, this lightbox will pop up which contains the instruction for, or mechanics of, the quiz game.
-    * Contains an 'x' icon to close the lightbox. This is located at the top right of the lightbox.     
+    When the 'How to Play' button is clicked, this lightbox will pop up. It contains the instruction for, or mechanics of, the quiz game.
+    * It includes an 'x' icon that can close the lightbox. This is located at the top right of the lightbox.     
 
         ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
 
 ### **Game Page**       
-The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.  
+The Game Page contains the Nav Bar (which has the logo and nav menu) - and the Game Area.  
 
 Large Screen    
 ![Image of Game Page on large screen](docs/features/gamepage-large.png)     
@@ -304,7 +313,7 @@ Small Screen (Mobile)
     The game area contains the following:   
 
     * **Countdown To Start**    
-    A 3-second countdown shows up when opening the Game Page, and before the 1st question is revelead.  
+    A 3-second countdown shows up when opening the Game Page, and before the 1st question is revealed.  
 
         ![Image of countdown](docs/features/countdown.png)
 
@@ -314,15 +323,15 @@ Small Screen (Mobile)
     * **Cash**  
     This is the current cash earned by the player displayed at the top right of the game area.
 
-    * **Cash Prize (level) Box**   
-    This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific cash amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
+    * **Cash Prizes (level) Box**   
+    This container houses the cash value of each level of the game. The game is comprised of 15 levels (15 questions), hence 15 specific incrementing amounts. As the player answers a question correctly, the player goes up a level higher and its corresponding cash is the amount they can possibly win.    
     
          The current cash value of the game level will be highlighted, and as the player answers it correctly, a star icon will be displayed beside the amount.
 
     * **Lifelines**    
     The LIFELINES are the tools that can help the player in answering difficult questions and giving them a higher chance to choose the correct answer. The game provides 3 lifelines as represented by 3 icons: (1) removes 1 wrong answer, (2) removes 2 wrong answers, and (3) adds an additional 30 seconds to the timer.     
 
-        The player can choose to use one or more lifelines in a question, but each lifeline can only be used once in the course of the game.      
+        The player can choose to use one or more lifelines in a question, but each lifeline can only be used once in a game session.      
 
         ![Image of Lifelines](docs/features/lifelines-image.png)
 
@@ -334,7 +343,7 @@ Small Screen (Mobile)
         There are a maximum of 15 questions that will be thrown to the player in a game session. These questions are randomly selected and increase in difficulty as the game progresses. The first 5 questions are easy, the next 5 questions are moderate, the following 4 questions are hard, and the 15th question is of the hardest level.
 
         * **Timer**     
-        ach question has an allotted time of 30 seconds. The player has to choose and click their answer before this allotted time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever prize is equivalent to their last level in the game.
+        Each question has an allotted time of 30 seconds. The player has to choose and click their answer before this time runs out. If the timer finishes before the player successfully chooses an answer, the game automatically becomes over and the player gets whatever current prize they have already earned.
 
     * **Answer Buttons**    
         As this game is a multiple-choice quiz, the player is presented with four (4) answer choices/options for each question. Only one of the four (4) choices is correct.    
@@ -343,7 +352,7 @@ Small Screen (Mobile)
 
         Each answer choice is a button, which the player can click/tap to select. When an answer is selected, all the buttons in the page including the other answer choices will be inactive momentarily for 1 second. Also, after the short pause, it will be revealed whether your answer is correct (by a check mark) or wrong (by an 'x' mark).    
 
-        If the selected answer is correct, the game will proceed to the next question and timer will reset. If answer is wrong, the game will be over and the player gets whatever prize is equivalent to their last level in the game.
+        If the selected answer is correct, the game will proceed to the next question and timer will reset. If the player's answer is wrong, the game will be over and the player gets whatever cash prize they have already earned (which is equivalent to their last level in the game).
 
 * **Lightboxes (Popups)**       
 
@@ -353,12 +362,12 @@ Small Screen (Mobile)
         ![Image of Game Over lightbox](docs/features/gameover-lightbox.png)  
 
     * **'Game Won' Lightbox**   
-        The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million, and provides the option to play again or go to homepage.    
+        The 'Game Won' lightbox pops up when the player has successfully answered all 15 questions on the session. It congratulates the player for winning € 1 million and provides the option to play again or go to homepage.    
 
         ![Image of Game Won lightbox](docs/features/gamewon-lightbox.png)
 
     * **'Quit' Lightbox**   
-        In the 'Quit' lightbox, the user can choose to go to home page, or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
+        In the 'Quit' lightbox, the user can choose to go to home page or play the game again, which will re-start the game session. If the player quits in the middle of the game, the player loses the game and goes home with no money.     
 
         ![Image of Quit lightbox](docs/features/quit-lightbox.png)
 
@@ -394,7 +403,7 @@ ___
 ___
 ## BUGS LEFT TO FIX   
 ___
-The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working in my iPhone (IOS). However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.
+The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working IOS. However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.
 ___
 ## TESTING
 ___
@@ -510,7 +519,7 @@ The following technologies are used in this website:
     * **CSS** - Casscading Style Sheets     
 * Web browsers (Google Chrome, Firefox, Safari, Microsoft Edge)
 * [**Gitpod**](https://gitpod.io/) — the cloud-based IDE (Integrated Developer Environment) used to build this site.
-* **Git** — as a version control system, is made use of to monitor and record changes made when building the site. This allows for the restoration of an earlier version of the code should it be necessary.
+* **Git** — as a version control system, was used to monitor and record changes made when building the site. This allowed for the restoration of an earlier version of the code when it was necessary.
 * [**GitHub**](https://github.com/) — stores the source code repository for this website.
 * [**GitHub Pages**](https://pages.github.com/) — hosts the live website.
 * [**Google Fonts**](https://fonts.google.com/) — provides the fonts used in this website. (see [Design Choices](#design-choices))
