@@ -282,8 +282,12 @@ The home page is simple and only shows the website logo, and 2 buttons ('Play' &
         ![Image of 'How To Play' lightbox](docs/features/how-to-play-lightbox.png)
 
 ### **Game Page**       
-The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.
-![Image of Game Page on large screen](docs/features/gamepage-large.png)
+The Game Page contains the Nav Bar - which has the logo and the nav menu - and the Game Area.  
+
+Large Screen    
+![Image of Game Page on large screen](docs/features/gamepage-large.png)     
+
+Small Screen (Mobile)   
 ![Image of Game Page on mobile device](docs/features/gamepage-mobile.png)    
 
 * **Navigation Bar** (Logo & Nav Menu)  
@@ -430,7 +434,9 @@ This site is fully responsive and works well from a minimum screen size of 280px
     ![Result of test on buttons/links functionality](docs/other-tests/buttons-testing.png)    
 
 ### **Validator Testing**   
-* [**JSHint**](https://jshint.com/) - NO ERRORS were found in the Javascript of the site. JSHint was configured to ES6.
+* [**JSHint**](https://jshint.com/) - NO ERRORS were found in the Javascript of the site. JSHint was configured to ES6. 
+
+    ![JSHint Result](docs/other-tests/jshint-result.png)
 
 * [**W3C Markup Validator**](https://validator.w3.org/) - NO ERRORS were found in the HTML of the site.   
 Home Page   
@@ -449,15 +455,26 @@ Game Page
 ![CSS validator result - 404 page](docs/css-validator/page404-css-validator.png)        
 
 ### **Lighthouse Testing**
-* On Desktop    
-![Lighthouse result for home page - desktop](docs/lighthouse-testing/home-large-lighthouse.png)
-![Lighthouse result for game page - desktop](docs/lighthouse-testing/gamepage-large-lighthouse.png)
-![Lighthouse result for 404 page - desktop](docs/lighthouse-testing/page404-large-lighthouse.png)   
 
-* On Mobile     
-![Lighthouse result for home page - mobile](docs/lighthouse-testing/home-mobile-lighthouse.png)
-![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png) 
-![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)   
+**On Desktop**    
+* Home Page    
+    ![Lighthouse result for home page - desktop](docs/lighthouse-testing/home-large-lighthouse.png)     
+
+* Game Page   
+    ![Lighthouse result for game page - desktop](docs/lighthouse-testing/gamepage-large-lighthouse.png)     
+
+* 404 Page    
+    ![Lighthouse result for 404 page - desktop](docs/lighthouse-testing/page404-large-lighthouse.png)   
+
+**On Mobile**    
+* Home Page    
+    ![Lighthouse result for home page - mobile](docs/lighthouse-testing/home-mobile-lighthouse.png)     
+
+* Game Page     
+    ![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png)     
+    
+* 404 Page      
+    ![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)   
 
 ___
 ## DEPLOYMENT
