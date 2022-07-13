@@ -35,7 +35,7 @@ body {
     height: 100%;
 }
 
-/* UTILITY CLASSES <-- [Start]*/
+/* UTILITY CLASSES <-- [Start] */
 
 .disabled-button {
     opacity: .2;
@@ -81,7 +81,7 @@ body {
     box-shadow: 0 0 5px 4px var(--clr-deep-moss);
 }
 
-/* UTILITY CLASSES <-- [End]*/
+/* UTILITY CLASSES <-- [End] */
 
 /* HOME PAGE <-- [Start] */
 
@@ -826,7 +826,7 @@ https://stackoverflow.com/questions/65514077/stick-buttons-to-the-right-top-of-a
 
 /* MEDIA QUERIES <-- [Start] */
 
-/* styling for hover-capable devices only - 
+/* hover styling for hover-capable devices only - 
 idea taken from CSS-TRICKS website (link found in README Credits section) */
 @media (hover: hover) {
     #howtoplay-btn-homepage:hover,
