@@ -447,12 +447,8 @@ Game Page
 ![Html checker result - 404 page](docs/html-validator/page404-html-checker.png)     
 
 * [**W3C CSS Validator**](https://jigsaw.w3.org/css-validator/) - NO ERRORS were found in the CSS of the site.      
-Home Page   
-![CSS validator result - home page](docs/css-validator/home-css-validator.png)      
-Game Page   
-![CSS validator result - game page](docs/css-validator/gamepage-css-validator.png)  
-404 Page    
-![CSS validator result - 404 page](docs/css-validator/page404-css-validator.png)        
+![CSS Validator result](docs/css-validator/css-validator-result.png)  
+    
 
 ### **Lighthouse Testing**
 
@@ -472,7 +468,7 @@ Game Page
 
 * Game Page     
     ![Lighthouse result for game page - mobile](docs/lighthouse-testing/gamepage-mobile-lighthouse.png)     
-    
+
 * 404 Page      
     ![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)   
 
