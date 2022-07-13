@@ -11,7 +11,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
         * [User Stories](#user-stories)
     * [Scope](#scope)
         * [Planned Features](#planned-features)
-        * [Design Choice](#design-choice)
+        * [Design Choices](#design-choices)
     * [Structure](#structure)
         * [Interaction Design (IXD)](#interaction-design-ixd)
         * [Information Design/Architecture](#information-designarchitecture)
@@ -35,6 +35,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
     * [Version Control](#version-control)
     * [Github Pages Deployment](#github-pages-deployment)
     * [Cloning from Github](#cloning-from-github)
+    * [Running Project Locally](#running-project-locally)
 * [Technologies](#technologies)
 * [Credits](#credits)
 * [Acknowledgment](#acknowledgment)
@@ -132,11 +133,10 @@ This online quiz game has the following planned features based on the User Stori
         * The game page will have a logo, nav bar with 3 nav links/buttons ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prizes box, lifelines, and the main game area where the question and multiple answer choices will be displayed.
         * The popup boxes will be minimal in text content, and will only contain 1 or 2 buttons/links.
 
-#### **Design Choice:**
+#### **Design Choices:**
 This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of mainly **shades of green** is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life. Also, some other colors to serve as accents are used.
 
 * **Color Scheme**:     
-    ([See **SURFACE** section for more details](#surface))  
     The following are the colors used:
     * #ffffff (White)    
     * #dad9d8 (Light silver)
@@ -151,13 +151,14 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * #b6a733 (Brass)
     * #e1cd33 (Sandstorm - yellow)
     * #f0e699 (Khaki - yellow)      
+    ([See **SURFACE** section for more details](#surface))  
 
 * **Typography**:      
-    ([See **'SURFACE'** section for more details](#surface))    
     This website uses fonts from [Google Fonts](https://fonts.google.com/). The following are the utilized fonts:
     * **Roboto** — the default font for the site
     * **Playfair Display** — used on the main logo
-    * **Roboto Slab** — used on the cash prizes (inside money box)   
+    * **Roboto Slab** — used on the cash prizes (inside money box)  
+    ([See **'SURFACE'** section for more details](#surface))    
 
 * **Layout**    
     * **The Logo** - The layout of the logo in the home page is deliberately designed to have the words 'The' and 'Quiz' to stay above and below, respectively, to the main title 'Million Euro'. This is different from how the logo in the game page and 404 page are laid out. This is because I feel it looks better on the home page, and the other pages are adequately served with the simpler linear arrangement of the logo.  
@@ -259,7 +260,7 @@ This site was created using several shades of colors that were mixed and matched
     ![Colors as shown in Contrast Grid](docs/design-choice/contrast-grid.png)
 
 * **Typography (Font Families)**   
-
+    The following fonts from [Google Fonts](https://fonts.google.com/) are used in this website:
     ![Playfair Display font from Google Fonts](docs/design-choice/playfair-font.png)
     ![Roboto font from Google Fonts](docs/design-choice/roboto-font.png)
     ![Roboto Slab font from Google Fonts](docs/design-choice/roboto-slab-font.png)    
@@ -379,6 +380,8 @@ The 404 Page simply informs the user that there is nothing to be found in that p
 
 ![Image of 404 page](docs/features/404page.png)
 
+[<u>Back to Table of Contents</u>](#table-of-contents)
+
 ### **Features for the Future**
 * In the future, I want to revisit this site and add more available questions, perhaps using APIs or database.
 ___
@@ -403,7 +406,9 @@ ___
 ___
 ## BUGS LEFT TO FIX   
 ___
-The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working IOS. However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.
+The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working IOS. However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.     
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 ___
 ## TESTING
 ___
@@ -481,6 +486,9 @@ Game Page
 * 404 Page      
     ![Lighthouse result for 404 page - mobile](docs/lighthouse-testing/page404-mobile-lighthouse.png)   
 
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
+
 ___
 ## DEPLOYMENT
 ___
@@ -509,6 +517,13 @@ To clone the repository for this site, do the following steps:
 5. Then, go to your computer's terminal and type `git clone <url of the repository>`.
 6. A copy of the repository is now saved in your computer.
 
+### **Running Project Locally**
+1. Go to the repository: https://github.com/marked-gil/the-million-euro-quiz
+2. Inside the repository, look for the button labeled as '**Code**' and click it.
+3. Inside the modal (popup box) that comes out, click **Download Zip**.
+4. Once the zip file is downloaded, unzip it if necessary, and open the index.html to run the project locally.
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 ___
 ## TECHNOLOGIES
 ___
@@ -538,6 +553,8 @@ The following technologies are used in this website:
     * [Color Contrast Accessibility Validator](https://color.a11y.com/)
     * Lighthouse Developer Tool
     * Safari Accessibility Audit
+
+[<u>Back to Table of Contents</u>](#table-of-contents)
 ___
 ## CREDITS
 ___
@@ -576,6 +593,7 @@ ___
 * [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) - Solves the issue with sticky hover state on mobile devices
 * [Stefan Judis](https://www.stefanjudis.com/snippets/how-to-color-the-browser-scrollbar-across-browsers/) - Shows how to color the scrollbar across main browsers
 
+[<u>Back to Table of Contents</u>](#table-of-contents)
 ___
 ## ACKNOWLEDGMENT
 ___
