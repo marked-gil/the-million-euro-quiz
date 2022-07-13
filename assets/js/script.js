@@ -841,7 +841,7 @@ function prizeMoney(qNum) {
 function highlightNextPrize() {
     const currentPrize = prizeMoney(questionNumber.innerText).current;
     currentPrize.classList.add('highlight-prize');
-    currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
+    // currentPrize.scrollIntoView({behavior: "smooth", block: "center"});
 }
 
 /**
