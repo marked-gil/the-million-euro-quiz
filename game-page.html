@@ -28,11 +28,11 @@
                 </h1>
             </div>
             <!-- nav menu -->
-            <ul id="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li id="howtoplay-btn-gamepage">How to Play</li>
-                <li id="quit-link">Quit</li>
-            </ul>
+            <div id="nav-menu">
+                <a href="index.html">Home</a>
+                <button id="howtoplay-btn-gamepage">How to Play</button>
+                <button id="quit-link">Quit</button>
+            </div>
         </nav>
     </header>
 
@@ -71,20 +71,20 @@
             <section id="life-lines">
                 <h2>Lifelines</h2>
                 <!-- to remove 1 wrong answer -->
-                <div data-lifeline="remove-one-option" class="life-line-item" role="button" aria-label="removes 1 wrong answer">
+                <button data-lifeline="remove-one-option" class="life-line-item" aria-label="removes 1 wrong answer">
                     <i class="fas fa-hands-helping lifeline-icon"></i>
                     <span class="tooltip">Removes 1 wrong answer</span>
-                </div>
+                </button>
                 <!-- to remove 2 wrong answers -->
-                <div data-lifeline="remove-two-options" class="life-line-item" role="button" aria-label="removes 2 wrong answers">
+                <button data-lifeline="remove-two-options" class="life-line-item" aria-label="removes 2 wrong answers">
                     <i class="fas fa-life-ring lifeline-icon"></i>
                     <span class="tooltip">Removes 2 wrong answers</span>
-                </div>
+                </button>
                 <!-- Adds more time to timer -->
-                <div data-lifeline="add-to-timer" class="life-line-item" role="button" aria-label="adds 30 seconds to the timer">
+                <button data-lifeline="add-to-timer" class="life-line-item" aria-label="adds 30 seconds to the timer">
                     <i class="fas fa-clock lifeline-icon"></i>
                     <span class="tooltip">Adds 30 sec more to your time</span>
-                </div> 
+                </button> 
             </section>
 
             <!-- container for question and timer -->
