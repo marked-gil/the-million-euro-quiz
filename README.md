@@ -45,7 +45,7 @@ The **Million Euro Quiz** is a time-pressured online quiz game that tests the ge
 ___
 ### **STRATEGY**
 #### **Main Goal:**
-* This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, lifelines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation.
+* This site aims to provide an online quiz game to users, young and old, who want to play and enjoy a challenging game that tests their general knowledge. This is endeavored to be achieved by employing special features, which include a timer, lifelines, randomness of questions, progressive level of difficulty, and 'cash-prize winning' simulation. Also, this site aims to be keyboard command accessible so any person who wishes to use their keyboard in playing the game can do so.
 
 #### **Target Audience**
 * People, of any age group, who want to test their general knowledge.
@@ -65,6 +65,7 @@ ___
 * As a user, I want to be able to quit the current game or return to home page so I would have the options to either play a new game or to enter a new name without needing to leave the site.
 * As a user, I want to be able to read the mechanics of the game before starting, and even while playing the game so I can be guided well.
 * As a user, I want the game to have an intuitive user interface so I can just play it straight away even without reading the mechanics of the game.
+* As a user, I want to be able to play the quiz using the keyboard if I desire or need so, such as in times when my mouse is not working or when I have difficulty using a mouse due to whatever physical limitations.
 
 [<u>Back to Table of Contents</u>](#table-of-contents)
 
@@ -132,6 +133,13 @@ This online quiz game has the following planned features based on the User Stori
         * The home page will only show the logo, and 2 buttons ('Play' and 'How To Play' buttons).
         * The game page will have a logo, nav bar with 3 nav links/buttons ('Home', 'How To Play' and 'Quit'), the player's name and money earned, cash prizes box, lifelines, and the main game area where the question and multiple answer choices will be displayed.
         * The popup boxes will be minimal in text content, and will only contain 1 or 2 buttons/links.
+
+* User Story:
+    > * As a user, I want to be able to play the quiz using the keyboard if I desire or need so, such as in times when my mouse is not working or when I have difficulty using a mouse due to whatever physical limitations.    
+    * IMPLEMENTATION:
+        * The site will be created with consideration to keyboard accessibility.
+        * All the interactive buttons and links must be accessible by a keyboard command.
+        * The game will work in similar way using mouse, keyboard, or touch-screen.     
 
 #### **Design Choices:**
 This online game site is created with a minimalist, uncluttered design theme that seeks to retain the user's focus on the game. The play of mainly **shades of green** is chosen due to its calming and stress-relieving effects to the user who, I believe, will play the game as a diversion from the hassles of life. Also, some other colors to serve as accents are used.
