@@ -351,16 +351,20 @@ if (document.getElementById('homepage-body')) {
     const usernameInput = document.getElementById('username');
     const playBtn = document.getElementById('play-button');
     const flashMsg = document.getElementById('username-feedback');
+    const userNameSubmit = document.getElementById('username-btn');
 
     // displays 'Enter Name' lightbox
     playBtn.addEventListener('click', () => {
         displayLightBox(enterNameSection);
+        disableAllButtons(closeUsernameIcon, userNameSubmit);
+        usernameInput.focus();
     });
 
     // closes 'Enter Name' lightbox
     closeUsernameIcon.addEventListener('click', () => {
         flashMsg.innerHTML = "";
         closeLightBox(enterNameSection);
+        enableAllButtons();
     });
 
 	// flash message if player's name >12 characters or starts with space
@@ -374,12 +378,16 @@ if (document.getElementById('homepage-body')) {
     });
 
     // displays 'How to Play' lightbox
-    howToPlayBtn.addEventListener('click', () => howToPlayLightbox());
+    howToPlayBtn.addEventListener('click', () => {
+        howToPlayLightbox();
+        const closeHowToPlayBtn = document.getElementById('close-howtoplay');
+        disableAllButtons(closeHowToPlayBtn);
+        closeHowToPlayBtn.focus();
+    });
     
     // 'Let's Play' button Event Listener ['Enter Name' lightbox]
     // Requires that a name is entered before redirecting to game page
     // Only allows alphanumeric characters and/or space in-between
-    const userNameSubmit = document.getElementById('username-btn');
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         // regex pattern taken from stackoverflow (links found in README file Credits section)
@@ -455,6 +463,7 @@ if (document.getElementById('gamepage-body')) {
      }
 
     // 'Countdown to Start' [Lightbox] <-- [Start]
+    disableAllButtons();
     displayLightBox(countdownSection);
     let countdownLeft = 3;
     let countdownId = setInterval(() => {
@@ -466,6 +475,7 @@ if (document.getElementById('gamepage-body')) {
             stopTimer(countdownId);
             displayCashPrizes();
             setTimeout(() => {
+                enableAllButtons();
                 closeLightBox(countdownSection);
                 // selects and displays first question
                 selectedQuestion = setDifficultyLevel();
@@ -511,11 +521,17 @@ if (document.getElementById('gamepage-body')) {
     // ANSWER OPTIONS/BUTTONS <-- [End]
 
     // 'How to Play' link Event Listener
-    howToPlayLink.addEventListener('click', () => howToPlayLightbox());
+    howToPlayLink.addEventListener('click', () => {
+        howToPlayLightbox();
+        const closeHowToPlay = document.getElementById('close-howtoplay');
+        disableAllButtons(closeHowToPlay);
+        closeHowToPlay.focus();
+    });
 
     // 'Quit' link Event Listener
     quitLink.addEventListener('click', () => quit());
 }
+
 // GAME PAGE <-- [End]
 
 // FUNCTIONS <-- [Start]
@@ -526,6 +542,7 @@ if (document.getElementById('gamepage-body')) {
  */
 function playGame(thisBtn, timerId) {
     stopTimer(timerId);
+    disableAllButtons();
     disableOptionBtns(thisBtn);
     let clicksBlocker = blockClicks();
     if (answerChecker(thisBtn.innerText.slice(3))) {
@@ -534,6 +551,7 @@ function playGame(thisBtn, timerId) {
             highlightEarnedPrize();
             setTimeout(() => {
                 clicksBlocker.remove();
+                enableAllButtons();
                 counter = timer(30);
                 if (usedQuestions.length < 15) {
                     thisBtn.classList.remove('correct-answer');
@@ -553,6 +571,7 @@ function playGame(thisBtn, timerId) {
             revealWrongAnswer(thisBtn);
             setTimeout(() => {
                 clicksBlocker.remove();
+                enableAllButtons();
                 gameOver();
             }, 1000);
         }, 1000);
@@ -714,6 +733,14 @@ function timer(num) {
 }
 
 /**
+ * Stops timer created by setInterval() function
+ * @param {number} timerId - The setInterval Id
+ */
+ function stopTimer(timerId) {
+    clearInterval(timerId);
+}
+
+/**
  * Adds specified time to the identified counter
  * @param {number} numToAdd - time (seconds) to add to the current counter
  * @returns timer id
@@ -721,14 +748,6 @@ function timer(num) {
 function addMoreTime(numToAdd) {
     let num = parseInt(timerValue.innerText) + numToAdd;
     return timer(num).id;
-}
-
-/**
- * Stops timer created by setInterval() function
- * @param {number} timerId - The setInterval Id
- */
-function stopTimer(timerId) {
-    clearInterval(timerId);
 }
 
 /**
@@ -870,16 +889,19 @@ function displayEarnedMoney() {
  */
  function gameOver() {
     const gameOverPopUp = document.getElementById('gameover-outer-wrapper');
-    const playAgainLoser = document.getElementById('play-again-gameover');
+    const playAgainBtn = document.getElementById('play-again-gameover');
     const prizeWon = document.getElementById('prize-won');
     const playerName = document.getElementById('username-gameover');
     const addOnText = document.querySelector('.not-bad');
+    const homeLink = document.querySelector('#gameover-inner-wrapper a');
     // Close 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
         document.getElementById('howtoplay-inner-wrapper').remove();
         document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
         document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
     }
+    // disable all buttons except buttons inside the lightbox
+    disableAllButtons(playAgainBtn, homeLink);
     // Add 'Not bad!' message to game over lightbox if cash is earned
     if (moneyEarned.innerText !== '0') {
         addOnText.classList.remove('hide');
@@ -890,8 +912,9 @@ function displayEarnedMoney() {
     // displays lightbox
     playerName.innerText = playerNameHolder.innerText;
     displayLightBox(gameOverPopUp);
+    playAgainBtn.focus();
     // 'Play Again' button Event Listener - reloads the game
-    playAgainLoser.addEventListener('click', () => {
+    playAgainBtn.addEventListener('click', () => {
         location.reload();
     });
 }
@@ -903,14 +926,16 @@ function displayEarnedMoney() {
 function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
     const playerName = document.getElementById('username-gamewon');
+    const playAgainBtn = document.getElementById('play-again-gamewon');
+    const homeLink = document.querySelector('#gamewon-inner-wrapper a');
     // stops timer and displays lightbox with name and cash prize
     stopTimer(counter.id);
+    disableAllButtons(playAgainBtn, homeLink);
     moneyEarned.innerText = '1,000,000';
     playerName.innerText = playerNameHolder.innerText;
     displayLightBox(gameWonSection);
     // 'Play Again' button Event Listener - reloads game
-    const playAgainWinner = document.getElementById('play-again-gamewon');
-    playAgainWinner.addEventListener('click', function() {
+    playAgainBtn.addEventListener('click', function() {
         location.reload();
     });
 }
@@ -921,12 +946,15 @@ function gameWon() {
  */
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
+    const playAgainBtn = document.getElementById('play-again-quitter');
+    const homeLink = document.querySelector('#quit-inner-wrapper > a');
     // displays lightbox and stops timer
     stopTimer(counter.id);
     displayLightBox(quitSection);
+    disableAllButtons(playAgainBtn, homeLink);
+    playAgainBtn.focus();
     // 'Play Again' button Event Listener - reloads game
-    const playAgainQuitter = document.getElementById('play-again-quitter');
-    playAgainQuitter.addEventListener('click', function() {
+    playAgainBtn.addEventListener('click', function() {
         location.reload();
     });
 }
@@ -993,6 +1021,44 @@ function howToPlayLightbox() {
         howToPlaySection.classList.remove('overlay-bg');
         howToPlayArticle.remove();
     });
+}
+
+	/**
+ * Disables all buttons except the argument/s passed in,
+ * and prevents keyboard accesibility
+ * @param  {...any} letOff - the elements to be exempted from inactivation
+ */
+function disableAllButtons(...letOff) {
+    const allButtons = document.querySelectorAll('button');
+    const allLinks = document.querySelectorAll('a');
+    for (let button of allButtons) {
+        if (letOff.includes(button)) {
+            continue;
+        } else {
+            button.setAttribute('disabled', '');
+        }
+    }
+    for (let aLink of allLinks) {
+        if (letOff.includes(aLink)) {
+            continue;
+        } else {
+            aLink.setAttribute('tabindex', '-1');
+        }
+    }
+}
+
+/**
+ * Re-enables all disabled buttons & their keyboard accessibility in the page
+ */
+function enableAllButtons() {
+    const allButtons = document.querySelectorAll('button');
+    const allLinks = document.querySelectorAll('a');
+    for (let button of allButtons) {
+        button.removeAttribute('disabled');
+    }
+    for (let aLink of allLinks) {
+        aLink.removeAttribute('tabindex');
+    }
 }
 
 /**
