@@ -977,7 +977,7 @@ function howToPlayLightbox() {
                 <h3>How to win?</h3>
                 <ul>
                     <li>Answer correctly all 15 questions to win the €1 million.</li>
-                    <li>Each question also corresponds to a guaranteed cash prize.</li>
+                    <li>As you progress in the game, your guaranteed cash prize increases.</li>
                 </ul>
             </section>
             <section>
