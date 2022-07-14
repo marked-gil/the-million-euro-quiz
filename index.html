@@ -34,8 +34,10 @@
     <section id="username-outer-wrapper" class="hide overlay-bgcolor">
         <div id="username-inner-wrapper" class="lightbox-bgcolor lightbox-border">
             <!-- 'x' icon to close lightbox -->
-            <div class="close-username-container" role="button" aria-label="close the lightbox">
-                <i class="fas fa-times" id="close-username"></i>
+            <div class="close-username-container">
+                <button id="close-username" aria-label="close the lightbox">
+                    <i class="fas fa-times" id="close-username-icon"></i>
+                </button>
             </div>
             <h2>Enter Player's Name:</h2>
             <!-- form for player's name input -->
@@ -50,7 +52,7 @@
     <!-- 'ENTER NAME' Lightbox [End] -->
 
     <!-- 'HOW TO PLAY' Lightbox [Start] -->
-    <div id="howtoplay-outer-wrapper" class="hide"></div>
+    <div id="howtoplay-outer-wrapper" class="hide overlay-bgcolor"></div>
     <!-- 'HOW TO PLAY' Lightbox [End] -->
 
     <!-- link to Fontawesome -->
