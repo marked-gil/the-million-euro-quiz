@@ -947,8 +947,10 @@ function howToPlayLightbox() {
     howToPlayArticle.setAttribute('id', 'howtoplay-inner-wrapper');
     howToPlayArticle.setAttribute('class', 'lightbox-bgcolor lightbox-border');
     howToPlayArticle.innerHTML = `
-            <div class="close-howtoplay-container" role="button" aria-label="close the lightbox">
-                <i class="fas fa-times" id="close-howtoplay"></i>
+            <div class="close-howtoplay-container">
+                <button id="close-howtoplay" aria-label="close the How to Play lightbox">
+                    <i class="fas fa-times" id="close-howtoplay-icon"></i>
+                </button>
             </div>
             <h2 id="howtoplay-heading">How to Play</h2>
             <p>To play this exciting game, read the following mechanics:</p>
