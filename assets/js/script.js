@@ -482,8 +482,6 @@ if (document.getElementById('gamepage-body')) {
                 usedQuestions.push(selectedQuestion.id);
                 displayQuestion();
                 counter = timer(30);
-                document.querySelector('section#question-container h2').style.visibility = 'visible';
-                document.querySelector('#question-text').style.visibility = 'visible';
                 highlightNextPrize();
             }, 1000);
         }
@@ -679,7 +677,12 @@ function displayQuestion() {
         optionButtonsList[i].innerText = `${letterSequence[i]} ${shuffledOptions[i]}`;
         optionButtonsList[i].setAttribute('aria-label', optionButtonsList[i].innerText);
         // un-disable buttons
-        optionButtonsList[i].classList.remove('disabled-button');
+        optionButtonsList[i].classList.remove('disabled-btn', 'disabled-btn-opacity');
+    }
+    // reveals the first question
+    if (questionNumber.innerHTML == '1') {
+        document.querySelector('section#question-container h2').classList.remove('invisible');
+        document.querySelector('#question-text').classList.remove('invisible');
     }
 }
 
