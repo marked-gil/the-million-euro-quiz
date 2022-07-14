@@ -543,7 +543,7 @@ if (document.getElementById('gamepage-body')) {
 function playGame(thisBtn, timerId) {
     stopTimer(timerId);
     disableAllButtons();
-    disableOptionBtns(thisBtn);
+    showDisabledAnswers(thisBtn);
     let clicksBlocker = blockClicks();
     if (answerChecker(thisBtn.innerText.slice(3))) {
         setTimeout(() => {
@@ -602,6 +602,18 @@ function blockClicks() {
     newDiv.classList.add('overlay-bg');
     gamepageBody.appendChild(newDiv);
     return newDiv;
+}
+
+/**
+ * Emphasizes disabled answer buttons
+ * @param {object} notDisabledBtn - The answer button that is NOT disabled
+ */
+ function showDisabledAnswers(notDisabledBtn) {
+    for (let optionBtn of optionButtonsList) {
+        if (optionBtn !== notDisabledBtn) {
+            optionBtn.classList.add('disabled-btn', 'disabled-btn-opacity');
+        }
+    }
 }
 
 /**
