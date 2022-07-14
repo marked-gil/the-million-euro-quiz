@@ -37,9 +37,12 @@ body {
 
 /* UTILITY CLASSES <-- [Start] */
 
-.disabled-button {
-    opacity: .2;
+.disabled-btn {
     pointer-events: none;
+}
+
+.disabled-btn-opacity {
+    opacity: .2;
 }
 
 .hide {
@@ -194,14 +197,24 @@ nav {
 #nav-menu {
     display: flex;
     column-gap: 1rem;
-    font-size: 1rem;
     justify-content: space-around;
     width: 90%;
 }
 
-#nav-menu li {
+/* home link */
+#nav-menu > a {
+    font-size: 1rem;
     padding: 0 .5rem;
+}
+
+/* 'how to play & 'quit' buttons */
+#howtoplay-btn-gamepage,
+#quit-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
     cursor: pointer;
+    padding: 0 .5rem;
 }
 
 /* outer wrapper of game area */
@@ -326,12 +339,14 @@ nav {
 }
 
 .life-line-item {
+    background: none;
     display: inline-block;
     border: 1px solid var(--clr-light-silver);
     width: 3.5rem;
     height: 3.5rem;
     text-align: center;
     position: relative;
+    cursor: pointer;
 }
 
 .lifeline-icon {
@@ -351,7 +366,7 @@ nav {
     top: -.9rem;
     left: -2rem;
     width: 6rem;
-    visibility: hidden;
+    display: none;
     z-index: 1;
 }
 
@@ -372,14 +387,12 @@ nav {
 
 /* question heading */
 #question-container > h2 {
-    visibility: hidden;
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1rem;
 }
 
 /* main question text */
 #question-text {
-    visibility: hidden;
     color: var(--clr-white);
     text-shadow: 0 0 5px var(--clr-raisin-black);
     font-size: 1rem;
@@ -419,6 +432,7 @@ nav {
     color: var(--clr-white);
     text-shadow: 0 0 10px var(--clr-raisin-black);
     position: relative;
+    cursor: pointer;
 }
 
 /* check mark appears when answer is correct */
@@ -514,18 +528,23 @@ nav {
     margin-top: 1.5rem;
 }
 
-/* 'x' icon to close lightbox*/
 .close-username-container {
     height: 90%;
     position: absolute;
     right: 8%;
 }
 
+/* 'x' icon to close lightbox*/
 #close-username {
-    color: var(--clr-sea-green);
-    font-size: 2.5rem;
+    background: none;
+    border: none;
     position: sticky;
     top: 0;
+}
+
+#close-username-icon {
+    color: var(--clr-sea-green);
+    font-size: 2.5rem;
 }
 
 #username-form {
@@ -610,7 +629,12 @@ https://stackoverflow.com/questions/65514077/stick-buttons-to-the-right-top-of-a
 }
 
 /* 'x' icon to close lightbox */
-#close-howtoplay {    
+#close-howtoplay {
+    background: none;
+    border: none;
+}
+
+#close-howtoplay-icon {
     color: var(--clr-sea-green);
     font-size: 2.5rem;
 }
@@ -856,7 +880,7 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
     [data-lifeline="remove-one-option"]:hover .tooltip,
     [data-lifeline="remove-two-options"]:hover .tooltip,
     [data-lifeline="add-to-timer"]:hover .tooltip {
-        visibility: visible;
+        display: block;
     }
 
     #close-username:hover,
@@ -892,11 +916,18 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
         row-gap: .5rem;
     }
 
-    #nav-menu {
+	/* home button */
+    #nav-menu > a {
+        display: flex;
+        align-items: center;
         font-size: 1.1rem;
+        padding: .2rem .8rem;
     }
 
-    #nav-menu li {
+    /* 'how to play' & 'quit' buttons */
+    #howtoplay-btn-gamepage ,
+    #quit-btn {
+        font-size: 1.1rem;
         padding: .2rem .8rem;
     }
 
@@ -1016,7 +1047,9 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
         font-size: 1.6rem;
     }
 
-    #nav-menu {
+    #nav-menu > a,
+    #howtoplay-btn-gamepage,
+    #quit-btn {
         font-size: 1.2rem;
     }
 
@@ -1215,8 +1248,13 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
     }
 
     #nav-menu {
-        font-size: 1.3rem;
         width: 50.8rem;
+    }
+
+    #nav-menu > a,
+    #howtoplay-btn-gamepage,
+    #quit-btn {
+        font-size: 1.3rem;
     }
 
     #game-area {
