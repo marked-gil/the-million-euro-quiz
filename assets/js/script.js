@@ -353,21 +353,21 @@ if (document.getElementById('homepage-body')) {
     const flashMsg = document.getElementById('username-feedback');
     const userNameSubmit = document.getElementById('username-btn');
 
-    // displays 'Enter Name' lightbox
+    // displays 'Enter Name' lightbox (disables other buttons)
     playBtn.addEventListener('click', () => {
         displayLightBox(enterNameSection);
         disableAllButtons(closeUsernameIcon, userNameSubmit);
         usernameInput.focus();
     });
 
-    // closes 'Enter Name' lightbox
+    // closes 'Enter Name' lightbox (enables all buttons)
     closeUsernameIcon.addEventListener('click', () => {
         flashMsg.innerHTML = "";
         closeLightBox(enterNameSection);
         enableAllButtons();
     });
 
-	// flash message if player's name >12 characters or starts with space
+	// flashes message if player's name >12 characters or starts with space
     usernameInput.addEventListener('input', (e) => {
         if (e.target.value[0] === ' ') {
             flashMsg.innerHTML = "Name cannot start with a space.";
@@ -377,7 +377,7 @@ if (document.getElementById('homepage-body')) {
         }
     });
 
-    // displays 'How to Play' lightbox
+    // displays 'How to Play' lightbox (disables other buttons)
     howToPlayBtn.addEventListener('click', () => {
         howToPlayLightbox();
         const closeHowToPlayBtn = document.getElementById('close-howtoplay');
@@ -387,7 +387,7 @@ if (document.getElementById('homepage-body')) {
     
     // 'Let's Play' button Event Listener ['Enter Name' lightbox]
     // Requires that a name is entered before redirecting to game page
-    // Only allows alphanumeric characters and/or space in-between
+    // Only allows alphanumeric characters and space in between
     userNameSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         // regex pattern taken from stackoverflow (links found in README file Credits section)
@@ -421,7 +421,7 @@ const optionButtonB = document.getElementById('answer-option-b');
 const optionButtonC = document.getElementById('answer-option-c');
 const optionButtonD = document.getElementById('answer-option-d');
 
-// variables to access 'Money Prize' DOM elements
+// variables to access 'Cash Prize' DOM elements
 const prizesList = document.querySelectorAll('#money-list li');
 const prizeOne = document.querySelector('[data-prize="500"]');
 const prizeTwo = document.querySelector('[data-prize="1,000"]');
@@ -536,7 +536,7 @@ if (document.getElementById('gamepage-body')) {
 /**
  * Continues the process of the game, checks the answer, and declares win or lose
  * @param {*} thisBtn - The targetted event 
- * @param {*} timerId - The id of the timer() function (setInterval)
+ * @param {*} timerId - The returned id of the timer() function
  */
 function playGame(thisBtn, timerId) {
     stopTimer(timerId);
@@ -615,19 +615,19 @@ function blockClicks() {
 }
 
 /**
- * Adds style to the selected wrong answer
- * @param {object} selectedBtn - The wrong option button (answer) targeted
+ * Adds style to the wrong answer button
+ * @param {object} wrongAnswer - The wrong option button (answer)
  */
-function revealWrongAnswer(selectedBtn) {
-    selectedBtn.classList.add('wrong-answer');
+function revealWrongAnswer(wrongAnswer) {
+    wrongAnswer.classList.add('wrong-answer');
 }
 
 /**
- * Adds style to the selected correct answer
- * @param {object} selectedBtn - The correct option button (answer) targeted
+ * Adds style to the correct answer button
+ * @param {object} correctAnswer - The correct option button (answer)
  */
-function revealCorrectAnswer(selectedBtn) {
-    selectedBtn.classList.add('correct-answer');
+function revealCorrectAnswer(correctAnswer) {
+    correctAnswer.classList.add('correct-answer');
 }
 
 /**
@@ -646,8 +646,8 @@ function captureUserName() {
 }
 
 /**
- * Retrieves username from sessionStorage
- * @returns username
+ * Retrieves player's name from sessionStorage
+ * @returns player's name
  */
 function getPlayerName() {
     let key = sessionStorage.length - 1;
@@ -666,7 +666,7 @@ function questionRandomizer(qCategory) {
 }
 
 /**
- * Displays the question and answer options in the game page
+ * Displays the question and answer options in the game area
  */
 function displayQuestion() {
     questionText.innerText = selectedQuestion.question;
@@ -760,7 +760,7 @@ function randomChoiceRemove(num) {
     let wrongAnswers = selectedQuestion.wrongAnswers;
     for (let optBtn of optionButtonsList) {
         let optBtnText = optBtn.innerText.slice(3);
-        // filters undisabled answer buttons containing the wrong answer
+        // filters undisabled wrong answer buttons
         if (wrongAnswers.includes(optBtnText) && optBtn.disabled === false) {
             wrongOptList.push(optBtn);
         }
@@ -885,8 +885,8 @@ function displayEarnedMoney() {
 }
 
 /**
- * Displays Game Over lightbox with player's name and money
- * earned 
+ * Displays 'Game Over' lightbox and disables all buttons outside
+ * of the lightbox
  */
  function gameOver() {
     const gameOverPopUp = document.getElementById('gameover-outer-wrapper');
@@ -919,15 +919,14 @@ function displayEarnedMoney() {
 }
 
 /**
- * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons,
- * and set the earned money to €1,0000,000 
+ * Displays the 'Game Won' lightbox with 'Play Again' and 'Home' buttons
  */
 function gameWon() {
     const gameWonSection = document.getElementById('gamewon-outer-wrapper');
     const playerName = document.getElementById('username-gamewon');
     const playAgainBtn = document.getElementById('play-again-gamewon');
     const homeLink = document.querySelector('#gamewon-inner-wrapper a');
-    // stops timer and displays lightbox with name and cash prize
+    // stops timer, and displays lightbox, and disables buttons
     stopTimer(counter.id);
     disableAllButtons(playAgainBtn, homeLink);
     moneyEarned.innerText = '1,000,000';
@@ -940,8 +939,8 @@ function gameWon() {
 }
 
 /**
- * Quits the current game by stopping timer, displays 'Quit' lightbox, 
- * and provides option to reload the game.
+ * Quits the current game by stopping timer, disables buttons, 
+ * displays 'Quit' lightbox, and provides option to reload game
  */
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
