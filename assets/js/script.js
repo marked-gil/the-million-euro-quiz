@@ -354,15 +354,13 @@ if (document.getElementById('homepage-body')) {
 
     // displays 'Enter Name' lightbox
     playBtn.addEventListener('click', () => {
-        enterNameSection.classList.remove('hide');
-        enterNameSection.classList.add('overlay-bg');
+        displayLightBox(enterNameSection);
     });
 
     // closes 'Enter Name' lightbox
     closeUsernameIcon.addEventListener('click', () => {
         flashMsg.innerHTML = "";
-        enterNameSection.classList.add('hide');
-        enterNameSection.classList.remove('overlay-bg');
+        closeLightBox(enterNameSection);
     });
 
 	// flash message if player's name >12 characters or starts with space
@@ -435,7 +433,7 @@ const prizeFifteen = document.querySelector('[data-prize="1-million"]');
 
 // variables to access lightbox links for 'How to Play' & 'Quit'
 const howToPlayLink = document.getElementById('howtoplay-btn-gamepage');
-const quitLink = document.getElementById('quit-link');
+const quitLink = document.getElementById('quit-btn');
 
 // variables to access 'Countdown to Start' lightbox
 const countdownSection = document.getElementById('countdown-outer-wrapper');
@@ -457,8 +455,7 @@ if (document.getElementById('gamepage-body')) {
      }
 
     // 'Countdown to Start' [Lightbox] <-- [Start]
-    countdownSection.classList.add('overlay-bg');
-    countdownSection.classList.remove('hide');
+    displayLightBox(countdownSection);
     let countdownLeft = 3;
     let countdownId = setInterval(() => {
         if (countdownLeft > 1) {
@@ -469,8 +466,7 @@ if (document.getElementById('gamepage-body')) {
             stopTimer(countdownId);
             displayCashPrizes();
             setTimeout(() => {
-                countdownSection.classList.remove('overlay-bg');
-                countdownSection.classList.add('hide');
+                closeLightBox(countdownSection);
                 // selects and displays first question
                 selectedQuestion = setDifficultyLevel();
                 usedQuestions.push(selectedQuestion.id);
@@ -893,8 +889,7 @@ function displayEarnedMoney() {
     }
     // displays lightbox
     playerName.innerText = playerNameHolder.innerText;
-    gameOverPopUp.classList.remove('hide');
-    gameOverPopUp.classList.add('overlay-bg');
+    displayLightBox(gameOverPopUp);
     // 'Play Again' button Event Listener - reloads the game
     playAgainLoser.addEventListener('click', () => {
         location.reload();
@@ -912,8 +907,7 @@ function gameWon() {
     stopTimer(counter.id);
     moneyEarned.innerText = '1,000,000';
     playerName.innerText = playerNameHolder.innerText;
-    gameWonSection.classList.remove('hide');
-    gameWonSection.classList.add('overlay-bg');
+    displayLightBox(gameWonSection);
     // 'Play Again' button Event Listener - reloads game
     const playAgainWinner = document.getElementById('play-again-gamewon');
     playAgainWinner.addEventListener('click', function() {
@@ -928,9 +922,8 @@ function gameWon() {
 function quit() {
     const quitSection = document.getElementById('quit-outer-wrapper');
     // displays lightbox and stops timer
-    quitSection.classList.remove('hide');
-    quitSection.classList.add('overlay-bg');
     stopTimer(counter.id);
+    displayLightBox(quitSection);
     // 'Play Again' button Event Listener - reloads game
     const playAgainQuitter = document.getElementById('play-again-quitter');
     playAgainQuitter.addEventListener('click', function() {
@@ -992,8 +985,7 @@ function howToPlayLightbox() {
         `;
     // displays the lightbox
     howToPlaySection.appendChild(howToPlayArticle);
-    howToPlaySection.classList.remove('hide');
-    howToPlaySection.classList.add('overlay-bg', 'overlay-bgcolor');
+    displayLightBox(howToPlaySection);
     // 'close' button Event Listener - hides 'How to Play' lightbox
     const closeHowToPlay = document.getElementById('close-howtoplay');
     closeHowToPlay.addEventListener('click', () => {
@@ -1002,4 +994,23 @@ function howToPlayLightbox() {
         howToPlayArticle.remove();
     });
 }
+
+/**
+ * Displays the lightbox
+ * @param {Element} outerWrapper - The outer container element of the lightbox
+ */
+function displayLightBox(outerWrapper) {
+    outerWrapper.classList.add('overlay-bg');
+    outerWrapper.classList.remove('hide');
+}
+
+/**
+ * Closes the lightbox
+ * @param {Element} outerWrapper - The outer container element of the lightbox
+ */
+function closeLightBox(outerWrapper) {
+    outerWrapper.classList.add('hide');
+    outerWrapper.classList.remove('overlay-bg');
+}
+
 // FUNCTIONS <-- [End]
