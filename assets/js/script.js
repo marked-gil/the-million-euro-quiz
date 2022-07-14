@@ -494,18 +494,18 @@ if (document.getElementById('gamepage-body')) {
     // removes 1 wrong option
     lifelineRemoveOne.addEventListener('click', function() {
         randomChoiceRemove(1);
-        this.classList.add("disabled-button");    // disables button with css
+        disableLifeline(this);
     }, {once: true});
     // removes 2 wrong options
     lifelineRemoveTwo.addEventListener('click', function() {
         randomChoiceRemove(2);
-        this.classList.add("disabled-button");    // disables button with css
+        disableLifeline(this);
     }, {once: true});
     // adds 30 seconds more to the timer
     lifelineAddToTimer.addEventListener('click', function() {
         stopTimer(counter.id);
         counter.id = addMoreTime(30);
-        this.classList.add("disabled-button");    // disables button with css
+        disableLifeline(this);
     }, {once: true});
     // LIFELINES <-- [End]
 
@@ -768,7 +768,7 @@ function randomChoiceRemove(num) {
     for (let i = 0; i < num; i++) {
         let randNum = Math.floor(Math.random() * wrongOptList.length);
         wrongOptList[randNum].disabled = true;
-        wrongOptList[randNum].classList.add('disabled-button');
+        wrongOptList[randNum].classList.add('disabled-btn', 'disabled-btn-opacity');
         wrongOptList.splice(randNum, 1);
     }
 }
@@ -780,6 +780,15 @@ function undisableOptionBtns() {
     for (let optionBtn of optionButtonsList) {
         optionBtn.disabled = false;
     }
+}
+
+/**
+ * Disables the lifeline and prevents its keyboard accessibility
+ * @param {Element} lifeline - The lifeline element triggered 
+ */
+function disableLifeline(lifeline) {
+    lifeline.classList.add('disabled-btn', 'disabled-btn-opacity');    // 
+    lifeline.setAttribute('tabindex', '-1');
 }
 
 /**
