@@ -560,7 +560,6 @@ function playGame(thisBtn, timerId) {
                     displayQuestion();
                     highlightNextPrize();
                     displayEarnedMoney();
-                    undisableOptionBtns();
                 } else {
                     gameWon();
                 }
@@ -770,15 +769,6 @@ function randomChoiceRemove(num) {
         wrongOptList[randNum].disabled = true;
         wrongOptList[randNum].classList.add('disabled-btn', 'disabled-btn-opacity');
         wrongOptList.splice(randNum, 1);
-    }
-}
-
-/**
- * Un-disable answer buttons that were disabled
- */
-function undisableOptionBtns() {
-    for (let optionBtn of optionButtonsList) {
-        optionBtn.disabled = false;
     }
 }
 
