@@ -605,19 +605,6 @@ function blockClicks() {
 }
 
 /**
- * Disables all option buttons except the one passed in as argument
- * @param {object} notToDisableBtn - The option button that is NOT to be disabled
- */
-function disableOptionBtns(notToDisableBtn) {
-    for (let optionBtn of optionButtonsList) {
-        optionBtn.disabled = true;
-        if (optionBtn !== notToDisableBtn) {
-            optionBtn.classList.add('disabled-button');
-        }
-    }
-}
-
-/**
  * Adds style to the selected wrong answer
  * @param {object} selectedBtn - The wrong option button (answer) targeted
  */
