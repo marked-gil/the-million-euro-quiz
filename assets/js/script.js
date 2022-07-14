@@ -896,9 +896,7 @@ function displayEarnedMoney() {
     const homeLink = document.querySelector('#gameover-inner-wrapper a');
     // Close 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
-        document.getElementById('howtoplay-inner-wrapper').remove();
-        document.getElementById('howtoplay-outer-wrapper').classList.add('hide');
-        document.getElementById('howtoplay-outer-wrapper').classList.remove('overlay-bg');
+        closeHowToPlaySection();
     }
     // disable all buttons except buttons inside the lightbox
     disableAllButtons(playAgainBtn, homeLink);
@@ -1014,16 +1012,24 @@ function howToPlayLightbox() {
     // displays the lightbox
     howToPlaySection.appendChild(howToPlayArticle);
     displayLightBox(howToPlaySection);
-    // 'close' button Event Listener - hides 'How to Play' lightbox
-    const closeHowToPlay = document.getElementById('close-howtoplay');
-    closeHowToPlay.addEventListener('click', () => {
-        howToPlaySection.classList.add('hide');
-        howToPlaySection.classList.remove('overlay-bg');
-        howToPlayArticle.remove();
+    // Event Listener to close 'How to Play' section
+    const closeHowToPlayBtn = document.getElementById('close-howtoplay');
+    closeHowToPlayBtn.addEventListener('click', () => {
+        closeHowToPlaySection();
     });
 }
 
-	/**
+/**
+ * Closes 'How to Play' Lightbox when close button triggered
+ */
+function closeHowToPlaySection() {
+    const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
+    closeLightBox(howToPlaySection);
+    document.getElementById('howtoplay-inner-wrapper').remove();
+    enableAllButtons();
+}
+
+/**
  * Disables all buttons except the argument/s passed in,
  * and prevents keyboard accesibility
  * @param  {...any} letOff - the elements to be exempted from inactivation
