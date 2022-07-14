@@ -268,7 +268,7 @@ This site was created using several shades of colors that were mixed and matched
     ![Colors as shown in Contrast Grid](docs/design-choice/contrast-grid.png)
 
 * **Typography (Font Families)**   
-    The following fonts from [Google Fonts](https://fonts.google.com/) are used in this website:
+    The following fonts from [Google Fonts](https://fonts.google.com/) are used in this website:    
     ![Playfair Display font from Google Fonts](docs/design-choice/playfair-font.png)
     ![Roboto font from Google Fonts](docs/design-choice/roboto-font.png)
     ![Roboto Slab font from Google Fonts](docs/design-choice/roboto-slab-font.png)    

@@ -402,6 +402,21 @@ if (document.getElementById('homepage-body')) {
             flashMsg.innerHTML = "You need to enter your name.";
         }
     }); 
+
+    // Closes any open lightbox using 'Escape' key
+    document.addEventListener('keydown', (e) => {
+        const enterNameClasses = enterNameSection.classList.value;
+        const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
+        const howToPlayClasses = howToPlaySection.classList.value;
+        if (e.key === 'Escape') {
+            if (!enterNameClasses.includes('hide')) {
+                closeLightBox(enterNameSection);
+                enableAllButtons();
+            } else if (!howToPlayClasses.includes('hide')) {
+                closeHowToPlaySection();
+            }
+        }
+    });
 }
 // HOME PAGE <-- [End]
 
@@ -518,6 +533,9 @@ if (document.getElementById('gamepage-body')) {
     optionButtonD.addEventListener('click', (e) => playGame(e.target, counter.id));
     // ANSWER OPTIONS/BUTTONS <-- [End]
 
+    // 'Quit' link Event Listener
+    quitLink.addEventListener('click', () => quit());
+
     // 'How to Play' link Event Listener
     howToPlayLink.addEventListener('click', () => {
         howToPlayLightbox();
@@ -526,8 +544,14 @@ if (document.getElementById('gamepage-body')) {
         closeHowToPlay.focus();
     });
 
-    // 'Quit' link Event Listener
-    quitLink.addEventListener('click', () => quit());
+    // Closes 'How to Play' lightbox using 'Escape' key
+    document.addEventListener('keydown', (e) => {
+        const howToPlaySection = document.getElementById('howtoplay-outer-wrapper');
+        const howToPlayClasses = howToPlaySection.classList.value;
+        if (e.key === 'Escape' && !howToPlayClasses.includes('hide')) {
+            closeHowToPlaySection();
+        }
+    });
 }
 
 // GAME PAGE <-- [End]
