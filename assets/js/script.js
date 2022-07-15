@@ -470,12 +470,12 @@ let counter;                // variable containing id of timer() (object)
 if (document.getElementById('gamepage-body')) {
     // display player's name and cash earned 
     // and protects game page from access if name not provided
-     let playerName = getPlayerName();
-     if (playerName !== null) {
-         playerNameHolder.innerText = playerName;
-     } else {
-         location.href = 'index.html';
-     }
+    //  let playerName = getPlayerName();
+    //  if (playerName !== null) {
+    //      playerNameHolder.innerText = playerName;
+    //  } else {
+    //      location.href = 'index.html';
+    //  }
 
     // 'Countdown to Start' [Lightbox] <-- [Start]
     disableAllButtons();
