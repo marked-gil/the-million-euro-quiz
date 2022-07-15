@@ -452,7 +452,7 @@ This site is fully responsive and works well from a minimum screen size of 280px
     | Keystrokes | Effects | Achieved |
     | ---------- | ------- |--------- |
     | 'Tab' key | Navigates forward to all the interactive links/buttons | Yes |
-    | 'Tab' + 'Shift' keys | Navigates backward to all the interactive links/buttons | Yes |
+    | 'Shift' + 'Tab' keys | Navigates backward to all the interactive links/buttons | Yes |
     | 'Enter' or 'Spacebar' | Activates the links and buttons | Yes |
     | 'Escape' key | closes 'Enter Name' & 'How to Play' lightboxes | Yes |
     | 'Up' & 'Down' arrow keys | Scrolls the 'How to Play' lightbox up and down | Yes |
