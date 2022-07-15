@@ -865,7 +865,7 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
         cursor: pointer;
     }
 
-    #nav-menu li:hover {
+    #nav-menu > *:hover {
         background-color: var(--clr-deep-moss);
         border-radius: 6px;
     }
