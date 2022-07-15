@@ -746,10 +746,11 @@ function timer(num) {
     let timeLeft = parseInt(num);
     timerValue.innerText = timeLeft;
     let timeInterval = setInterval(() => {
-        if (timeLeft >= 0) {
+        if (timeLeft > 0) {
             timeLeft--;
             timerValue.innerText = timeLeft + 1;
         } else {
+            timerValue.innerText = 0;
             gameOver();
             stopTimer(timeInterval);
         }
