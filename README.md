@@ -394,7 +394,7 @@ ___
 ## FIXED BUGS   
 ___
 * **ISSUE:**   
-    This site has 3 pages (html files) and using only 1 javascript file. When I ran the 'game page', it works perfectly fine without errors. But, when I went to the 'home page', an error showed up in the console: `Uncaught TypeError: Cannot set properties of null (setting ‘innerText’) at displayQuestion`.
+    This site has 3 pages (html files) and using only 1 javascript file. When I ran the 'game page', it worked perfectly fine without errors. But, when I went to the 'home page', an error showed up in the console: `Uncaught TypeError: Cannot set properties of null (setting ‘innerText’) at displayQuestion`.
     * **INTENDED OUTCOME**:   
     I expect no error to show up even in the console when I go to any pages of the site.
 
@@ -402,17 +402,17 @@ ___
     As advised in [stackoverflow](https://stackoverflow.com/questions/44182660/add-eventlistener-to-only-one-html-page), I added an ID name to the `<body>` element and used an `if statement` so the codes intended for the gamepage would only run if the current location the user is at is the 'game page'.
 
 * **ISSUE:**    
-    On a mobile device, when I tap on a hoverable button, the hover style sticks on the screen.
+    On a mobile device, when I tapped on a hoverable button, the hover style stuck on the screen.
     * **INTENDED OUTCOME**:     
     I expect that in mobile devices, the hover style on buttons will not show up or stick to the screen.
     
     * **SOLUTION**:
-    As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling will only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
+    As advised by [CSS-TRICKS](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) website, I used the media query `@media (hover: hover)` so the hover styling would only apply to devices that have the capability for hover, which does not usually include touchscreen devices.
 
 ___
 ## BUGS LEFT TO FIX   
 ___
-The only bug I found that I could not fix at the moment is that the code I used to customize the color of the scrollbar and scrollbar thumb of the **'How To Play' lightbox** is not working IOS. However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar in IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.     
+The only bug I found that I could not fix at the moment is that my customized scrollbar of the **'How To Play' lightbox** is not working on IOS. However, I found in this [link](https://developer.apple.com/forums/thread/670065) that custom scrollbars are no longer supported in IOS 14. My iPhone is actually on IOS 15.5, but I also noted from [Can I Use](https://caniuse.com/?search=webkit%20scrollbar) website that ```"From Safari 13, only display: none works with the pseudo-element ::-webkit-scrollbar. Other styles have no effect."``` Although a bit disappointing, the default scrollbar on IOS 15 actually still complements the design & color of the lightbox. Its scrollbar is thin and hides automatically when not used. Thus, I am happy to leave it as it is.     
 
 [<u>Back to Table of Contents</u>](#table-of-contents)
 ___
@@ -460,6 +460,9 @@ This site is fully responsive and works well from a minimum screen size of 280px
     |  | Keyboard accessibility are disabled and enabled when necessary on specific interactions on the page | Yes |
     |  | The site can be fully accessed with keyboard alone. | Yes |
 
+    * Important: 
+        * By default, MacOS/OX S and Safari browser are not configured to allow the use of Tab in navigating a website. To solve this, follow the steps prescribed in this link: [Configure MacOS & Safari for Keyboard Accessibility](https://www.webassign.net/manual/student_guide/t_a_osx_tab_config.htm).
+        * By default, Firefox browser does not allow keyboard focus on links. To solve this issue, check this solution from stackoverflow: [Allow Keyboard Focus on Links in Firefox](https://stackoverflow.com/questions/11704828/how-to-allow-keyboard-focus-of-links-in-firefox#:~:text=the%20accepted%20answer%3A-,In%20Firefox%2C%20type%20%22about%3Aconfig%22%20in%20the%20URL,and%20set%20it%20to%207.).
 ### **Links/Buttons Functionality Testing**
 * All the links and buttons of the site were manually tested on different browsers (Chrome, Firefox, Microsoft Edge, and Safari) and are confirmed to be working as shown in the table below:    
 
