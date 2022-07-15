@@ -429,11 +429,11 @@ This site is fully responsive and works well from a minimum screen size of 280px
 
 ### Accessibility
 * Safari Accessibility Audit Results    
-    * Home Page 
+    * Home Page     
     ![Result of Safari Accessibility Audit on home page](docs/accessibility-testing/home-accessibility-test.png)    
-    * Game Page 
+    * Game Page     
     ![Result of Safari Accessibility Audit on game page](docs/accessibility-testing/gamepage-accessibility-test.png)    
-    * 404 Page  
+    * 404 Page      
     ![Result of Safari Accessibility Audit on 404 page](docs/accessibility-testing/page404-accessibility-test.png)      
 
 * Color Contrast Accessibility Validator Results
@@ -559,7 +559,7 @@ The following technologies are used in this website:
 * [**Favicon.io**](https://favicon.io/) — used for the icon displayed beside the site title seen in the browser tab.
 * [**Balsalmiq**](https://balsamiq.com/) - used in creating the wireframes of this project's design concept.
 * [**TinyPNG**](https://tinypng.com/) - used to compress size of images
-* [Diffchecker](https://www.diffchecker.com/diff) - used in comparing texts
+* [**Diffchecker**](https://www.diffchecker.com/diff) - used in comparing texts
 * For testing and validating:
     * [JSHint](https://jshint.com/)
     * [W3C Markup Validator](https://validator.w3.org/)
