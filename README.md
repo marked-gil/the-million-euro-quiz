@@ -189,7 +189,7 @@ This online game site is created with a minimalist, uncluttered design theme tha
     * The color scheme is consistent by using shades of green dominantly, and some yellow colors, in the entire site. 
     * The fonts used are consistent across all pages of the site.   
     * The look and feel of the lightboxes (modals) are similar.    
-    * There is consistency in the navigation system of the site and the game. Nav links are placed at the top of the game page and 404 page. Also, other bottoms - such as the 'home', 'play', and 'play again' - are always located at the bottom after some text content where a user would expect them to be seen after reading a short textual information. 
+    * There is consistency in the navigation system of the site and the game. Nav links are placed at the top of the game page and 404 page. Also, other buttons - such as the 'home', 'play', and 'play again' - are always located at the bottom after some text content where a user would expect them to be seen after reading a short textual information. 
     * The logo appears on each page of the site.    
     * Feedbacks are available for each interaction a user does in the site. Examples include:   
         * When a mouse hovers on a link and button, a style change on the hovered link/button would appear, thus making the user aware that it is a clickable button/link.  
