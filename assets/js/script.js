@@ -804,7 +804,7 @@ function randomChoiceRemove(num) {
  * @param {Element} lifeline - The lifeline element triggered 
  */
 function disableLifeline(lifeline) {
-    lifeline.classList.add('disabled-btn', 'disabled-btn-opacity');    // 
+    lifeline.classList.add('disabled-btn', 'disabled-btn-opacity');
     lifeline.setAttribute('tabindex', '-1');
 }
 
@@ -813,7 +813,7 @@ function disableLifeline(lifeline) {
  * @returns randomly selected question
  */
 function setDifficultyLevel() {
-    /* Returns selected question based on question Category (questCategory) */
+    // returns selected question based on question Category (questCategory)
     const questionSelection = (quesCategory) => {
         let questionSelected = questionRandomizer(quesCategory);
         while (usedQuestions.includes(questionSelected.id)) {
@@ -920,13 +920,13 @@ function displayEarnedMoney() {
     const playerName = document.getElementById('username-gameover');
     const addOnText = document.querySelector('.not-bad');
     const homeLink = document.querySelector('#gameover-inner-wrapper a');
-    // Close 'How to Play' lightbox if it is open
+    // closes 'How to Play' lightbox if it is open
     if (document.getElementById('howtoplay-inner-wrapper')) {
         closeHowToPlaySection();
     }
-    // disable all buttons except buttons inside the lightbox
+    // disables all buttons except buttons inside the lightbox
     disableAllButtons(playAgainBtn, homeLink);
-    // Add 'Not bad!' message to game over lightbox if cash is earned
+    // adds 'Not bad!' message to game over lightbox if cash is earned
     if (moneyEarned.innerText !== '0') {
         addOnText.classList.remove('hide');
         prizeWon.innerText = moneyEarned.innerText;
