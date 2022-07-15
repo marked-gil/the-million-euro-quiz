@@ -1036,7 +1036,7 @@ function howToPlayLightbox() {
     // displays the lightbox
     howToPlaySection.appendChild(howToPlayArticle);
     displayLightBox(howToPlaySection);
-    // Event Listener to close 'How to Play' section
+    // Event Listener to close icon button
     const closeHowToPlayBtn = document.getElementById('close-howtoplay');
     closeHowToPlayBtn.addEventListener('click', () => {
         closeHowToPlaySection();
