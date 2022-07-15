@@ -272,8 +272,7 @@ nav {
     height: 3rem;
     width: 90%;
     overflow: auto;
-    /* hides scrollbar in Firefox */
-    scrollbar-width: none;
+    scrollbar-width: none;    /* hides scrollbar in Firefox */
 }
 
 /* hides scrollbar in Chrome, Safari, & Edge */
@@ -597,10 +596,8 @@ nav {
     max-height: 41rem;
     overflow: auto;
     position: relative;
-    /* styles scrollbar in Firefox */
-    scrollbar-color: var(--clr-sea-green) var(--clr-deep-moss);
-    /* styles scrollbar thumb in Firefox */
-    scrollbar-width: thin;
+    scrollbar-color: var(--clr-sea-green) var(--clr-deep-moss);    /* styles scrollbar in Firefox */
+    scrollbar-width: thin;    /* styles scrollbar thumb in Firefox */
 }
 
 /* styles scrollbar in Chrome, Safari, & Edge */
