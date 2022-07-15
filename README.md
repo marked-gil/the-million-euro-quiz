@@ -455,10 +455,10 @@ This site is fully responsive and works well from a minimum screen size of 280px
     | 'Tab' + 'Shift' keys | Navigates backward to all the interactive links/buttons | Yes |
     | 'Enter' or 'Spacebar' | Activates the links and buttons | Yes |
     | 'Escape' key | closes 'Enter Name' & 'How to Play' lightboxes | Yes |
+    | 'Up' & 'Down' arrow keys | Scrolls the 'How to Play' lightbox up and down | Yes |
     |  | Default focus styling present on the interactive elements focused on | Yes |
     |  | Keyboard accessibility are disabled and enabled when necessary on specific interactions on the page | Yes |
     |  | The site can be fully accessed with keyboard alone. | Yes |
-
 
 ### **Links/Buttons Functionality Testing**
 * All the links and buttons of the site were manually tested on different browsers (Chrome, Firefox, Microsoft Edge, and Safari) and are confirmed to be working as shown in the table below:    
@@ -481,7 +481,6 @@ Game Page
 * [**W3C CSS Validator**](https://jigsaw.w3.org/css-validator/) - NO ERRORS were found in the CSS of the site.      
 ![CSS Validator result](docs/css-validator/css-validator-result.png)  
     
-
 ### **Lighthouse Testing**
 
 **On Desktop**    
