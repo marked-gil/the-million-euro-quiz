@@ -880,8 +880,8 @@ idea taken from CSS-TRICKS website (link found in README Credits section) */
         display: block;
     }
 
-    #close-username:hover,
-    #close-howtoplay:hover {
+    #close-username-icon:hover,
+    #close-howtoplay-icon:hover {
         color: var(--clr-dark-sea);
         cursor: pointer;
     }
